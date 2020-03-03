@@ -29,6 +29,7 @@ public class Wings : MonoBehaviour {
 
     public int AmountOfPositions;
     [SerializeField] private bool verticalMovement = false;
+    [SerializeField] private float maxSpeed = 1000f;
 
     private int currentPosition = 0;
     private int filledPositions = 0;
@@ -130,6 +131,10 @@ public class Wings : MonoBehaviour {
         if (!verticalMovement)
             forceToAdd = new Vector3(forceToAdd.x, 0f, forceToAdd.z);
         transform.parent.GetComponent<Rigidbody>().AddForce((forceToAdd / AmountOfPositions) * Force);
+
+        if(transform.parent.GetComponent<Rigidbody>().velocity.sqrMagnitude > maxSpeed * maxSpeed) {
+            transform.parent.GetComponent<Rigidbody>().velocity = transform.parent.GetComponent<Rigidbody>().velocity.normalized * maxSpeed;
+        }
     }
 
     /// <summary>
