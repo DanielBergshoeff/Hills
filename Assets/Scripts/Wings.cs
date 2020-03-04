@@ -40,9 +40,11 @@ public class Wings : MonoBehaviour {
     private Vector3[] handRightRotations;
 
     private GameObject FeatherParent;
+    private Rigidbody myRigidbody;
 
     // Start is called before the first frame update
     void Start() {
+        myRigidbody = transform.parent.GetComponent<Rigidbody>();
         if (RenderWings)
             SpawnFeathers();
         ResetPositions();
@@ -101,6 +103,8 @@ public class Wings : MonoBehaviour {
     /// Calculate movement body based on feather positions
     /// </summary>
     private void WingBasedMovement() {
+        float speed = myRigidbody.velocity.magnitude;
+
         handLeftPositions[currentPosition] = LeftHand.transform.localPosition;
         handRightPositions[currentPosition] = RightHand.transform.localPosition;
         handLeftRotations[currentPosition] = LeftHand.transform.forward;
@@ -130,11 +134,8 @@ public class Wings : MonoBehaviour {
 
         if (!verticalMovement)
             forceToAdd = new Vector3(forceToAdd.x, 0f, forceToAdd.z);
+        
         transform.parent.GetComponent<Rigidbody>().AddForce((forceToAdd / AmountOfPositions) * Force);
-
-        if(transform.parent.GetComponent<Rigidbody>().velocity.sqrMagnitude > maxSpeed * maxSpeed) {
-            transform.parent.GetComponent<Rigidbody>().velocity = transform.parent.GetComponent<Rigidbody>().velocity.normalized * maxSpeed;
-        }
     }
 
     /// <summary>
