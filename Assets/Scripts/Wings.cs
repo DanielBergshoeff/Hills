@@ -30,6 +30,8 @@ public class Wings : MonoBehaviour {
     public int AmountOfPositions;
     [SerializeField] private bool verticalMovement = false;
     [SerializeField] private float maxSpeed = 1000f;
+    [SerializeField] private float rotateSpeed = 1f;
+    public float RotationRatchet = 45f;
 
     private int currentPosition = 0;
     private int filledPositions = 0;
@@ -40,12 +42,37 @@ public class Wings : MonoBehaviour {
     private Vector3[] handRightRotations;
 
     private GameObject FeatherParent;
+    private bool ReadyToSnapTurn = true;
+    public bool RotationEitherThumbstick = false;
 
     // Start is called before the first frame update
     void Start() {
         if (RenderWings)
             SpawnFeathers();
         ResetPositions();
+    }
+
+    private void UpdateRotations() {
+        Vector3 euler = transform.parent.rotation.eulerAngles;
+        if (OVRInput.Get(OVRInput.Button.SecondaryThumbstickLeft) ||
+                    (RotationEitherThumbstick && OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft))) {
+            if (ReadyToSnapTurn) {
+                euler.y -= RotationRatchet;
+                ReadyToSnapTurn = false;
+            }
+        }
+        else if (OVRInput.Get(OVRInput.Button.SecondaryThumbstickRight) ||
+            (RotationEitherThumbstick && OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight))) {
+            if (ReadyToSnapTurn) {
+                euler.y += RotationRatchet;
+                ReadyToSnapTurn = false;
+            }
+        }
+        else {
+            ReadyToSnapTurn = true;
+        }
+
+        transform.parent.rotation = Quaternion.Euler(euler);
     }
 
     private void SpawnFeathers() {
@@ -94,6 +121,8 @@ public class Wings : MonoBehaviour {
             currentPosition = 0;
             filledPositions = 0;
         }
+
+        UpdateRotations();
     }
 
 
@@ -130,9 +159,15 @@ public class Wings : MonoBehaviour {
 
         if (!verticalMovement)
             forceToAdd = new Vector3(forceToAdd.x, 0f, forceToAdd.z);
-        transform.parent.GetComponent<Rigidbody>().AddForce((forceToAdd / AmountOfPositions) * Force);
 
-        if(transform.parent.GetComponent<Rigidbody>().velocity.sqrMagnitude > maxSpeed * maxSpeed) {
+        /*
+        transform.parent.Rotate(0f, forceToAdd.x * rotateSpeed, 0f);
+        forceToAdd = new Vector3(0f, 0f, forceToAdd.z);
+        */
+
+        transform.parent.GetComponent<Rigidbody>().AddRelativeForce((forceToAdd / AmountOfPositions) * Force);
+
+        if (transform.parent.GetComponent<Rigidbody>().velocity.sqrMagnitude > maxSpeed * maxSpeed) {
             transform.parent.GetComponent<Rigidbody>().velocity = transform.parent.GetComponent<Rigidbody>().velocity.normalized * maxSpeed;
         }
     }
