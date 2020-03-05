@@ -37,8 +37,8 @@ public class ShakeDetection : MonoBehaviour
     /// Calculate movement body based on feather positions
     /// </summary>
     private void UpdatePositions() {
-        Vector3 velocityLeftHand = LeftHand.transform.position - previousLeftHandPosition;
-        Vector3 velocityRightHand = RightHand.transform.position - previousRightHandPosition;
+        Vector3 velocityLeftHand = LeftHand.transform.localPosition - previousLeftHandPosition;
+        Vector3 velocityRightHand = RightHand.transform.localPosition - previousRightHandPosition;
 
         if (Mathf.Abs(velocityRightHand.y) > 0.01f) {
             if (shakeTimerRight < timeTillShake + 0.01f)
