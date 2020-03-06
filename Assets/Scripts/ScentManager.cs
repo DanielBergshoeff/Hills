@@ -9,6 +9,7 @@ public class ScentManager : MonoBehaviour
 {
     public static List<ScentObject> scentObjects;
     private Dictionary<Scent, float> scentToStrength;
+    public float refreshTime = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +24,19 @@ public class ScentManager : MonoBehaviour
     }
 
     private IEnumerator ShowScent() {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(refreshTime);
+        Scent strongestScent = Scent.NEWSCENT1;
+        float strongestScentStrength = 0f;
         foreach (Scent s in Enum.GetValues(typeof(Scent))) {
-            if (scentToStrength.ContainsKey(s))
+            if (scentToStrength.ContainsKey(s)) {
                 Debug.Log(s + ": " + scentToStrength[s]);
+                if (scentToStrength[s] > strongestScentStrength) {
+                    strongestScent = s;
+                    strongestScentStrength = scentToStrength[s];
+                }
+            }
         }
+        SensiksManager.SetActiveScent(strongestScent, strongestScentStrength);
         StartCoroutine(ShowScent());
     }
 

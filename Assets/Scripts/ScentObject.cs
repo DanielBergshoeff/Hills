@@ -9,8 +9,6 @@ public class ScentObject : MonoBehaviour
     public Scent ObjectScent;
     public float MaxDistance;
 
-    private bool scentOn = false;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -20,23 +18,7 @@ public class ScentObject : MonoBehaviour
         ScentManager.scentObjects.Add(this);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider other) {
-        if (!other.CompareTag("Player"))
-            return;
-
-        scentOn = true;
-    }
-
-    private void OnTriggerExit(Collider other) {
-        if (!other.CompareTag("Player"))
-            return;
-
-        scentOn = false;
+    private void OnDrawGizmos() {
+        Gizmos.DrawWireSphere(transform.position, MaxDistance);
     }
 }
