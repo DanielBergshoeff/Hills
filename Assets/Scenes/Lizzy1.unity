@@ -512,6 +512,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stick (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2490562811356180881, guid: 41c1692770d845943aa2f4d27a7b080a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3922796382804976266, guid: 41c1692770d845943aa2f4d27a7b080a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -699,7 +704,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &71233616
 Transform:
@@ -904,6 +909,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &141730894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 141730895}
+  - component: {fileID: 141730896}
+  m_Layer: 0
+  m_Name: WorldCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &141730895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141730894}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -26.5, y: 22, z: 148.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1558324961}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &141730896
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141730894}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 450, y: 100, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &145715211
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,7 +967,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &145715212
 Transform:
@@ -946,6 +995,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stick (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490562811356180881, guid: 41c1692770d845943aa2f4d27a7b080a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3922796382804976266, guid: 41c1692770d845943aa2f4d27a7b080a,
         type: 3}
@@ -1181,6 +1235,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &186474684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 186474685}
+  - component: {fileID: 186474686}
+  m_Layer: 0
+  m_Name: WorldCollider (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &186474685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186474684}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -226.3, y: 22, z: -48.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1558324961}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
+--- !u!65 &186474686
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186474684}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 450, y: 100, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &229357037 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1901972316895312, guid: eb6748575a8fce346b19dff6cb1471ec,
@@ -1496,6 +1594,50 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &399289768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 399289769}
+  - component: {fileID: 399289770}
+  m_Layer: 0
+  m_Name: WorldCollider (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &399289769
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399289768}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -26.5, y: 22, z: -246.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1558324961}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &399289770
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399289768}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 450, y: 100, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &416882844
 GameObject:
@@ -1934,6 +2076,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant_Lavender (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8980629302449007188, guid: 3c1d6c1dff6d4da47b7d534ada053f2d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c1d6c1dff6d4da47b7d534ada053f2d, type: 3}
 --- !u!4 &453457188 stripped
@@ -2142,6 +2289,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stick (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2490562811356180881, guid: 41c1692770d845943aa2f4d27a7b080a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3922796382804976266, guid: 41c1692770d845943aa2f4d27a7b080a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2272,6 +2424,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant_Lavender (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8980629302449007188, guid: 3c1d6c1dff6d4da47b7d534ada053f2d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c1d6c1dff6d4da47b7d534ada053f2d, type: 3}
 --- !u!4 &713609220 stripped
@@ -2324,7 +2481,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &887601710
 Transform:
@@ -2414,6 +2571,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Plant_Lavender (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980629302449007188, guid: 3c1d6c1dff6d4da47b7d534ada053f2d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c1d6c1dff6d4da47b7d534ada053f2d, type: 3}
@@ -2880,7 +3042,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1116179080
 Transform:
@@ -2897,6 +3059,7 @@ Transform:
   - {fileID: 1603711056}
   - {fileID: 145715212}
   - {fileID: 887601710}
+  - {fileID: 1558324961}
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2911,6 +3074,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stick (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490562811356180881, guid: 41c1692770d845943aa2f4d27a7b080a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3922796382804976266, guid: 41c1692770d845943aa2f4d27a7b080a,
         type: 3}
@@ -3077,6 +3245,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Plant_Lavender (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980629302449007188, guid: 3c1d6c1dff6d4da47b7d534ada053f2d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c1d6c1dff6d4da47b7d534ada053f2d, type: 3}
@@ -3418,6 +3591,40 @@ Transform:
   - {fileID: 450056086}
   m_Father: {fileID: 0}
   m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1558324960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1558324961}
+  m_Layer: 0
+  m_Name: WorldColliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1558324961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558324960}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 141730895}
+  - {fileID: 186474685}
+  - {fileID: 399289769}
+  - {fileID: 2036490746}
+  m_Father: {fileID: 1116179080}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1564153694
 PrefabInstance:
@@ -4175,6 +4382,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stick (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2490562811356180881, guid: 41c1692770d845943aa2f4d27a7b080a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3922796382804976266, guid: 41c1692770d845943aa2f4d27a7b080a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4252,7 +4464,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1603711056
 Transform:
@@ -4424,6 +4636,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant_Lavender (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8980629302449007188, guid: 3c1d6c1dff6d4da47b7d534ada053f2d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c1d6c1dff6d4da47b7d534ada053f2d, type: 3}
 --- !u!4 &1650795048 stripped
@@ -4498,6 +4715,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Plant_Lavender (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980629302449007188, guid: 3c1d6c1dff6d4da47b7d534ada053f2d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c1d6c1dff6d4da47b7d534ada053f2d, type: 3}
@@ -4885,6 +5107,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant_Lavender
       objectReference: {fileID: 0}
+    - target: {fileID: 8980629302449007188, guid: 3c1d6c1dff6d4da47b7d534ada053f2d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c1d6c1dff6d4da47b7d534ada053f2d, type: 3}
 --- !u!4 &1822070439 stripped
@@ -4959,6 +5186,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Plant_Lavender (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980629302449007188, guid: 3c1d6c1dff6d4da47b7d534ada053f2d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c1d6c1dff6d4da47b7d534ada053f2d, type: 3}
@@ -5167,6 +5399,50 @@ MonoBehaviour:
   useVolumetric: 1
   featuresFoldout: 1
   showAdditionalSettings: 0
+--- !u!1 &2036490745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2036490746}
+  - component: {fileID: 2036490747}
+  m_Layer: 0
+  m_Name: WorldCollider (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2036490746
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036490745}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 168.7, y: 22, z: -48.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1558324961}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
+--- !u!65 &2036490747
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036490745}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 450, y: 100, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2084703826
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5178,6 +5454,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stick (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490562811356180881, guid: 41c1692770d845943aa2f4d27a7b080a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3922796382804976266, guid: 41c1692770d845943aa2f4d27a7b080a,
         type: 3}
@@ -5521,6 +5802,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sapling
       objectReference: {fileID: 0}
+    - target: {fileID: 3287032650052790623, guid: 32fccd32de29c824da8823e4109bd629,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32fccd32de29c824da8823e4109bd629, type: 3}
 --- !u!1001 &3613356088349188990
@@ -5590,6 +5876,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_Big
       objectReference: {fileID: 0}
+    - target: {fileID: 2690370123993202498, guid: 451b6f3357cb661409d9b81ea5f4db80,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 451b6f3357cb661409d9b81ea5f4db80, type: 3}
 --- !u!4 &3613356088349188991 stripped
@@ -5609,6 +5900,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stick (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490562811356180881, guid: 41c1692770d845943aa2f4d27a7b080a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3922796382804976266, guid: 41c1692770d845943aa2f4d27a7b080a,
         type: 3}
@@ -5739,6 +6035,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stick
+      objectReference: {fileID: 0}
+    - target: {fileID: 6810675587062647095, guid: 049a0d7d9b9908046b3466e30992d7e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 049a0d7d9b9908046b3466e30992d7e6, type: 3}
