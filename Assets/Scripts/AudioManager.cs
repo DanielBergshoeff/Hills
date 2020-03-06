@@ -22,6 +22,8 @@ public class AudioManager : MonoBehaviour
         myAudioSource = gameObject.AddComponent<AudioSource>();
         AllClips = Clips;
         WaveAudio = WavesAudio;
+        /*myAudioSource.clip = Clips[0];
+        myAudioSource.Play();*/
     }
 
     // Update is called once per frame
