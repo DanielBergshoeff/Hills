@@ -15,6 +15,8 @@ public class ButterflyVisualizer : MonoBehaviour {
     [SerializeField] private float minSpeed = 0.5f;
     [SerializeField] private float colorMultiplier = 3.0f;
 
+    [SerializeField] private float strengthMultiplier = 3.0f;
+
     private List<VisualEffect> audioVisualizers;
 
     // Start is called before the first frame update
@@ -29,7 +31,8 @@ public class ButterflyVisualizer : MonoBehaviour {
 
     private void ChangeColorStrength() {
         for (int i = 0; i < amtOfVisualizers; i++) {
-            audioVisualizers[i].SetFloat("MaxDistance", Mathf.Clamp(AudioManager.FrequencyBands[i] * distanceMultiplier, minDistance, 500f));
+            audioVisualizers[i].SetFloat("MaxDistance", Mathf.Clamp(AudioManager.FrequencyBands[i] * distanceMultiplier * strengthMultiplier, minDistance, 500f));
+            audioVisualizers[i].SetFloat("Strength", AudioManager.FrequencyBands[i] * AudioManager.FrequencyBands[i] * strengthMultiplier);
             audioVisualizers[i].SetFloat("Speed", Mathf.Clamp(AudioManager.FrequencyBands[i] * speedMultiplier, minSpeed, 500f));
         }
     }

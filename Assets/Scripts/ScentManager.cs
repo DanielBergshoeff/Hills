@@ -10,6 +10,7 @@ public class ScentManager : MonoBehaviour
     public static List<ScentObject> scentObjects;
     private Dictionary<Scent, float> scentToStrength;
     public float refreshTime = 1.0f;
+    public float onTime = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,9 @@ public class ScentManager : MonoBehaviour
     }
 
     private IEnumerator ShowScent() {
+        yield return new WaitForSeconds(onTime);
+        SensiksManager.SetActiveScent(Scent.SMOKE, 0f);
+
         yield return new WaitForSeconds(refreshTime);
         Scent strongestScent = Scent.NEWSCENT1;
         float strongestScentStrength = 0f;
