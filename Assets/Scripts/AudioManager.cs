@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour
     public static AudioClip WaveAudio;
     public AudioClip[] Clips;
     public AudioClip WavesAudio;
+    public bool AutoPlay = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +23,10 @@ public class AudioManager : MonoBehaviour
         myAudioSource = gameObject.AddComponent<AudioSource>();
         AllClips = Clips;
         WaveAudio = WavesAudio;
-        /*myAudioSource.clip = Clips[0];
-        myAudioSource.Play();*/
+        if (!AutoPlay)
+            return;
+        myAudioSource.clip = Clips[0];
+        myAudioSource.Play();
     }
 
     // Update is called once per frame
