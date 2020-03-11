@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Sensiks.SDK.Shared.SensiksDataTypes;
+using Sensiks.SDK;
 using Sensiks.SDK.UnityLibrary;
 
 public class HeartbeatManager : MonoBehaviour
