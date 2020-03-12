@@ -4,10 +4,22 @@ using UnityEngine;
 
 public class SmallObject : MonoBehaviour {
     public bool HeldInHand = false;
+    private Rigidbody myRigidbody;
+
+    private void Start() {
+        myRigidbody = GetComponent<Rigidbody>();
+    }
 
     public void LetGo() {
         CheckForEating();
         HeldInHand = true;
+        Debug.Log("Let go");
+
+        if (myRigidbody != null) {
+            Debug.Log("Allow rotation");
+            myRigidbody.constraints = RigidbodyConstraints.None;
+        }
+
         Invoke("SetHeldInHand", 3f);
     }
 
