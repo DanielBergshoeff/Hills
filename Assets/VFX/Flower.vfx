@@ -965,7 +965,7 @@ VisualEffectResource:
         - m_ExpressionIndex: 8
           m_Value: 0
         - m_ExpressionIndex: 9
-          m_Value: 64
+          m_Value: 63.999992
         - m_ExpressionIndex: 10
           m_Value: 0
         - m_ExpressionIndex: 11
@@ -977,7 +977,7 @@ VisualEffectResource:
         - m_ExpressionIndex: 15
           m_Value: 2
         - m_ExpressionIndex: 16
-          m_Value: 0
+          m_Value: 5.9920645
         - m_ExpressionIndex: 17
           m_Value: 3
         - m_ExpressionIndex: 18
@@ -4777,7 +4777,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":64.0,"y":0.0,"z":0.0}'
+      m_SerializableObject: '{"x":63.99999237060547,"y":0.0,"z":5.992064476013184}'
     m_Space: 2147483647
   m_Property:
     name: Color
