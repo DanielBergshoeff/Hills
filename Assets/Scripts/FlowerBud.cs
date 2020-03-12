@@ -6,8 +6,8 @@ public class FlowerBud : MonoBehaviour
 {
     [SerializeField] private GameObject flowerPrefab;
 
-    private void OnTriggerEnter(Collider other) {
-        if (!(other.gameObject.layer == LayerMask.NameToLayer("Terrain")))
+    private void OnCollisionEnter(Collision collision) {
+        if (!(collision.collider.gameObject.layer == LayerMask.NameToLayer("Terrain")))
             return;
 
         GameObject go = Instantiate(flowerPrefab);
