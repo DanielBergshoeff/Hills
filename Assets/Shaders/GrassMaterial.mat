@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_Grass 1
+  m_Name: GrassMaterial
   m_Shader: {fileID: -6465566751694194690, guid: b47bcfc3f4709144d8ad32f441711e99,
     type: 3}
   m_ShaderKeywords: _ALPHATEST_ON _BLENDMODE_ALPHA _DOUBLESIDED_ON _SURFACE_TYPE_TRANSPARENT
@@ -32,26 +32,12 @@ Material:
         m_Texture: {fileID: 2800000, guid: 645ba7690992de343a17ad5b6973e630, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - Texture2D_B030ADD5:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_B9B99CF9:
-        m_Texture: {fileID: 2800000, guid: 89b2897e618d39b4ba527ebf7dc822c1, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_F2A5F797:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - Texture2D_F6B0D946:
         m_Texture: {fileID: 2800000, guid: ac0359e3fadda614c886a5f8f5b95966, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_259048C5: 0.3
     - Vector1_51457E74: 0.1
-    - Vector1_78695CE3: 1
     - Vector1_8050F7EC: 0.6
     - _AlphaCutoffEnable: 1
     - _AlphaDstBlend: 10
@@ -84,14 +70,12 @@ Material:
     - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 3
     - _ZTestTransparent: 4
-    - _ZWrite: 0
+    - _ZWrite: 1
     m_Colors:
-    - Color_244FF7A: {r: 0, g: 1, b: 0, a: 0}
-    - Vector2_8322DE1A: {r: 6, g: 0, b: 0, a: 0}
     - Vector2_C818C4BE: {r: 6, g: 6, b: 0, a: 0}
     - _DoubleSidedConstants: {r: -1, g: -1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &9068460768396523488
+--- !u!114 &5700492644407842425
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
