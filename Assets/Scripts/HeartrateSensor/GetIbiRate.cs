@@ -6,9 +6,12 @@
 using System.IO.Ports;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GetIbiRate : MonoBehaviour
 {
+    public static GetIbiRate Instance;
+    public static HeartBeatEvent heartBeatEvent;
 
     private SerialPort mySerialPort;
 
@@ -18,6 +21,8 @@ public class GetIbiRate : MonoBehaviour
     public string choice;
     public void Start()
     {
+        Instance = this;
+
         try
         {
             mySerialPort = new SerialPort(choice, 115200, Parity.None, 8, StopBits.One);
@@ -53,6 +58,7 @@ public class GetIbiRate : MonoBehaviour
                     int.TryParse(val, out ibiValue);
                     if(ibiValue > 0)
                     {
+                        heartBeatEvent.Invoke(ibiValue);
                         heartrate = (60000 / ibiValue);
                     }
                 }
@@ -68,3 +74,5 @@ public class GetIbiRate : MonoBehaviour
         }
     }
 }
+
+public class HeartBeatEvent : UnityEvent<int> { }
