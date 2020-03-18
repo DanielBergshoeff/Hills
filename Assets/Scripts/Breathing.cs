@@ -12,25 +12,57 @@ public class Breathing : MonoBehaviour
     [SerializeField] private float breatheOutTime = 3.0f;
     [SerializeField] private float waitForNewBreath = 1.0f;
 
+    private float timer = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
         vfxGraph = GetComponent<VisualEffect>();
-        Invoke("BreatheIn", 0f);
+        vfxGraph.resetSeedOnPlay = true;
+        vfxGraph.Reinit();
+
+        vfxGraph.SetFloat("Direction", 1f);
+        vfxGraph.SetFloat("Speed", 1f / breatheInTime);
+        //CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe in", breatheInTime, Vector3.up * 2f, 0.5f, false);
+        //Invoke("BreatheIn", 0f);
+    }
+
+    private void Update() {
+        if (timer < breatheInTime && timer + Time.deltaTime >= breatheInTime) {
+            CommunicationManager.Instance.DisplayMessage(this.gameObject, "Hold breath", holdBreathTime, Vector3.up * 2f, 0.5f, false);
+            vfxGraph.SetFloat("Speed", 0f);
+        }
+        else if (timer < breatheInTime + holdBreathTime && timer + Time.deltaTime >= breatheInTime + holdBreathTime) {
+            CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe out", breatheOutTime, Vector3.up * 2f, 0.5f, false);
+            vfxGraph.SetFloat("Direction", -1f);
+            vfxGraph.SetFloat("Speed", 1f / breatheOutTime);
+        }
+        else if(timer < breatheInTime + holdBreathTime + breatheOutTime && timer + Time.deltaTime >= breatheInTime + holdBreathTime + breatheOutTime) {
+            CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe in", breatheInTime, Vector3.up * 2f, 0.5f, false);
+            vfxGraph.SetFloat("Direction", 1f);
+            vfxGraph.SetFloat("Speed", 1f / breatheInTime);
+            timer = 0f;
+        }
+
+        timer += Time.deltaTime;
+        vfxGraph.SetFloat("Point", timer);
     }
 
     private void BreatheIn() {
+        CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe in", breatheInTime, Vector3.up * 2f, 0.5f, false);
         vfxGraph.SetFloat("Direction", 1f);
         vfxGraph.SetFloat("Speed", 1f / breatheInTime);
         Invoke("HoldBreath", breatheInTime);
     }
 
     private void HoldBreath() {
+        CommunicationManager.Instance.DisplayMessage(this.gameObject, "Hold breath", holdBreathTime, Vector3.up * 2f, 0.5f, false);
         vfxGraph.SetFloat("Speed", 0f);
         Invoke("BreatheOut", holdBreathTime);
     }
 
     private void BreatheOut() {
+        CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe out", breatheOutTime, Vector3.up * 2f, 0.5f, false);
         vfxGraph.SetFloat("Direction", -1f);
         vfxGraph.SetFloat("Speed", 1f / breatheOutTime);
         Invoke("WaitForNewBreath", breatheOutTime);
@@ -39,5 +71,12 @@ public class Breathing : MonoBehaviour
     private void WaitForNewBreath() {
         vfxGraph.SetFloat("Speed", 0f);
         Invoke("BreatheIn", waitForNewBreath);
+    }
+
+    public void Stop() {
+        Debug.Log("Stop");
+        if (vfxGraph == null)
+            vfxGraph = GetComponent<VisualEffect>();
+        vfxGraph.Reinit();
     }
 }

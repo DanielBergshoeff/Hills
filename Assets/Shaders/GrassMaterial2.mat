@@ -38,7 +38,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Distance: 0.1
-    - Ripple: 548.0097
+    - Ripple: 288.0411
     - Vector1_51457E74: 0.1
     - Vector1_8050F7EC: 0.6
     - Vector1_8A82F843: 0.5
