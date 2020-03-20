@@ -12,10 +12,10 @@ public class ScentObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (ScentManager.scentObjects == null)
-            ScentManager.scentObjects = new List<ScentObject>();
+        if (ScentManager.ScentObjects == null)
+            ScentManager.ScentObjects = new List<ScentObject>();
 
-        ScentManager.scentObjects.Add(this);
+        ScentManager.ScentObjects.Add(this);
     }
 
     private void OnDrawGizmos() {

@@ -6,6 +6,7 @@ using UnityEngine.VFX;
 public class Breathing : MonoBehaviour
 {
     private VisualEffect vfxGraph;
+    public VisualEffect Tree;
 
     [SerializeField] private float breatheInTime = 3.0f;
     [SerializeField] private float holdBreathTime = 3.0f;
@@ -36,11 +37,13 @@ public class Breathing : MonoBehaviour
             CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe out", breatheOutTime, Vector3.up * 2f, 0.5f, false);
             vfxGraph.SetFloat("Direction", -1f);
             vfxGraph.SetFloat("Speed", 1f / breatheOutTime);
+            Tree.SetFloat("Direction", 1f);
         }
         else if(timer < breatheInTime + holdBreathTime + breatheOutTime && timer + Time.deltaTime >= breatheInTime + holdBreathTime + breatheOutTime) {
             CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe in", breatheInTime, Vector3.up * 2f, 0.5f, false);
             vfxGraph.SetFloat("Direction", 1f);
             vfxGraph.SetFloat("Speed", 1f / breatheInTime);
+            Tree.SetFloat("Direction", 0f);
             timer = 0f;
         }
 
