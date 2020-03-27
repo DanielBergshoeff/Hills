@@ -6,6 +6,9 @@ TagManager:
   tags:
   - SmallObject
   - Message
+  - ExcludeTeleport
+  - TeleportIgnore
+  - DestinationPoint
   layers:
   - Default
   - TransparentFX

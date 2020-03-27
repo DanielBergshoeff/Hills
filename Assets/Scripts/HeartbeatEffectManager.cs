@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.HighDefinition;
 
 public class HeartbeatEffectManager : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class HeartbeatEffectManager : MonoBehaviour
     public float Ripple = 0f;
     public float Range = 0.1f;
     public float RippleSpeed = 1f;
+
+    public GameObject DecalObjectPrefab;
+    public int amountOfRipples = 5;
 
     private Dictionary<int, string> rippleToName = new Dictionary<int, string>() {
         {0, "Ripple" },
@@ -22,6 +26,9 @@ public class HeartbeatEffectManager : MonoBehaviour
     private int currentRipple = 0;
     private bool init = false;
 
+    private List<DecalProjector> projectors;
+    private List<float> rippleSizes;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +40,15 @@ public class HeartbeatEffectManager : MonoBehaviour
         rippleToStrength = new Dictionary<int, float>();
         for (int i = 0; i < rippleToName.Count; i++) {
             rippleToStrength.Add(i, 0f);
+        }
+
+        projectors = new List<DecalProjector>();
+        rippleSizes = new List<float>();
+        for (int i = 0; i < amountOfRipples; i++) {
+            GameObject go = Instantiate(DecalObjectPrefab);
+            projectors.Add(go.GetComponent<DecalProjector>());
+            rippleSizes.Add(0f);
+            projectors[i].size = new Vector3(rippleSizes[i], rippleSizes[i], rippleSizes[i]);
         }
     }
 
@@ -47,6 +63,12 @@ public class HeartbeatEffectManager : MonoBehaviour
             SaplingMaterial.SetFloat(rippleToName[i], rippleToStrength[i]);
         }
         SaplingMaterial.SetFloat("Vector1_1C651665", Range);
+
+        for (int i = 0; i < projectors.Count; i++) {
+            rippleSizes[i] += Time.deltaTime * RippleSpeed;
+            projectors[i].size = new Vector3(rippleSizes[i], rippleSizes[i], rippleSizes[i]);
+            projectors[i].transform.position = Camera.main.transform.parent.parent.position;
+        }
     }
 
     private void Initialize() {
@@ -61,6 +83,8 @@ public class HeartbeatEffectManager : MonoBehaviour
 
         Debug.Log(currentRipple);
 
+
+        rippleSizes[currentRipple] = 0f;
         rippleToStrength[currentRipple] = 0f;
         SaplingMaterial.SetFloat(rippleToName[currentRipple], rippleToStrength[currentRipple]);
     }
