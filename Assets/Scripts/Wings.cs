@@ -41,12 +41,14 @@ public class Wings : MonoBehaviour {
     private Vector3[] handLeftRotations;
     private Vector3[] handRightRotations;
 
+    private Rigidbody myRigidbody;
     private GameObject FeatherParent;
     private bool ReadyToSnapTurn = true;
     public bool RotationEitherThumbstick = false;
 
     // Start is called before the first frame update
     void Start() {
+        myRigidbody = transform.parent.GetComponent<Rigidbody>();
         if (RenderWings)
             SpawnFeathers();
         ResetPositions();
@@ -130,6 +132,8 @@ public class Wings : MonoBehaviour {
     /// Calculate movement body based on feather positions
     /// </summary>
     private void WingBasedMovement() {
+        float speed = myRigidbody.velocity.magnitude;
+
         handLeftPositions[currentPosition] = LeftHand.transform.localPosition;
         handRightPositions[currentPosition] = RightHand.transform.localPosition;
         handLeftRotations[currentPosition] = LeftHand.transform.forward;
