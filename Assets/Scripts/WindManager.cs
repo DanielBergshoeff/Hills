@@ -48,10 +48,10 @@ public class WindManager : MonoBehaviour {
             float atanAngle = Mathf.Atan2(det, dot);
             atanAngle = atanAngle / Mathf.PI * 180f;
 
-            Debug.Log(atanAngle);
+            //Debug.Log(atanAngle);
             if (atanAngle >= -45f && atanAngle <= 45) {
                 //Front left and front right
-                Debug.Log("Front left and front right");
+                //Debug.Log("Front left and front right");
 
                 //Front left
                 strengthFrontLeft += (1f - Mathf.Abs(atanAngle + 45f) / 90f) * wo.Strength;
@@ -61,7 +61,7 @@ public class WindManager : MonoBehaviour {
             }
             else if (atanAngle >= 45f && atanAngle <= 135f) {
                 //Front right and behind right
-                Debug.Log("Front right and behind right");
+                //Debug.Log("Front right and behind right");
 
                 //Front right
                 strengthFrontRight += (1f - Mathf.Abs(atanAngle - 45f) / 90f) * wo.Strength;
@@ -72,7 +72,7 @@ public class WindManager : MonoBehaviour {
             }
             else if (atanAngle <= -45f && atanAngle >= -135f) {
                 //Front left and behind left
-                Debug.Log("Front left and behind left");
+                //Debug.Log("Front left and behind left");
 
                 //Front left
                 strengthFrontLeft += (1f - Mathf.Abs(atanAngle + 45f) / 90f) * wo.Strength;
@@ -82,7 +82,7 @@ public class WindManager : MonoBehaviour {
             }
             else {
                 //Behind left and behind right
-                Debug.Log("Behind left and behind right");
+                //Debug.Log("Behind left and behind right");
 
                 if (atanAngle > 0f) {
                     //Behind left
