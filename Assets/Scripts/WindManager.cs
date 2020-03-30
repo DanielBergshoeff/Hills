@@ -117,6 +117,7 @@ public class WindManager : MonoBehaviour {
     }
 
     private void OnDrawGizmos() {
+        /*
         Vector3 posFrontLeft = Camera.main.transform.parent.parent.position + Camera.main.transform.parent.parent.forward - Camera.main.transform.parent.parent.right;
         Gizmos.DrawSphere(posFrontLeft, 0.1f + strengthFrontLeft);
         Vector3 posFrontRight = Camera.main.transform.parent.parent.position + Camera.main.transform.parent.parent.forward + Camera.main.transform.parent.parent.right;
@@ -124,6 +125,6 @@ public class WindManager : MonoBehaviour {
         Vector3 posBehindLeft = Camera.main.transform.parent.parent.position - Camera.main.transform.parent.parent.forward - Camera.main.transform.parent.parent.right;
         Gizmos.DrawSphere(posBehindLeft, 0.1f + strengthBehindLeft);
         Vector3 posBehindRight = Camera.main.transform.parent.parent.position - Camera.main.transform.parent.parent.forward + Camera.main.transform.parent.parent.right;
-        Gizmos.DrawSphere(posBehindRight, 0.1f + strengthBehindRight);
+        Gizmos.DrawSphere(posBehindRight, 0.1f + strengthBehindRight);*/
     }
 }
