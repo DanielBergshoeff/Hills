@@ -7,7 +7,7 @@ using System;
 
 public class ScentManager : MonoBehaviour
 {
-    public static List<ScentObject> scentObjects;
+    public static List<ScentObject> ScentObjects;
     private Dictionary<Scent, float> scentToStrength;
     public float refreshTime = 1.0f;
     public float onTime = 0.1f;
@@ -46,7 +46,7 @@ public class ScentManager : MonoBehaviour
 
     private void SetScent() {
         scentToStrength = new Dictionary<Scent, float>();
-        foreach(ScentObject so in scentObjects) {
+        foreach(ScentObject so in ScentObjects) {
             float sqrDistance = (so.transform.position - Camera.main.transform.position).sqrMagnitude;
             if (sqrDistance > so.MaxDistance * so.MaxDistance)
                 continue;

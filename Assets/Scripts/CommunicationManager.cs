@@ -7,14 +7,14 @@ public class CommunicationManager : MonoBehaviour
     public static CommunicationManager Instance { get; private set; }
     public GameObject MessagePrefab;
     public GameObject Sapling;
-    public float DisappearTime = 1f;
+    public float DisappearTime = 0f;
     public LayerMask TerrainLayer;
 
     // Start is called before the first frame update
     void Start()
     {
         Instance = this;
-        DisplayMessage(Sapling, "Welcome.. Please take a deep breath..", 0f, Vector3.up * 2f, 1f);
+        //DisplayMessage(Sapling, "Welcome.. Please take a deep breath..", 0f, Vector3.up * 2f, 1f);
         //DisplayMessage(null, "Try to squeeze your hands..", 30f, Camera.main.transform.forward * 10f, 0.3f);
     }
 
