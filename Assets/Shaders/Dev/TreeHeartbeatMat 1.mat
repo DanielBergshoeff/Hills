@@ -41,11 +41,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Ripple: 51.501507
-    - Ripple2: 51.501507
-    - Ripple3: 51.501507
-    - Ripple4: 51.501507
-    - Ripple5: 51.501507
+    - Ripple: 298.93137
+    - Ripple2: 298.93137
+    - Ripple3: 298.93137
+    - Ripple4: 298.93137
+    - Ripple5: 298.93137
     - Vector1_1C651665: 0.1
     - Vector1_244EB1C7: 6.94
     - Vector1_32686F6F: 0
