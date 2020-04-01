@@ -22,10 +22,12 @@ public class HeatManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Invoke("UpdateHeat", UpdateTime);
+        StartCoroutine(UpdateHeat());
     }
 
-    private void UpdateHeat() {
+    private IEnumerator UpdateHeat() {
+        yield return new WaitForSeconds(UpdateTime);
+
         foreach (HeatObject ho in HeatObjects) {
             Vector3 heading = ho.transform.position - Camera.main.transform.position;
             heading = new Vector3(heading.x, 0f, heading.z);
@@ -72,7 +74,7 @@ public class HeatManager : MonoBehaviour
             break;
         }
 
-        Invoke("UpdateHeat", UpdateTime);
+        StartCoroutine(UpdateHeat());
     }
 
     private void OnDrawGizmos() {
