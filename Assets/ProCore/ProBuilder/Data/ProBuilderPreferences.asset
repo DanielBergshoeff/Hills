@@ -33,11 +33,11 @@ MonoBehaviour:
   m_Material_keys:
   - pbDefaultMaterial
   m_Bool_values: 01000000
-  m_Int_values: 00000000020000000200000001000000020000000100000000000000
+  m_Int_values: 00000000020000000200000000000000010000000100000000000000
   m_Float_values:
   - 0
   - 0
   m_String_values: []
   m_Color_values: []
   m_Material_values:
-  - {fileID: 2100000, guid: bcf81f7b526515d4fab15221b408e307, type: 2}
+  - {fileID: 2100000, guid: 75bd9d1ea0dc78240ba90b7c1c63d4da, type: 2}
