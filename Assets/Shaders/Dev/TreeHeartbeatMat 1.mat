@@ -41,11 +41,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Ripple: 77.292366
-    - Ripple2: 77.292366
-    - Ripple3: 77.292366
-    - Ripple4: 77.292366
-    - Ripple5: 77.292366
+    - Ripple: 1804.434
+    - Ripple2: 1804.434
+    - Ripple3: 1804.434
+    - Ripple4: 1804.434
+    - Ripple5: 1804.434
     - Vector1_1C651665: 0.1
     - Vector1_244EB1C7: 6.94
     - Vector1_32686F6F: 0
@@ -87,6 +87,6 @@ Material:
     m_Colors:
     - Color_701AA7C2: {r: 1, g: 1, b: 1, a: 0}
     - Color_B3B1C7E7: {r: 24543.86, g: 12437.818, b: 0, a: 0}
-    - Vector3_3FA21F24: {r: -5.3453674, g: 0.397995, b: -0.24121094, a: 0}
+    - Vector3_3FA21F24: {r: -5.46, g: 0.38, b: -0.28, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}

@@ -40,7 +40,6 @@ public class HeatManager : MonoBehaviour
 
             if (ho.PositionBased) {
                 Vector3 player = new Vector3(Camera.main.transform.parent.parent.forward.x, 0f, Camera.main.transform.parent.parent.forward.z);
-                float angle = Vector3.Angle(heading.normalized, player);
 
                 float dot = heading.x * player.x + heading.z * player.z;
                 float det = heading.x * player.z - heading.z * player.x;

@@ -9,6 +9,7 @@ public class MapSet
     public Texture2D uv;
     public Texture2D normal;
     public Vector3 scale;
+    public Texture modelMainTex;
 }
 
 

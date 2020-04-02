@@ -13,57 +13,80 @@ public class MuscleRelaxation : MonoBehaviour
         public const string ModelMainTex = "ModelMainTex";
         public const string VtxCount = "VtxCount";
         public const string Scale = "Scale";
+        public const string Speed = "Speed";
+        public const string TurbulenceIntensity = "TurbulenceIntensity";
     }
-
-    public GameObject newModel;
-    public GameObject model;
 
     private int pointCountPerArea = 100000;
     private VisualEffect vfxGraph;
-    private MapSet mapSet;
-    private Texture modelMainTex;
     private Animator pausedAnim;
+
+    private int currentMuscle = 0;
+    public List<GameObject> MuscleGroups;
+    public float timePerMuscle = 10f;
+    public float switchTime = 3f;
+    public float turbulenceIntensity = 0f;
+    public float maxTurbulenceIntensity = 3f;
+    private List<MapSet> mapSets;
+
 
     // Start is called before the first frame update
     void Start()
     {
         vfxGraph = GetComponent<VisualEffect>();
+        mapSets = new List<MapSet>();
+
+        foreach(GameObject go in MuscleGroups) {
+            mapSets.Add(InitEffect(go));
+        }
+
+        UpdateModel();
+        vfxGraph.SetFloat(PropName.Speed, 1f / switchTime);
+
+        Invoke("SwitchMuscleGroup", timePerMuscle);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(newModel != null) {
-            model = newModel;
-            newModel = null;
-            UpdateModel();
+        if(turbulenceIntensity > 0f) {
+            turbulenceIntensity -= Time.deltaTime / switchTime;
+
+            if (turbulenceIntensity < 0f)
+                turbulenceIntensity = 0f;
+
+            vfxGraph.SetFloat(PropName.TurbulenceIntensity, turbulenceIntensity);
         }
+    }
+
+    private void SwitchMuscleGroup() {
+        currentMuscle++;
+        UpdateModel();
+        turbulenceIntensity = maxTurbulenceIntensity;
+        Invoke("SwitchMuscleGroup", timePerMuscle);
     }
 
     private void UpdateModel() {
-        InitEffect();
-
-        vfxGraph.SetTexture(PropName.PositionMap, mapSet.position);
-        vfxGraph.SetVector3(PropName.PositionOffset, model.transform.position);
-        /*
-        vfxGraph.SetTexture(PropName.UVMap, mapSet.uv);
-        vfxGraph.SetTexture(PropName.ModelMainTex, modelMainTex);
-        vfxGraph.SetInt(PropName.VtxCount, mapSet.vtxCount);*/
-        vfxGraph.SetVector3(PropName.Scale, mapSet.scale);
+        vfxGraph.SetTexture(PropName.PositionMap, mapSets[currentMuscle].position);
+        vfxGraph.SetVector3(PropName.PositionOffset, MuscleGroups[currentMuscle].transform.position);
+        vfxGraph.SetVector3(PropName.Scale, mapSets[currentMuscle].scale);
     }
 
-    private void InitEffect() {
-        var modelTrans = model.transform;
-        var meshAndTexs = GetMeshData();
+    private MapSet InitEffect(GameObject go) {
+        MapSet mapSet = new MapSet();
+        var modelTrans = go.transform;
+        var meshAndTexs = GetMeshData(go);
 
         foreach (var (mesh, tex) in meshAndTexs) {
             mapSet = MeshToMap.ComputeMap(mesh, pointCountPerArea);
-            modelMainTex = tex;
+            mapSet.modelMainTex = tex;
             mapSet.scale = modelTrans.localScale * 1.1f;
         }
+
+        return mapSet;
     }
 
-    IEnumerable<(Mesh, Texture)> GetMeshData() {
+    IEnumerable<(Mesh, Texture)> GetMeshData(GameObject model) {
         var smr = model.GetComponentInChildren<SkinnedMeshRenderer>();
         if (smr != null) {
             // stop animation
