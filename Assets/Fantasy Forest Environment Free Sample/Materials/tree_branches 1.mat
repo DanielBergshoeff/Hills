@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: tree_branches
+  m_Name: tree_branches 1
   m_Shader: {fileID: -6465566751694194690, guid: 6801f017cea7e9242b4b86c4d06f4c31,
     type: 3}
   m_ShaderKeywords: _ALPHATEST_ON
@@ -133,7 +133,7 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - Color_AC58BBF8: {r: 1, g: 1, b: 1, a: 0}
+    - Color_AC58BBF8: {r: 1, g: 0.08282871, b: 0, a: 0}
     - _Color: {r: 0.9698226, g: 1, b: 0.3803922, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}

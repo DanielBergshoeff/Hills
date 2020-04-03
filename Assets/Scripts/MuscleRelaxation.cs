@@ -60,6 +60,9 @@ public class MuscleRelaxation : MonoBehaviour
     }
 
     private void SwitchMuscleGroup() {
+        if (currentMuscle + 1 >= MuscleGroups.Count)
+            return;
+
         currentMuscle++;
         UpdateModel();
         turbulenceIntensity = maxTurbulenceIntensity;
