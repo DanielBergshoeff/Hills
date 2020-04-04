@@ -21,7 +21,7 @@ public class Flock : MonoBehaviour
     void Update()
     {
         bool turning = false;
-        Vector3 difference = transform.position - GlobalFlock.GlobalFlockPosition;
+        Vector3 difference = transform.position;
         if (difference.x > GlobalFlock.GlobalFlockPosition.x + GlobalFlock.TankSizeStatic.x / 2f ||
             difference.x < GlobalFlock.GlobalFlockPosition.x - GlobalFlock.TankSizeStatic.x / 2f ||
             difference.y > GlobalFlock.GlobalFlockPosition.y + GlobalFlock.TankSizeStatic.y / 2f ||

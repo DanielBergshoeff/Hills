@@ -22,10 +22,12 @@ public class HeatManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Invoke("UpdateHeat", UpdateTime);
+        StartCoroutine(UpdateHeat());
     }
 
-    private void UpdateHeat() {
+    private IEnumerator UpdateHeat() {
+        yield return new WaitForSeconds(UpdateTime);
+
         foreach (HeatObject ho in HeatObjects) {
             Vector3 heading = ho.transform.position - Camera.main.transform.position;
             heading = new Vector3(heading.x, 0f, heading.z);
@@ -38,7 +40,6 @@ public class HeatManager : MonoBehaviour
 
             if (ho.PositionBased) {
                 Vector3 player = new Vector3(Camera.main.transform.parent.parent.forward.x, 0f, Camera.main.transform.parent.parent.forward.z);
-                float angle = Vector3.Angle(heading.normalized, player);
 
                 float dot = heading.x * player.x + heading.z * player.z;
                 float det = heading.x * player.z - heading.z * player.x;
@@ -72,7 +73,7 @@ public class HeatManager : MonoBehaviour
             break;
         }
 
-        Invoke("UpdateHeat", UpdateTime);
+        StartCoroutine(UpdateHeat());
     }
 
     private void OnDrawGizmos() {

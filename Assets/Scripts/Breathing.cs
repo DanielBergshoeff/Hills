@@ -6,7 +6,7 @@ using UnityEngine.VFX;
 public class Breathing : MonoBehaviour
 {
     private VisualEffect vfxGraph;
-    public VisualEffect Tree;
+    public VisualEffect TreeVfxGraph;
 
     [SerializeField] private float breatheInTime = 3.0f;
     [SerializeField] private float holdBreathTime = 3.0f;
@@ -30,51 +30,45 @@ public class Breathing : MonoBehaviour
 
     private void Update() {
         if (timer < breatheInTime && timer + Time.deltaTime >= breatheInTime) {
-            CommunicationManager.Instance.DisplayMessage(this.gameObject, "Hold breath", holdBreathTime, Vector3.up * 2f, 0.5f, false);
-            vfxGraph.SetFloat("Speed", 0f);
+            HoldBreathEffects();
         }
         else if (timer < breatheInTime + holdBreathTime && timer + Time.deltaTime >= breatheInTime + holdBreathTime) {
-            CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe out", breatheOutTime, Vector3.up * 2f, 0.5f, false);
-            vfxGraph.SetFloat("Direction", -1f);
-            vfxGraph.SetFloat("Speed", 1f / breatheOutTime);
-            Tree.SetFloat("Direction", 1f);
+            BreatheOutEffects();
         }
         else if(timer < breatheInTime + holdBreathTime + breatheOutTime && timer + Time.deltaTime >= breatheInTime + holdBreathTime + breatheOutTime) {
-            CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe in", breatheInTime, Vector3.up * 2f, 0.5f, false);
-            vfxGraph.SetFloat("Direction", 1f);
-            vfxGraph.SetFloat("Speed", 1f / breatheInTime);
-            Tree.SetFloat("Direction", 0f);
-            timer = 0f;
+            BreatheInEffects();
         }
 
         timer += Time.deltaTime;
         vfxGraph.SetFloat("Point", timer);
     }
 
-    private void BreatheIn() {
+    private void BreatheInEffects() {
         CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe in", breatheInTime, Vector3.up * 2f, 0.5f, false);
         vfxGraph.SetFloat("Direction", 1f);
         vfxGraph.SetFloat("Speed", 1f / breatheInTime);
-        Invoke("HoldBreath", breatheInTime);
+        TreeVfxGraph.SetFloat("Direction", 0f);
+        timer = 0f;
+
+        Tree.UpdateTree(30f, 50f);
     }
 
-    private void HoldBreath() {
+    private void HoldBreathEffects() {
         CommunicationManager.Instance.DisplayMessage(this.gameObject, "Hold breath", holdBreathTime, Vector3.up * 2f, 0.5f, false);
         vfxGraph.SetFloat("Speed", 0f);
-        Invoke("BreatheOut", holdBreathTime);
+
+        Tree.UpdateTree(30f, 50f);
     }
 
-    private void BreatheOut() {
+    private void BreatheOutEffects() {
         CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe out", breatheOutTime, Vector3.up * 2f, 0.5f, false);
         vfxGraph.SetFloat("Direction", -1f);
         vfxGraph.SetFloat("Speed", 1f / breatheOutTime);
-        Invoke("WaitForNewBreath", breatheOutTime);
-    }
+        TreeVfxGraph.SetFloat("Direction", 1f);
 
-    private void WaitForNewBreath() {
-        vfxGraph.SetFloat("Speed", 0f);
-        Invoke("BreatheIn", waitForNewBreath);
+        Tree.UpdateTree(0f, 1f);
     }
+    
 
     public void Stop() {
         Debug.Log("Stop");
