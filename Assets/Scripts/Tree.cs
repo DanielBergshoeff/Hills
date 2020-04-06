@@ -23,10 +23,11 @@ public class Tree : MonoBehaviour
         VfxGraph.SetVector3("Center", Camera.main.transform.position);
     }
 
-    public static void UpdateTree(float attractionForce, float colorIntensity) {
+    public static void UpdateTree(float attractionForce, float colorIntensity, float amtOfLeaves) {
         foreach(Tree tree in AllTrees) {
             tree.VfxGraph.SetFloat("AttractionForce", attractionForce);
             tree.VfxGraph.SetFloat("ColorIntensity", colorIntensity);
+            tree.VfxGraph.SetFloat("SpawnRate", amtOfLeaves);
         }
     }
 }

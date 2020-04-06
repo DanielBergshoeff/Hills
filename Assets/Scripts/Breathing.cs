@@ -17,6 +17,9 @@ public class Breathing : MonoBehaviour
     [SerializeField] private bool leavesEffect = false;
     [SerializeField] private bool flowerRainEffect = false;
 
+    [SerializeField] private float leafSpawnRateNormal = 3f;
+    [SerializeField] private float leafSpawnRateDuringEffect = 10f;
+
     private float timer = 0f;
 
     // Start is called before the first frame update
@@ -30,6 +33,8 @@ public class Breathing : MonoBehaviour
         vfxGraph.SetFloat("Speed", 1f / breatheInTime);
         //CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe in", breatheInTime, Vector3.up * 2f, 0.5f, false);
         //Invoke("BreatheIn", 0f);
+
+        Tree.UpdateTree(0f, 1f, leafSpawnRateNormal);
     }
 
     private void Update() {
@@ -55,7 +60,7 @@ public class Breathing : MonoBehaviour
         timer = 0f;
 
         if(leavesEffect)
-            Tree.UpdateTree(30f, 50f);
+            Tree.UpdateTree(30f, 50f, leafSpawnRateDuringEffect);
 
         if (flowerRainEffect)
             FlowerRainVfxGraph.SetInt("SpawnRate", 0);
@@ -66,7 +71,7 @@ public class Breathing : MonoBehaviour
         vfxGraph.SetFloat("Speed", 0f);
 
         if(leavesEffect)
-            Tree.UpdateTree(30f, 50f);
+            Tree.UpdateTree(30f, 50f, leafSpawnRateDuringEffect);
 
         if (flowerRainEffect)
             FlowerRainVfxGraph.SetInt("SpawnRate", 0);
@@ -79,7 +84,7 @@ public class Breathing : MonoBehaviour
         TreeVfxGraph.SetFloat("Direction", 1f);
 
         if(leavesEffect)
-            Tree.UpdateTree(0f, 1f);
+            Tree.UpdateTree(0f, 1f, leafSpawnRateNormal);
 
         if (flowerRainEffect)
             FlowerRainVfxGraph.SetInt("SpawnRate", 16);
