@@ -37,8 +37,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_119C1AE: 0
+    - Vector1_4154745: 1
     - Vector1_51457E74: 0.1
     - Vector1_8050F7EC: 0.6
+    - Vector1_8B8DEAE8: 1
     - _AlphaCutoffEnable: 1
     - _AlphaDstBlend: 10
     - _AlphaSrcBlend: 1
