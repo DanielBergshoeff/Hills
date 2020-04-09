@@ -9,12 +9,11 @@ public class MuscleRelaxation : MonoBehaviour
     public static class PropName {
         public const string PositionMap = "PositionMap";
         public const string PositionOffset = "PositionOffset";
-        public const string UVMap = "UVMap";
-        public const string ModelMainTex = "ModelMainTex";
-        public const string VtxCount = "VtxCount";
         public const string Scale = "Scale";
         public const string Speed = "Speed";
         public const string TurbulenceIntensity = "TurbulenceIntensity";
+        public const string FlexStrength = "FlexStrength";
+        public const string FlexBlend = "FlexBlend";
     }
 
     private int pointCountPerArea = 100000;
@@ -49,11 +48,16 @@ public class MuscleRelaxation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(turbulenceIntensity > 0f) {
-            turbulenceIntensity -= Time.deltaTime / switchTime;
+        if (turbulenceIntensity > 0f) {
+            turbulenceIntensity -= (Time.deltaTime / switchTime) * maxTurbulenceIntensity;
 
-            if (turbulenceIntensity < 0f)
+            if (turbulenceIntensity < 0f) {
                 turbulenceIntensity = 0f;
+                vfxGraph.SetFloat(PropName.FlexStrength, 1f);
+            }
+            else {
+                vfxGraph.SetFloat(PropName.FlexBlend, 1f - (turbulenceIntensity / maxTurbulenceIntensity));
+            }
 
             vfxGraph.SetFloat(PropName.TurbulenceIntensity, turbulenceIntensity);
         }
@@ -66,6 +70,15 @@ public class MuscleRelaxation : MonoBehaviour
         currentMuscle++;
         UpdateModel();
         turbulenceIntensity = maxTurbulenceIntensity;
+
+        vfxGraph.SetFloat(PropName.FlexStrength, 0f);
+        vfxGraph.SetFloat(PropName.FlexBlend, 0f);
+
+        Invoke("FlexMuscleGroup", switchTime);
+    }
+
+    private void FlexMuscleGroup() {
+
         Invoke("SwitchMuscleGroup", timePerMuscle);
     }
 
