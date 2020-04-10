@@ -14,11 +14,9 @@ public class CommunicationManager : MonoBehaviour
     void Start()
     {
         Instance = this;
-        //DisplayMessage(Sapling, "Welcome.. Please take a deep breath..", 0f, Vector3.up * 2f, 1f);
-        //DisplayMessage(null, "Try to squeeze your hands..", 30f, Camera.main.transform.forward * 10f, 0.3f);
     }
 
-    public void DisplayMessage(GameObject go, string message, float time = 0f, Vector3 relativePosition = default, float size = 1f, bool follow = false) {
+    public void DisplayMessage(GameObject go, string message, AudioClip audio, float time = 0f, Vector3 relativePosition = default, float size = 1f, bool follow = false) {
         GameObject messageObject = Instantiate(MessagePrefab);
         CommunicationMessage msg = messageObject.GetComponent<CommunicationMessage>();
 
@@ -33,6 +31,7 @@ public class CommunicationManager : MonoBehaviour
         msg.TerrainLayer = TerrainLayer;
         msg.DisappearTime = time;
         msg.Text = message;
+        msg.Audio = audio;
         msg.RelativePosition = relativePosition;
     }
 }
