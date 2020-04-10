@@ -6,29 +6,38 @@ using UnityEngine.VFX;
 public class Breathing : MonoBehaviour
 {
     private VisualEffect vfxGraph;
-    public VisualEffect TreeVfxGraph;
-    public VisualEffect FlowerRainVfxGraph;
-    public VisualEffect MountainPaintingVFXGraph;
+    private VisualEffect FlowerRainVfxGraph;
+    private VisualEffect MountainPaintingVFXGraph;
+
+    [Header("Materials")]
     public Material WaterShaderGraph;
 
-    public Transform LeftHand;
-
+    [Header("Breathing cycle")]
     [SerializeField] private float breatheInTime = 3.0f;
     [SerializeField] private float holdBreathTime = 3.0f;
     [SerializeField] private float breatheOutTime = 3.0f;
     [SerializeField] private float waitForNewBreath = 1.0f;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip breatheInAudio;
+    [SerializeField] private AudioClip holdbreathAudio;
+    [SerializeField] private AudioClip breatheOutAudio;
+
+    [Header("Select effects")]
     [SerializeField] private bool leavesEffect = false;
     [SerializeField] private bool flowerRainEffect = false;
     [SerializeField] private bool waterEffect = false;
     [SerializeField] private bool mountainPainting = false;
 
+    [Header("Leaves effect")]
     [SerializeField] private float leafSpawnRateNormal = 3f;
     [SerializeField] private float leafSpawnRateDuringEffect = 10f;
 
+    [Header("Water effect")]
     [SerializeField] private float minWaterDistance = 3f;
     [SerializeField] private float maxWaterDistance = 15f;
 
+    [Header("Mountain painting effect")]
     [SerializeField] private float mountainPaintingSpawnRate = 30f;
     [SerializeField] private float mountainPaintingSpeed = 3f;
 
@@ -42,17 +51,18 @@ public class Breathing : MonoBehaviour
         vfxGraph.resetSeedOnPlay = true;
         vfxGraph.Reinit();
 
-        vfxGraph.enabled = false;
         //CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe in", breatheInTime, Vector3.up * 2f, 0.5f, false);
         //Invoke("BreatheIn", 0f);
+
+        FlowerRainVfxGraph = GameObject.Find("FlowerRain").GetComponent<VisualEffect>();
+        MountainPaintingVFXGraph = GameObject.Find("MountainPaint").GetComponent<VisualEffect>();
 
         Tree.UpdateTree(0f, 1f, leafSpawnRateNormal);
     }
 
-    private void StartBreathing() {
-        vfxGraph.transform.position = Camera.main.transform.parent.parent.position + Camera.main.transform.parent.parent.forward * 5f + Vector3.up * 1f;
-        vfxGraph.enabled = true;
+    public void StartBreathing() {
         active = true;
+        BreatheInEffects();
     }
 
     private void Update() {
@@ -101,8 +111,8 @@ public class Breathing : MonoBehaviour
             SetWaterGraph(waterPoint);
         }
         if (mountainPainting) {
-            MountainPaintingVFXGraph.SetVector3("Velocity", LeftHand.transform.forward * mountainPaintingSpeed);
-            MountainPaintingVFXGraph.SetVector3("SpawnPosition", LeftHand.transform.position);
+            MountainPaintingVFXGraph.SetVector3("Velocity", Wings.Instance.LeftHand.transform.forward * mountainPaintingSpeed);
+            MountainPaintingVFXGraph.SetVector3("SpawnPosition", Wings.Instance.LeftHand.transform.position);
         }
     }
 
@@ -113,10 +123,9 @@ public class Breathing : MonoBehaviour
     }
 
     private void BreatheInEffects() {
-        CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe in", breatheInTime, Vector3.up * 2f, 0.5f, false);
+        CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe in", breatheInAudio, breatheInTime, Vector3.up * 2f, 0.5f, false);
         vfxGraph.SetFloat("Direction", 1f);
         vfxGraph.SetFloat("Speed", 1f / breatheInTime);
-        TreeVfxGraph.SetFloat("Direction", 0f);
         timer = 0f;
 
         if(leavesEffect)
@@ -130,7 +139,7 @@ public class Breathing : MonoBehaviour
     }
 
     private void HoldBreathEffects() {
-        CommunicationManager.Instance.DisplayMessage(this.gameObject, "Hold breath", holdBreathTime, Vector3.up * 2f, 0.5f, false);
+        CommunicationManager.Instance.DisplayMessage(this.gameObject, "Hold breath", holdbreathAudio, holdBreathTime, Vector3.up * 2f, 0.5f, false);
         vfxGraph.SetFloat("Speed", 0f);
 
         if(leavesEffect)
@@ -144,10 +153,9 @@ public class Breathing : MonoBehaviour
     }
 
     private void BreatheOutEffects() {
-        CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe out", breatheOutTime, Vector3.up * 2f, 0.5f, false);
+        CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe out", breatheOutAudio, breatheOutTime, Vector3.up * 2f, 0.5f, false);
         vfxGraph.SetFloat("Direction", -1f);
         vfxGraph.SetFloat("Speed", 1f / breatheOutTime);
-        TreeVfxGraph.SetFloat("Direction", 1f);
 
         if(leavesEffect)
             Tree.UpdateTree(0f, 1f, leafSpawnRateNormal);

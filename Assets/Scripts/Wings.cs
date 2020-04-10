@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.VR;
 
 public class Wings : MonoBehaviour {
+    public static Wings Instance { get; private set; }
+
     [Header("References")]
     public Transform LeftHand;
     public Transform RightHand;
@@ -50,6 +52,8 @@ public class Wings : MonoBehaviour {
         if (RenderWings)
             SpawnFeathers();
         ResetPositions();
+
+        Instance = this;
     }
 
     private void UpdateRotations() {

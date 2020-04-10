@@ -20,7 +20,8 @@ public class Tree : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        VfxGraph.SetVector3("Center", Camera.main.transform.position);
+        if(Camera.main != null)
+            VfxGraph.SetVector3("Center", Camera.main.transform.position);
     }
 
     public static void UpdateTree(float attractionForce, float colorIntensity, float amtOfLeaves) {
