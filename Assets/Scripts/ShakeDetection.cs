@@ -50,7 +50,8 @@ public class ShakeDetection : MonoBehaviour
         }
 
         if (shakeTimerRight > timeTillShake) {
-            shakeEvent.Invoke(rightHandGrabObject);
+            if(shakeEvent != null)
+                shakeEvent.Invoke(rightHandGrabObject);
         }
 
         if (Mathf.Abs(velocityLeftHand.y) > 0.01f) {
@@ -63,7 +64,8 @@ public class ShakeDetection : MonoBehaviour
         }
 
         if (shakeTimerLeft > timeTillShake) {
-            shakeEvent.Invoke(leftHandGrabObject);
+            if(shakeEvent != null)
+                shakeEvent.Invoke(leftHandGrabObject);
         }
 
         previousLeftHandPosition = LeftHand.transform.localPosition;

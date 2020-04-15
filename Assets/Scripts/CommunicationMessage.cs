@@ -12,15 +12,18 @@ public class CommunicationMessage : MonoBehaviour
     public Vector3 RelativePosition;
     public float DisappearTime = 0f;
     public string Text;
+    public AudioClip Audio;
     public float Size;
     public TextMeshProUGUI Tmp;
-    public Image img;
+
+    private Image img;
     public LayerMask TerrainLayer; 
 
     private bool fade;
     private float startAlphaText;
     private float startAlphaImage;
     private float fadeTimer = 0f;
+    private AudioSource myAudioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +36,10 @@ public class CommunicationMessage : MonoBehaviour
         startAlphaText = Tmp.alpha;
         img = GetComponentInChildren<Image>();
         startAlphaImage = img.color.a;
+
+        myAudioSource = gameObject.AddComponent<AudioSource>();
+        if(Audio != null)
+            myAudioSource.PlayOneShot(Audio);
 
         fadeTimer = CommunicationManager.Instance.DisappearTime;
         transform.localScale = new Vector3(Size, Size, Size);
