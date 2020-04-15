@@ -9,6 +9,8 @@ TagManager:
   - ExcludeTeleport
   - TeleportIgnore
   - DestinationPoint
+  - Painting
+  - Color
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - PostProcessing
   - Terrain
   - IgnoreVFX
-  - 
+  - Paint
   - 
   - 
   - 
