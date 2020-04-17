@@ -381,7 +381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7484750736837202251
 Transform:
   m_ObjectHideFlags: 0
@@ -526,7 +526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7484750737296180823
 Transform:
   m_ObjectHideFlags: 0
@@ -634,7 +634,7 @@ GameObject:
   - component: {fileID: 7484750737543420934}
   - component: {fileID: 7484750737543420935}
   m_Layer: 0
-  m_Name: DestinationPoint
+  m_Name: ValidDestinationPointFive [Rotation With Offset]
   m_TagString: DestinationPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -845,10 +845,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CursorBeam
       objectReference: {fileID: 0}
-    - target: {fileID: 1894731597653858, guid: 12370ddcc6985ba4abe57fc5b64502f8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4119596741741680, guid: 12370ddcc6985ba4abe57fc5b64502f8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -974,10 +970,6 @@ PrefabInstance:
     - target: {fileID: 1413768137026182, guid: af1c322da33b9ec40b0f5a418ed90ef4, type: 3}
       propertyPath: m_Name
       value: InvalidCursor
-      objectReference: {fileID: 0}
-    - target: {fileID: 1413768137026182, guid: af1c322da33b9ec40b0f5a418ed90ef4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4590852826190610, guid: af1c322da33b9ec40b0f5a418ed90ef4, type: 3}
       propertyPath: m_LocalPosition.x
