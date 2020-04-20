@@ -634,7 +634,7 @@ GameObject:
   - component: {fileID: 7484750737543420934}
   - component: {fileID: 7484750737543420935}
   m_Layer: 0
-  m_Name: ValidDestinationPointFive [Rotation With Offset]
+  m_Name: DestinationPoint
   m_TagString: DestinationPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
