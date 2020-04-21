@@ -25,6 +25,9 @@ public class Tree : MonoBehaviour
     }
 
     public static void UpdateTree(float attractionForce, float colorIntensity, float amtOfLeaves) {
+        if (AllTrees == null)
+            return;
+
         foreach(Tree tree in AllTrees) {
             tree.VfxGraph.SetFloat("AttractionForce", attractionForce);
             tree.VfxGraph.SetFloat("ColorIntensity", colorIntensity);

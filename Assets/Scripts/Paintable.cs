@@ -61,8 +61,8 @@ public class Paintable : MonoBehaviour
             if (!hit.transform.CompareTag("Painting"))
                 return;
 
-            Aim.SetVector3("SpawnPosition", hit.point + transform.up * 0.05f);
             SpawnPosition.transform.position = hit.point + transform.up * distance;
+            Aim.SetVector3("SpawnPosition", hit.point + transform.up * (distance + 0.05f));
 
             if (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) > 0.1f) {
 
