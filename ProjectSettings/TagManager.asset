@@ -9,8 +9,8 @@ TagManager:
   - ExcludeTeleport
   - TeleportIgnore
   - DestinationPoint
-  - Painting
   - Color
+  - Painting
   layers:
   - Default
   - TransparentFX

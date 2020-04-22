@@ -35,7 +35,7 @@ public class AudioManager : MonoBehaviour
         GetSpectrumAudioSource();
         MakeFrequencyBands();
         //BandBuffer();
-        //CalculateAverage();
+        CalculateAverage();
     }
 
     private void GetSpectrumAudioSource() {
