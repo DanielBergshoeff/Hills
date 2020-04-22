@@ -10,16 +10,20 @@ public class MenuManager : MonoBehaviour
 
     private MenuOption[] menuOptions;
     private bool menuEnabled = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool painting = false;
 
     // Update is called once per frame
     void Update()
     {
+        if (painting)
+            PaintingMenu();
+    }
+
+    private void StartPainting() {
+        painting = true;
+    }
+
+    private void PaintingMenu() {
         if (OVRInput.GetDown(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.RTouch)) {
             Debug.Log("Pressed");
             ColorMenu = Instantiate(ColorMenuPrefab, transform);
@@ -38,7 +42,7 @@ public class MenuManager : MonoBehaviour
             Destroy(ColorMenu);
             menuEnabled = false;
 
-            foreach(MenuOption mo in menuOptions) {
+            foreach (MenuOption mo in menuOptions) {
                 if (!mo.Selected)
                     continue;
 

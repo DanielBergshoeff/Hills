@@ -83,13 +83,14 @@ public class CommunicationMessage : MonoBehaviour
             transform.position = new Vector3(transform.position.x, height + Size, transform.position.z);
         }
 
+        /*
         Vector3 heading = transform.position - Camera.main.transform.position;
         if(Physics.SphereCast(Camera.main.transform.position, 0.5f, heading.normalized, out hit, 1000f)) {
             if (!hit.collider.CompareTag("Message")) {
                 Vector3 hd = Camera.main.transform.position - hit.point;
                 transform.position = hit.point + hd.normalized;
             }
-        }
+        }*/
     }
 
     private void StartFade() {
