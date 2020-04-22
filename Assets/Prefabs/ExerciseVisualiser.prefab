@@ -152,7 +152,7 @@ MonoBehaviour:
   waterEffect: 1
   mountainPainting: 0
   leafSpawnRateNormal: 3
-  leafSpawnRateDuringEffect: 10
+  leafSpawnRateDuringEffect: 5
   minWaterDistance: 5
   maxWaterDistance: 15
   mountainPaintingSpawnRate: 30
