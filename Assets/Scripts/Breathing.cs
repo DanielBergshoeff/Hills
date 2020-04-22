@@ -16,7 +16,7 @@ public class Breathing : MonoBehaviour
     [SerializeField] private float breatheInTime = 3.0f;
     [SerializeField] private float holdBreathTime = 3.0f;
     [SerializeField] private float breatheOutTime = 3.0f;
-    [SerializeField] private float waitForNewBreath = 1.0f;
+    [SerializeField] private int amtOfCycles = 10;
 
     [Header("Audio")]
     [SerializeField] private AudioClip breatheInAudio;
@@ -43,6 +43,7 @@ public class Breathing : MonoBehaviour
 
     private float timer = 0f;
     private bool active = false;
+    private int currentCycle = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -86,8 +87,15 @@ public class Breathing : MonoBehaviour
         }
         else if(timer < breatheInTime + holdBreathTime + breatheOutTime) {
             ContinuousBreatheOutEffects();
-            if(timer + Time.deltaTime >= breatheInTime + holdBreathTime + breatheOutTime)
-                BreatheInEffects();
+            if (timer + Time.deltaTime >= breatheInTime + holdBreathTime + breatheOutTime) {
+                currentCycle++;
+                if (currentCycle == amtOfCycles) {
+                    Destroy(gameObject);
+                }
+                else {
+                    BreatheInEffects();
+                }
+            }
         }
 
         timer += Time.deltaTime;
@@ -165,6 +173,12 @@ public class Breathing : MonoBehaviour
 
         if (mountainPainting)
             MountainPaintingVFXGraph.SetFloat("SpawnRate", mountainPaintingSpawnRate);
+    }
+
+    private void SetToNeutral() {
+        Tree.UpdateTree(0f, 1f, leafSpawnRateNormal);
+        FlowerRainVfxGraph.SetInt("SpawnRate", 0);
+        MountainPaintingVFXGraph.SetFloat("SpawnRate", 0f);
     }
     
 
