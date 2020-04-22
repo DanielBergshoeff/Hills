@@ -29,9 +29,17 @@ public class Tree : MonoBehaviour
             return;
 
         foreach(Tree tree in AllTrees) {
-            tree.VfxGraph.SetFloat("AttractionForce", attractionForce);
-            tree.VfxGraph.SetFloat("ColorIntensity", colorIntensity);
-            tree.VfxGraph.SetFloat("SpawnRate", amtOfLeaves);
+            Vector3 heading = tree.transform.position - Camera.main.transform.position;
+            if (heading.sqrMagnitude < 30f * 30f) {
+                tree.VfxGraph.SetFloat("AttractionForce", attractionForce);
+                tree.VfxGraph.SetFloat("ColorIntensity", colorIntensity);
+                tree.VfxGraph.SetFloat("SpawnRate", amtOfLeaves);
+            }
+            else {
+                tree.VfxGraph.SetFloat("AttractionForce", 0f);
+                tree.VfxGraph.SetFloat("ColorIntensity", 1f);
+                tree.VfxGraph.SetFloat("SpawnRate", 0);
+            }
         }
     }
 }
