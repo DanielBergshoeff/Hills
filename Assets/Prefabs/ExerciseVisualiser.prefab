@@ -148,11 +148,11 @@ MonoBehaviour:
   holdbreathAudio: {fileID: 8300000, guid: 801b422fcd985fe429c090613d99b0f0, type: 3}
   breatheOutAudio: {fileID: 8300000, guid: 221e5b3d9ad384c43a69cf7b285f3431, type: 3}
   leavesEffect: 1
-  flowerRainEffect: 0
-  waterEffect: 0
+  flowerRainEffect: 1
+  waterEffect: 1
   mountainPainting: 0
   leafSpawnRateNormal: 3
-  leafSpawnRateDuringEffect: 10
+  leafSpawnRateDuringEffect: 5
   minWaterDistance: 5
   maxWaterDistance: 15
   mountainPaintingSpawnRate: 30
