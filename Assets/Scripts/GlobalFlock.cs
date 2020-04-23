@@ -8,19 +8,19 @@ public class GlobalFlock : MonoBehaviour
     public Vector3 TankSize = new Vector3(10f, 10f, 10f);
 
     [SerializeField] private int numFish = 10;
-    public Flock[] AllFish;
+    public List<Flock> AllFish;
     public Vector3 GoalPosition = Vector3.zero;
+    public bool UpdatePosition = true;
 
     public Collider MyCollider;
-    public float SpeedAdjustment = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        AllFish = new Flock[numFish];
+        AllFish = new List<Flock>();
         for (int i = 0; i < numFish; i++) {
             Vector3 pos = GetRandomPositionInTank();
-            AllFish[i] = Instantiate(FishPrefab, pos, Quaternion.identity).GetComponent<Flock>();
+            AllFish.Add(Instantiate(FishPrefab, pos, Quaternion.identity).GetComponent<Flock>());
             AllFish[i].MyFlock = this;
             AllFish[i].transform.parent = transform;
         }
@@ -31,11 +31,14 @@ public class GlobalFlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!UpdatePosition) {
+            GoalPosition = transform.position;
+            return;
+        }
+
         if(Random.Range(0, 10000) < 50) {
             GoalPosition = GetRandomPositionInTank();
         }
-
-        SpeedAdjustment = AudioManager.Average / 3f;
     }
 
     private void OnDrawGizmosSelected() {

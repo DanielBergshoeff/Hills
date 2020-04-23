@@ -11,6 +11,7 @@ TagManager:
   - DestinationPoint
   - Color
   - Painting
+  - Firefly
   layers:
   - Default
   - TransparentFX
