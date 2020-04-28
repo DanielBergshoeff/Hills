@@ -16,7 +16,7 @@ public class MuscleRelaxation : MonoBehaviour {
         public const string FlexBlend = "FlexBlend";
     }
 
-    private int pointCountPerArea = 100000;
+    private int pointCountPerArea = 100;
     private VisualEffect vfxGraph;
     private Animator pausedAnim;
 
@@ -97,7 +97,7 @@ public class MuscleRelaxation : MonoBehaviour {
 
     private void UpdateModel() {
         vfxGraph.SetTexture(PropName.PositionMap, mapSets[currentMuscle].position);
-        vfxGraph.SetVector3(PropName.PositionOffset, MuscleGroups[currentMuscle].transform.position);
+        vfxGraph.SetVector3(PropName.PositionOffset, MuscleGroups[currentMuscle].transform.position - transform.position);
         vfxGraph.SetVector3(PropName.Scale, mapSets[currentMuscle].scale);
     }
 
@@ -109,7 +109,7 @@ public class MuscleRelaxation : MonoBehaviour {
         foreach (var (mesh, tex) in meshAndTexs) {
             mapSet = MeshToMap.ComputeMap(mesh, pointCountPerArea);
             mapSet.modelMainTex = tex;
-            mapSet.scale = modelTrans.localScale * 1.1f;
+            mapSet.scale = modelTrans.parent.localScale * 1.1f;
         }
 
         return mapSet;
