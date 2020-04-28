@@ -5,6 +5,8 @@ using UnityEngine;
 public class ExerciseGrabber : MonoBehaviour
 {
     public GameObject BreathingPrefab;
+    public float MinDistance = 5f;
+    public float MaxDistance = 100f;
 
     private bool touching = false;
     private bool grabbed = false;
@@ -25,14 +27,14 @@ public class ExerciseGrabber : MonoBehaviour
         if (grabbed) {
             RaycastHit hit;
 
-            if (Physics.Raycast(Wings.Instance.RightHand.transform.position, Wings.Instance.RightHand.transform.forward, out hit, 100f)) {
+            if (Physics.Raycast(Wings.Instance.RightHand.transform.position, Wings.Instance.RightHand.transform.forward, out hit, MaxDistance) && (Wings.Instance.RightHand.transform.position - hit.point).sqrMagnitude > MinDistance * MinDistance) {
                 lineRenderer.SetPositions(new Vector3[] { Wings.Instance.RightHand.transform.position, hit.point });
-                breathingExercise.transform.position = hit.point + Vector3.up * 1f;
+                breathingExercise.transform.position = hit.point + Vector3.up * 1.5f;
                 Vector3 heading = Camera.main.transform.position - breathingExercise.transform.position;
                 breathingExercise.transform.rotation = Quaternion.LookRotation(-heading);
             }
             else {
-                lineRenderer.SetPositions(new Vector3[] { Wings.Instance.RightHand.transform.position, Wings.Instance.RightHand.transform.position + Wings.Instance.RightHand.transform.forward * 100f });
+                lineRenderer.SetPositions(new Vector3[] { Wings.Instance.RightHand.transform.position, Wings.Instance.RightHand.transform.position + Wings.Instance.RightHand.transform.forward * MaxDistance });
             }
 
             if (Input.GetAxis("Oculus_CrossPlatform_SecondaryHandTrigger") < 0.5f) {

@@ -98,7 +98,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 56e85d5dc4d99b24f9b01a6f086bd74d,
+  m_LightingDataAsset: {fileID: 112000000, guid: 34e10d1a81f92464391becfb38ca193e,
     type: 2}
   m_UseShadowmask: 0
 --- !u!196 &4
@@ -517,6 +517,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeWithLeaves (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2373968060958429657, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2377346500224665209, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -596,6 +601,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316450147403651805, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8199488603174251738, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f0cea39cdab1cf4d91b7e2b637b7369, type: 3}
@@ -2278,107 +2293,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 360831441}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &144883198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59b6606ef2548734bb6d11b9d160bc7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 0
-    m_Value: 10
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxColor:
-    m_OverrideState: 0
-    m_Value: {x: 0, y: 0, z: 0}
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 0
-  hdriSky:
-    m_OverrideState: 0
-    m_Value: {fileID: 8900000, guid: 0a345497283889f49b7c8637c2b84cb8, type: 3}
-  enableBackplate:
-    m_OverrideState: 0
-    m_Value: 0
-  backplateType:
-    m_OverrideState: 0
-    m_Value: 0
-  groundLevel:
-    m_OverrideState: 0
-    m_Value: 0
-  scale:
-    m_OverrideState: 0
-    m_Value: {x: 32, y: 32}
-  projectionDistance:
-    m_OverrideState: 0
-    m_Value: 16
-    min: 0.0000001
-  plateRotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  plateTexRotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  plateTexOffset:
-    m_OverrideState: 0
-    m_Value: {x: 0, y: 0}
-  blendAmount:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 100
-  shadowTint:
-    m_OverrideState: 0
-    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  pointLightShadow:
-    m_OverrideState: 0
-    m_Value: 0
-  dirLightShadow:
-    m_OverrideState: 0
-    m_Value: 0
-  rectLightShadow:
-    m_OverrideState: 0
-    m_Value: 0
 --- !u!1 &159048470
 GameObject:
   m_ObjectHideFlags: 0
@@ -3534,7 +3448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: a123fc0ac58cb774e8592c925f167e7c, type: 2}
   m_StaticLightingSkyUniqueID: 1
-  m_SkySettings: {fileID: 144883198}
+  m_SkySettings: {fileID: 1070387408}
   m_SkySettingsFromProfile: {fileID: -1658960478407648048, guid: a123fc0ac58cb774e8592c925f167e7c,
     type: 2}
 --- !u!4 &313761475
@@ -4714,9 +4628,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 857092421}
     m_Modifications:
+    - target: {fileID: 1093577914464490, guid: eded051879df4c147b9010199d240258, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1148613061152340, guid: eded051879df4c147b9010199d240258, type: 3}
       propertyPath: m_Name
       value: tree_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1148613061152340, guid: eded051879df4c147b9010199d240258, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244885105455798, guid: eded051879df4c147b9010199d240258, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834748535681010, guid: eded051879df4c147b9010199d240258, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4279449019447086, guid: eded051879df4c147b9010199d240258, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6183,6 +6113,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeWithLeaves (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2373968060958429657, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2377346500224665209, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6247,6 +6182,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316450147403651805, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8199488603174251738, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f0cea39cdab1cf4d91b7e2b637b7369, type: 3}
@@ -9512,10 +9457,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a286f617a1861314eac9218d5ac7ae25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flockPrefab: {fileID: 563915794421425491, guid: f5bea64259b802343ba73e4e24d23bc4,
-    type: 3}
+  FishPrefab: {fileID: 0}
   TankSize: {x: 10, y: 5, z: 10}
-  NumFish: 10
+  numFish: 10
+  AllFish: []
+  GoalPosition: {x: 0, y: 0, z: 0}
+  MyCollider: {fileID: 0}
+  SpeedAdjustment: 0
 --- !u!4 &686147450
 Transform:
   m_ObjectHideFlags: 0
@@ -11920,7 +11868,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &857092421
 Transform:
@@ -13155,7 +13103,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!73398921 &980897725
 VFXRenderer:
@@ -13785,6 +13733,107 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060177902}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1070387408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b6606ef2548734bb6d11b9d160bc7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  rotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  skyIntensityMode:
+    m_OverrideState: 0
+    m_Value: 0
+  exposure:
+    m_OverrideState: 0
+    m_Value: 10
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxValue:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxColor:
+    m_OverrideState: 0
+    m_Value: {x: 0, y: 0, z: 0}
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 0
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 0
+  hdriSky:
+    m_OverrideState: 0
+    m_Value: {fileID: 8900000, guid: 0a345497283889f49b7c8637c2b84cb8, type: 3}
+  enableBackplate:
+    m_OverrideState: 0
+    m_Value: 0
+  backplateType:
+    m_OverrideState: 0
+    m_Value: 0
+  groundLevel:
+    m_OverrideState: 0
+    m_Value: 0
+  scale:
+    m_OverrideState: 0
+    m_Value: {x: 32, y: 32}
+  projectionDistance:
+    m_OverrideState: 0
+    m_Value: 16
+    min: 0.0000001
+  plateRotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  plateTexRotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  plateTexOffset:
+    m_OverrideState: 0
+    m_Value: {x: 0, y: 0}
+  blendAmount:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 100
+  shadowTint:
+    m_OverrideState: 0
+    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  pointLightShadow:
+    m_OverrideState: 0
+    m_Value: 0
+  dirLightShadow:
+    m_OverrideState: 0
+    m_Value: 0
+  rectLightShadow:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!1 &1072380548
 GameObject:
   m_ObjectHideFlags: 0
@@ -16684,6 +16733,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeWithLeaves (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2373968060958429657, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2377346500224665209, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16763,6 +16817,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316450147403651805, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8199488603174251738, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f0cea39cdab1cf4d91b7e2b637b7369, type: 3}
@@ -19719,6 +19783,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeWithLeaves (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2373968060958429657, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2377346500224665209, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19798,6 +19867,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316450147403651805, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8199488603174251738, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f0cea39cdab1cf4d91b7e2b637b7369, type: 3}
@@ -20255,6 +20334,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeWithLeaves (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2373968060958429657, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2377346500224665209, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20319,6 +20403,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316450147403651805, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8199488603174251738, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f0cea39cdab1cf4d91b7e2b637b7369, type: 3}
@@ -21732,6 +21826,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeWithLeaves (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2373968060958429657, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2377346500224665209, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21811,6 +21910,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316450147403651805, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8199488603174251738, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f0cea39cdab1cf4d91b7e2b637b7369, type: 3}
@@ -28646,6 +28755,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeWithLeaves
       objectReference: {fileID: 0}
+    - target: {fileID: 2373968060958429657, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2377346500224665209, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28710,6 +28824,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316450147403651805, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8199488603174251738, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f0cea39cdab1cf4d91b7e2b637b7369, type: 3}

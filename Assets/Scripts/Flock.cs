@@ -10,6 +10,7 @@ public class Flock : MonoBehaviour
     public float MinSpeed = 1f;
     public float MaxSpeed = 2f;
     public float RotationSpeed = 4f;
+    public float SpeedMultiplier = 1f;
     private Vector3 averageHeading;
     private Vector3 averagePosition;
 
@@ -21,7 +22,7 @@ public class Flock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Speed = Random.Range(MinSpeed, MaxSpeed);
+        Speed = Random.Range(MinSpeed, MaxSpeed) * SpeedMultiplier;
     }
 
     // Update is called once per frame
@@ -34,10 +35,13 @@ public class Flock : MonoBehaviour
 
         if (turning) {
             Vector3 direction = MyFlock.transform.position - transform.position;
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), RotationSpeed * Time.deltaTime);
 
-            Speed = Random.Range(MinSpeed, MaxSpeed);
-            Speed += MyFlock.SpeedAdjustment;
+            if (RotationSpeed > 999f)
+                transform.rotation = Quaternion.LookRotation(direction);
+            else
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), RotationSpeed * Time.deltaTime);
+
+            Speed = Random.Range(MinSpeed, MaxSpeed) * SpeedMultiplier;
         }
         else {
             if (Random.Range(0, 5) < 1) {
@@ -78,7 +82,6 @@ public class Flock : MonoBehaviour
 
         vcentre = vcentre / groupSize + (MyFlock.GoalPosition - transform.position);
         Speed = gSpeed / groupSize;
-        Speed += MyFlock.SpeedAdjustment;
 
         Vector3 direction = (vcentre + vavoid) - transform.position;
         if (direction != Vector3.zero)

@@ -11,6 +11,8 @@ TagManager:
   - DestinationPoint
   - Color
   - Painting
+  - Firefly
+  - DetectedItem
   layers:
   - Default
   - TransparentFX
