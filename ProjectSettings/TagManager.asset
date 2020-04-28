@@ -12,6 +12,7 @@ TagManager:
   - Color
   - Painting
   - Firefly
+  - DetectedItem
   layers:
   - Default
   - TransparentFX

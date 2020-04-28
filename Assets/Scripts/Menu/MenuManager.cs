@@ -10,7 +10,7 @@ public class MenuManager : MonoBehaviour
 
     private MenuOption[] menuOptions;
     private bool menuEnabled = false;
-    private bool painting = false;
+    private bool painting = true;
 
     // Update is called once per frame
     void Update()
