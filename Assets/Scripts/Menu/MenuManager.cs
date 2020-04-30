@@ -7,6 +7,7 @@ public class MenuManager : MonoBehaviour
 {
     public GameObject ColorMenuPrefab;
     public GameObject ColorMenu;
+    public GameObject TutorialPosition;
     public Wings wings;
     public float MenuDistance = 0.1f;
 
@@ -19,6 +20,9 @@ public class MenuManager : MonoBehaviour
     public VRTK_InteractGrab RightHandGrab;
     public VRTK_Pointer RightHandPointer;
     public VRTK_Pointer LeftHandPointer;
+
+    private int tutorialPart = 0;
+    private CommunicationMessage currentMessage;
 
     private Tool myTool;
 
@@ -45,7 +49,14 @@ public class MenuManager : MonoBehaviour
     }
 
     private void StartTutorial() {
+        wings.RotationEnabled = true;
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "To rotate, gently nudge the thumbstick on your right controller into the desired direction. Try it now.", null, 0f, Vector3.up * 1f, 2f, true, 5f);
+    }
 
+    private void TeleportTutorial() {
+        tutorialPart++;
+        currentMessage.StartFade();
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "To teleport, press the thumbstick on the left controller to make an arch appear first. Aim for a stepping stone on the path, until the arch turns green", null, 0f, Vector3.up * 1f, 2f, true, 5f);
     }
 
     // Update is called once per frame
@@ -53,6 +64,20 @@ public class MenuManager : MonoBehaviour
     {
         if (painting)
             PaintingMenu();
+
+        if (!Tutorial)
+            return;
+
+        switch (tutorialPart) {
+            case 0:
+                if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft, OVRInput.Controller.RTouch) || OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight, OVRInput.Controller.RTouch)) {
+                    TeleportTutorial();
+                }
+                break;
+            default:
+                break;
+
+        }
     }
 
     private void StartPainting() {
