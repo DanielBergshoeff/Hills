@@ -143,7 +143,7 @@ MonoBehaviour:
   breatheInTime: 4
   holdBreathTime: 5
   breatheOutTime: 7
-  amtOfCycles: 1
+  amtOfCycles: 8
   breatheInAudio: {fileID: 8300000, guid: c170989196d6d8541b50a8ab429a6ecb, type: 3}
   holdbreathAudio: {fileID: 8300000, guid: 801b422fcd985fe429c090613d99b0f0, type: 3}
   breatheOutAudio: {fileID: 8300000, guid: 221e5b3d9ad384c43a69cf7b285f3431, type: 3}
