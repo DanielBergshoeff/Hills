@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.VFX;
 
-public class MuscleRelaxation : MonoBehaviour
-{
+public class MuscleRelaxation : MonoBehaviour {
     public static class PropName {
         public const string PositionMap = "PositionMap";
         public const string PositionOffset = "PositionOffset";
@@ -28,21 +28,34 @@ public class MuscleRelaxation : MonoBehaviour
     public float maxTurbulenceIntensity = 3f;
     private List<MapSet> mapSets;
 
+    public GameObject MuscleToSave;
+
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         vfxGraph = GetComponent<VisualEffect>();
         mapSets = new List<MapSet>();
 
-        foreach(GameObject go in MuscleGroups) {
-            mapSets.Add(InitEffect(go));
+        foreach (GameObject go in MuscleGroups) {
+            MapSet ms = InitEffect(go);
+            mapSets.Add(ms);
         }
 
         UpdateModel();
         vfxGraph.SetFloat(PropName.Speed, 1f / switchTime);
 
         Invoke("SwitchMuscleGroup", timePerMuscle);
+
+        //SaveAsset();
+    }
+
+    private void SaveAsset() {
+        MapSet ms = InitEffect(MuscleToSave);
+        SaveTextureToFile(ms.position, "Assets/Resources/Muscle.png");
+    }
+
+    void SaveTextureToFile(Texture2D texture, string filename) {
+        System.IO.File.WriteAllBytes(filename, texture.EncodeToPNG());
     }
 
     // Update is called once per frame
