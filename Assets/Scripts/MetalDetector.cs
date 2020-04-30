@@ -24,6 +24,7 @@ public class MetalDetector : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(transform.position, transform.forward, out hit, Range)) {
             DetectionMaterial.SetVector("Vector3_E8D52375", hit.point);
+            DetectionEffect.SetVector3("ScanPosition", hit.point);
             DetectedItem.UpdateDetectedPosition(hit.point);
 
             if (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) > 0.5f && hit.transform.CompareTag("DetectedItem")) {
@@ -52,7 +53,6 @@ public class MetalDetector : MonoBehaviour
             detectedTimer = 0f;
         }
 
-        DetectionEffect.SetVector3("ScanPosition", hit.point);
         DetectionEffect.SetVector3("ScannerPosition", transform.position);
     }
 }

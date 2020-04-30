@@ -22,6 +22,8 @@ public class Wings : MonoBehaviour {
     public float Force;
 
     public bool Testing;
+    public bool Flying = false;
+    public bool RotationEnabled = true;
 
     public GameObject FeatherPrefab;
 
@@ -47,9 +49,9 @@ public class Wings : MonoBehaviour {
     private GameObject FeatherParent;
     private bool ReadyToSnapTurn = true;
     public bool RotationEitherThumbstick = false;
-
-    // Start is called before the first frame update
-    void Start() {
+    
+    private void Awake() {
+        Debug.Log("Awake");
         myRigidbody = transform.parent.GetComponent<Rigidbody>();
         if (RenderWings)
             SpawnFeathers();
@@ -58,16 +60,20 @@ public class Wings : MonoBehaviour {
         Instance = this;
     }
 
+    private void Start() {
+        Debug.Log("Start");
+    }
+
     private void UpdateRotations() {
         Vector3 euler = transform.parent.rotation.eulerAngles;
-        if (OVRInput.Get(OVRInput.Button.SecondaryThumbstickLeft) ||
+        if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft, OVRInput.Controller.RTouch) ||
                     (RotationEitherThumbstick && OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft))) {
             if (ReadyToSnapTurn) {
                 euler.y -= RotationRatchet;
                 ReadyToSnapTurn = false;
             }
         }
-        else if (OVRInput.Get(OVRInput.Button.SecondaryThumbstickRight) ||
+        else if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight, OVRInput.Controller.RTouch) ||
             (RotationEitherThumbstick && OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight))) {
             if (ReadyToSnapTurn) {
                 euler.y += RotationRatchet;
@@ -119,6 +125,13 @@ public class Wings : MonoBehaviour {
     void Update() {
         if (RenderWings)
             SetWingPositionAndRotation();
+        
+        if(RotationEnabled)
+            UpdateRotations();
+
+        if (!Flying)
+            return;
+
         if ((Input.GetAxis("Oculus_CrossPlatform_PrimaryHandTrigger") > 0.5f && Input.GetAxis("Oculus_CrossPlatform_SecondaryHandTrigger") > 0.5f) || Testing) {
             WingBasedMovement();
         }
@@ -127,8 +140,6 @@ public class Wings : MonoBehaviour {
             currentPosition = 0;
             filledPositions = 0;
         }
-
-        UpdateRotations();
     }
 
 
