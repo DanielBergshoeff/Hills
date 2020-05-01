@@ -90,6 +90,7 @@ public class Breathing : MonoBehaviour
             if (timer + Time.deltaTime >= breatheInTime + holdBreathTime + breatheOutTime) {
                 currentCycle++;
                 if (currentCycle == amtOfCycles) {
+                    SetToNeutral();
                     Destroy(gameObject);
                 }
                 else {
@@ -179,6 +180,8 @@ public class Breathing : MonoBehaviour
         Tree.UpdateTree(0f, 1f, leafSpawnRateNormal);
         FlowerRainVfxGraph.SetInt("SpawnRate", 0);
         MountainPaintingVFXGraph.SetFloat("SpawnRate", 0f);
+        WaterShaderGraph.SetFloat("_RipplePosition", 0f);
+        WaterShaderGraph.SetVector("_CenterPosition", Vector3.zero);
     }
     
 

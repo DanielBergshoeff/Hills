@@ -10,13 +10,11 @@ public class CommunicationManager : MonoBehaviour
     public float DisappearTime = 0f;
     public LayerMask TerrainLayer;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    private void Awake() {
         Instance = this;
     }
 
-    public void DisplayMessage(GameObject go, string message, AudioClip audio, float time = 0f, Vector3 relativePosition = default, float size = 1f, bool follow = false) {
+    public CommunicationMessage DisplayMessage(GameObject go, string message, AudioClip audio, float time = 0f, Vector3 relativePosition = default, float size = 1f, bool follow = false, float textsize = 10f) {
         GameObject messageObject = Instantiate(MessagePrefab);
         CommunicationMessage msg = messageObject.GetComponent<CommunicationMessage>();
 
@@ -26,6 +24,7 @@ public class CommunicationManager : MonoBehaviour
             msg.FollowObject = go;
         }
 
+        msg.TextSize = textsize;
         msg.Follow = follow;
         msg.Size = size;
         msg.TerrainLayer = TerrainLayer;
@@ -33,5 +32,7 @@ public class CommunicationManager : MonoBehaviour
         msg.Text = message;
         msg.Audio = audio;
         msg.RelativePosition = relativePosition;
+
+        return msg;
     }
 }

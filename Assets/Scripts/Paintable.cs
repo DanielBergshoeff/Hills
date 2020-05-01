@@ -10,6 +10,7 @@ public class Paintable : MonoBehaviour
     public static ColorEvent colorEvent;
     public static SizeEvent sizeEvent;
     public static VisualEffect sharedVfxGraph;
+    public static Paintable Instance { get; private set; }
     public GameObject SpawnPosition;
     public VisualEffect VFXGraph;
     public VisualEffect Aim;
@@ -19,10 +20,13 @@ public class Paintable : MonoBehaviour
     public LayerMask PaintLayer;
 
     private float distance = 0f;
+    public bool PaintingEnabled = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
+
         PaintLayer = ~PaintLayer;
         colorEvent = new ColorEvent();
         colorEvent.AddListener(ChangeColor);
@@ -38,6 +42,9 @@ public class Paintable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!PaintingEnabled)
+            return;
+
         if (!VREnabled) {
             TryPaint();
         }
@@ -58,8 +65,10 @@ public class Paintable : MonoBehaviour
     private void TryPaintVR() {
         RaycastHit hit;
         if (Physics.Raycast(Wings.Instance.RightHand.transform.position + Wings.Instance.RightHand.transform.forward * 0.25f, Wings.Instance.RightHand.transform.forward, out hit, 100f, PaintLayer)) {
-            if (!hit.transform.CompareTag("Painting"))
+            if (!hit.transform.CompareTag("Painting")) {
+                Debug.Log(hit.transform.name);
                 return;
+            }
 
             SpawnPosition.transform.position = hit.point + transform.up * distance;
             Aim.SetVector3("SpawnPosition", hit.point + transform.up * (distance + 0.05f));

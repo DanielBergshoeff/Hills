@@ -15,6 +15,7 @@ public class CommunicationMessage : MonoBehaviour
     public AudioClip Audio;
     public float Size;
     public TextMeshProUGUI Tmp;
+    public float TextSize;
 
     private Image img;
     public LayerMask TerrainLayer; 
@@ -33,6 +34,7 @@ public class CommunicationMessage : MonoBehaviour
 
         Tmp = GetComponentInChildren<TextMeshProUGUI>();
         Tmp.text = Text;
+        Tmp.fontSize = TextSize;
         startAlphaText = Tmp.alpha;
         img = GetComponentInChildren<Image>();
         startAlphaImage = img.color.a;
@@ -93,7 +95,7 @@ public class CommunicationMessage : MonoBehaviour
         }*/
     }
 
-    private void StartFade() {
+    public void StartFade() {
         fade = true;
     }
 }

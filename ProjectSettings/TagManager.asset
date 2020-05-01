@@ -13,6 +13,7 @@ TagManager:
   - Painting
   - Firefly
   - DetectedItem
+  - Tool
   layers:
   - Default
   - TransparentFX
