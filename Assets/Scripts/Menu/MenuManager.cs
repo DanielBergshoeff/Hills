@@ -20,6 +20,7 @@ public class MenuManager : MonoBehaviour
     public VRTK_InteractGrab RightHandGrab;
     public VRTK_Pointer RightHandPointer;
     public VRTK_Pointer LeftHandPointer;
+    public VRTK_HeightAdjustTeleport Teleporter;
 
     private int tutorialPart = 0;
     private CommunicationMessage currentMessage;
@@ -37,12 +38,18 @@ public class MenuManager : MonoBehaviour
     private void Awake() {
         RightHandGrab.ControllerGrabInteractableObject += new ObjectInteractEventHandler(OnGrabObject);
         RightHandGrab.ControllerUngrabInteractableObject += new ObjectInteractEventHandler(OnUnGrabObject);
+        Teleporter.Teleported += new TeleportEventHandler(OnTeleport);
 
         if (Tutorial) {
             RightHandPointer.enabled = false;
             LeftHandPointer.enabled = false;
             wings.RotationEnabled = false;
         }
+    }
+
+    private void OnTeleport(object sender, DestinationMarkerEventArgs e) {
+        WindManager.Instance.UpdateWind();
+        HeatManager.Instance.UpdateHeat();
     }
 
     private void Start() {

@@ -87,7 +87,6 @@ public class Wings : MonoBehaviour {
         if (!ReadyToSnapTurn) {
             WindManager.Instance.UpdateWind();
             HeatManager.Instance.UpdateHeat();
-            ScentManager.Instance.UpdateScent();
         }
 
         transform.parent.rotation = Quaternion.Euler(euler);

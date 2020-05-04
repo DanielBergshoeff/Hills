@@ -13,6 +13,8 @@ public class ScentManager : MonoBehaviour
     private Scent strongestScent;
     private float turnOffTimer = 0f;
 
+    public float UpdateTime = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,14 +31,15 @@ public class ScentManager : MonoBehaviour
         }
     }
 
-    public void UpdateScent() {
+    private IEnumerator UpdateScent() {
+        yield return new WaitForSeconds(UpdateTime);
+
         SetScent();
         SensiksManager.SetActiveScent(Scent.SMOKE, 0f);
         Scent strongestScent = Scent.NEWSCENT1;
         float strongestScentStrength = 0f;
         foreach (Scent s in Enum.GetValues(typeof(Scent))) {
             if (scentToStrength.ContainsKey(s)) {
-                Debug.Log(s + ": " + scentToStrength[s]);
                 if (scentToStrength[s] > strongestScentStrength) {
                     strongestScent = s;
                     strongestScentStrength = scentToStrength[s];
@@ -48,6 +51,8 @@ public class ScentManager : MonoBehaviour
         SensiksManager.SetActiveScent(strongestScent, strongestScentStrength);
 
         turnOffTimer = strongestScentStrength / 2f;
+
+        StartCoroutine("UpdateScent", UpdateTime);
     }
 
     private void TurnOffScent() {
