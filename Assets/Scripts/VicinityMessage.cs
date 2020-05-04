@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class VicinityMessage : MonoBehaviour
 {
-    public float MaxRange = 5f;
+    public float MaxRange = 10f;
     public string Message = "This is an example text. Use it wisely.";
     public float Size = 0.075f;
     public float TextSize = 10f;
     public float MessageDuration = 10f;
-    public float CooldownTime = 30f;
+    public float CooldownTime = 90f;
     public Vector3 Position = Vector3.up * 0.2f;
 
     private CommunicationMessage myMessage;

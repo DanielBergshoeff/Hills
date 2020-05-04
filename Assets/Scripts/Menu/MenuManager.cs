@@ -85,7 +85,7 @@ public class MenuManager : MonoBehaviour
         tutorialPart++;
         currentMessage.StartFade();
         Tutorial = false;
-        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "Good job, you are now in control!", null, 0f, Vector3.up * 1f, 2f, true, 4f);
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "Good job, you are now in control!", null, 10f, Vector3.up * 1f, 2f, true, 4f);
     }
 
 
