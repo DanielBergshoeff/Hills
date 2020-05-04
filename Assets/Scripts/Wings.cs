@@ -84,6 +84,12 @@ public class Wings : MonoBehaviour {
             ReadyToSnapTurn = true;
         }
 
+        if (!ReadyToSnapTurn) {
+            WindManager.Instance.UpdateWind();
+            HeatManager.Instance.UpdateHeat();
+            ScentManager.Instance.UpdateScent();
+        }
+
         transform.parent.rotation = Quaternion.Euler(euler);
     }
 

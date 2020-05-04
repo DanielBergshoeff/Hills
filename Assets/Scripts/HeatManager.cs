@@ -7,27 +7,20 @@ using Sensiks.SDK.UnityLibrary;
 public class HeatManager : MonoBehaviour
 {
     public static List<HeatObject> HeatObjects;
-    public float UpdateTime = 0.1f;
+    public static HeatManager Instance;
 
     private float heatFront = 0f;
     private float heatLeft = 0f;
     private float heatRight = 0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(UpdateHeat());
+        Instance = this;
+        UpdateHeat();
     }
 
-    private IEnumerator UpdateHeat() {
-        yield return new WaitForSeconds(UpdateTime);
-
+    public void UpdateHeat() {
         foreach (HeatObject ho in HeatObjects) {
             Vector3 heading = ho.transform.position - Camera.main.transform.position;
             heading = new Vector3(heading.x, 0f, heading.z);
@@ -72,17 +65,14 @@ public class HeatManager : MonoBehaviour
             SensiksManager.SetHeaterIntensity(HeaterPosition.RIGHT, heatRight);
             break;
         }
-
-        StartCoroutine(UpdateHeat());
     }
 
-    private void OnDrawGizmos() {
-        /*
+    private void OnDrawGizmosSelected() {
         Vector3 posFrontLeft = Camera.main.transform.parent.parent.position + Camera.main.transform.parent.parent.forward;
         Gizmos.DrawSphere(posFrontLeft, 0.1f + heatFront);
         Vector3 posFrontRight = Camera.main.transform.parent.parent.position + Camera.main.transform.parent.parent.right;
         Gizmos.DrawSphere(posFrontRight, 0.1f + heatRight);
         Vector3 posBehindLeft = Camera.main.transform.parent.parent.position - Camera.main.transform.parent.parent.right;
-        Gizmos.DrawSphere(posBehindLeft, 0.1f + heatLeft);*/
+        Gizmos.DrawSphere(posBehindLeft, 0.1f + heatLeft);
     }
 }

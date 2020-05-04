@@ -7,7 +7,6 @@ using Sensiks.SDK.UnityLibrary;
 public class WindManager : MonoBehaviour {
     public static List<WindObject> WindObjects;
     public static WindManager Instance;
-    public float UpdateTime;
 
     private float strengthFrontLeft = 0f;
     private float strengthFrontRight = 0f;
@@ -17,17 +16,10 @@ public class WindManager : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         Instance = this;
-        StartCoroutine(UpdateWind());
+        UpdateWind();
     }
 
-    // Update is called once per frame
-    void Update() {
-
-    }
-
-    private IEnumerator UpdateWind() {
-        yield return new WaitForSeconds(Instance.UpdateTime);
-
+    public void UpdateWind() {
         strengthFrontLeft = 0f;
         strengthFrontRight = 0f;
         strengthBehindLeft = 0f;
@@ -112,8 +104,6 @@ public class WindManager : MonoBehaviour {
             SensiksManager.SetFanIntensity(FanPosition.REAR_LEFT, Mathf.Clamp(strengthBehindLeft, 0f, 1f));
             SensiksManager.SetFanIntensity(FanPosition.REAR_RIGHT, Mathf.Clamp(strengthBehindRight, 0f, 1f));
         }
-
-        StartCoroutine(UpdateWind());
     }
 
     private void OnDrawGizmos() {
