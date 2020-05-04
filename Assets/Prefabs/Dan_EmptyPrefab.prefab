@@ -7930,11 +7930,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5217132553832128578, guid: de64175829882ca4cbbfc84ee93b752f,
         type: 3}
-      propertyPath: MuscleGroups.Array.size
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 5217132553832128578, guid: de64175829882ca4cbbfc84ee93b752f,
-        type: 3}
       propertyPath: MuscleGroups.Array.data[0]
       value: 
       objectReference: {fileID: 7614955490858349277}
@@ -8018,6 +8013,11 @@ PrefabInstance:
       propertyPath: MuscleToSave
       value: 
       objectReference: {fileID: 6583726797652888001}
+    - target: {fileID: 5217132553832128578, guid: de64175829882ca4cbbfc84ee93b752f,
+        type: 3}
+      propertyPath: MuscleGroups.Array.data[16]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5217132553832128579, guid: de64175829882ca4cbbfc84ee93b752f,
         type: 3}
       propertyPath: m_LocalPosition.x
