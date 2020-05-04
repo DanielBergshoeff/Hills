@@ -28,8 +28,6 @@ public class MuscleRelaxation : MonoBehaviour {
     public float maxTurbulenceIntensity = 3f;
     private List<MapSet> mapSets;
 
-    public GameObject MuscleToSave;
-
 
     // Start is called before the first frame update
     void Start() {
@@ -45,17 +43,6 @@ public class MuscleRelaxation : MonoBehaviour {
         vfxGraph.SetFloat(PropName.Speed, 1f / switchTime);
 
         Invoke("SwitchMuscleGroup", timePerMuscle);
-
-        //SaveAsset();
-    }
-
-    private void SaveAsset() {
-        MapSet ms = InitEffect(MuscleToSave);
-        SaveTextureToFile(ms.position, "Assets/Resources/Muscle.png");
-    }
-
-    void SaveTextureToFile(Texture2D texture, string filename) {
-        System.IO.File.WriteAllBytes(filename, texture.EncodeToPNG());
     }
 
     // Update is called once per frame

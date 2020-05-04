@@ -20,9 +20,11 @@ public class MenuManager : MonoBehaviour
     public VRTK_InteractGrab RightHandGrab;
     public VRTK_Pointer RightHandPointer;
     public VRTK_Pointer LeftHandPointer;
+    public VRTK_HeightAdjustTeleport Teleporter;
 
     private int tutorialPart = 0;
     private CommunicationMessage currentMessage;
+    private Vector3 startPosition;
 
     private Tool myTool;
 
@@ -36,6 +38,7 @@ public class MenuManager : MonoBehaviour
     private void Awake() {
         RightHandGrab.ControllerGrabInteractableObject += new ObjectInteractEventHandler(OnGrabObject);
         RightHandGrab.ControllerUngrabInteractableObject += new ObjectInteractEventHandler(OnUnGrabObject);
+        Teleporter.Teleported += new TeleportEventHandler(OnTeleport);
 
         if (Tutorial) {
             RightHandPointer.enabled = false;
@@ -44,20 +47,55 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    private void OnTeleport(object sender, DestinationMarkerEventArgs e) {
+        WindManager.Instance.UpdateWind();
+        HeatManager.Instance.UpdateHeat();
+    }
+
     private void Start() {
         StartTutorial();
     }
 
     private void StartTutorial() {
         wings.RotationEnabled = true;
-        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "To rotate, gently nudge the thumbstick on your right controller into the desired direction. Try it now.", null, 0f, Vector3.up * 1f, 2f, true, 5f);
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "To rotate, gently nudge the thumbstick on your right controller into the desired direction. Try it now.", null, 0f, Vector3.up * 1f, 2f, true, 4f);
+    }
+
+    private void PickupTutorial() {
+        tutorialPart++;
+        currentMessage.StartFade();
+        RightHandPointer.enabled = true;
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "To pick up items from a distance, press the thumbstick on your right controller to make a ray appear from it.", null, 0f, Vector3.up * 1f, 2f, true, 4f);
+    }
+
+    private void PickupTutorialPart2() {
+        tutorialPart++;
+        currentMessage.StartFade();
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "Aim at the brush on the floor and squeeze the right controller's middle finger to pick it up.", null, 0f, Vector3.up * 1f, 2f, true, 4f);
     }
 
     private void TeleportTutorial() {
         tutorialPart++;
         currentMessage.StartFade();
-        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "To teleport, press the thumbstick on the left controller to make an arch appear first. Aim for a stepping stone on the path, until the arch turns green", null, 0f, Vector3.up * 1f, 2f, true, 5f);
+        LeftHandPointer.enabled = true;
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "To teleport, press the thumbstick on the left controller to make an arch appear first.", null, 0f, Vector3.up * 1f, 2f, true, 4f);
     }
+
+    private void TeleportPart2Tutorial() {
+        tutorialPart++;
+        currentMessage.StartFade();
+        startPosition = wings.transform.parent.position;
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "Aim for a stepping stone on the path, until the arch turns green. Release the button to teleport.", null, 0f, Vector3.up * 1f, 2f, true, 4f);
+    }
+
+    private void EndTutorial() {
+        tutorialPart++;
+        currentMessage.StartFade();
+        Tutorial = false;
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "Good job, you are now in control!", null, 10f, Vector3.up * 1f, 2f, true, 4f);
+    }
+
+
 
     // Update is called once per frame
     void Update()
@@ -71,7 +109,27 @@ public class MenuManager : MonoBehaviour
         switch (tutorialPart) {
             case 0:
                 if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft, OVRInput.Controller.RTouch) || OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight, OVRInput.Controller.RTouch)) {
+                    PickupTutorial();
+                }
+                break;
+            case 1:
+                if(OVRInput.Get(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.RTouch)) {
+                    PickupTutorialPart2();
+                }
+                break;
+            case 2:
+                if(myTool == Tool.Paintbrush) {
                     TeleportTutorial();
+                }
+                break;
+            case 3: 
+                if(OVRInput.Get(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.LTouch)){
+                    TeleportPart2Tutorial();
+                }
+                break;
+            case 4:
+                if((startPosition - wings.transform.position).sqrMagnitude > 0.5f) {
+                    EndTutorial();
                 }
                 break;
             default:
@@ -85,6 +143,11 @@ public class MenuManager : MonoBehaviour
     }
 
     void OnGrabObject(object sender, ObjectInteractEventArgs e) {
+        VicinityMessage vm = e.target.GetComponent<VicinityMessage>();
+        if(vm != null) {
+            vm.StopMessage();
+        }
+
         if (!e.target.CompareTag("Tool"))
             return;
 

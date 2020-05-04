@@ -222,27 +222,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MuscleGroups:
-  - {fileID: 5217132554605474765}
-  - {fileID: 5217132554363429937}
-  - {fileID: 5217132555249483361}
-  - {fileID: 5217132554488511869}
-  - {fileID: 5217132555337011988}
-  - {fileID: 5217132554302504441}
-  - {fileID: 5217132554211300232}
-  - {fileID: 5217132553684533931}
-  - {fileID: 5217132555540877624}
-  - {fileID: 5217132555529850046}
-  - {fileID: 5217132554144011081}
-  - {fileID: 5217132554219054962}
-  - {fileID: 5217132555010991038}
-  - {fileID: 5217132554554719846}
-  - {fileID: 5217132554315106500}
-  - {fileID: 5217132555474394583}
-  - {fileID: 5217132554768564749}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   timePerMuscle: 10
   switchTime: 5
   turbulenceIntensity: 0
   maxTurbulenceIntensity: 3
+  MuscleToSave: {fileID: 0}
 --- !u!1 &5217132554144011081
 GameObject:
   m_ObjectHideFlags: 0
