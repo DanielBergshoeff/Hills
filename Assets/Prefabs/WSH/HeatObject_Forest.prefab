@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3167178440205149054}
   - component: {fileID: 3167178440205149055}
+  - component: {fileID: 5909043029216989576}
   m_Layer: 0
   m_Name: HeatObject_Forest
   m_TagString: Untagged
@@ -46,3 +47,16 @@ MonoBehaviour:
   Heat: 1
   Range: 10
   PositionBased: 0
+--- !u!114 &5909043029216989576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3167178440205149049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2ca67d15e715a42800312eba91ae3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Size: {x: 10, y: 10, z: 10}
