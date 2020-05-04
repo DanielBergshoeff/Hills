@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4346361557148048546}
   - component: {fileID: 4346361557148048547}
+  - component: {fileID: 7345555938390162160}
   m_Layer: 0
   m_Name: HeatObject
   m_TagString: Untagged
@@ -46,3 +47,16 @@ MonoBehaviour:
   Heat: 1
   Range: 10
   PositionBased: 0
+--- !u!114 &7345555938390162160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4346361557148048549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2ca67d15e715a42800312eba91ae3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Size: {x: 0, y: 0, z: 0}
