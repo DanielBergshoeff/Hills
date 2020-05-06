@@ -16,7 +16,7 @@ public class MenuManager : MonoBehaviour
     private bool painting = true;
 
 
-    public bool Tutorial = false;
+    public static bool Tutorial = false;
     public VRTK_InteractGrab RightHandGrab;
     public VRTK_Pointer RightHandPointer;
     public VRTK_Pointer LeftHandPointer;
@@ -50,10 +50,17 @@ public class MenuManager : MonoBehaviour
     private void OnTeleport(object sender, DestinationMarkerEventArgs e) {
         WindManager.Instance.UpdateWind();
         HeatManager.Instance.UpdateHeat();
+
+        if(Breathing.Instance != null) {
+            if((Breathing.Instance.transform.position - wings.transform.position).sqrMagnitude > 60f * 60f) {
+                Destroy(Breathing.Instance.gameObject);
+            }
+        }
     }
 
     private void Start() {
-        StartTutorial();
+        if(Tutorial)
+            StartTutorial();
     }
 
     private void StartTutorial() {
@@ -146,6 +153,7 @@ public class MenuManager : MonoBehaviour
         VicinityMessage vm = e.target.GetComponent<VicinityMessage>();
         if(vm != null) {
             vm.StopMessage();
+            Destroy(vm);
         }
 
         if (!e.target.CompareTag("Tool"))

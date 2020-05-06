@@ -54,8 +54,10 @@ public class CommunicationMessage : MonoBehaviour
         if (Follow)
             DoFollow();
 
-        Vector3 targetDirection = transform.position - Camera.main.transform.position;
-        transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(transform.forward, targetDirection, 1f, 0f));
+        if (Camera.main != null) {
+            Vector3 targetDirection = transform.position - Camera.main.transform.position;
+            transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(transform.forward, targetDirection, 1f, 0f));
+        }
 
         if (!fade)
             return;

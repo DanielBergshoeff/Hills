@@ -16,6 +16,7 @@ public class WindManager : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         Instance = this;
+
         UpdateWind();
     }
 
@@ -26,13 +27,13 @@ public class WindManager : MonoBehaviour {
         strengthBehindRight = 0f;
 
         foreach (WindObject wo in WindObjects) {
-            Vector3 heading = wo.transform.position - Camera.main.transform.parent.parent.position;
+            Vector3 heading = wo.transform.position - Wings.Instance.transform.parent.position;
             heading = new Vector3(heading.x, 0f, heading.z);
 
             if (heading.sqrMagnitude > wo.MaxDistance * wo.MaxDistance)
                 continue;
 
-            Vector3 player = new Vector3(Camera.main.transform.parent.parent.forward.x, 0f, Camera.main.transform.parent.parent.forward.z);
+            Vector3 player = new Vector3(Wings.Instance.transform.parent.forward.x, 0f, Wings.Instance.transform.parent.forward.z);
             float angle = Vector3.Angle(heading.normalized, player);
 
             float dot = heading.x * player.x + heading.z * player.z;

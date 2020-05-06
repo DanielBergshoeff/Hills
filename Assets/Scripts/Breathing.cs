@@ -5,6 +5,8 @@ using UnityEngine.VFX;
 
 public class Breathing : MonoBehaviour
 {
+    public static Breathing Instance;
+
     private VisualEffect vfxGraph;
     private VisualEffect FlowerRainVfxGraph;
     private VisualEffect MountainPaintingVFXGraph;
@@ -44,10 +46,12 @@ public class Breathing : MonoBehaviour
     private float timer = 0f;
     private bool active = false;
     private int currentCycle = 0;
+    private CommunicationMessage myMessage;
 
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
         vfxGraph = GetComponent<VisualEffect>();
         vfxGraph.resetSeedOnPlay = true;
         vfxGraph.Reinit();
@@ -90,7 +94,6 @@ public class Breathing : MonoBehaviour
             if (timer + Time.deltaTime >= breatheInTime + holdBreathTime + breatheOutTime) {
                 currentCycle++;
                 if (currentCycle == amtOfCycles) {
-                    SetToNeutral();
                     Destroy(gameObject);
                 }
                 else {
@@ -132,7 +135,7 @@ public class Breathing : MonoBehaviour
     }
 
     private void BreatheInEffects() {
-        CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe in", breatheInAudio, breatheInTime, Vector3.up * 2f, 0.5f, false);
+        myMessage = CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe in", breatheInAudio, breatheInTime, Vector3.up * 2f, 0.5f, false);
         vfxGraph.SetFloat("Direction", 1f);
         vfxGraph.SetFloat("Speed", 1f / breatheInTime);
         timer = 0f;
@@ -148,7 +151,7 @@ public class Breathing : MonoBehaviour
     }
 
     private void HoldBreathEffects() {
-        CommunicationManager.Instance.DisplayMessage(this.gameObject, "Hold breath", holdbreathAudio, holdBreathTime, Vector3.up * 2f, 0.5f, false);
+        myMessage = CommunicationManager.Instance.DisplayMessage(this.gameObject, "Hold breath", holdbreathAudio, holdBreathTime, Vector3.up * 2f, 0.5f, false);
         vfxGraph.SetFloat("Speed", 0f);
 
         if(leavesEffect)
@@ -162,7 +165,7 @@ public class Breathing : MonoBehaviour
     }
 
     private void BreatheOutEffects() {
-        CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe out", breatheOutAudio, breatheOutTime, Vector3.up * 2f, 0.5f, false);
+        myMessage = CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe out", breatheOutAudio, breatheOutTime, Vector3.up * 2f, 0.5f, false);
         vfxGraph.SetFloat("Direction", -1f);
         vfxGraph.SetFloat("Speed", 1f / breatheOutTime);
 
@@ -190,6 +193,12 @@ public class Breathing : MonoBehaviour
         if (vfxGraph == null)
             vfxGraph = GetComponent<VisualEffect>();
         vfxGraph.Reinit();
+    }
+
+    private void OnDestroy() {
+        SetToNeutral();
+        if (myMessage != null)
+            myMessage.StartFade();
     }
 }
 
