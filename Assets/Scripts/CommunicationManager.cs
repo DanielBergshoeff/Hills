@@ -30,7 +30,7 @@ public class CommunicationManager : MonoBehaviour
         msg.TerrainLayer = TerrainLayer;
         msg.DisappearTime = time;
         msg.Text = message;
-        msg.Audio = audio;
+        msg.MyAudioClip = audio;
         msg.RelativePosition = relativePosition;
 
         return msg;

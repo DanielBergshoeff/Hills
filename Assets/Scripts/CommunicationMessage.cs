@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class CommunicationMessage : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class CommunicationMessage : MonoBehaviour
     public Vector3 RelativePosition;
     public float DisappearTime = 0f;
     public string Text;
-    public AudioClip Audio;
+    public AudioClip MyAudioClip;
     public float Size;
     public TextMeshProUGUI Tmp;
     public float TextSize;
@@ -40,8 +41,10 @@ public class CommunicationMessage : MonoBehaviour
         startAlphaImage = img.color.a;
 
         myAudioSource = gameObject.AddComponent<AudioSource>();
-        if(Audio != null)
-            myAudioSource.PlayOneShot(Audio);
+        AudioMixer mixer = Resources.Load("MixerGroups/Ambience") as AudioMixer;
+        myAudioSource.outputAudioMixerGroup = mixer.FindMatchingGroups("Instructions")[0];
+        if(MyAudioClip != null)
+            myAudioSource.PlayOneShot(MyAudioClip);
 
         fadeTimer = CommunicationManager.Instance.DisappearTime;
         transform.localScale = new Vector3(Size, Size, Size);
