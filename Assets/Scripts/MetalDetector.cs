@@ -6,7 +6,7 @@ using UnityEngine.VFX;
 public class MetalDetector : MonoBehaviour
 {
     public Material DetectionMaterial;
-    public float Range = 10f;
+    public float Range = 5f;
 
     public VisualEffect DetectionEffect;
     public float DetectionTime = 3f;
@@ -50,6 +50,9 @@ public class MetalDetector : MonoBehaviour
             }
         }
         else {
+            DetectionMaterial.SetVector("Vector3_E8D52375", transform.position + transform.forward * Range);
+            DetectionEffect.SetVector3("ScanPosition", transform.position + transform.forward * Range);
+            DetectedItem.UpdateDetectedPosition(transform.position + transform.forward * Range);
             detectedTimer = 0f;
         }
 

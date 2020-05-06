@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DetectionMaterial: {fileID: 2100000, guid: 3dfd590d67995bc4ba0f50b4f3623ece, type: 2}
-  Range: 10
+  Range: 5
   DetectionEffect: {fileID: 3570027912795047072}
   DetectionTime: 3
   detectorPosition: {fileID: 1479602532873071994}
