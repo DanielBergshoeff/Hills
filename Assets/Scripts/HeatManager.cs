@@ -22,7 +22,7 @@ public class HeatManager : MonoBehaviour
 
     public void UpdateHeat() {
         foreach (HeatObject ho in HeatObjects) {
-            Vector3 heading = ho.transform.position - Camera.main.transform.position;
+            Vector3 heading = ho.transform.position - Wings.Instance.transform.parent.position;
             heading = new Vector3(heading.x, 0f, heading.z);
             if (heading.sqrMagnitude > ho.Range * ho.Range)
                 continue;
@@ -32,7 +32,7 @@ public class HeatManager : MonoBehaviour
             heatRight = 0f;
 
             if (ho.PositionBased) {
-                Vector3 player = new Vector3(Camera.main.transform.parent.parent.forward.x, 0f, Camera.main.transform.parent.parent.forward.z);
+                Vector3 player = new Vector3(Wings.Instance.transform.parent.forward.x, 0f, Wings.Instance.transform.parent.forward.z);
 
                 float dot = heading.x * player.x + heading.z * player.z;
                 float det = heading.x * player.z - heading.z * player.x;

@@ -177,6 +177,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BreathingPrefab: {fileID: 3000471440073527143, guid: b2eb701a1535ae046aec2e05e1a1e1f7,
     type: 3}
+  MinDistance: 5
+  MaxDistance: 100
 --- !u!135 &1785255528
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1253,6 +1255,8 @@ MonoBehaviour:
   AmtOfFeathers: 50
   Force: 1000
   Testing: 0
+  Flying: 0
+  RotationEnabled: 1
   FeatherPrefab: {fileID: 0}
   AmountOfPositions: 10
   verticalMovement: 0
@@ -5238,7 +5242,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1269484419823304369
 Transform:
   m_ObjectHideFlags: 0
@@ -5495,7 +5499,7 @@ MonoBehaviour:
   breatheInTime: 3
   holdBreathTime: 3
   breatheOutTime: 3
-  waitForNewBreath: 1
+  amtOfCycles: 10
   breatheInAudio: {fileID: 0}
   holdbreathAudio: {fileID: 0}
   breatheOutAudio: {fileID: 0}

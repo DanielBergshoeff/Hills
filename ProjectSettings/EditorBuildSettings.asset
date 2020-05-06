@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/DevScene.unity
-    guid: cbfe36cfddfde964d9dfce63a355d5dd
+    path: Assets/Scenes/MainMenu.unity
+    guid: a28db5a379cf612478ca28fa3abc0de3
+  - enabled: 1
+    path: Assets/Scenes/LizzyTerrain.unity
+    guid: 875fba9aa4493b74f94ffd5c51af7aa7
   m_configObjects: {}

@@ -23,6 +23,9 @@ public class VicinityMessage : MonoBehaviour
         if (displayingMessage || cooldown)
             return;
 
+        if (Camera.main == null)
+            return;
+
         if ((transform.position - Camera.main.transform.position).sqrMagnitude > MaxRange * MaxRange)
             return;
 
