@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class ExerciseGrabber : MonoBehaviour
 {
+    public static ExerciseGrabber Instance;
+
     public GameObject BreathingPrefab;
     public VicinityMessage MyVicinityMessage;
     public float MinDistance = 5f;
-    public float MaxDistance = 100f;
+    public float MaxDistance = 50f;
 
     private bool touching = false;
     private bool grabbed = false;
@@ -15,11 +17,20 @@ public class ExerciseGrabber : MonoBehaviour
     private GameObject breathingExercise;
     private LineRenderer lineRenderer;
 
+    private void Awake() {
+        Instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        if (MenuManager.Tutorial) {
+            gameObject.SetActive(false);
+        }
+
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.enabled = false;
+        MyVicinityMessage = GetComponent<VicinityMessage>();
     }
 
     // Update is called once per frame
@@ -79,8 +90,6 @@ public class ExerciseGrabber : MonoBehaviour
 
         touching = true;
         transform.GetChild(0).localScale = new Vector3(0.045f, 0.045f, 0.045f);
-
-        Debug.Log("Touching");
     }
 
     private void OnTriggerExit(Collider other) {
@@ -89,7 +98,5 @@ public class ExerciseGrabber : MonoBehaviour
 
         touching = false;
         transform.GetChild(0).localScale = new Vector3(0.025f, 0.025f, 0.025f);
-
-        Debug.Log("Stop touching");
     }
 }
