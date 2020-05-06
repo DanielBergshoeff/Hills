@@ -16,8 +16,6 @@ public class WindManager : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         Instance = this;
-
-        UpdateWind();
     }
 
     public void UpdateWind() {

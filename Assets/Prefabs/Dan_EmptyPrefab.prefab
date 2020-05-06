@@ -1972,8 +1972,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1597490800}
   - {fileID: 6402956950983643304}
+  - {fileID: 1597490800}
   m_VisualEffect: {fileID: 1668356059171651938}
 --- !u!114 &1597490800
 MonoBehaviour:
@@ -3452,10 +3452,20 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5217132553832128581, guid: de64175829882ca4cbbfc84ee93b752f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5217132553832128582, guid: de64175829882ca4cbbfc84ee93b752f,
         type: 3}
       propertyPath: m_Name
       value: MuscleVFX (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217132553832128582, guid: de64175829882ca4cbbfc84ee93b752f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5217132554855217171, guid: de64175829882ca4cbbfc84ee93b752f,
         type: 3}
@@ -8514,10 +8524,20 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5217132553832128581, guid: de64175829882ca4cbbfc84ee93b752f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5217132553832128582, guid: de64175829882ca4cbbfc84ee93b752f,
         type: 3}
       propertyPath: m_Name
       value: MuscleVFX (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217132553832128582, guid: de64175829882ca4cbbfc84ee93b752f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5217132554855217171, guid: de64175829882ca4cbbfc84ee93b752f,
         type: 3}

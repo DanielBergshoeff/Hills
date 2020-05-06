@@ -5,6 +5,7 @@ using UnityEngine;
 public class ExerciseGrabber : MonoBehaviour
 {
     public GameObject BreathingPrefab;
+    public VicinityMessage MyVicinityMessage;
     public float MinDistance = 5f;
     public float MaxDistance = 100f;
 
@@ -49,6 +50,11 @@ public class ExerciseGrabber : MonoBehaviour
 
         if (!grabbed) {
             if (Input.GetAxis("Oculus_CrossPlatform_SecondaryHandTrigger") > 0.5f) {
+                if (MyVicinityMessage != null) {
+                    MyVicinityMessage.StopMessage();
+                    Destroy(MyVicinityMessage);
+                }
+
                 grabbed = true;
                 lineRenderer.enabled = true;
                 

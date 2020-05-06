@@ -17,7 +17,6 @@ public class HeatManager : MonoBehaviour
     void Update()
     {
         Instance = this;
-        UpdateHeat();
     }
 
     public void UpdateHeat() {

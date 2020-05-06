@@ -29,6 +29,9 @@ public class Tree : MonoBehaviour
             return;
 
         foreach(Tree tree in AllTrees) {
+            if (tree == null)
+                continue;
+
             Vector3 heading = tree.transform.position - Camera.main.transform.position;
             if (heading.sqrMagnitude < 30f * 30f) {
                 tree.VfxGraph.SetFloat("AttractionForce", attractionForce);
