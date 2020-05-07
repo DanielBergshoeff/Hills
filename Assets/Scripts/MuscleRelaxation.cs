@@ -48,10 +48,16 @@ public class MuscleRelaxation : MonoBehaviour {
         }
 
         foreach (GameObject go in MuscleGroups) {
-            MapSet ms = InitEffect(go);
-            mapSets.Add(ms);
             CMObject cmo = go.GetComponent<CMObject>();
             cMObjects.Add(cmo);
+
+            if (go.name == "Pause") {
+                mapSets.Add(null);
+                continue;
+            }
+
+            MapSet ms = InitEffect(go);
+            mapSets.Add(ms);
         }
         
         vfxGraph.SetFloat(PropName.Speed, 1f / switchTime);
@@ -81,7 +87,9 @@ public class MuscleRelaxation : MonoBehaviour {
             return;
 
         currentMuscle++;
-        UpdateModel();
+
+        if(mapSets[currentMuscle] != null)
+            UpdateModel();
 
         if (SendMessages) {
             if (currentMessage != null)
@@ -94,8 +102,14 @@ public class MuscleRelaxation : MonoBehaviour {
             switchTime = cMObjects[currentMuscle].MyAudioClipInstructions.length;
         }
 
-        instructionPhase = true;
-        Invoke("FlexMuscleGroup", switchTime);
+
+        if (MuscleGroups[currentMuscle].name != "Pause") {
+            Invoke("FlexMuscleGroup", switchTime);
+            instructionPhase = true;
+        }
+        else {
+            Invoke("SwitchMuscleGroup", switchTime);
+        }
     }
 
     private void FlexMuscleGroup() {
