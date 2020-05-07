@@ -36,6 +36,8 @@ public class FireflyCatcher : MonoBehaviour
 
         flock.transform.position = myFlock.transform.position;
         flock.transform.parent = this.transform;
+
+        Destroy(flock);
         
         currentFireflies++;
         GlassMat.SetColor("_EmissiveColor", startColor * (1f + (maxIntensity * (Mathf.Clamp(currentFireflies, 0f, maxFireFlies)) / maxFireFlies)));
