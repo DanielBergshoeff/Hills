@@ -26,17 +26,24 @@ public class MuscleRelaxation : MonoBehaviour {
     public float switchTime = 3f;
     public float turbulenceIntensity = 0f;
     public float maxTurbulenceIntensity = 3f;
+    public bool SendMessages = false;
     private List<MapSet> mapSets;
+    private List<CMObject> cMObjects;
+
+    private CommunicationMessage currentMessage;
 
 
     // Start is called before the first frame update
     void Start() {
         vfxGraph = GetComponent<VisualEffect>();
         mapSets = new List<MapSet>();
+        cMObjects = new List<CMObject>();
 
         foreach (GameObject go in MuscleGroups) {
             MapSet ms = InitEffect(go);
             mapSets.Add(ms);
+            CMObject cmo = go.GetComponent<CMObject>();
+            cMObjects.Add(cmo);
         }
 
         UpdateModel();
@@ -86,6 +93,14 @@ public class MuscleRelaxation : MonoBehaviour {
         vfxGraph.SetTexture(PropName.PositionMap, mapSets[currentMuscle].position);
         vfxGraph.SetVector3(PropName.PositionOffset, MuscleGroups[currentMuscle].transform.position - transform.position);
         vfxGraph.SetVector3(PropName.Scale, mapSets[currentMuscle].scale);
+
+        if (SendMessages) {
+            if (currentMessage != null)
+                currentMessage.StartFade();
+
+            if(cMObjects[currentMuscle] != null)
+                currentMessage = CommunicationManager.Instance.DisplayMessage(gameObject, cMObjects[currentMuscle].MyMessage, cMObjects[currentMuscle].MyAudioClip, 0f, Vector3.up * 12.5f, 3f, false, 3f);
+        }
     }
 
     private MapSet InitEffect(GameObject go) {

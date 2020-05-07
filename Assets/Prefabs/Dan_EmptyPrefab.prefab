@@ -684,6 +684,38 @@ Transform:
   m_Father: {fileID: 3501821051827883104}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3501821051686289646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563202253046815534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClip: {fileID: 8300000, guid: a9799ae01c2fee349adf031ec9fa711e, type: 3}
+  MyMessage: Tighten the muscles in your forehead by raising your eyebrows as high
+    as you can. Hold for about 5 seconds... And abruptly release, feeling the tension
+    fall away.
+--- !u!114 &3501821051686289648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673419794059944489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClip: {fileID: 8300000, guid: a9799ae01c2fee349adf031ec9fa711e, type: 3}
+  MyMessage: Tighten the muscles in your forehead by raising your eyebrows as high
+    as you can. Hold for about 5 seconds... And abruptly release, feeling the tension
+    fall away.
 --- !u!1 &815443176075751892
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,6 +795,38 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &3501821051686289658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822258033210879888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClip: {fileID: 8300000, guid: a9799ae01c2fee349adf031ec9fa711e, type: 3}
+  MyMessage: Tighten the muscles in your forehead by raising your eyebrows as high
+    as you can. Hold for about 5 seconds... And abruptly release, feeling the tension
+    fall away.
+--- !u!114 &3501821051686289655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027001242902566035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClip: {fileID: 8300000, guid: a9799ae01c2fee349adf031ec9fa711e, type: 3}
+  MyMessage: Tighten the muscles in your forehead by raising your eyebrows as high
+    as you can. Hold for about 5 seconds... And abruptly release, feeling the tension
+    fall away.
 --- !u!1 &1106689594496415346
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,6 +887,22 @@ Transform:
   m_Father: {fileID: 3501821051827883104}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3501821051686289647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425142182340110355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClip: {fileID: 8300000, guid: a9799ae01c2fee349adf031ec9fa711e, type: 3}
+  MyMessage: Tighten the muscles in your forehead by raising your eyebrows as high
+    as you can. Hold for about 5 seconds... And abruptly release, feeling the tension
+    fall away.
 --- !u!1 &2083326350685565315
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,6 +976,22 @@ Transform:
   m_Father: {fileID: 3501821051827883104}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3501821051686289649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2351146614060061865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClip: {fileID: 8300000, guid: a9799ae01c2fee349adf031ec9fa711e, type: 3}
+  MyMessage: Tighten the muscles in your forehead by raising your eyebrows as high
+    as you can. Hold for about 5 seconds... And abruptly release, feeling the tension
+    fall away.
 --- !u!1 &2391975690676810723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1723,6 +1819,38 @@ MonoBehaviour:
   AdditionalData: {fileID: 5591874771812089368}
   CameraProperty:
     m_Name: DepthCamera
+--- !u!114 &3501821051686289650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4029483545431057811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClip: {fileID: 8300000, guid: a9799ae01c2fee349adf031ec9fa711e, type: 3}
+  MyMessage: Tighten the muscles in your forehead by raising your eyebrows as high
+    as you can. Hold for about 5 seconds... And abruptly release, feeling the tension
+    fall away.
+--- !u!114 &3501821051686289654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4270089839428589166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClip: {fileID: 8300000, guid: a9799ae01c2fee349adf031ec9fa711e, type: 3}
+  MyMessage: Tighten the muscles in your forehead by raising your eyebrows as high
+    as you can. Hold for about 5 seconds... And abruptly release, feeling the tension
+    fall away.
 --- !u!1 &4716717392569624056
 GameObject:
   m_ObjectHideFlags: 0
@@ -2017,7 +2145,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Property:
     m_Name: PlayerPosition
-  Target: {fileID: 2384170666738881557}
+  Target: {fileID: 2384095979551125133}
+--- !u!114 &3501821051686289652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5289837117913223798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClip: {fileID: 8300000, guid: a9799ae01c2fee349adf031ec9fa711e, type: 3}
+  MyMessage: Tighten the muscles in your forehead by raising your eyebrows as high
+    as you can. Hold for about 5 seconds... And abruptly release, feeling the tension
+    fall away.
 --- !u!1 &5959482011934233836
 GameObject:
   m_ObjectHideFlags: 0
@@ -2377,6 +2521,22 @@ MonoBehaviour:
   customCursor: {fileID: 0}
   validLocationObject: {fileID: 0}
   invalidLocationObject: {fileID: 0}
+--- !u!114 &1845204620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6583726797652888001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClip: {fileID: 8300000, guid: a9799ae01c2fee349adf031ec9fa711e, type: 3}
+  MyMessage: Tighten the muscles in your forehead by raising your eyebrows as high
+    as you can. Hold for about 5 seconds... And abruptly release, feeling the tension
+    fall away.
 --- !u!1 &6607491606206955590
 GameObject:
   m_ObjectHideFlags: 0
@@ -2579,6 +2739,102 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &3501821051686289657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7394896709696916625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClip: {fileID: 8300000, guid: a9799ae01c2fee349adf031ec9fa711e, type: 3}
+  MyMessage: Tighten the muscles in your forehead by raising your eyebrows as high
+    as you can. Hold for about 5 seconds... And abruptly release, feeling the tension
+    fall away.
+--- !u!114 &3501821051686289653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7481414264080730317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClip: {fileID: 8300000, guid: a9799ae01c2fee349adf031ec9fa711e, type: 3}
+  MyMessage: Tighten the muscles in your forehead by raising your eyebrows as high
+    as you can. Hold for about 5 seconds... And abruptly release, feeling the tension
+    fall away.
+--- !u!114 &3501821051686289659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7614955490858349277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClip: {fileID: 8300000, guid: a9799ae01c2fee349adf031ec9fa711e, type: 3}
+  MyMessage: Tighten the muscles in your forehead by raising your eyebrows as high
+    as you can. Hold for about 5 seconds... And abruptly release, feeling the tension
+    fall away.
+--- !u!114 &3501821051686289651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7665122761174898385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClip: {fileID: 8300000, guid: a9799ae01c2fee349adf031ec9fa711e, type: 3}
+  MyMessage: Tighten the muscles in your forehead by raising your eyebrows as high
+    as you can. Hold for about 5 seconds... And abruptly release, feeling the tension
+    fall away.
+--- !u!114 &3501821051686289645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8025990358088186875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClip: {fileID: 8300000, guid: a9799ae01c2fee349adf031ec9fa711e, type: 3}
+  MyMessage: Tighten the muscles in your forehead by raising your eyebrows as high
+    as you can. Hold for about 5 seconds... And abruptly release, feeling the tension
+    fall away.
+--- !u!114 &3501821051686289656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9046911103197779384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClip: {fileID: 8300000, guid: a9799ae01c2fee349adf031ec9fa711e, type: 3}
+  MyMessage: Tighten the muscles in your forehead by raising your eyebrows as high
+    as you can. Hold for about 5 seconds... And abruptly release, feeling the tension
+    fall away.
 --- !u!1 &9072773711742624582
 GameObject:
   m_ObjectHideFlags: 0
@@ -3455,7 +3711,7 @@ PrefabInstance:
     - target: {fileID: 5217132553832128581, guid: de64175829882ca4cbbfc84ee93b752f,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5217132553832128582, guid: de64175829882ca4cbbfc84ee93b752f,
         type: 3}
@@ -3465,7 +3721,7 @@ PrefabInstance:
     - target: {fileID: 5217132553832128582, guid: de64175829882ca4cbbfc84ee93b752f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5217132554855217171, guid: de64175829882ca4cbbfc84ee93b752f,
         type: 3}
@@ -4129,51 +4385,9 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4da04ea080b2a0b40b30c5d978f8fc8e, type: 3}
---- !u!1 &6559489283313389765 stripped
+--- !u!1 &4709001226079358384 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: -3850469290260644158, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1267655728061410823}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2403247094896418387 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -5706744259334590380, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1267655728061410823}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5325755864698207878 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -2846419451704979327, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1267655728061410823}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &9067137666865581244 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7801201575275307707, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1267655728061410823}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3445991165032965972 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -4736378746410743469, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1267655728061410823}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8062481117881603851 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9111962883125049612, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1267655728061410823}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4617626028250286572 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -3349969748038113301, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1267655728061410823}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &444196562708320724 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -7512703190786424877, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+  m_CorrespondingSourceObject: {fileID: -3400739430628056137, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
     type: 3}
   m_PrefabInstance: {fileID: 1267655728061410823}
   m_PrefabAsset: {fileID: 0}
@@ -4183,15 +4397,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1267655728061410823}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5536354968381100972 stripped
+--- !u!1 &9067137666865581244 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: -2503284881404592725, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+  m_CorrespondingSourceObject: {fileID: 7801201575275307707, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
     type: 3}
   m_PrefabInstance: {fileID: 1267655728061410823}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3840996861339692398 stripped
+--- !u!1 &6559489283313389765 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: -6567822343310408855, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+  m_CorrespondingSourceObject: {fileID: -3850469290260644158, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1267655728061410823}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4617626028250286572 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3349969748038113301, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
     type: 3}
   m_PrefabInstance: {fileID: 1267655728061410823}
   m_PrefabAsset: {fileID: 0}
@@ -4201,9 +4421,45 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1267655728061410823}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4709001226079358384 stripped
+--- !u!1 &5536354968381100972 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: -3400739430628056137, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+  m_CorrespondingSourceObject: {fileID: -2503284881404592725, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1267655728061410823}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &444196562708320724 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7512703190786424877, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1267655728061410823}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3840996861339692398 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6567822343310408855, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1267655728061410823}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5325755864698207878 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2846419451704979327, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1267655728061410823}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2403247094896418387 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5706744259334590380, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1267655728061410823}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8062481117881603851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9111962883125049612, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1267655728061410823}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3445991165032965972 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4736378746410743469, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
     type: 3}
   m_PrefabInstance: {fileID: 1267655728061410823}
   m_PrefabAsset: {fileID: 0}
@@ -4794,6 +5050,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PaintingCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 253550540784490603, guid: 00195c457a007314aafeb81b7ab8eb09,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 253550540784490604, guid: 00195c457a007314aafeb81b7ab8eb09,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5117,12 +5378,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 396917c60628b2e47822e2e121a60d49, type: 3}
---- !u!4 &5591874771812089351 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9007942298498979417, guid: 396917c60628b2e47822e2e121a60d49,
-    type: 3}
-  m_PrefabInstance: {fileID: 3501821049885730910}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5591874771812089368 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9007942298498979398, guid: 396917c60628b2e47822e2e121a60d49,
@@ -5135,6 +5390,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &5591874771812089351 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9007942298498979417, guid: 396917c60628b2e47822e2e121a60d49,
+    type: 3}
+  m_PrefabInstance: {fileID: 3501821049885730910}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3501821050318532305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5777,6 +6038,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60fe01da15cc8844bb8ddcbcf96a2f55, type: 3}
+--- !u!4 &2384095979551125133 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1265218029851868112, guid: 60fe01da15cc8844bb8ddcbcf96a2f55,
+    type: 3}
+  m_PrefabInstance: {fileID: 3501821050720195933}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2384170666738881557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1265143330053357896, guid: 60fe01da15cc8844bb8ddcbcf96a2f55,
@@ -6289,51 +6556,9 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4da04ea080b2a0b40b30c5d978f8fc8e, type: 3}
---- !u!1 &4270089839428589166 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 891465569071004948, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
-    type: 3}
-  m_PrefabInstance: {fileID: 3971461442843093882}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6583726797652888001 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7801201575275307707, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
-    type: 3}
-  m_PrefabInstance: {fileID: 3971461442843093882}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7394896709696916625 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -3349969748038113301, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
-    type: 3}
-  m_PrefabInstance: {fileID: 3971461442843093882}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &673419794059944489 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4736378746410743469, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
-    type: 3}
-  m_PrefabInstance: {fileID: 3971461442843093882}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &9046911103197779384 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -3850469290260644158, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
-    type: 3}
-  m_PrefabInstance: {fileID: 3971461442843093882}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7614955490858349277 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6823154163696212391, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
-    type: 3}
-  m_PrefabInstance: {fileID: 3971461442843093882}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2351146614060061865 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -7512703190786424877, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
-    type: 3}
-  m_PrefabInstance: {fileID: 3971461442843093882}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8025990358088186875 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -2846419451704979327, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
     type: 3}
   m_PrefabInstance: {fileID: 3971461442843093882}
   m_PrefabAsset: {fileID: 0}
@@ -6343,15 +6568,69 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3971461442843093882}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7665122761174898385 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -2503284881404592725, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
-    type: 3}
-  m_PrefabInstance: {fileID: 3971461442843093882}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &563202253046815534 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5706744259334590380, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3971461442843093882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7481414264080730317 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3400739430628056137, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3971461442843093882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8025990358088186875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2846419451704979327, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3971461442843093882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1027001242902566035 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5089679922872107031, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3971461442843093882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6583726797652888001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7801201575275307707, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3971461442843093882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4029483545431057811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 69505406398992105, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3971461442843093882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9046911103197779384 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3850469290260644158, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3971461442843093882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4270089839428589166 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 891465569071004948, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3971461442843093882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7614955490858349277 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6823154163696212391, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3971461442843093882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7394896709696916625 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3349969748038113301, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3971461442843093882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &822258033210879888 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4356186389288338666, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
     type: 3}
   m_PrefabInstance: {fileID: 3971461442843093882}
   m_PrefabAsset: {fileID: 0}
@@ -6361,9 +6640,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3971461442843093882}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7481414264080730317 stripped
+--- !u!1 &2351146614060061865 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: -3400739430628056137, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+  m_CorrespondingSourceObject: {fileID: -7512703190786424877, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3971461442843093882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7665122761174898385 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2503284881404592725, guid: 4da04ea080b2a0b40b30c5d978f8fc8e,
     type: 3}
   m_PrefabInstance: {fileID: 3971461442843093882}
   m_PrefabAsset: {fileID: 0}
@@ -8459,10 +8744,15 @@ PrefabInstance:
       propertyPath: timePerMuscle
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5217132553832128578, guid: de64175829882ca4cbbfc84ee93b752f,
+        type: 3}
+      propertyPath: SendMessages
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5217132553832128579, guid: de64175829882ca4cbbfc84ee93b752f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 43.82
+      value: 29.32
       objectReference: {fileID: 0}
     - target: {fileID: 5217132553832128579, guid: de64175829882ca4cbbfc84ee93b752f,
         type: 3}
@@ -8542,7 +8832,7 @@ PrefabInstance:
     - target: {fileID: 5217132553832128581, guid: de64175829882ca4cbbfc84ee93b752f,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5217132553832128582, guid: de64175829882ca4cbbfc84ee93b752f,
         type: 3}
@@ -8552,7 +8842,7 @@ PrefabInstance:
     - target: {fileID: 5217132553832128582, guid: de64175829882ca4cbbfc84ee93b752f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5217132554855217171, guid: de64175829882ca4cbbfc84ee93b752f,
         type: 3}
