@@ -59,7 +59,12 @@ public class MuscleRelaxation : MonoBehaviour {
             MapSet ms = InitEffect(go);
             mapSets.Add(ms);
         }
-        
+
+        turbulenceIntensity = maxTurbulenceIntensity;
+        vfxGraph.SetFloat(PropName.TurbulenceIntensity, turbulenceIntensity);
+        vfxGraph.SetFloat(PropName.FlexStrength, 0f);
+        vfxGraph.SetFloat(PropName.FlexBlend, 0f);
+
         vfxGraph.SetFloat(PropName.Speed, 1f / switchTime);
         SwitchMuscleGroup();
     }
@@ -70,7 +75,7 @@ public class MuscleRelaxation : MonoBehaviour {
         if (turbulenceIntensity > 0f && instructionPhase) {
             turbulenceIntensity -= (Time.deltaTime / switchTime) * maxTurbulenceIntensity;
 
-            if (turbulenceIntensity < 0f) {
+            if (turbulenceIntensity <= 0f) {
                 turbulenceIntensity = 0f;
                 vfxGraph.SetFloat(PropName.FlexStrength, 1f);
             }
@@ -99,9 +104,9 @@ public class MuscleRelaxation : MonoBehaviour {
                 return;
 
             currentMessage = CommunicationManager.Instance.DisplayMessage(gameObject, cMObjects[currentMuscle].MyMessageInstructions, cMObjects[currentMuscle].MyAudioClipInstructions, 0f, Vector3.up * 12.5f, 3f, false, 3f);
-            switchTime = cMObjects[currentMuscle].MyAudioClipInstructions.length;
         }
 
+        switchTime = cMObjects[currentMuscle].MyAudioClipInstructions.length;
 
         if (MuscleGroups[currentMuscle].name != "Pause") {
             Invoke("FlexMuscleGroup", switchTime);
@@ -119,15 +124,17 @@ public class MuscleRelaxation : MonoBehaviour {
             currentMessage = CommunicationManager.Instance.DisplayMessage(gameObject, cMObjects[currentMuscle].MyMessageHolding, cMObjects[currentMuscle].MyAudioClipHolding, 0f, Vector3.up * 12.5f, 3f, false, 3f);
         }
 
-        instructionPhase = false;
         Invoke("ReleaseMuscleGroup", cMObjects[currentMuscle].MyAudioClipHolding.length);
     }
 
     private void ReleaseMuscleGroup() {
-        currentMessage.StartFade();
+        if(SendMessages)
+            currentMessage.StartFade();
 
         if (SendMessages)
             currentMessage = CommunicationManager.Instance.DisplayMessage(gameObject, cMObjects[currentMuscle].MyMessageRelease, cMObjects[currentMuscle].MyAudioClipRelease, 0f, Vector3.up * 12.5f, 3f, false, 3f);
+
+        instructionPhase = false;
 
         turbulenceIntensity = maxTurbulenceIntensity;
         vfxGraph.SetFloat(PropName.TurbulenceIntensity, turbulenceIntensity);
@@ -151,7 +158,7 @@ public class MuscleRelaxation : MonoBehaviour {
         foreach (var (mesh, tex) in meshAndTexs) {
             mapSet = MeshToMap.ComputeMap(mesh, pointCountPerArea);
             mapSet.modelMainTex = tex;
-            mapSet.scale = modelTrans.parent.localScale * 1.1f;
+            mapSet.scale = modelTrans.parent.localScale * 1.01f;
         }
 
         return mapSet;
