@@ -9,7 +9,7 @@ public class Tree : MonoBehaviour
     public VisualEffect VfxGraph;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (AllTrees == null)
             AllTrees = new List<Tree>();
@@ -22,6 +22,20 @@ public class Tree : MonoBehaviour
     {
         if(Camera.main != null)
             VfxGraph.SetVector3("Center", Camera.main.transform.position);
+    }
+
+    public static void SetAllTrees(float attractionForce, float colorIntensity, float amtOfLeaves) {
+        if (AllTrees == null)
+            return;
+
+        foreach (Tree tree in AllTrees) {
+            if (tree == null)
+                continue;
+
+            tree.VfxGraph.SetFloat("AttractionForce", attractionForce);
+            tree.VfxGraph.SetFloat("ColorIntensity", colorIntensity);
+            tree.VfxGraph.SetFloat("SpawnRate", amtOfLeaves);
+        }
     }
 
     public static void UpdateTree(float attractionForce, float colorIntensity, float amtOfLeaves) {

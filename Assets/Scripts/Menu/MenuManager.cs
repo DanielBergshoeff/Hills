@@ -5,12 +5,15 @@ using VRTK;
 
 public class MenuManager : MonoBehaviour
 {
+    public static MenuManager Instance;
+
     public GameObject ColorMenuPrefab;
     public GameObject ColorMenu;
     public GameObject TutorialPosition;
     public Wings wings;
     public float MenuDistance = 0.1f;
     public GameObject PaintingCanvas;
+    public float StandardAmountOfLeaves = 1f;
 
     private MenuOption[] menuOptions;
     private bool menuEnabled = false;
@@ -39,7 +42,7 @@ public class MenuManager : MonoBehaviour
     private void Awake() {
         RightHandGrab.ControllerGrabInteractableObject += new ObjectInteractEventHandler(OnGrabObject);
         RightHandGrab.ControllerUngrabInteractableObject += new ObjectInteractEventHandler(OnUnGrabObject);
-        Teleporter.Teleported += new TeleportEventHandler(OnTeleport);
+        Instance = this;
 
         if (Tutorial) {
             RightHandPointer.enabled = false;
@@ -48,7 +51,7 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    private void OnTeleport(object sender, DestinationMarkerEventArgs e) {
+    private void OnTeleport() {
         WindManager.Instance.UpdateWind();
         HeatManager.Instance.UpdateHeat();
 
@@ -60,14 +63,15 @@ public class MenuManager : MonoBehaviour
     }
 
     private void Start() {
-        if (Tutorial) {
+        if (Tutorial && !MuscleRelaxationStarter.StartOnAwake) {
             StartTutorial();
         }
 
         PaintingCanvas.SetActive(true);
+        Tree.SetAllTrees(0f, 1f, StandardAmountOfLeaves);
     }
 
-    private void StartTutorial() {
+    public void StartTutorial() {
         wings.RotationEnabled = true;
         currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "To rotate, gently nudge the thumbstick on your right controller into the desired direction. Try it now.", null, 0f, Vector3.up * 1f, 2f, true, 4f);
     }
@@ -112,10 +116,15 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if ((startPosition - wings.transform.position).sqrMagnitude > 0.5f) {
+            OnTeleport();
+        }
+        startPosition = wings.transform.position;
+
         if (painting)
             PaintingMenu();
 
-        if (!Tutorial)
+        if (!Tutorial || MuscleRelaxationStarter.StartOnAwake)
             return;
 
         switch (tutorialPart) {

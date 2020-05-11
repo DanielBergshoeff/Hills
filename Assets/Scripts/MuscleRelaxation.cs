@@ -88,8 +88,13 @@ public class MuscleRelaxation : MonoBehaviour {
     }
 
     private void SwitchMuscleGroup() {
-        if (currentMuscle + 1 >= MuscleGroups.Count)
+        if (currentMuscle + 1 >= MuscleGroups.Count) {
+            MuscleRelaxationStarter.StartOnAwake = false;
+            if (MenuManager.Tutorial) {
+                MenuManager.Instance.StartTutorial();
+            }
             return;
+        }
 
         currentMuscle++;
 
@@ -103,7 +108,7 @@ public class MuscleRelaxation : MonoBehaviour {
             if (cMObjects[currentMuscle] == null)
                 return;
 
-            currentMessage = CommunicationManager.Instance.DisplayMessage(gameObject, cMObjects[currentMuscle].MyMessageInstructions, cMObjects[currentMuscle].MyAudioClipInstructions, 0f, Vector3.up * 12.5f, 3f, false, 3f);
+            currentMessage = CommunicationManager.Instance.DisplayMessage(gameObject, cMObjects[currentMuscle].MyMessageInstructions, cMObjects[currentMuscle].MyAudioClipInstructions, 0f, Vector3.up * 7f, 1f, false, 5f);
         }
 
         switchTime = cMObjects[currentMuscle].MyAudioClipInstructions.length;
@@ -121,7 +126,7 @@ public class MuscleRelaxation : MonoBehaviour {
         if (SendMessages) {
             if (currentMessage != null)
                 currentMessage.StartFade();
-            currentMessage = CommunicationManager.Instance.DisplayMessage(gameObject, cMObjects[currentMuscle].MyMessageHolding, cMObjects[currentMuscle].MyAudioClipHolding, 0f, Vector3.up * 12.5f, 3f, false, 3f);
+            currentMessage = CommunicationManager.Instance.DisplayMessage(gameObject, cMObjects[currentMuscle].MyMessageHolding, cMObjects[currentMuscle].MyAudioClipHolding, 0f, Vector3.up * 7f, 1f, false, 5f);
         }
 
         Invoke("ReleaseMuscleGroup", cMObjects[currentMuscle].MyAudioClipHolding.length);
@@ -132,7 +137,7 @@ public class MuscleRelaxation : MonoBehaviour {
             currentMessage.StartFade();
 
         if (SendMessages)
-            currentMessage = CommunicationManager.Instance.DisplayMessage(gameObject, cMObjects[currentMuscle].MyMessageRelease, cMObjects[currentMuscle].MyAudioClipRelease, 0f, Vector3.up * 12.5f, 3f, false, 3f);
+            currentMessage = CommunicationManager.Instance.DisplayMessage(gameObject, cMObjects[currentMuscle].MyMessageRelease, cMObjects[currentMuscle].MyAudioClipRelease, 0f, Vector3.up * 7f, 1f, false, 5f);
 
         instructionPhase = false;
 
