@@ -19,7 +19,7 @@ public class ScentManager : MonoBehaviour
     void Start()
     {
         Instance = this;
-        UpdateScent();
+        StartCoroutine("UpdateScent", 1f);
     }
 
     private void Update() {

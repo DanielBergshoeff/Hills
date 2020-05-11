@@ -11,6 +11,7 @@ public class VicinityMessage : MonoBehaviour
     public float MessageDuration = 10f;
     public float CooldownTime = 90f;
     public Vector3 Position = Vector3.up * 0.2f;
+    public bool FollowObject = true;
 
     private CommunicationMessage myMessage;
     private bool displayingMessage = false;
@@ -33,7 +34,7 @@ public class VicinityMessage : MonoBehaviour
         float angle = Vector3.Angle(heading, Camera.main.transform.forward);
 
         if(angle < 20f) {
-            myMessage = CommunicationManager.Instance.DisplayMessage(this.gameObject, Message, null, MessageDuration, Position, Size, true, TextSize);
+            myMessage = CommunicationManager.Instance.DisplayMessage(this.gameObject, Message, null, MessageDuration, Position, Size, FollowObject, TextSize);
             displayingMessage = true;
             Invoke("RevertDisplayingMessage", MessageDuration);
         }

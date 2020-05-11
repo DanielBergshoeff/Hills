@@ -71,23 +71,24 @@ public class Wings : MonoBehaviour {
                     (RotationEitherThumbstick && OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft))) {
             if (ReadyToSnapTurn) {
                 euler.y -= RotationRatchet;
+                WindManager.Instance.UpdateWind();
+                HeatManager.Instance.UpdateHeat();
                 ReadyToSnapTurn = false;
+                Debug.Log("Rotate!");
             }
         }
         else if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight, OVRInput.Controller.RTouch) ||
             (RotationEitherThumbstick && OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight))) {
             if (ReadyToSnapTurn) {
                 euler.y += RotationRatchet;
+                WindManager.Instance.UpdateWind();
+                HeatManager.Instance.UpdateHeat();
                 ReadyToSnapTurn = false;
+                Debug.Log("Rotate!");
             }
         }
         else {
             ReadyToSnapTurn = true;
-        }
-
-        if (!ReadyToSnapTurn) {
-            WindManager.Instance.UpdateWind();
-            HeatManager.Instance.UpdateHeat();
         }
 
         transform.parent.rotation = Quaternion.Euler(euler);
