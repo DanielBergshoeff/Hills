@@ -554,6 +554,15 @@ namespace VRTK
                 SecondaryControllerGrab(currentGrabbingGameObject);
             }
             OnInteractableObjectGrabbed(SetInteractableObjectEvent(currentGrabbingGameObject));
+
+            if (!gameObject.CompareTag("SmallObject"))
+                return;
+
+            SmallObject so = GetComponent<SmallObject>();
+            if (so == null)
+                return;
+
+            so.StartHolding();
         }
 
         /// <summary>

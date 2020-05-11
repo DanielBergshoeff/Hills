@@ -10,6 +10,7 @@ public class MenuManager : MonoBehaviour
     public GameObject TutorialPosition;
     public Wings wings;
     public float MenuDistance = 0.1f;
+    public GameObject PaintingCanvas;
 
     private MenuOption[] menuOptions;
     private bool menuEnabled = false;
@@ -59,8 +60,11 @@ public class MenuManager : MonoBehaviour
     }
 
     private void Start() {
-        if(Tutorial)
+        if (Tutorial) {
             StartTutorial();
+        }
+
+        PaintingCanvas.SetActive(true);
     }
 
     private void StartTutorial() {
@@ -98,6 +102,7 @@ public class MenuManager : MonoBehaviour
     private void EndTutorial() {
         tutorialPart++;
         currentMessage.StartFade();
+        ExerciseGrabber.Instance.gameObject.SetActive(true);
         Tutorial = false;
         currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "Good job, you are now in control!", null, 10f, Vector3.up * 1f, 2f, true, 4f);
     }

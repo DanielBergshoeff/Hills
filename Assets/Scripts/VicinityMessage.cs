@@ -46,7 +46,8 @@ public class VicinityMessage : MonoBehaviour
     }
 
     public void StopMessage() {
-        myMessage.StartFade();
+        if(myMessage != null)
+            myMessage.StartFade();
         displayingMessage = false;
         cooldown = true;
         Invoke("EndCooldown", CooldownTime);

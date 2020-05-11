@@ -61,7 +61,8 @@ public class Wings : MonoBehaviour {
     }
 
     private void Start() {
-        Debug.Log("Start");
+        HeatManager.Instance.UpdateHeat();
+        WindManager.Instance.UpdateWind();
     }
 
     private void UpdateRotations() {

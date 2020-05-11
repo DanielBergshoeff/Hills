@@ -10,16 +10,15 @@ public class SmallObject : MonoBehaviour {
         myRigidbody = GetComponent<Rigidbody>();
     }
 
-    public void LetGo() {
-        CheckForEating();
-        HeldInHand = true;
-        Debug.Log("Let go");
-
+    public void StartHolding() {
         if (myRigidbody != null) {
-            Debug.Log("Allow rotation");
             myRigidbody.constraints = RigidbodyConstraints.None;
         }
+    }
 
+    public void LetGo() {
+        //CheckForEating();
+        HeldInHand = true;
         Invoke("SetHeldInHand", 3f);
     }
 

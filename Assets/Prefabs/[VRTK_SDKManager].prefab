@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 1785255529}
   - component: {fileID: 1785255528}
   - component: {fileID: 1785255530}
+  - component: {fileID: 3546226366541759765}
   m_Layer: 0
   m_Name: ExerciseGrabber
   m_TagString: Untagged
@@ -289,6 +290,25 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &3546226366541759765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785255526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4571f4b3bc64555488af4546f12e10e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxRange: 10
+  Message: Try grabbing the sphere to place a breathing exercise..
+  Size: 0.075
+  TextSize: 10
+  MessageDuration: 10
+  CooldownTime: 90
+  Position: {x: 0, y: 0.2, z: 0}
 --- !u!1 &1267767226117791498
 GameObject:
   m_ObjectHideFlags: 0
