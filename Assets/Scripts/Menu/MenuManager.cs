@@ -28,6 +28,7 @@ public class MenuManager : MonoBehaviour
 
     private int tutorialPart = 0;
     private CommunicationMessage currentMessage;
+    private Vector3 previousPosition;
     private Vector3 startPosition;
 
     private Tool myTool;
@@ -116,10 +117,10 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((startPosition - wings.transform.position).sqrMagnitude > 0.5f) {
+        if ((previousPosition - wings.transform.position).sqrMagnitude > 0.5f) {
             OnTeleport();
         }
-        startPosition = wings.transform.position;
+        previousPosition = wings.transform.position;
 
         if (painting)
             PaintingMenu();
