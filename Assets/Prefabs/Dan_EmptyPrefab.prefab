@@ -1494,8 +1494,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158525268661036831}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.8252895, y: 0.0039482117, z: -0.06354427}
-  m_LocalScale: {x: 0.029679503, y: 0.029679503, z: 0.029679503}
+  m_LocalPosition: {x: 2.0331671, y: 0.0020980835, z: -0.033775568}
+  m_LocalScale: {x: 0.01577484, y: 0.01577484, z: 0.01577484}
   m_Children: []
   m_Father: {fileID: 1377138701239185308}
   m_RootOrder: 0
@@ -1690,11 +1690,11 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: 4c04131be319f714393d9ce596e15a73,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: 09a520f553a55f240997f4885efa968a, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: 3cf1e5c8ec3ecd24ebe64859433e9787, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 47487e0c0dde4b848a51438933c89439, type: 3}
   MyMessageInstructions: 'Now tighten your triceps by extending your arms out and
     locking your elbows. '
   MyMessageHolding: Hold for about 5 seconds.
-  MyMessageRelease: And release. Pause for about 5seconds.
+  MyMessageRelease: And release. Pause for about 5 seconds.
 --- !u!1 &745715667831152804
 GameObject:
   m_ObjectHideFlags: 0
@@ -1790,7 +1790,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: 0aab6c4552907604cbf1e72fa85f564e,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: 4b13a53a23dd6354d87661279af0f1be, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: 69e0071145751874e9345e751758a492, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 54d4325d32da8b146b5385967dde273c, type: 3}
   MyMessageInstructions: 'Now lift your shoulders up as if they could touch your
     ears. '
   MyMessageHolding: Hold for about 5 seconds.
@@ -1843,7 +1843,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815443176075751892}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1970,7 +1970,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: b0b2e6a51176d3e44b0fa656580ac84b,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: 22247fabd95fc31409a99b2422bc9637, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: 11aa982260f88034fb447d6b74033f57, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: a49f7f170116a804397f1e72bf23a643, type: 3}
   MyMessageInstructions: Now smile widely, feeling your mouth and cheeks tense.
   MyMessageHolding: Hold for about 5 seconds.
   MyMessageRelease: And release, appreciating the softness in your face. Pause for
@@ -2070,7 +2070,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: e07499d252a016241b537bc546fe057d,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: e7149ab6e6bacb044b9b4d3c9f716573, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: c58494268a9884a468196cca15f4c63c, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 5a165ff514461e14abe720370af06e57, type: 3}
   MyMessageInstructions: 'Tense your upper back by pulling your shoulders back trying
     to make your shoulder blades touch. '
   MyMessageHolding: Hold for about 5 seconds.
@@ -2230,7 +2230,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: a47902c27b353754d973d136490e53d9,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: a125179d48eb50341bc1db83df74392d, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: b300cafa374c19048af706014dccea83, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 1db2b01c239e77a4086d7abf0b3e76cb, type: 3}
   MyMessageInstructions: 'Tighten your thighs by pressing your knees together, as
     if you were holding a penny between them. '
   MyMessageHolding: Hold for about 5 seconds.
@@ -2430,7 +2430,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: 4f01f7428a8a3c04181a6acb5f317cfe,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: a039ffe2769d2654bb7b7b8fc2dcf5b7, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: 691c41a6c3e081d4ab6fa8e01ffda3a0, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 798b7349e0602b7408809d6b2be7781f, type: 3}
   MyMessageInstructions: Now flex your feet, pulling your toes towards you and feeling
     the tension in your calves.
   MyMessageHolding: Hold for about 5 seconds.
@@ -2675,7 +2675,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: e07499d252a016241b537bc546fe057d,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: e7149ab6e6bacb044b9b4d3c9f716573, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: c58494268a9884a468196cca15f4c63c, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 5a165ff514461e14abe720370af06e57, type: 3}
   MyMessageInstructions: 'Tense your upper back by pulling your shoulders back trying
     to make your shoulder blades touch. '
   MyMessageHolding: Hold for about 5 seconds.
@@ -2775,7 +2775,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: abdf254b7a5e6694b9702239f84aefb0,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: 6e5e80a946c8ed1479efe03ff752425d, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: ebbe458d589a23d4d91394534a67d130, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 50839958cd476cb41aea2bfdbd17a079, type: 3}
   MyMessageInstructions: 'Now, tightly, but without straining, clench your fists
     and hold this position until I say stop. '
   MyMessageHolding: Hold for about 5 seconds.
@@ -2999,7 +2999,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: 0aab6c4552907604cbf1e72fa85f564e,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: 4b13a53a23dd6354d87661279af0f1be, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: 69e0071145751874e9345e751758a492, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 54d4325d32da8b146b5385967dde273c, type: 3}
   MyMessageInstructions: 'Now lift your shoulders up as if they could touch your
     ears. '
   MyMessageHolding: Hold for about 5 seconds.
@@ -3451,7 +3451,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: fafc6fd547be294429f5734b3a4ca570,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: f488d920469c97344874ec6da96fab81, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: 75952ffab53c3ce479ad83a9d82fcf51, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 2caa122512a7c034cac25187de6139ae, type: 3}
   MyMessageInstructions: 'Tighten your buttocks. '
   MyMessageHolding: Hold for about 5 seconds.
   MyMessageRelease: Release, imagine your hips falling loose. Pause for about 5 seconds.
@@ -3641,7 +3641,7 @@ Transform:
   m_GameObject: {fileID: 2574395502333359256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.029679503, y: 0.029679503, z: 0.029679503}
+  m_LocalScale: {x: 0.01577484, y: 0.01577484, z: 0.01577484}
   m_Children:
   - {fileID: 5366382389959522408}
   - {fileID: 872446232267745574}
@@ -3952,7 +3952,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: 381265052404c6543ad826fb91885a55,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: ac9845349b7bf1e41a34875789658cbe, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: c70534b11296e1848a9d6588aecc9c90, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 96b790c45c6db2548be2816b18b83bc6, type: 3}
   MyMessageInstructions: Curl your toes under tensing your feet.
   MyMessageHolding: Hold for about 5 seconds.
   MyMessageRelease: Release. Pause for about 5 seconds.
@@ -4043,8 +4043,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3675867096097109102}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.00059841573, y: 3.617323, z: 0.1805687}
-  m_LocalScale: {x: 0.029679503, y: 0.029679503, z: 0.029679503}
+  m_LocalPosition: {x: -0.00031851235, y: 1.9226303, z: 0.09597398}
+  m_LocalScale: {x: 0.01577484, y: 0.01577484, z: 0.01577484}
   m_Children: []
   m_Father: {fileID: 1377138701239185308}
   m_RootOrder: 2
@@ -4141,8 +4141,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3739806248080663692}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.8252895, y: 0.0039482117, z: -0.06354427}
-  m_LocalScale: {x: 0.029679503, y: 0.029679503, z: 0.029679503}
+  m_LocalPosition: {x: 2.033165, y: 0.0020980835, z: -0.033773184}
+  m_LocalScale: {x: 0.015774839, y: 0.015774839, z: 0.015774839}
   m_Children: []
   m_Father: {fileID: 3037370659783528946}
   m_RootOrder: 0
@@ -4307,7 +4307,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: a47902c27b353754d973d136490e53d9,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: a125179d48eb50341bc1db83df74392d, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: b300cafa374c19048af706014dccea83, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 1db2b01c239e77a4086d7abf0b3e76cb, type: 3}
   MyMessageInstructions: 'Tighten your thighs by pressing your knees together, as
     if you were holding a penny between them. '
   MyMessageHolding: Hold for about 5 seconds.
@@ -4457,11 +4457,11 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: 4c04131be319f714393d9ce596e15a73,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: 09a520f553a55f240997f4885efa968a, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: 3cf1e5c8ec3ecd24ebe64859433e9787, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 47487e0c0dde4b848a51438933c89439, type: 3}
   MyMessageInstructions: 'Now tighten your triceps by extending your arms out and
     locking your elbows. '
   MyMessageHolding: Hold for about 5 seconds.
-  MyMessageRelease: And release. Pause for about 5seconds.
+  MyMessageRelease: And release. Pause for about 5 seconds.
 --- !u!1 &4001336183509302644
 GameObject:
   m_ObjectHideFlags: 0
@@ -4856,7 +4856,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: fafc6fd547be294429f5734b3a4ca570,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: f488d920469c97344874ec6da96fab81, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: 75952ffab53c3ce479ad83a9d82fcf51, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 2caa122512a7c034cac25187de6139ae, type: 3}
   MyMessageInstructions: 'Tighten your buttocks. '
   MyMessageHolding: Hold for about 5 seconds.
   MyMessageRelease: Release, imagine your hips falling loose. Pause for about 5 seconds.
@@ -4984,7 +4984,7 @@ Transform:
   m_GameObject: {fileID: 4343524117851271694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.029679503, y: 0.029679503, z: 0.029679503}
+  m_LocalScale: {x: 0.015774839, y: 0.015774839, z: 0.015774839}
   m_Children:
   - {fileID: 8203914881594225171}
   - {fileID: 4684017709474330545}
@@ -5039,8 +5039,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4376276685124507944}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0059524328, y: 2.0805016, z: 0.14450075}
-  m_LocalScale: {x: 0.029679503, y: 0.029679503, z: 0.029679503}
+  m_LocalPosition: {x: -0.0031642844, y: 1.1057987, z: 0.07680131}
+  m_LocalScale: {x: 0.01577484, y: 0.01577484, z: 0.01577484}
   m_Children: []
   m_Father: {fileID: 1377138701239185308}
   m_RootOrder: 3
@@ -5330,7 +5330,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: 3bb82cc78f5b27d478f0f9777e7651cb,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: e5e5594280bf8ca4e896bf8bc7c301c7, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: 5a9829295e6dd574d89dfcbb215dfd8b, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: e742fa85ac1451741b439d7c2c014171, type: 3}
   MyMessageInstructions: 'Next, tighten your eye muscles by squinting your eyelids
     tightly shut. '
   MyMessageHolding: Hold for about 5 seconds.
@@ -5951,7 +5951,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: 381265052404c6543ad826fb91885a55,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: ac9845349b7bf1e41a34875789658cbe, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: c70534b11296e1848a9d6588aecc9c90, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 96b790c45c6db2548be2816b18b83bc6, type: 3}
   MyMessageInstructions: Curl your toes under tensing your feet.
   MyMessageHolding: Hold for about 5 seconds.
   MyMessageRelease: Release. Pause for about 5 seconds.
@@ -6100,7 +6100,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: 4f01f7428a8a3c04181a6acb5f317cfe,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: a039ffe2769d2654bb7b7b8fc2dcf5b7, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: 691c41a6c3e081d4ab6fa8e01ffda3a0, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 798b7349e0602b7408809d6b2be7781f, type: 3}
   MyMessageInstructions: Now flex your feet, pulling your toes towards you and feeling
     the tension in your calves.
   MyMessageHolding: Hold for about 5 seconds.
@@ -6201,7 +6201,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: b0b2e6a51176d3e44b0fa656580ac84b,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: 22247fabd95fc31409a99b2422bc9637, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: 11aa982260f88034fb447d6b74033f57, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: a49f7f170116a804397f1e72bf23a643, type: 3}
   MyMessageInstructions: Now smile widely, feeling your mouth and cheeks tense.
   MyMessageHolding: Hold for about 5 seconds.
   MyMessageRelease: And release, appreciating the softness in your face. Pause for
@@ -6343,8 +6343,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5970729902898234005}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0065613426, y: 5.0524693, z: 0.022922497}
-  m_LocalScale: {x: 0.029679503, y: 0.029679503, z: 0.029679503}
+  m_LocalPosition: {x: 0.0034866356, y: 2.685419, z: 0.012184145}
+  m_LocalScale: {x: 0.01577484, y: 0.01577484, z: 0.01577484}
   m_Children: []
   m_Father: {fileID: 1377138701239185308}
   m_RootOrder: 1
@@ -6891,8 +6891,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6199177283688675689}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0065613426, y: 5.0524693, z: 0.022922497}
-  m_LocalScale: {x: 0.029679503, y: 0.029679503, z: 0.029679503}
+  m_LocalPosition: {x: 0.0034876205, y: 2.685419, z: 0.012184134}
+  m_LocalScale: {x: 0.015774839, y: 0.015774839, z: 0.015774839}
   m_Children: []
   m_Father: {fileID: 3037370659783528946}
   m_RootOrder: 1
@@ -7408,7 +7408,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: 1bec34b8308d1e448ae787b246ad364a,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: 602db03b08cdfc343aeda738ee7562ed, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: 1087bf7b10643024ea40a74aa6c726e6, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 32ca3be7d38786547ae037ddd65bf5cf, type: 3}
   MyMessageInstructions: 'Gently pull your head back as if to look at the ceiling. '
   MyMessageHolding: Hold for about 5 seconds.
   MyMessageRelease: 'And release, feeling the tension melting away. Pause for about
@@ -7472,8 +7472,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7240779674294747232}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.00059841573, y: 3.617323, z: 0.1805687}
-  m_LocalScale: {x: 0.029679503, y: 0.029679503, z: 0.029679503}
+  m_LocalPosition: {x: -0.00031826645, y: 1.9226303, z: 0.09597397}
+  m_LocalScale: {x: 0.015774839, y: 0.015774839, z: 0.015774839}
   m_Children: []
   m_Father: {fileID: 3037370659783528946}
   m_RootOrder: 2
@@ -7638,7 +7638,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: a243a5d26e6868e4c8bea95f96a67702,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: 44e499fcb81513d43ad4c5f2fbe3e339, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: 5bc0c7c5a0acb4a499f73ca203a612af, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 08398378f90f3f7489fc77bac97e2df8, type: 3}
   MyMessageInstructions: Gently arch your lower back.
   MyMessageHolding: Hold for about 5 seconds.
   MyMessageRelease: Relax. Pause for about 5 seconds.
@@ -8033,7 +8033,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: a243a5d26e6868e4c8bea95f96a67702,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: 44e499fcb81513d43ad4c5f2fbe3e339, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: 5bc0c7c5a0acb4a499f73ca203a612af, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 08398378f90f3f7489fc77bac97e2df8, type: 3}
   MyMessageInstructions: Gently arch your lower back.
   MyMessageHolding: Hold for about 5 seconds.
   MyMessageRelease: Relax. Pause for about 5 seconds.
@@ -8132,7 +8132,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: abdf254b7a5e6694b9702239f84aefb0,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: 6e5e80a946c8ed1479efe03ff752425d, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: ebbe458d589a23d4d91394534a67d130, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 50839958cd476cb41aea2bfdbd17a079, type: 3}
   MyMessageInstructions: 'Now, tightly, but without straining, clench your fists
     and hold this position until I say stop. '
   MyMessageHolding: Hold for about 5 seconds.
@@ -8164,8 +8164,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8327244781017574254}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0059524328, y: 2.0805016, z: 0.14450075}
-  m_LocalScale: {x: 0.029679503, y: 0.029679503, z: 0.029679503}
+  m_LocalPosition: {x: -0.0031640828, y: 1.1057987, z: 0.07680131}
+  m_LocalScale: {x: 0.015774839, y: 0.015774839, z: 0.015774839}
   m_Children: []
   m_Father: {fileID: 3037370659783528946}
   m_RootOrder: 3
@@ -8330,7 +8330,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: 3bb82cc78f5b27d478f0f9777e7651cb,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: e5e5594280bf8ca4e896bf8bc7c301c7, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: 5a9829295e6dd574d89dfcbb215dfd8b, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: e742fa85ac1451741b439d7c2c014171, type: 3}
   MyMessageInstructions: 'Next, tighten your eye muscles by squinting your eyelids
     tightly shut. '
   MyMessageHolding: Hold for about 5 seconds.
@@ -8470,6 +8470,7 @@ Transform:
   - {fileID: 4604007334321508636}
   - {fileID: 894585385892121099}
   - {fileID: 2824465150325813787}
+  - {fileID: 8777068526685560990}
   m_Father: {fileID: 3501821051827883104}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 60.000004, y: 0, z: 0}
@@ -8849,7 +8850,7 @@ MonoBehaviour:
   MyAudioClipInstructions: {fileID: 8300000, guid: 1bec34b8308d1e448ae787b246ad364a,
     type: 3}
   MyAudioClipHolding: {fileID: 8300000, guid: 602db03b08cdfc343aeda738ee7562ed, type: 3}
-  MyAudioClipRelease: {fileID: 8300000, guid: 1087bf7b10643024ea40a74aa6c726e6, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 32ca3be7d38786547ae037ddd65bf5cf, type: 3}
   MyMessageInstructions: 'Gently pull your head back as if to look at the ceiling. '
   MyMessageHolding: Hold for about 5 seconds.
   MyMessageRelease: 'And release, feeling the tension melting away. Pause for about
@@ -10183,15 +10184,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00195c457a007314aafeb81b7ab8eb09, type: 3}
---- !u!4 &2906043205660296941 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 253550540784490604, guid: 00195c457a007314aafeb81b7ab8eb09,
-    type: 3}
-  m_PrefabInstance: {fileID: 3157195109884272257}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2906043205660296938 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 253550540784490603, guid: 00195c457a007314aafeb81b7ab8eb09,
+    type: 3}
+  m_PrefabInstance: {fileID: 3157195109884272257}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2906043205660296941 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 253550540784490604, guid: 00195c457a007314aafeb81b7ab8eb09,
     type: 3}
   m_PrefabInstance: {fileID: 3157195109884272257}
   m_PrefabAsset: {fileID: 0}
@@ -10449,6 +10450,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 396917c60628b2e47822e2e121a60d49, type: 3}
+--- !u!4 &5591874771812089351 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9007942298498979417, guid: 396917c60628b2e47822e2e121a60d49,
+    type: 3}
+  m_PrefabInstance: {fileID: 3501821049885730910}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5591874771812089368 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9007942298498979398, guid: 396917c60628b2e47822e2e121a60d49,
@@ -10461,12 +10468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &5591874771812089351 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9007942298498979417, guid: 396917c60628b2e47822e2e121a60d49,
-    type: 3}
-  m_PrefabInstance: {fileID: 3501821049885730910}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3501821050720195933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10944,6 +10945,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60fe01da15cc8844bb8ddcbcf96a2f55, type: 3}
+--- !u!4 &2384095979551125133 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1265218029851868112, guid: 60fe01da15cc8844bb8ddcbcf96a2f55,
+    type: 3}
+  m_PrefabInstance: {fileID: 3501821050720195933}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2379847752044323592 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1269484421026985557, guid: 60fe01da15cc8844bb8ddcbcf96a2f55,
@@ -10959,12 +10966,6 @@ MonoBehaviour:
 --- !u!4 &2384170666738881557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1265143330053357896, guid: 60fe01da15cc8844bb8ddcbcf96a2f55,
-    type: 3}
-  m_PrefabInstance: {fileID: 3501821050720195933}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2384095979551125133 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1265218029851868112, guid: 60fe01da15cc8844bb8ddcbcf96a2f55,
     type: 3}
   m_PrefabInstance: {fileID: 3501821050720195933}
   m_PrefabAsset: {fileID: 0}
@@ -11537,6 +11538,96 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2377346500224665209, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
     type: 3}
   m_PrefabInstance: {fileID: 4240154857246580996}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4374364804324985732
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 895661682993917961}
+    m_Modifications:
+    - target: {fileID: -4216859302048453862, guid: 8996e01c2bee90e40861b6c124c52b1a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8996e01c2bee90e40861b6c124c52b1a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.371
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8996e01c2bee90e40861b6c124c52b1a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8996e01c2bee90e40861b6c124c52b1a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8996e01c2bee90e40861b6c124c52b1a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8996e01c2bee90e40861b6c124c52b1a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8996e01c2bee90e40861b6c124c52b1a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8996e01c2bee90e40861b6c124c52b1a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8996e01c2bee90e40861b6c124c52b1a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8996e01c2bee90e40861b6c124c52b1a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8996e01c2bee90e40861b6c124c52b1a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8996e01c2bee90e40861b6c124c52b1a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.006672754
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8996e01c2bee90e40861b6c124c52b1a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.020878006
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8996e01c2bee90e40861b6c124c52b1a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.012811524
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8996e01c2bee90e40861b6c124c52b1a,
+        type: 3}
+      propertyPath: m_Name
+      value: paint_brush
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8996e01c2bee90e40861b6c124c52b1a, type: 3}
+--- !u!4 &8777068526685560990 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8996e01c2bee90e40861b6c124c52b1a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4374364804324985732}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4678905185838049241
 PrefabInstance:

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using VRTK;
 
@@ -15,7 +16,10 @@ public class MenuManager : MonoBehaviour
     public GameObject PaintingCanvas;
     public float StandardAmountOfLeaves = 1f;
 
+    public LineRenderer menuLineRenderer;
+
     private MenuOption[] menuOptions;
+    private MenuOption selectedMenu;
     private bool menuEnabled = false;
     private bool painting = true;
 
@@ -68,6 +72,7 @@ public class MenuManager : MonoBehaviour
             StartTutorial();
         }
 
+        menuLineRenderer.enabled = false;
         PaintingCanvas.SetActive(true);
         Tree.SetAllTrees(0f, 1f, StandardAmountOfLeaves);
     }
@@ -117,6 +122,10 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (menuEnabled) {
+            MenuPointing();
+        }
+
         if ((previousPosition - wings.transform.position).sqrMagnitude > 0.5f) {
             OnTeleport();
         }
@@ -158,6 +167,35 @@ public class MenuManager : MonoBehaviour
                 break;
 
         }
+    }
+
+    private void MenuPointing() {
+        RaycastHit hit;
+        if(Physics.Raycast(RightHandGrab.transform.position, RightHandGrab.transform.forward, out hit, 10f)) {
+            menuLineRenderer.SetPositions(new Vector3[] { RightHandGrab.transform.position, hit.point });
+            if (hit.transform.CompareTag("MenuOption")) {
+                if (selectedMenu == null || selectedMenu.name != hit.transform.name) {
+                    MenuOption mo = hit.transform.GetComponent<MenuOption>();
+                    selectedMenu = mo;
+                    selectedMenu.SetSelected();
+                }
+            }
+            else {
+                DeselectMenu();
+            }
+        }
+        else {
+            menuLineRenderer.SetPositions(new Vector3[] { RightHandGrab.transform.position, RightHandGrab.transform.position + RightHandGrab.transform.forward * 10f });
+            DeselectMenu();
+        }
+    }
+
+    private void DeselectMenu() {
+        if (selectedMenu == null)
+            return;
+
+        selectedMenu.SetDeselected();
+        selectedMenu = null;
     }
 
     private void StartPainting() {
@@ -216,6 +254,8 @@ public class MenuManager : MonoBehaviour
                 menuOptions = ColorMenu.GetComponentsInChildren<MenuOption>();
             }
 
+            menuLineRenderer.enabled = true;
+
             menuEnabled = true;
         }
         if (OVRInput.GetUp(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.RTouch)) {
@@ -224,12 +264,19 @@ public class MenuManager : MonoBehaviour
             if (!menuEnabled)
                 return;
 
-            foreach (MenuOption mo in menuOptions) {
-                if (!mo.Selected)
-                    continue;
-
-                mo.Select();
+            if (selectedMenu != null) {
+                selectedMenu.Select();
             }
+            else {
+                foreach (MenuOption mo in menuOptions) {
+                    if (!mo.Selected)
+                        continue;
+
+                    mo.Select();
+                }
+            }
+
+            menuLineRenderer.enabled = false;
 
             Destroy(ColorMenu);
             menuEnabled = false;
