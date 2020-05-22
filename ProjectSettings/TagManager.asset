@@ -15,6 +15,7 @@ TagManager:
   - DetectedItem
   - Tool
   - MenuOption
+  - Interactable
   layers:
   - Default
   - TransparentFX

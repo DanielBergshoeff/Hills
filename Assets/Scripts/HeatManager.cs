@@ -13,13 +13,15 @@ public class HeatManager : MonoBehaviour
     private float heatLeft = 0f;
     private float heatRight = 0f;
 
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
         Instance = this;
     }
 
     public void UpdateHeat() {
+        if (Wings.Instance == null)
+            return;
+
         foreach (HeatObject ho in HeatObjects) {
             Vector3 heading = ho.transform.position - Wings.Instance.transform.parent.position;
             heading = new Vector3(heading.x, 0f, heading.z);
@@ -67,6 +69,9 @@ public class HeatManager : MonoBehaviour
     }
 
     private void OnDrawGizmosSelected() {
+        if (Camera.main == null)
+            return;
+
         Vector3 posFrontLeft = Camera.main.transform.parent.parent.position + Camera.main.transform.parent.parent.forward;
         Gizmos.DrawSphere(posFrontLeft, 0.1f + heatFront);
         Vector3 posFrontRight = Camera.main.transform.parent.parent.position + Camera.main.transform.parent.parent.right;
