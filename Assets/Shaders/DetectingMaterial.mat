@@ -246,7 +246,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_73DB59A: {r: 785404, g: 0, b: 575709.2, a: 1}
-    - Vector3_E8D52375: {r: -85.3295, g: 5.7548246, b: 55.44955, a: 0}
+    - Vector3_E8D52375: {r: -85.33253, g: 5.7568407, b: 55.443172, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

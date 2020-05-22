@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using VRTK;
 
@@ -15,7 +16,10 @@ public class MenuManager : MonoBehaviour
     public GameObject PaintingCanvas;
     public float StandardAmountOfLeaves = 1f;
 
+    public LineRenderer menuLineRenderer;
+
     private MenuOption[] menuOptions;
+    private MenuOption selectedMenu;
     private bool menuEnabled = false;
     private bool painting = true;
 
@@ -28,6 +32,7 @@ public class MenuManager : MonoBehaviour
 
     private int tutorialPart = 0;
     private CommunicationMessage currentMessage;
+    private Vector3 previousPosition;
     private Vector3 startPosition;
 
     private Tool myTool;
@@ -67,20 +72,21 @@ public class MenuManager : MonoBehaviour
             StartTutorial();
         }
 
+        menuLineRenderer.enabled = false;
         PaintingCanvas.SetActive(true);
         Tree.SetAllTrees(0f, 1f, StandardAmountOfLeaves);
     }
 
     public void StartTutorial() {
         wings.RotationEnabled = true;
-        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "To rotate, gently nudge the thumbstick on your right controller into the desired direction. Try it now.", null, 0f, Vector3.up * 1f, 2f, true, 4f);
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "To rotate, gently nudge the thumbstick on your left controller into the desired direction. Try it now.", null, 0f, Vector3.up * 1f, 2f, true, 4f);
     }
 
     private void PickupTutorial() {
         tutorialPart++;
         currentMessage.StartFade();
         RightHandPointer.enabled = true;
-        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "To pick up items from a distance, press the thumbstick on your right controller to make a ray appear from it.", null, 0f, Vector3.up * 1f, 2f, true, 4f);
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "To pick up items from a distance, press the A button on your right controller to make a ray appear from it.", null, 0f, Vector3.up * 1f, 2f, true, 4f);
     }
 
     private void PickupTutorialPart2() {
@@ -93,7 +99,7 @@ public class MenuManager : MonoBehaviour
         tutorialPart++;
         currentMessage.StartFade();
         LeftHandPointer.enabled = true;
-        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "To teleport, press the thumbstick on the left controller to make an arch appear first.", null, 0f, Vector3.up * 1f, 2f, true, 4f);
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "To teleport, press the X button on the left controller to make an arch appear first.", null, 0f, Vector3.up * 1f, 2f, true, 4f);
     }
 
     private void TeleportPart2Tutorial() {
@@ -116,10 +122,14 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((startPosition - wings.transform.position).sqrMagnitude > 0.5f) {
+        if (menuEnabled) {
+            MenuPointing();
+        }
+
+        if ((previousPosition - wings.transform.position).sqrMagnitude > 0.5f) {
             OnTeleport();
         }
-        startPosition = wings.transform.position;
+        previousPosition = wings.transform.position;
 
         if (painting)
             PaintingMenu();
@@ -129,12 +139,12 @@ public class MenuManager : MonoBehaviour
 
         switch (tutorialPart) {
             case 0:
-                if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft, OVRInput.Controller.RTouch) || OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight, OVRInput.Controller.RTouch)) {
+                if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft, OVRInput.Controller.LTouch) || OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight, OVRInput.Controller.LTouch)) {
                     PickupTutorial();
                 }
                 break;
             case 1:
-                if(OVRInput.Get(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.RTouch)) {
+                if(OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
                     PickupTutorialPart2();
                 }
                 break;
@@ -144,7 +154,7 @@ public class MenuManager : MonoBehaviour
                 }
                 break;
             case 3: 
-                if(OVRInput.Get(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.LTouch)){
+                if(OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.LTouch)){
                     TeleportPart2Tutorial();
                 }
                 break;
@@ -157,6 +167,38 @@ public class MenuManager : MonoBehaviour
                 break;
 
         }
+    }
+
+    private void MenuPointing() {
+        RaycastHit hit;
+        if(Physics.Raycast(RightHandGrab.transform.position, RightHandGrab.transform.forward, out hit, 10f)) {
+            menuLineRenderer.SetPositions(new Vector3[] { RightHandGrab.transform.position, hit.point });
+            if (hit.transform.CompareTag("MenuOption")) {
+                if (selectedMenu == null || selectedMenu.name != hit.transform.name) {
+                    if(selectedMenu != null) {
+                        selectedMenu.SetDeselected();
+                    }
+                    MenuOption mo = hit.transform.GetComponent<MenuOption>();
+                    selectedMenu = mo;
+                    selectedMenu.SetSelected();
+                }
+            }
+            else {
+                DeselectMenu();
+            }
+        }
+        else {
+            menuLineRenderer.SetPositions(new Vector3[] { RightHandGrab.transform.position, RightHandGrab.transform.position + RightHandGrab.transform.forward * 10f });
+            DeselectMenu();
+        }
+    }
+
+    private void DeselectMenu() {
+        if (selectedMenu == null)
+            return;
+
+        selectedMenu.SetDeselected();
+        selectedMenu = null;
     }
 
     private void StartPainting() {
@@ -215,6 +257,8 @@ public class MenuManager : MonoBehaviour
                 menuOptions = ColorMenu.GetComponentsInChildren<MenuOption>();
             }
 
+            menuLineRenderer.enabled = true;
+
             menuEnabled = true;
         }
         if (OVRInput.GetUp(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.RTouch)) {
@@ -223,12 +267,19 @@ public class MenuManager : MonoBehaviour
             if (!menuEnabled)
                 return;
 
-            foreach (MenuOption mo in menuOptions) {
-                if (!mo.Selected)
-                    continue;
-
-                mo.Select();
+            if (selectedMenu != null) {
+                selectedMenu.Select();
             }
+            else {
+                foreach (MenuOption mo in menuOptions) {
+                    if (!mo.Selected)
+                        continue;
+
+                    mo.Select();
+                }
+            }
+
+            menuLineRenderer.enabled = false;
 
             Destroy(ColorMenu);
             menuEnabled = false;

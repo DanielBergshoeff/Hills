@@ -526,6 +526,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bucket
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 2352add4059bcb14ca7264710190a7b9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2352add4059bcb14ca7264710190a7b9, type: 3}
 --- !u!1 &1471409626760261822 stripped

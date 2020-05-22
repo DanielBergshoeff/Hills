@@ -178,8 +178,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BreathingPrefab: {fileID: 3000471440073527143, guid: b2eb701a1535ae046aec2e05e1a1e1f7,
     type: 3}
+  MyVicinityMessage: {fileID: 0}
   MinDistance: 5
-  MaxDistance: 100
+  MaxDistance: 20
 --- !u!135 &1785255528
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -304,11 +305,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxRange: 10
   Message: Try grabbing the sphere to place a breathing exercise..
-  Size: 0.075
+  Size: 0.025
   TextSize: 10
   MessageDuration: 10
-  CooldownTime: 90
+  CooldownTime: 30
   Position: {x: 0, y: 0.2, z: 0}
+  FollowObject: 1
 --- !u!1 &1267767226117791498
 GameObject:
   m_ObjectHideFlags: 0

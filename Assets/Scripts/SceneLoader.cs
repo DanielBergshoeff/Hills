@@ -11,7 +11,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadExperience() {
         MenuManager.Tutorial = toggleTutorial.isOn;
-        MuscleRelaxationStarter.StartOnAwake = toggleMR;
+        MuscleRelaxationStarter.StartOnAwake = toggleMR.isOn;
         SceneManager.LoadScene("LizzyTerrain");
     }
 }

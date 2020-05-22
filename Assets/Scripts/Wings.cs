@@ -67,7 +67,7 @@ public class Wings : MonoBehaviour {
 
     private void UpdateRotations() {
         Vector3 euler = transform.parent.rotation.eulerAngles;
-        if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft, OVRInput.Controller.RTouch) ||
+        if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft, OVRInput.Controller.LTouch) ||
                     (RotationEitherThumbstick && OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft))) {
             if (ReadyToSnapTurn) {
                 euler.y -= RotationRatchet;
@@ -77,7 +77,7 @@ public class Wings : MonoBehaviour {
                 Debug.Log("Rotate!");
             }
         }
-        else if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight, OVRInput.Controller.RTouch) ||
+        else if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight, OVRInput.Controller.LTouch) ||
             (RotationEitherThumbstick && OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight))) {
             if (ReadyToSnapTurn) {
                 euler.y += RotationRatchet;

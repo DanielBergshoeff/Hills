@@ -12,8 +12,12 @@ public class ScentManager : MonoBehaviour
     private Dictionary<Scent, float> scentToStrength;
     private Scent strongestScent;
     private float turnOffTimer = 0f;
+    private float currentScentStrength = 0f;
 
-    public float UpdateTime = 1f;
+    public float UpdateTime = 15f;
+    public float ScentTimeMultiplier = 3f;
+
+    private bool turningOn = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,12 +27,30 @@ public class ScentManager : MonoBehaviour
     }
 
     private void Update() {
-        if(turnOffTimer > 0f) {
-            turnOffTimer -= Time.deltaTime;
-            if(turnOffTimer <= 0f) {
+        if(currentScentStrength > 0f && !turningOn) {
+            currentScentStrength -= Time.deltaTime * ScentTimeMultiplier;
+
+            if(currentScentStrength <= 0f) {
                 TurnOffScent();
             }
+            else {
+                SetScentStrength();
+            }
         }
+        else if(currentScentStrength < turnOffTimer && turningOn) {
+            currentScentStrength += Time.deltaTime * ScentTimeMultiplier;
+
+            if(currentScentStrength >= turnOffTimer) {
+                turningOn = false;
+            }
+            else {
+                SetScentStrength();
+            }
+        }
+    }
+
+    private void SetScentStrength() {
+        SensiksManager.SetActiveScent(strongestScent, currentScentStrength);
     }
 
     private IEnumerator UpdateScent() {
@@ -51,8 +73,9 @@ public class ScentManager : MonoBehaviour
         SensiksManager.SetActiveScent(strongestScent, strongestScentStrength);
 
         turnOffTimer = strongestScentStrength / 2f;
+        turningOn = true;
 
-        StartCoroutine("UpdateScent", UpdateTime);
+        StartCoroutine("UpdateScent");
     }
 
     private void TurnOffScent() {
