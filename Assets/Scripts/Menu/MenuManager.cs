@@ -7,6 +7,7 @@ using VRTK;
 public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
+    public static bool Dutch = false;
 
     public GameObject ColorMenuPrefab;
     public GameObject ColorMenu;

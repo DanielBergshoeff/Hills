@@ -9,6 +9,9 @@ public class HeatManager : MonoBehaviour
     public static List<HeatObject> HeatObjects;
     public static HeatManager Instance;
 
+    public float UpdateTime = 15f;
+    public float MaxUptimePercentage = 0.5f;
+
     private float heatFront = 0f;
     private float heatLeft = 0f;
     private float heatRight = 0f;
@@ -16,6 +19,7 @@ public class HeatManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        StartCoroutine("SetHeat", 1f);
     }
 
     public void UpdateHeat() {
@@ -60,12 +64,29 @@ public class HeatManager : MonoBehaviour
                 heatLeft = ho.Heat;
                 heatRight = ho.Heat;
             }
-
-            SensiksManager.SetHeaterIntensity(HeaterPosition.FRONT, heatFront);
-            SensiksManager.SetHeaterIntensity(HeaterPosition.LEFT, heatLeft);
-            SensiksManager.SetHeaterIntensity(HeaterPosition.RIGHT, heatRight);
             break;
         }
+    }
+
+    private IEnumerator SetHeat() {
+        SensiksManager.SetHeaterIntensity(HeaterPosition.FRONT, heatFront);
+        SensiksManager.SetHeaterIntensity(HeaterPosition.LEFT, heatLeft);
+        SensiksManager.SetHeaterIntensity(HeaterPosition.RIGHT, heatRight);
+
+
+        StartCoroutine(TurnOffHeat(heatFront * UpdateTime * MaxUptimePercentage, HeaterPosition.FRONT));
+        StartCoroutine(TurnOffHeat(heatLeft * UpdateTime * MaxUptimePercentage, HeaterPosition.LEFT));
+        StartCoroutine(TurnOffHeat(heatRight * UpdateTime * MaxUptimePercentage, HeaterPosition.RIGHT));
+
+        yield return new WaitForSeconds(UpdateTime);
+
+        StartCoroutine("SetHeat");
+    }
+
+    private IEnumerator TurnOffHeat(float timeToWait, HeaterPosition position) {
+        yield return new WaitForSeconds(timeToWait);
+
+        SensiksManager.SetHeaterIntensity(position, 0f);
     }
 
     private void OnDrawGizmosSelected() {
