@@ -38,6 +38,26 @@ public class MenuManager : MonoBehaviour
 
     private Tool myTool;
 
+    private string[] englishTutorial = new string[] {
+        "To rotate, gently nudge the thumbstick on your left controller into the desired direction. Try it now.",
+        "To pick up items from a distance, press the A button on your right controller to make a ray appear from it.",
+        "Aim at the brush on the floor and squeeze the right controller's middle finger to pick it up.",
+        "To teleport, press the X button on the left controller to make an arch appear first.",
+        "Aim for a stepping stone on the path, until the arch turns green. Release the button to teleport.",
+        "Good job, now you are in control!"
+    };
+
+    private string[] dutchTutorial = new string[] {
+        "Om te roteren, kan je de joystick op je linker controller zachtjes in de gewenste richting duwen. Probeer het nu.",
+        "Om objecten van een afstand op te pakken, druk je op de A knop op je rechter controller om een straal te laten verschijnen.",
+        "Richt met de straal op de kwast en knijp met je middelvinger de onderste knop in om de kwast op te pakken.",
+        "Om te teleporteren kan je de X knop op je linker controller indrukken om een boog te laten verschijnen.",
+        "Richt vervolgens op een steen op het pad, tot de boog groen wordt. Laat vervolgens de knop los om te teleporteren.",
+        "Goed gedaan, nu heb je zelf de controle!"
+    };
+
+    private string[] currentTutorial;
+
     public enum Tool {
         None,
         Paintbrush,
@@ -51,6 +71,13 @@ public class MenuManager : MonoBehaviour
         Instance = this;
 
         if (Tutorial) {
+            if (Dutch) {
+                currentTutorial = dutchTutorial;
+            }
+            else {
+                currentTutorial = englishTutorial;
+            }
+
             RightHandPointer.enabled = false;
             LeftHandPointer.enabled = false;
             wings.RotationEnabled = false;
@@ -80,34 +107,34 @@ public class MenuManager : MonoBehaviour
 
     public void StartTutorial() {
         wings.RotationEnabled = true;
-        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "To rotate, gently nudge the thumbstick on your left controller into the desired direction. Try it now.", null, 0f, Vector3.up * 1f, 2f, true, 4f);
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[0], AudioManager.TutorialClips[0], 0f, Vector3.up * 1f, 2f, true, 4f);
     }
 
     private void PickupTutorial() {
         tutorialPart++;
         currentMessage.StartFade();
         RightHandPointer.enabled = true;
-        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "To pick up items from a distance, press the A button on your right controller to make a ray appear from it.", null, 0f, Vector3.up * 1f, 2f, true, 4f);
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[1], AudioManager.TutorialClips[1], 0f, Vector3.up * 1f, 2f, true, 4f);
     }
 
     private void PickupTutorialPart2() {
         tutorialPart++;
         currentMessage.StartFade();
-        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "Aim at the brush on the floor and squeeze the right controller's middle finger to pick it up.", null, 0f, Vector3.up * 1f, 2f, true, 4f);
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[2], AudioManager.TutorialClips[2], 0f, Vector3.up * 1f, 2f, true, 4f);
     }
 
     private void TeleportTutorial() {
         tutorialPart++;
         currentMessage.StartFade();
         LeftHandPointer.enabled = true;
-        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "To teleport, press the X button on the left controller to make an arch appear first.", null, 0f, Vector3.up * 1f, 2f, true, 4f);
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[3], AudioManager.TutorialClips[3], 0f, Vector3.up * 1f, 2f, true, 4f);
     }
 
     private void TeleportPart2Tutorial() {
         tutorialPart++;
         currentMessage.StartFade();
         startPosition = wings.transform.parent.position;
-        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "Aim for a stepping stone on the path, until the arch turns green. Release the button to teleport.", null, 0f, Vector3.up * 1f, 2f, true, 4f);
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[4], AudioManager.TutorialClips[4], 0f, Vector3.up * 1f, 2f, true, 4f);
     }
 
     private void EndTutorial() {
@@ -115,7 +142,7 @@ public class MenuManager : MonoBehaviour
         currentMessage.StartFade();
         ExerciseGrabber.Instance.gameObject.SetActive(true);
         Tutorial = false;
-        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, "Good job, you are now in control!", null, 10f, Vector3.up * 1f, 2f, true, 4f);
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[5], AudioManager.TutorialClips[5], 10f, Vector3.up * 1f, 2f, true, 4f);
     }
 
 

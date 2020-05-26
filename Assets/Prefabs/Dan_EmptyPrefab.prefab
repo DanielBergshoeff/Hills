@@ -149,12 +149,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxRange: 5
   Message: Try pointing me at the floor to look for the four treasures!
+  MessageDutch: Dit is een voorbeeld text. Gebruik het wijslijk.
   Size: 0.08
   TextSize: 10
   MessageDuration: 8
-  CooldownTime: 8
   Position: {x: -0.5, y: 0.1, z: 0}
   FollowObject: 1
+  CooldownTime: 8
 --- !u!1 &223249772
 GameObject:
   m_ObjectHideFlags: 0
@@ -4544,7 +4545,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4252778200711575158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 27.41, y: 20.46, z: 15.1}
+  m_LocalPosition: {x: 27.7, y: 20.46, z: 15.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3501821051827883104}
@@ -4624,12 +4625,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxRange: 10
   Message: Touch the orb to start the muscle relaxation!
+  MessageDutch: Dit is een voorbeeld text. Gebruik het wijslijk.
   Size: 0.15
   TextSize: 10
   MessageDuration: 80
-  CooldownTime: 90
   Position: {x: 0, y: 0, z: -1}
   FollowObject: 0
+  CooldownTime: 90
 --- !u!114 &3922825207957309784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8417,12 +8419,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxRange: 5
   Message: Paint brush. Try picking up to paint on the canvas.
+  MessageDutch: Kwast. Probeer op te pakken om te kunnen verven op het canvas.
   Size: 0.075
   TextSize: 10
   MessageDuration: 10
-  CooldownTime: 30
   Position: {x: 0, y: 0.2, z: 0}
   FollowObject: 1
+  CooldownTime: 30
 --- !u!1 &9131756049830648030
 GameObject:
   m_ObjectHideFlags: 0

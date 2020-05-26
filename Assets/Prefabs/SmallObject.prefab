@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8113549059046514574}
   - component: {fileID: 2853339910810463293}
   - component: {fileID: 2741810681289849521}
+  - component: {fileID: 4012673265951096503}
   m_Layer: 0
   m_Name: SmallObject
   m_TagString: SmallObject
@@ -130,6 +131,29 @@ MonoBehaviour:
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1.5
   onGrabCollisionDelay: 0
+--- !u!114 &4012673265951096503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7037766006290124154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9286cd89e87dc3e49bc754075f8138f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxRange: 10
+  Message: Can be used to throw into or against other objects.
+  MessageDutch: Kan worden gebruikt om in of tegen andere objecten aan te gooien.
+  Size: 0.1
+  TextSize: 8
+  MessageDuration: 10
+  Position: {x: 0, y: 0.5, z: 0}
+  FollowObject: 1
+  Title: Coconut
+  TitleDutch: Kokosnoot
+  TitleTextSize: 12
 --- !u!1001 &5570240472218314727
 PrefabInstance:
   m_ObjectHideFlags: 0

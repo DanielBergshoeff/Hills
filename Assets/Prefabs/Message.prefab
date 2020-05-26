@@ -379,10 +379,13 @@ MonoBehaviour:
   RelativePosition: {x: 0, y: 0, z: 0}
   DisappearTime: 0
   Text: 
+  Title: 
   MyAudioClip: {fileID: 0}
   Size: 0
-  Tmp: {fileID: 0}
+  Tmp: {fileID: 5632399427612991336}
+  TitleTmp: {fileID: 0}
   TextSize: 0
+  TitleTextSize: 0
   TerrainLayer:
     serializedVersion: 2
     m_Bits: 0
