@@ -13,10 +13,13 @@ public class CommunicationMessage : MonoBehaviour
     public Vector3 RelativePosition;
     public float DisappearTime = 0f;
     public string Text;
+    public string Title;
     public AudioClip MyAudioClip;
     public float Size;
     public TextMeshProUGUI Tmp;
+    public TextMeshProUGUI TitleTmp;
     public float TextSize;
+    public float TitleTextSize;
 
     private Image img;
     public LayerMask TerrainLayer; 
@@ -33,8 +36,11 @@ public class CommunicationMessage : MonoBehaviour
         if (DisappearTime > 0f)
             Invoke("StartFade", DisappearTime);
 
-        Tmp = GetComponentInChildren<TextMeshProUGUI>();
         Tmp.text = Text;
+        if (Title != "") {
+            TitleTmp.text = Title;
+            TitleTmp.fontSize = TitleTextSize;
+        }
         Tmp.fontSize = TextSize;
         startAlphaText = Tmp.alpha;
         img = GetComponentInChildren<Image>();

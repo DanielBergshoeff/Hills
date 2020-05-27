@@ -11,15 +11,10 @@ public class HeatObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (HeatManager.HeatObjects == null)
-            HeatManager.HeatObjects = new List<HeatObject>();
-
-        HeatManager.HeatObjects.Add(this);
+        HeatManager.AddHeatObject(this);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void OnDestroy() {
+        HeatManager.HeatObjects.Remove(this);
     }
 }

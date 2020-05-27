@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -17,12 +18,32 @@ public class AudioManager : MonoBehaviour
     public AudioClip WavesAudio;
     public bool AutoPlay = false;
 
+    public static List<AudioClip> BreatheInClips;
+    public static List<AudioClip> BreatheOutClips;
+    public static List<AudioClip> HoldBreathClips;
+    public static List<AudioClip> TutorialClips;
+
+    private void Awake() {
+        string language = MenuManager.Dutch ? "Dutch" : "English";
+        string pathBreatheIn = "TextClips/" + language + "/BreatheIn";
+        string pathBreatheOut = "TextClips/" + language + "/BreatheOut";
+        string pathHoldBreath = "TextClips/" + language + "/HoldBreath";
+        BreatheInClips = new List<AudioClip>(Resources.LoadAll(pathBreatheIn, typeof(AudioClip)).Cast<AudioClip>());
+        BreatheOutClips = new List<AudioClip>(Resources.LoadAll(pathBreatheOut, typeof(AudioClip)).Cast<AudioClip>());
+        HoldBreathClips = new List<AudioClip>(Resources.LoadAll(pathHoldBreath, typeof(AudioClip)).Cast<AudioClip>());
+
+        string pathTutorial = "Tutorial/" + language;
+        TutorialClips = new List<AudioClip>(Resources.LoadAll(pathTutorial, typeof(AudioClip)).Cast<AudioClip>());
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         myAudioSource = gameObject.AddComponent<AudioSource>();
         AllClips = Clips;
         WaveAudio = WavesAudio;
+
+
         if (!AutoPlay)
             return;
         myAudioSource.clip = Clips[0];

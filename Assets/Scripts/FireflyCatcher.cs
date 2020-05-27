@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FireflyCatcher : MonoBehaviour
 {
+    public static FireflyCatcher Instance;
     public Material GlassMat;
     public Color startColor;
     public int maxFireFlies = 10;
@@ -11,7 +12,11 @@ public class FireflyCatcher : MonoBehaviour
 
     private GlobalFlock myFlock;
 
-    private int currentFireflies = 0;
+    public int currentFireflies = 0;
+
+    private void Awake() {
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
