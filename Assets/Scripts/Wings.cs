@@ -28,7 +28,7 @@ public class Wings : MonoBehaviour {
     }
 
     private void Start() {
-        HeatManager.Instance.UpdateHeat();
+        //HeatManager.Instance.UpdateHeat();
         WindManager.Instance.UpdateWind();
     }
 
@@ -39,7 +39,7 @@ public class Wings : MonoBehaviour {
             if (ReadyToSnapTurn) {
                 euler.y -= RotationRatchet;
                 WindManager.Instance.UpdateWind();
-                HeatManager.Instance.UpdateHeat();
+                //HeatManager.Instance.UpdateHeat();
                 ReadyToSnapTurn = false;
                 Debug.Log("Rotate!");
             }
@@ -49,7 +49,7 @@ public class Wings : MonoBehaviour {
             if (ReadyToSnapTurn) {
                 euler.y += RotationRatchet;
                 WindManager.Instance.UpdateWind();
-                HeatManager.Instance.UpdateHeat();
+                //HeatManager.Instance.UpdateHeat();
                 ReadyToSnapTurn = false;
                 Debug.Log("Rotate!");
             }

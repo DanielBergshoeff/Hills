@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.VFX;
 using VRTK;
 
 public class MenuManager : MonoBehaviour
@@ -16,6 +17,9 @@ public class MenuManager : MonoBehaviour
     public float MenuDistance = 0.1f;
     public GameObject PaintingCanvas;
     public float StandardAmountOfLeaves = 1f;
+
+    public VisualEffect FireflyCatcherVFX;
+    public float MaxFireflyCatcherTime = 10f;
 
     public LineRenderer menuLineRenderer;
 
@@ -35,6 +39,8 @@ public class MenuManager : MonoBehaviour
     private CommunicationMessage currentMessage;
     private Vector3 previousPosition;
     private Vector3 startPosition;
+
+    private float fireflyCatcherCooldown = 0f;
 
     private Tool myTool;
 
@@ -86,7 +92,7 @@ public class MenuManager : MonoBehaviour
 
     private void OnTeleport() {
         WindManager.Instance.UpdateWind();
-        HeatManager.Instance.UpdateHeat();
+        //HeatManager.Instance.UpdateHeat();
 
         if(Breathing.Instance != null) {
             if((Breathing.Instance.transform.position - wings.transform.position).sqrMagnitude > 60f * 60f) {
@@ -145,6 +151,24 @@ public class MenuManager : MonoBehaviour
         currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[5], AudioManager.TutorialClips[5], 10f, Vector3.up * 1f, 2f, true, 4f);
     }
 
+    private void FireflyCatcherUpdate() {
+        if (fireflyCatcherCooldown > 0f) {
+            FireflyCatcherVFX.SetVector3("Velocity", FireflyCatcher.Instance.transform.forward * 2f);
+            fireflyCatcherCooldown -= Time.deltaTime;
+            if(fireflyCatcherCooldown <= 0f) {
+                FireflyCatcherVFX.SetFloat("SpawnRate", 0f);
+            }
+        }
+
+        if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch)) {
+            if(FireflyCatcher.Instance.currentFireflies > 0 && fireflyCatcherCooldown <= 0f) {
+                FireflyCatcher.Instance.currentFireflies--;
+                fireflyCatcherCooldown = MaxFireflyCatcherTime;
+                FireflyCatcherVFX.SetFloat("SpawnRate", 3f);
+            }
+        }
+    }
+
 
 
     // Update is called once per frame
@@ -161,6 +185,9 @@ public class MenuManager : MonoBehaviour
 
         if (painting)
             PaintingMenu();
+
+        if(myTool == Tool.FireflyCatcher) 
+            FireflyCatcherUpdate();
 
         if (!Tutorial || MuscleRelaxationStarter.StartOnAwake)
             return;
