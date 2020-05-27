@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5447216049543910285}
   - component: {fileID: 3271850362012401444}
   - component: {fileID: 3592385203358566786}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: cursorBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 7292371245529722986}
   - component: {fileID: 4082812306338530808}
   - component: {fileID: 5442034053733373209}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: cursorBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 449477746879340895}
   - component: {fileID: 7483234771610456397}
   - component: {fileID: 2053741141987505465}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: cursorBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5126001278795950495}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: defaultCursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 3735101380402756532}
   - component: {fileID: 6736573926281992508}
   - component: {fileID: 6417240096033614544}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: DestinationZone
   m_TagString: DestinationPoint
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4422536120032134979}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: lockedCursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1533317761330715725}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: hoverCursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,6 +413,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SteppingStone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311264930148791148, guid: 2a1930a644dc2f3419656cebbfed5150,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5311264930148791443, guid: 2a1930a644dc2f3419656cebbfed5150,
         type: 3}

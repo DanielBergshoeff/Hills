@@ -66,7 +66,6 @@ public class Paintable : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(Wings.Instance.RightHand.transform.position + Wings.Instance.RightHand.transform.forward * 0.25f, Wings.Instance.RightHand.transform.forward, out hit, 100f, PaintLayer)) {
             if (!hit.transform.CompareTag("Painting")) {
-                Debug.Log(hit.transform.name);
                 return;
             }
 

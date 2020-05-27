@@ -7,6 +7,7 @@ public class MetalDetector : MonoBehaviour
 {
     public Material DetectionMaterial;
     public float Range = 5f;
+    public int TotalDetectableItems = 4;
 
     public VisualEffect DetectionEffect;
     public float DetectionTime = 3f;
@@ -17,6 +18,26 @@ public class MetalDetector : MonoBehaviour
     private float detectedTimer = 0f;
 
     private int detectedItems = 0;
+
+    private void Start() {
+        if(DetectedItem.VisualEffects == null)
+            return;
+
+        List<GameObject> tempList = new List<GameObject>();
+
+        foreach(VisualEffect vfx in DetectedItem.VisualEffects) {
+            vfx.transform.parent.gameObject.SetActive(false);
+            tempList.Add(vfx.transform.parent.gameObject);
+        }
+
+        for (int i = 0; i < TotalDetectableItems; i++) {
+            if (tempList.Count > 0) {
+                GameObject go = tempList[Random.Range(0, tempList.Count)];
+                go.SetActive(true);
+                tempList.Remove(go);
+            }
+        }
+    }
 
     // Update is called once per frame
     void Update()

@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 50}
+  m_SizeDelta: {x: 85, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5632399427612991339
 CanvasRenderer:
@@ -379,9 +379,13 @@ MonoBehaviour:
   RelativePosition: {x: 0, y: 0, z: 0}
   DisappearTime: 0
   Text: 
+  Title: 
+  MyAudioClip: {fileID: 0}
   Size: 0
-  Tmp: {fileID: 0}
-  img: {fileID: 0}
+  Tmp: {fileID: 5632399427612991336}
+  TitleTmp: {fileID: 0}
+  TextSize: 0
+  TitleTextSize: 0
   TerrainLayer:
     serializedVersion: 2
     m_Bits: 0

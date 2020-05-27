@@ -2,20 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VicinityMessage : MonoBehaviour
+public class VicinityMessage : MessageObject
 {
-    public float MaxRange = 10f;
-    public string Message = "This is an example text. Use it wisely.";
-    public float Size = 0.075f;
-    public float TextSize = 10f;
-    public float MessageDuration = 10f;
-    public float CooldownTime = 90f;
-    public Vector3 Position = Vector3.up * 0.2f;
-
-    private CommunicationMessage myMessage;
-    private bool displayingMessage = false;
     private bool cooldown = false;
-    
+    public float CooldownTime = 90f;
 
     // Update is called once per frame
     void Update()
@@ -33,7 +23,9 @@ public class VicinityMessage : MonoBehaviour
         float angle = Vector3.Angle(heading, Camera.main.transform.forward);
 
         if(angle < 20f) {
-            myMessage = CommunicationManager.Instance.DisplayMessage(this.gameObject, Message, null, MessageDuration, Position, Size, true, TextSize);
+            string msg = MenuManager.Dutch ? MessageDutch : Message;
+
+            myMessage = CommunicationManager.Instance.DisplayMessage(this.gameObject, msg, null, MessageDuration, Position, Size, FollowObject, TextSize);
             displayingMessage = true;
             Invoke("RevertDisplayingMessage", MessageDuration);
         }
@@ -45,10 +37,8 @@ public class VicinityMessage : MonoBehaviour
         Invoke("EndCooldown", CooldownTime);
     }
 
-    public void StopMessage() {
-        if(myMessage != null)
-            myMessage.StartFade();
-        displayingMessage = false;
+    public new void StopMessage() {
+        base.StopMessage();
         cooldown = true;
         Invoke("EndCooldown", CooldownTime);
     }

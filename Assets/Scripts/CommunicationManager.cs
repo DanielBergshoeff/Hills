@@ -6,6 +6,7 @@ public class CommunicationManager : MonoBehaviour
 {
     public static CommunicationManager Instance { get; private set; }
     public GameObject MessagePrefab;
+    public GameObject MessageWithTitlePrefab;
     public GameObject Sapling;
     public float DisappearTime = 0f;
     public LayerMask TerrainLayer;
@@ -30,7 +31,31 @@ public class CommunicationManager : MonoBehaviour
         msg.TerrainLayer = TerrainLayer;
         msg.DisappearTime = time;
         msg.Text = message;
-        msg.Audio = audio;
+        msg.MyAudioClip = audio;
+        msg.RelativePosition = relativePosition;
+
+        return msg;
+    }
+
+    public CommunicationMessage DisplayMessage(GameObject go, string title, string message, AudioClip audio, float time = 0f, Vector3 relativePosition = default, float size = 1f, bool follow = false, float textsize = 10f, float titleSize = 12f) {
+        GameObject messageObject = Instantiate(MessageWithTitlePrefab);
+        CommunicationMessage msg = messageObject.GetComponent<CommunicationMessage>();
+
+        if (go == null)
+            msg.FollowObject = Camera.main.gameObject;
+        else {
+            msg.FollowObject = go;
+        }
+
+        msg.Title = title;
+        msg.TitleTextSize = titleSize;
+        msg.TextSize = textsize;
+        msg.Follow = follow;
+        msg.Size = size;
+        msg.TerrainLayer = TerrainLayer;
+        msg.DisappearTime = time;
+        msg.Text = message;
+        msg.MyAudioClip = audio;
         msg.RelativePosition = relativePosition;
 
         return msg;

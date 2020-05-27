@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class MapSet : ScriptableObject
+public class MapSet
 {
     public int vtxCount;
     public Texture2D position;

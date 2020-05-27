@@ -14,7 +14,7 @@ public class WindManager : MonoBehaviour {
     private float strengthBehindRight = 0f;
 
     // Start is called before the first frame update
-    void Start() {
+    void Awake() {
         Instance = this;
     }
 
@@ -23,6 +23,9 @@ public class WindManager : MonoBehaviour {
         strengthFrontRight = 0f;
         strengthBehindLeft = 0f;
         strengthBehindRight = 0f;
+
+        if (Wings.Instance == null)
+            return;
 
         foreach (WindObject wo in WindObjects) {
             Vector3 heading = wo.transform.position - Wings.Instance.transform.parent.position;

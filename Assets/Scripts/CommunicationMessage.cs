@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class CommunicationMessage : MonoBehaviour
 {
@@ -12,10 +13,13 @@ public class CommunicationMessage : MonoBehaviour
     public Vector3 RelativePosition;
     public float DisappearTime = 0f;
     public string Text;
-    public AudioClip Audio;
+    public string Title;
+    public AudioClip MyAudioClip;
     public float Size;
     public TextMeshProUGUI Tmp;
+    public TextMeshProUGUI TitleTmp;
     public float TextSize;
+    public float TitleTextSize;
 
     private Image img;
     public LayerMask TerrainLayer; 
@@ -32,16 +36,21 @@ public class CommunicationMessage : MonoBehaviour
         if (DisappearTime > 0f)
             Invoke("StartFade", DisappearTime);
 
-        Tmp = GetComponentInChildren<TextMeshProUGUI>();
         Tmp.text = Text;
+        if (Title != "") {
+            TitleTmp.text = Title;
+            TitleTmp.fontSize = TitleTextSize;
+        }
         Tmp.fontSize = TextSize;
         startAlphaText = Tmp.alpha;
         img = GetComponentInChildren<Image>();
         startAlphaImage = img.color.a;
 
         myAudioSource = gameObject.AddComponent<AudioSource>();
-        if(Audio != null)
-            myAudioSource.PlayOneShot(Audio);
+        AudioMixer mixer = Resources.Load("MixerGroups/Ambience") as AudioMixer;
+        myAudioSource.outputAudioMixerGroup = mixer.FindMatchingGroups("Instructions")[0];
+        if(MyAudioClip != null)
+            myAudioSource.PlayOneShot(MyAudioClip);
 
         fadeTimer = CommunicationManager.Instance.DisappearTime;
         transform.localScale = new Vector3(Size, Size, Size);

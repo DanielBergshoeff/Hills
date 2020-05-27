@@ -10,14 +10,22 @@ public class MenuOption : MonoBehaviour
         if (other.name != "LeftHandAnchor" && other.name != "RightHandAnchor")
             return;
 
-        gameObject.transform.localScale = Vector3.one * 1.25f;
-        Selected = true;
+        SetSelected();
     }
 
     private void OnTriggerExit(Collider other) {
         if (other.name != "LeftHandAnchor" && other.name != "RightHandAnchor")
             return;
 
+        SetDeselected();
+    }
+
+    public void SetSelected() {
+        gameObject.transform.localScale = Vector3.one * 1.25f;
+        Selected = true;
+    }
+
+    public void SetDeselected() {
         gameObject.transform.localScale = Vector3.one;
         Selected = false;
     }
