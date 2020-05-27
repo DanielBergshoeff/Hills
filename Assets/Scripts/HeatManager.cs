@@ -19,7 +19,17 @@ public class HeatManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        StartCoroutine("SetHeat", 1f);
+    }
+
+    private void Update() {
+        if (heatFront > 0f) 
+            heatFront -= Time.deltaTime / UpdateTime * MaxUptimePercentage;
+        if (heatLeft > 0f) 
+            heatLeft -= Time.deltaTime / UpdateTime * MaxUptimePercentage;
+        if (heatRight > 0f) 
+            heatRight -= Time.deltaTime / UpdateTime * MaxUptimePercentage;
+
+        SetHeat();
     }
 
     public void UpdateHeat() {
@@ -32,10 +42,6 @@ public class HeatManager : MonoBehaviour
             if (heading.sqrMagnitude > ho.Range * ho.Range)
                 continue;
 
-            heatFront = 0f;
-            heatLeft = 0f;
-            heatRight = 0f;
-
             if (ho.PositionBased) {
                 Vector3 player = new Vector3(Wings.Instance.transform.parent.forward.x, 0f, Wings.Instance.transform.parent.forward.z);
 
@@ -45,48 +51,33 @@ public class HeatManager : MonoBehaviour
                 atanAngle = atanAngle / Mathf.PI * 180f;
 
                 if (Mathf.Abs(atanAngle) < 45f) {
-                    heatFront = ho.Heat;
-                    heatLeft = ho.Heat;
-                    heatRight = ho.Heat;
+                    heatFront += ho.Heat;
+                    heatLeft += ho.Heat;
+                    heatRight += ho.Heat;
                 }
                 else if (Mathf.Abs(atanAngle) > 135f) {
-                    heatLeft = ho.Heat;
-                    heatRight = ho.Heat;
+                    heatLeft += ho.Heat;
+                    heatRight += ho.Heat;
                 }
                 else if (atanAngle < -45f)
-                    heatLeft = ho.Heat;
+                    heatLeft += ho.Heat;
                 else if (atanAngle > 45f)
-                    heatRight = ho.Heat;
+                    heatRight += ho.Heat;
 
             }
             else {
-                heatFront = ho.Heat;
-                heatLeft = ho.Heat;
-                heatRight = ho.Heat;
+                heatFront += ho.Heat;
+                heatLeft += ho.Heat;
+                heatRight += ho.Heat;
             }
             break;
         }
     }
 
-    private IEnumerator SetHeat() {
-        SensiksManager.SetHeaterIntensity(HeaterPosition.FRONT, heatFront);
-        SensiksManager.SetHeaterIntensity(HeaterPosition.LEFT, heatLeft);
-        SensiksManager.SetHeaterIntensity(HeaterPosition.RIGHT, heatRight);
-
-
-        StartCoroutine(TurnOffHeat(heatFront * UpdateTime * MaxUptimePercentage, HeaterPosition.FRONT));
-        StartCoroutine(TurnOffHeat(heatLeft * UpdateTime * MaxUptimePercentage, HeaterPosition.LEFT));
-        StartCoroutine(TurnOffHeat(heatRight * UpdateTime * MaxUptimePercentage, HeaterPosition.RIGHT));
-
-        yield return new WaitForSeconds(UpdateTime);
-
-        StartCoroutine("SetHeat");
-    }
-
-    private IEnumerator TurnOffHeat(float timeToWait, HeaterPosition position) {
-        yield return new WaitForSeconds(timeToWait);
-
-        SensiksManager.SetHeaterIntensity(position, 0f);
+    private void SetHeat() {
+        SensiksManager.SetHeaterIntensity(HeaterPosition.FRONT, Mathf.Clamp(heatFront, 0f, 1f));
+        SensiksManager.SetHeaterIntensity(HeaterPosition.LEFT, Mathf.Clamp(heatLeft, 0f, 1f));
+        SensiksManager.SetHeaterIntensity(HeaterPosition.RIGHT, Mathf.Clamp(heatRight, 0f, 1f));
     }
 
     private void OnDrawGizmosSelected() {
