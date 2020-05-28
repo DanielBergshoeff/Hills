@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 221394984}
   - component: {fileID: 221394983}
   - component: {fileID: 9054054755113793193}
+  - component: {fileID: 6944532431062345538}
   m_Layer: 0
   m_Name: TreasureFinder
   m_TagString: Tool
@@ -156,6 +157,31 @@ MonoBehaviour:
   Position: {x: -0.5, y: 0.1, z: 0}
   FollowObject: 1
   CooldownTime: 8
+--- !u!114 &6944532431062345538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221394981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9286cd89e87dc3e49bc754075f8138f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxRange: 10
+  Message: Aim at a hidden object under the floor and press your index finger to
+    capture its energy.
+  MessageDutch: Richt op een verborgen object onder de grond en druk je wijsvinger
+    in om de energie op te nemen.
+  Size: 0.15
+  TextSize: 9
+  MessageDuration: 10
+  Position: {x: 0, y: 0.5, z: 0}
+  FollowObject: 1
+  Title: Treasure finder
+  TitleDutch: Schat zoeker
+  TitleTextSize: 12
 --- !u!1 &223249772
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +328,7 @@ Transform:
   m_Children:
   - {fileID: 939586717}
   m_Father: {fileID: 3501821051827883104}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 5.6270003}
 --- !u!33 &326424731
 MeshFilter:
@@ -523,7 +549,7 @@ Transform:
   m_Children:
   - {fileID: 403324941}
   m_Father: {fileID: 3501821051827883104}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: -3.568, y: 0.41000003, z: 15.860001}
 --- !u!33 &627360652
 MeshFilter:
@@ -1058,7 +1084,7 @@ Transform:
   m_Children:
   - {fileID: 223249773}
   m_Father: {fileID: 3501821051827883104}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: -0.083000004, y: 2.907, z: 1.4120001}
 --- !u!33 &1749086457
 MeshFilter:
@@ -1320,6 +1346,205 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3681241502438643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1852943252286620903}
+  - component: {fileID: 9026752806447318733}
+  - component: {fileID: 2973935156814234871}
+  - component: {fileID: 7518776433553459068}
+  m_Layer: 0
+  m_Name: Rhomboids
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1852943252286620903
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3681241502438643}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.07272339, y: 141.35655, z: -10.868004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &9026752806447318733
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3681241502438643}
+  m_Mesh: {fileID: -6863250267974907948, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &2973935156814234871
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3681241502438643}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &7518776433553459068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3681241502438643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 3a5c4cfda5766544ab5cdd8b9821918f,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: e30f91946da418041a753dcdb05aa257, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 3818df10b2bc9014caceb09f82956acb, type: 3}
+  MyMessageInstructions: Span je bovenrug aan door je schouders naar achter te halen,
+    alsof je schouderbladen elkaar aan kunnen raken.
+  MyMessageHolding: Houd dit vast voor ongeveer 5 seconden.
+  MyMessageRelease: En ontspan je spieren weer.
+--- !u!1 &26435813734309715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4123738373357250822}
+  - component: {fileID: 6192459784980911479}
+  - component: {fileID: 7155271614420776937}
+  - component: {fileID: 6130309807161363954}
+  m_Layer: 0
+  m_Name: Deltiods
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4123738373357250822
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26435813734309715}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.10372346, y: 145.01952, z: -3.636044}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &6192459784980911479
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26435813734309715}
+  m_Mesh: {fileID: 4281201991250382845, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &7155271614420776937
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26435813734309715}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &6130309807161363954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26435813734309715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 693f86f9f1252b245bd558f9ca1aa301,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 06d35ed34278c7843ae2d408b4335ce5, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 057a02de6698b68429c14d5ac1e83488, type: 3}
+  MyMessageInstructions: Haal je schouders op naar je oren alsof ze je ze kan raken.
+  MyMessageHolding: Houd dit vast voor ongeveer 5 seconden.
+  MyMessageRelease: En laat het snel los, voel het gewicht.
 --- !u!1 &46764669161155416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,6 +1792,57 @@ MonoBehaviour:
   MyMessageInstructions: 
   MyMessageHolding: 
   MyMessageRelease: 
+--- !u!1 &244037523323281282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3643981309131771989}
+  - component: {fileID: 4536962696989458203}
+  m_Layer: 0
+  m_Name: Pause
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3643981309131771989
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244037523323281282}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.020183172, y: 155.00488, z: -3.9385653}
+  m_LocalScale: {x: 0.97927636, y: 0.949598, z: 0.9674405}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4536962696989458203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244037523323281282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 017e8feb1c8c15441bff42acbdd2dc72,
+    type: 3}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: Voel de ontspanning in je bovenlichaam terwijl je de spanning
+    en stress loslaat.
+  MyMessageHolding: 
+  MyMessageRelease: 
 --- !u!1 &333354703716751204
 GameObject:
   m_ObjectHideFlags: 0
@@ -1597,6 +1873,405 @@ Transform:
   m_Father: {fileID: 3501821051827883104}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &388692490552814987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9085535544943702834}
+  - component: {fileID: 8972643632166305462}
+  - component: {fileID: 7771191944318663628}
+  - component: {fileID: 1149280609891994406}
+  m_Layer: 0
+  m_Name: TrapeZius
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9085535544943702834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388692490552814987}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.02016449, y: 155.00487, z: -3.9385462}
+  m_LocalScale: {x: 0.9792763, y: 0.949598, z: 0.9674405}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &8972643632166305462
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388692490552814987}
+  m_Mesh: {fileID: 6768373285632417894, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &7771191944318663628
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388692490552814987}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &1149280609891994406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388692490552814987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: d2f4dcc19cee8924aa0f55e8b9fb947d,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 1008de25348c91842adfb370102f61a5, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: d7b23cd429cd89f4e8e4d1a6b5303631, type: 3}
+  MyMessageInstructions: Leun je hoofd voorzichtig naar achteren alsof je naar het
+    plafond wil kijken.
+  MyMessageHolding: Houd deze positie aan voor ongeveer 5 seconden.
+  MyMessageRelease: "En laat het weer los\u2026 voel de spanning wegvallen..."
+--- !u!1 &439922174616978475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4239659163810289674}
+  - component: {fileID: 3042454707641621663}
+  - component: {fileID: 6211342127760046085}
+  - component: {fileID: 7104448320157757363}
+  m_Layer: 0
+  m_Name: Pectorals
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4239659163810289674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439922174616978475}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.020168304, y: 140.47018, z: 7.523278}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3042454707641621663
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439922174616978475}
+  m_Mesh: {fileID: -7085773156835574993, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &6211342127760046085
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439922174616978475}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &7104448320157757363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439922174616978475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 0f63ac8dd27aeee479378c038d754486,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 6b3ff561253219f43aa9b63bda5e6e7d, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 36a50e03cdc3c8f4f8dc3340591017af, type: 3}
+  MyMessageInstructions: Span je borst aan door diep in te ademen.
+  MyMessageHolding: Houd dit aan voor 5 seconden.
+  MyMessageRelease: En adem weer uit, blaas alle spanning eruit.
+--- !u!1 &634101281345654162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4338279543021010180}
+  - component: {fileID: 3747077667363411590}
+  - component: {fileID: 360580308150300696}
+  - component: {fileID: 765874562628867055}
+  m_Layer: 0
+  m_Name: TrapeZius
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4338279543021010180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634101281345654162}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.02016449, y: 155.00487, z: -3.9385462}
+  m_LocalScale: {x: 0.9792763, y: 0.949598, z: 0.9674405}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3747077667363411590
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634101281345654162}
+  m_Mesh: {fileID: 6768373285632417894, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &360580308150300696
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634101281345654162}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &765874562628867055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634101281345654162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: d2f4dcc19cee8924aa0f55e8b9fb947d,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 1008de25348c91842adfb370102f61a5, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: d7b23cd429cd89f4e8e4d1a6b5303631, type: 3}
+  MyMessageInstructions: Leun je hoofd voorzichtig naar achteren alsof je naar het
+    plafond wil kijken.
+  MyMessageHolding: Houd deze positie aan voor ongeveer 5 seconden.
+  MyMessageRelease: "En laat het weer los\u2026 voel de spanning wegvallen..."
+--- !u!1 &641614742185480722
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8164851766325449998}
+  - component: {fileID: 2635001725216186521}
+  - component: {fileID: 4378399566795699526}
+  - component: {fileID: 6983566929688404019}
+  m_Layer: 0
+  m_Name: Gastrocnemius
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8164851766325449998
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641614742185480722}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.20058823, y: 31.345886, z: -11.476544}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &2635001725216186521
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641614742185480722}
+  m_Mesh: {fileID: -5258637513795983813, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &4378399566795699526
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641614742185480722}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &6983566929688404019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641614742185480722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: c6b00e517152db24b84b28d34365b541,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 804a10672cee72a4487da1baef973653, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: f0341ce80192ffc4392c37715007117e, type: 3}
+  MyMessageInstructions: Span nu je voeten aan. Strek hiervoor je tenen naar je toe,
+    en voel de spanning in je kuiten.
+  MyMessageHolding: Houd dit 5 seconden vol.
+  MyMessageRelease: En relax, voel het gewicht van je benen naar beneden zakken.
 --- !u!1 &654742098056130260
 GameObject:
   m_ObjectHideFlags: 0
@@ -2077,6 +2752,156 @@ MonoBehaviour:
     to make your shoulder blades touch. '
   MyMessageHolding: Hold for about 5 seconds.
   MyMessageRelease: And release. Pause for about 5 seconds.
+--- !u!1 &968323400758091743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8676688123655211873}
+  - component: {fileID: 1244662444855542966}
+  - component: {fileID: 2049892935355036911}
+  - component: {fileID: 3602759000581515076}
+  m_Layer: 0
+  m_Name: Deltiods
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8676688123655211873
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968323400758091743}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.10372346, y: 145.01952, z: -3.636044}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1244662444855542966
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968323400758091743}
+  m_Mesh: {fileID: 4281201991250382845, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &2049892935355036911
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968323400758091743}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &3602759000581515076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968323400758091743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 693f86f9f1252b245bd558f9ca1aa301,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 06d35ed34278c7843ae2d408b4335ce5, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 057a02de6698b68429c14d5ac1e83488, type: 3}
+  MyMessageInstructions: Haal je schouders op naar je oren alsof ze je ze kan raken.
+  MyMessageHolding: Houd dit vast voor ongeveer 5 seconden.
+  MyMessageRelease: En laat het snel los, voel het gewicht.
+--- !u!1 &1054397955839459481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3374587137724718488}
+  - component: {fileID: 6252497246141654551}
+  m_Layer: 0
+  m_Name: Pause
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3374587137724718488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054397955839459481}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.020183172, y: 155.00488, z: -3.9385653}
+  m_LocalScale: {x: 0.97927636, y: 0.949598, z: 0.9674405}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6252497246141654551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054397955839459481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 5e7f234bd7452d0448c8c8b086297969,
+    type: 3}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: Voel het gewicht van je ontspannen hoofd en nek langzaam
+    wegzakken.
+  MyMessageHolding: 
+  MyMessageRelease: 
 --- !u!1 &1106689594496415346
 GameObject:
   m_ObjectHideFlags: 0
@@ -2107,6 +2932,455 @@ Transform:
   m_Father: {fileID: 3501821051827883104}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1134317251972327334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1229463008093425476}
+  - component: {fileID: 7315254959735377889}
+  - component: {fileID: 3089537714045438553}
+  - component: {fileID: 4619657767846560678}
+  m_Layer: 0
+  m_Name: Obliques
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1229463008093425476
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134317251972327334}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.00031826645, y: 1.9226303, z: 0.09597397}
+  m_LocalScale: {x: 0.015774839, y: 0.015774839, z: 0.015774839}
+  m_Children: []
+  m_Father: {fileID: 4784784547511732277}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &7315254959735377889
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134317251972327334}
+  m_Mesh: {fileID: 1954939133646094786, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &3089537714045438553
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134317251972327334}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &4619657767846560678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134317251972327334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 0}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: 
+  MyMessageHolding: 
+  MyMessageRelease: 
+--- !u!1 &1173264753254379537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1618706938060508061}
+  - component: {fileID: 1451326218259052844}
+  - component: {fileID: 3222158418862656618}
+  - component: {fileID: 3164616621695198596}
+  m_Layer: 0
+  m_Name: Abdominus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1618706938060508061
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173264753254379537}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.020168304, y: 111.353676, z: 11.567936}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1451326218259052844
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173264753254379537}
+  m_Mesh: {fileID: 6277465883492232146, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &3222158418862656618
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173264753254379537}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &3164616621695198596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173264753254379537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 137e1c956cfbfa641bd44767b8aeef7b,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 1d917fc1805adc4419766bb41cfc0186, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: f4e21ee2e9abee845aa5f9dcd3edb92e, type: 3}
+  MyMessageInstructions: Haal nu diep adem door je mond om je buik aan te spannen.
+  MyMessageHolding: Houd dit voor 5 seconden vast.
+  MyMessageRelease: En laat het weer los.
+--- !u!1 &1192535015474983997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2708469480473831008}
+  - component: {fileID: 88596686145254961}
+  - component: {fileID: 7179706895040305491}
+  - component: {fileID: 5273886511567584190}
+  m_Layer: 0
+  m_Name: Abductors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2708469480473831008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192535015474983997}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.20059204, y: 70.536705, z: -4.25459}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &88596686145254961
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192535015474983997}
+  m_Mesh: {fileID: -1734043437191712829, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &7179706895040305491
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192535015474983997}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &5273886511567584190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192535015474983997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 5c4935699a1e63146af2bc6f799903f5,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: b4aa864466a62864c8683167ca98b778, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 73357d9461db2544592967d5207a5be5, type: 3}
+  MyMessageInstructions: Span je dijen aan door je knieen tegen elkaar aan te duwen,
+    alsof je er een muntje tussen vasthoudt.
+  MyMessageHolding: "Houd dit zo\u2019n 5 seconden aan."
+  MyMessageRelease: En laat het weer los.
+--- !u!1 &1202174379846081672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5630881000423442536}
+  - component: {fileID: 5596849734016396623}
+  - component: {fileID: 7550173284922323169}
+  - component: {fileID: 970719990851405637}
+  m_Layer: 0
+  m_Name: Biceps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5630881000423442536
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202174379846081672}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 128.1523, z: -0.9887678}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &5596849734016396623
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202174379846081672}
+  m_Mesh: {fileID: 2998336934545621170, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &7550173284922323169
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202174379846081672}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &970719990851405637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202174379846081672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 0715eba3c71abed4e8851958784b7b31,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 6c12780110e4d534896563a2990f8b38, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 92b52862561723b428ebb46137c18d46, type: 3}
+  MyMessageInstructions: Span nu je biceps aan. Voel de spanning in je spieren opbouwen.
+    Je kan zelfs voor je zien hoe die spier strak wordt.
+  MyMessageHolding: Houd dit voor ongeveer 5 seconden aan.
+  MyMessageRelease: En laat het los, geniet van de ontspanning in je spieren.
+--- !u!1 &1332092968284086168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7734842276630035530}
+  - component: {fileID: 2478583709352303499}
+  m_Layer: 0
+  m_Name: Pause
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7734842276630035530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332092968284086168}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.020183172, y: 155.00488, z: -3.9385653}
+  m_LocalScale: {x: 0.97927636, y: 0.949598, z: 0.9674405}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2478583709352303499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332092968284086168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 0a96f0e44f3cee548ad5ca288250c07f,
+    type: 3}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: Haal diep adem door je buik, houd dit vast voor een paar
+    seconden, en adem rustig uit. Probeer dit nog een keer. Voel hoe je buik en borst
+    op en neer bewegen en voel je longen zich vullen met lucht.
+  MyMessageHolding: 
+  MyMessageRelease: 
 --- !u!1 &1340345429121083838
 GameObject:
   m_ObjectHideFlags: 0
@@ -2237,6 +3511,258 @@ MonoBehaviour:
     if you were holding a penny between them. '
   MyMessageHolding: Hold for about 5 seconds.
   MyMessageRelease: And release. Pause for about 5 seconds.
+--- !u!1 &1379069674754998087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5780129971466574547}
+  - component: {fileID: 2375042596235159862}
+  - component: {fileID: 789875198886554817}
+  - component: {fileID: 8662843350815326473}
+  m_Layer: 0
+  m_Name: Squinting
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5780129971466574547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379069674754998087}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.18543614, y: 173.02426, z: 6.883608}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &2375042596235159862
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379069674754998087}
+  m_Mesh: {fileID: 4958478750611369943, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &789875198886554817
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379069674754998087}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &8662843350815326473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379069674754998087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: bd9a0bc10d46db34db88d096f643326f,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 1eff555527e203844944155601221176, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 7c079e9266a9ef048adb75fa10804d49, type: 3}
+  MyMessageInstructions: Span vervolgens je oogspieren aan door je oogleden strak
+    te sluiten.
+  MyMessageHolding: Houd dit vast voor 5 seconden.
+  MyMessageRelease: En laat het weer los...
+--- !u!1 &1416349703564014795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4117114797451457871}
+  - component: {fileID: 7279511874442029820}
+  m_Layer: 0
+  m_Name: Pause
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4117114797451457871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416349703564014795}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.020183172, y: 155.00488, z: -3.9385653}
+  m_LocalScale: {x: 0.97927636, y: 0.949598, z: 0.9674405}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7279511874442029820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416349703564014795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 4b0d6c845c0924a41b954b7a96b9028e,
+    type: 3}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: Tijdens deze oefening mag je je voorstellen hoe je spieren
+    zich aanspannen, en er vervolgens een golf van ontspanning doorheen vloeit, terwijl
+    je loslaat.
+  MyMessageHolding: 
+  MyMessageRelease: 
+--- !u!1 &1429556897941443471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8662542009293538275}
+  - component: {fileID: 1609788768878573877}
+  - component: {fileID: 8131311009024177572}
+  - component: {fileID: 6165578912670359756}
+  m_Layer: 0
+  m_Name: Triceps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8662542009293538275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429556897941443471}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.1513252, y: 129.33138, z: -7.069703}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1609788768878573877
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429556897941443471}
+  m_Mesh: {fileID: 8150061251124819540, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &8131311009024177572
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429556897941443471}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &6165578912670359756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429556897941443471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 861f6effe4aa2424d9755ef78fa8370f,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 95ee908c3d1b7d44d9ac86fd82edb454, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 11f77578c41250c449d519cf0853b0d7, type: 3}
+  MyMessageInstructions: Span nu je triceps aan door je armen uit te strekken en
+    je en je duim naar onder te wijzen.
+  MyMessageHolding: Houd deze positie for 5 seconden aan.
+  MyMessageRelease: En laat het weer los.
 --- !u!1 &1534880949642928946
 GameObject:
   m_ObjectHideFlags: 0
@@ -2337,6 +3863,104 @@ MonoBehaviour:
     as high as you can.
   MyMessageHolding: Hold for about five seconds.
   MyMessageRelease: And abruptly release, feeling that tension fall away.
+--- !u!1 &1613955345382513497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6219022393032012936}
+  - component: {fileID: 1395299243820698788}
+  - component: {fileID: 2457147424720011631}
+  - component: {fileID: 603316864459652158}
+  m_Layer: 0
+  m_Name: Head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6219022393032012936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613955345382513497}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0034876205, y: 2.685419, z: 0.012184134}
+  m_LocalScale: {x: 0.015774839, y: 0.015774839, z: 0.015774839}
+  m_Children: []
+  m_Father: {fileID: 4784784547511732277}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1395299243820698788
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613955345382513497}
+  m_Mesh: {fileID: -8839368762345780380, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &2457147424720011631
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613955345382513497}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &603316864459652158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613955345382513497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 0}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: 
+  MyMessageHolding: 
+  MyMessageRelease: 
 --- !u!1 &1656989267709658575
 GameObject:
   m_ObjectHideFlags: 0
@@ -2582,6 +4206,105 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
+--- !u!1 &1747931271215390385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4909319252811638998}
+  - component: {fileID: 2284943220932565009}
+  - component: {fileID: 1787914296827849987}
+  - component: {fileID: 3836444097637208306}
+  m_Layer: 0
+  m_Name: Feet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4909319252811638998
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747931271215390385}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.20058441, y: 5.36571, z: 0.13422775}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &2284943220932565009
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747931271215390385}
+  m_Mesh: {fileID: 2840823874903811969, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &1787914296827849987
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747931271215390385}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &3836444097637208306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747931271215390385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: e1c8a869514b7574bbaf163c10e66470,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: d4622a0b2884a2c498db49aefa141a9a, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: d47bec86d00467647a13e3944629d9d3, type: 3}
+  MyMessageInstructions: Trek nu je tenen in om je voeten aan te spannen.
+  MyMessageHolding: Houd dit voor ongeveer 5 seconden vast.
+  MyMessageRelease: En laat weer los.
 --- !u!1 &1775097181482137004
 GameObject:
   m_ObjectHideFlags: 0
@@ -2682,6 +4405,58 @@ MonoBehaviour:
     to make your shoulder blades touch. '
   MyMessageHolding: Hold for about 5 seconds.
   MyMessageRelease: And release. Pause for about 5 seconds.
+--- !u!1 &1776265437417700631
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5579131678237982952}
+  - component: {fileID: 3285210674303922}
+  m_Layer: 0
+  m_Name: Pause
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5579131678237982952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776265437417700631}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.020183172, y: 155.00488, z: -3.9385653}
+  m_LocalScale: {x: 0.97927636, y: 0.949598, z: 0.9674405}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3285210674303922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776265437417700631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 945c01b8d043fb3499d6b67785058c05,
+    type: 3}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: Focus je aandacht op enkel je lichaam. Als je merkt dat
+    je gedachten afdwalen, probeer het dan terug te brengen naar de spiergroep waar
+    je op dat moment aan werkt.
+  MyMessageHolding: 
+  MyMessageRelease: 
 --- !u!1 &1792857475509845215
 GameObject:
   m_ObjectHideFlags: 0
@@ -2833,6 +4608,158 @@ MonoBehaviour:
     and flowing out of your body.
   MyMessageHolding: 
   MyMessageRelease: 
+--- !u!1 &2045907033356705538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8922547604159412163}
+  - component: {fileID: 945532345004482822}
+  - component: {fileID: 1882182344895571825}
+  - component: {fileID: 2507928220382207075}
+  m_Layer: 0
+  m_Name: Gluteals
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8922547604159412163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045907033356705538}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.021583557, y: 99.590294, z: -6.7240624}
+  m_LocalScale: {x: 1, y: 0.9442749, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &945532345004482822
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045907033356705538}
+  m_Mesh: {fileID: -5184784309073745011, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &1882182344895571825
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045907033356705538}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &2507928220382207075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045907033356705538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 70707496f66f09a4090b100b9d4c236f,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: b6b1f9cbb2a1a5a44ba49595bbc8dac9, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 2f91a4dbc47e93a489bc9155a55855e5, type: 3}
+  MyMessageInstructions: Span nu je billen aan.
+  MyMessageHolding: Houd deze positie voor ongeveer 5 seconden aan.
+  MyMessageRelease: En laat weer los, voel de spieren om je heupen ontspannen.
+--- !u!1 &2078347471430568457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 619311658142771959}
+  m_Layer: 0
+  m_Name: Human_Body_v4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &619311658142771959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078347471430568457}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.015774839, y: 0.015774839, z: 0.015774839}
+  m_Children:
+  - {fileID: 1085850688358725749}
+  - {fileID: 5520106735013282824}
+  - {fileID: 9003097966557640153}
+  - {fileID: 6367889300667019172}
+  - {fileID: 186877912185771582}
+  - {fileID: 3545338667043975201}
+  - {fileID: 5780129971466574547}
+  - {fileID: 9085535544943702834}
+  - {fileID: 3374587137724718488}
+  - {fileID: 1822172784832734302}
+  - {fileID: 5630881000423442536}
+  - {fileID: 8662542009293538275}
+  - {fileID: 8676688123655211873}
+  - {fileID: 1852943252286620903}
+  - {fileID: 4239659163810289674}
+  - {fileID: 2309424622935996656}
+  - {fileID: 7734190891577260245}
+  - {fileID: 3643981309131771989}
+  - {fileID: 5327917654042330914}
+  - {fileID: 2708469480473831008}
+  - {fileID: 5096102502902191387}
+  - {fileID: 2222306206250646350}
+  - {fileID: 8086181992774899953}
+  m_Father: {fileID: 4890812260657023493}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2083326350685565315
 GameObject:
   m_ObjectHideFlags: 0
@@ -2906,6 +4833,105 @@ Transform:
   m_Father: {fileID: 3501821051827883104}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2181947784164064308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7734190891577260245}
+  - component: {fileID: 5606577859243538506}
+  - component: {fileID: 7547488254243818950}
+  - component: {fileID: 960335175814772617}
+  m_Layer: 0
+  m_Name: Latissimus_Dorsi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7734190891577260245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2181947784164064308}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.005355835, y: 123.929955, z: -7.5950184}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &5606577859243538506
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2181947784164064308}
+  m_Mesh: {fileID: -5948521262588528721, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &7547488254243818950
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2181947784164064308}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &960335175814772617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2181947784164064308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 12b6cd10d055b794690f40fc294f03d7,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: df4517b37125782489ac088bbb2a0d50, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 9ee6f567e75b1e44aaeaa67b9e6bc16e, type: 3}
+  MyMessageInstructions: Buig voorzichtig je onderrug.
+  MyMessageHolding: Blijf ongeveer 5 seconden in deze positie.
+  MyMessageRelease: En ontspan je weer.
 --- !u!1 &2363671473664776406
 GameObject:
   m_ObjectHideFlags: 0
@@ -3339,6 +5365,106 @@ MonoBehaviour:
   MyMessageInstructions: 'Tighten your buttocks. '
   MyMessageHolding: Hold for about 5 seconds.
   MyMessageRelease: Release, imagine your hips falling loose. Pause for about 5 seconds.
+--- !u!1 &2434559401763045539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1434869963501204956}
+  - component: {fileID: 4767100187965590819}
+  - component: {fileID: 9124630570017806901}
+  - component: {fileID: 4259573698927727587}
+  m_Layer: 0
+  m_Name: Smile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1434869963501204956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2434559401763045539}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.22109985, y: 170.2343, z: 0.7722583}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &4767100187965590819
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2434559401763045539}
+  m_Mesh: {fileID: -8839368762345780380, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &9124630570017806901
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2434559401763045539}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &4259573698927727587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2434559401763045539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 7e97ef5d865e63944b464c5ae8831ffb,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 80fe46bc0c504d44c80edcccc7177b09, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 25e25749c8ce42542a13e7bb89fdbb99, type: 3}
+  MyMessageInstructions: Glimlach nu zo wijd als je maar kan, voel je mond en wangen
+    zich aanspannen.
+  MyMessageHolding: "Houd dit vast voor zo\u2019n 5 seconden."
+  MyMessageRelease: En laat het los, waardeer de ontspanning in je gezicht.
 --- !u!1 &2561146177879183526
 GameObject:
   m_ObjectHideFlags: 0
@@ -3350,6 +5476,7 @@ GameObject:
   - component: {fileID: 894585385892121099}
   - component: {fileID: 5191714193828333194}
   - component: {fileID: 8199507285627064651}
+  - component: {fileID: 5668315983652830115}
   m_Layer: 11
   m_Name: Cylinder
   m_TagString: Untagged
@@ -3393,6 +5520,30 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &5668315983652830115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2561146177879183526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9286cd89e87dc3e49bc754075f8138f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxRange: 10
+  Message: Can be used by pointing at a canvas and pressing the index finger.
+  MessageDutch: Kan worden gebruikt door op het canvas te richten en de wijsvinger
+    in te drukken.
+  Size: 0.15
+  TextSize: 9
+  MessageDuration: 10
+  Position: {x: 0, y: 0.2, z: 0}
+  FollowObject: 1
+  Title: Paint brush
+  TitleDutch: Kwast
+  TitleTextSize: 12
 --- !u!1 &2570631901119313083
 GameObject:
   m_ObjectHideFlags: 0
@@ -3559,6 +5710,104 @@ Transform:
   m_Father: {fileID: 1377138701239185308}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2593606072586204936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7712644048457629394}
+  - component: {fileID: 4773881353952294715}
+  - component: {fileID: 8326473982257093941}
+  - component: {fileID: 7217735682894932429}
+  m_Layer: 0
+  m_Name: Fullbody
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7712644048457629394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2593606072586204936}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.033165, y: 0.0020980835, z: -0.033773184}
+  m_LocalScale: {x: 0.015774839, y: 0.015774839, z: 0.015774839}
+  m_Children: []
+  m_Father: {fileID: 4890812260657023493}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &4773881353952294715
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2593606072586204936}
+  m_Mesh: {fileID: -885498629771275596, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &8326473982257093941
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2593606072586204936}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &7217735682894932429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2593606072586204936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 0}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: 
+  MyMessageHolding: 
+  MyMessageRelease: 
 --- !u!1 &2607016025475628291
 GameObject:
   m_ObjectHideFlags: 0
@@ -3702,6 +5951,106 @@ MonoBehaviour:
   m_Bindings:
   - {fileID: 3501821051686289634}
   m_VisualEffect: {fileID: 5564838250643471334}
+--- !u!1 &2629666111270247080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2718675226990415980}
+  - component: {fileID: 3123723389132037638}
+  - component: {fileID: 4135593728140643237}
+  - component: {fileID: 8870268921634217117}
+  m_Layer: 0
+  m_Name: Biceps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2718675226990415980
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2629666111270247080}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 128.1523, z: -0.9887678}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3123723389132037638
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2629666111270247080}
+  m_Mesh: {fileID: 2998336934545621170, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &4135593728140643237
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2629666111270247080}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &8870268921634217117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2629666111270247080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 0715eba3c71abed4e8851958784b7b31,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 6c12780110e4d534896563a2990f8b38, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 92b52862561723b428ebb46137c18d46, type: 3}
+  MyMessageInstructions: Span nu je biceps aan. Voel de spanning in je spieren opbouwen.
+    Je kan zelfs voor je zien hoe die spier strak wordt.
+  MyMessageHolding: Houd dit voor ongeveer 5 seconden aan.
+  MyMessageRelease: En laat het los, geniet van de ontspanning in je spieren.
 --- !u!1 &2642204836719481100
 GameObject:
   m_ObjectHideFlags: 0
@@ -3735,7 +6084,7 @@ Transform:
   m_Children:
   - {fileID: 6221629676753374258}
   m_Father: {fileID: 3501821051827883104}
-  m_RootOrder: 33
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: -6.7840004, y: -0.36800003, z: 4.1470003}
 --- !u!33 &5058874282383634720
 MeshFilter:
@@ -3810,6 +6159,204 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca311d9e19fa58b4484a07a2c69ff9b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2750546907672376525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2614238431137057007}
+  - component: {fileID: 8031352645635892114}
+  - component: {fileID: 8969970437961928134}
+  - component: {fileID: 7461929206983290756}
+  m_Layer: 0
+  m_Name: Abductors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2614238431137057007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2750546907672376525}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.20059204, y: 70.536705, z: -4.25459}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &8031352645635892114
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2750546907672376525}
+  m_Mesh: {fileID: -1734043437191712829, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &8969970437961928134
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2750546907672376525}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &7461929206983290756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2750546907672376525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 5c4935699a1e63146af2bc6f799903f5,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: b4aa864466a62864c8683167ca98b778, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 73357d9461db2544592967d5207a5be5, type: 3}
+  MyMessageInstructions: Span je dijen aan door je knieen tegen elkaar aan te duwen,
+    alsof je er een muntje tussen vasthoudt.
+  MyMessageHolding: "Houd dit zo\u2019n 5 seconden aan."
+  MyMessageRelease: En laat het weer los.
+--- !u!1 &2838408293350412538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5044111188669849715}
+  - component: {fileID: 4590325104866455568}
+  - component: {fileID: 8905970436789343509}
+  - component: {fileID: 3980120680894514092}
+  m_Layer: 0
+  m_Name: Quadriceps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5044111188669849715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2838408293350412538}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0031640828, y: 1.1057987, z: 0.07680131}
+  m_LocalScale: {x: 0.015774839, y: 0.015774839, z: 0.015774839}
+  m_Children: []
+  m_Father: {fileID: 4784784547511732277}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &4590325104866455568
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2838408293350412538}
+  m_Mesh: {fileID: 2129457083912056756, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &8905970436789343509
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2838408293350412538}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &3980120680894514092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2838408293350412538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 0}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: 
+  MyMessageHolding: 
+  MyMessageRelease: 
 --- !u!1 &2887602994774852690
 GameObject:
   m_ObjectHideFlags: 0
@@ -3987,7 +6534,7 @@ Transform:
   m_Children:
   - {fileID: 8789191293069605226}
   m_Father: {fileID: 3501821051827883104}
-  m_RootOrder: 32
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3.095}
 --- !u!33 &6738356369348910653
 MeshFilter:
@@ -4115,6 +6662,7 @@ Transform:
   - {fileID: 7461030119880661199}
   - {fileID: 7889568643284755989}
   - {fileID: 7365224448779593800}
+  - {fileID: 7151703362951481938}
   - {fileID: 8890407887002570034}
   - {fileID: 326424727}
   - {fileID: 627360648}
@@ -4126,6 +6674,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3527046920781953668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5488660462206629457}
+  - component: {fileID: 1363332340831804553}
+  m_Layer: 0
+  m_Name: Pause
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5488660462206629457
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3527046920781953668}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.020183172, y: 155.00488, z: -3.9385653}
+  m_LocalScale: {x: 0.97927636, y: 0.949598, z: 0.9674405}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1363332340831804553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3527046920781953668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 7a3eec36ad48d2e4baaaeef73f467a8b,
+    type: 3}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: 'Terwijl je uitademt, probeer je voor te stellen hoe de
+    spanning in je lichaam wordt losgelaten, en uit je lichaam vloeit. '
+  MyMessageHolding: 
+  MyMessageRelease: 
 --- !u!1 &3675867096097109102
 GameObject:
   m_ObjectHideFlags: 0
@@ -4322,6 +6921,106 @@ MonoBehaviour:
   MyMessageInstructions: 
   MyMessageHolding: 
   MyMessageRelease: 
+--- !u!1 &3761722207589644346
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1993335408730369188}
+  - component: {fileID: 3253092885331343048}
+  - component: {fileID: 938547562463054017}
+  - component: {fileID: 1602336903076815061}
+  m_Layer: 0
+  m_Name: Rhomboids
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1993335408730369188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3761722207589644346}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.07272339, y: 141.35655, z: -10.868004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3253092885331343048
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3761722207589644346}
+  m_Mesh: {fileID: -6863250267974907948, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &938547562463054017
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3761722207589644346}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &1602336903076815061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3761722207589644346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 3a5c4cfda5766544ab5cdd8b9821918f,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: e30f91946da418041a753dcdb05aa257, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 3818df10b2bc9014caceb09f82956acb, type: 3}
+  MyMessageInstructions: Span je bovenrug aan door je schouders naar achter te halen,
+    alsof je schouderbladen elkaar aan kunnen raken.
+  MyMessageHolding: Houd dit vast voor ongeveer 5 seconden.
+  MyMessageRelease: En ontspan je spieren weer.
 --- !u!1 &3823797684756588068
 GameObject:
   m_ObjectHideFlags: 0
@@ -4422,6 +7121,104 @@ MonoBehaviour:
     if you were holding a penny between them. '
   MyMessageHolding: Hold for about 5 seconds.
   MyMessageRelease: And release. Pause for about 5 seconds.
+--- !u!1 &3835715958710740544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4389125697304402553}
+  - component: {fileID: 4797236778021579098}
+  - component: {fileID: 4539957319585395563}
+  - component: {fileID: 4229181774238551263}
+  m_Layer: 0
+  m_Name: Fullbody
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4389125697304402553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3835715958710740544}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.033165, y: 0.0020980835, z: -0.033773184}
+  m_LocalScale: {x: 0.015774839, y: 0.015774839, z: 0.015774839}
+  m_Children: []
+  m_Father: {fileID: 4784784547511732277}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &4797236778021579098
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3835715958710740544}
+  m_Mesh: {fileID: -885498629771275596, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &4539957319585395563
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3835715958710740544}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &4229181774238551263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3835715958710740544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 0}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: 
+  MyMessageHolding: 
+  MyMessageRelease: 
 --- !u!1 &3858666539613901588
 GameObject:
   m_ObjectHideFlags: 0
@@ -4472,6 +7269,106 @@ MonoBehaviour:
   MyMessageInstructions: Progressive muscle relaxation.
   MyMessageHolding: 
   MyMessageRelease: 
+--- !u!1 &3873606812981420108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 186877912185771582}
+  - component: {fileID: 3409061432066782954}
+  - component: {fileID: 5051598165230521823}
+  - component: {fileID: 2185797030412260247}
+  m_Layer: 0
+  m_Name: Eye_Brows
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &186877912185771582
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3873606812981420108}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.18543614, y: 173.02426, z: 6.883608}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3409061432066782954
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3873606812981420108}
+  m_Mesh: {fileID: 4958478750611369943, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &5051598165230521823
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3873606812981420108}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &2185797030412260247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3873606812981420108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: c5517eb571d08b344a8558e932ca66b7,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 513a3502046292e4989b281dbf95f766, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 614844d00b01d7949b648954a74f24a7, type: 3}
+  MyMessageInstructions: Span de spieren in je voorhoofd aan door je wenkbrauwen
+    zo ver als je kan naar boven te bewegen.
+  MyMessageHolding: Houd dit vast voor ongeveer 5 seconden.
+  MyMessageRelease: En laat het ineens los, voel die spanning wegvallen.
 --- !u!1 &4000519038217108041
 GameObject:
   m_ObjectHideFlags: 0
@@ -4776,7 +7673,7 @@ Transform:
   m_Children:
   - {fileID: 6978724931408429449}
   m_Father: {fileID: 3501821051827883104}
-  m_RootOrder: 30
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 5.6270003}
 --- !u!33 &5142182246973056705
 MeshFilter:
@@ -4997,7 +7894,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3501821051827883104}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3548742652628597108
 MeshFilter:
@@ -5073,7 +7970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxRange: 10
   Message: Touch the orb to start the muscle relaxation!
-  MessageDutch: Dit is een voorbeeld text. Gebruik het wijslijk.
+  MessageDutch: Raak de bol aan om de oefening te beginnen!
   Size: 0.15
   TextSize: 10
   MessageDuration: 80
@@ -5093,6 +7990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MuscleRelaxation: {fileID: 7196760246380199984}
+  DutchMuscleRelaxation: {fileID: 7593884322068931699}
 --- !u!1 &4309920275621007089
 GameObject:
   m_ObjectHideFlags: 0
@@ -5555,6 +8453,249 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &4629209248344375349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4890812260657023493}
+  - component: {fileID: 1265629410931398033}
+  - component: {fileID: 6991179450848248044}
+  - component: {fileID: 7064279006085053278}
+  m_Layer: 0
+  m_Name: MuscleVFX (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4890812260657023493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4629209248344375349}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: 36, y: 18.9, z: 16.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7712644048457629394}
+  - {fileID: 8605178793974571236}
+  - {fileID: 6750022368969453267}
+  - {fileID: 3178885595440481229}
+  - {fileID: 619311658142771959}
+  m_Father: {fileID: 7151703362951481938}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+--- !u!114 &1265629410931398033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4629209248344375349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5c491bbd8d818f40bef14fbb786b393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timePerMuscle: 10
+  switchTime: 3
+  turbulenceIntensity: 0
+  maxTurbulenceIntensity: 2
+  timeBetweenMuscles: 2
+  SendMessages: 1
+  ParentObject: {fileID: 2078347471430568457}
+--- !u!73398921 &6991179450848248044
+VFXRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4629209248344375349}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!2083052967 &7064279006085053278
+VisualEffect:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4629209248344375349}
+  m_Enabled: 1
+  m_Asset: {fileID: 8926484042661614526, guid: 5154138a91af02141888aec5730742ac, type: 3}
+  m_InitialEventName: OnPlay
+  m_InitialEventNameOverriden: 0
+  m_StartSeed: 0
+  m_ResetSeedOnPlay: 1
+  m_PropertySheet:
+    m_Float:
+      m_Array:
+      - m_Value: -1
+        m_Name: Orientation
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: OrientationXZ
+        m_Overridden: 1
+    m_Vector2f:
+      m_Array: []
+    m_Vector3f:
+      m_Array: []
+    m_Vector4f:
+      m_Array:
+      - m_Value: {x: 64, y: 0, z: 0, w: 0}
+        m_Name: ColorFlexed
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 58.647488, z: 63.999992, w: 0}
+        m_Name: ColorRelaxed
+        m_Overridden: 1
+    m_Uint:
+      m_Array: []
+    m_Int:
+      m_Array: []
+    m_Matrix4x4f:
+      m_Array: []
+    m_AnimationCurve:
+      m_Array: []
+    m_Gradient:
+      m_Array: []
+    m_NamedObject:
+      m_Array: []
+    m_Bool:
+      m_Array: []
+--- !u!1 &4682799392017272994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8679033487284206378}
+  - component: {fileID: 485244418802659471}
+  - component: {fileID: 3716710902888581036}
+  - component: {fileID: 1325505000797508685}
+  m_Layer: 0
+  m_Name: Pectorals
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8679033487284206378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4682799392017272994}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.020168304, y: 140.47018, z: 7.523278}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &485244418802659471
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4682799392017272994}
+  m_Mesh: {fileID: -7085773156835574993, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &3716710902888581036
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4682799392017272994}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &1325505000797508685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4682799392017272994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 0f63ac8dd27aeee479378c038d754486,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 6b3ff561253219f43aa9b63bda5e6e7d, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 36a50e03cdc3c8f4f8dc3340591017af, type: 3}
+  MyMessageInstructions: Span je borst aan door diep in te ademen.
+  MyMessageHolding: Houd dit aan voor 5 seconden.
+  MyMessageRelease: En adem weer uit, blaas alle spanning eruit.
 --- !u!1 &4716717392569624056
 GameObject:
   m_ObjectHideFlags: 0
@@ -5954,8 +9095,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 6402956950983643304}
   - {fileID: 1597490800}
+  - {fileID: 6402956950983643304}
   m_VisualEffect: {fileID: 1668356059171651938}
 --- !u!114 &1597490800
 MonoBehaviour:
@@ -6000,6 +9141,57 @@ MonoBehaviour:
   m_Property:
     m_Name: PlayerPosition
   Target: {fileID: 2384095979551125133}
+--- !u!1 &5062134072705012740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3337796885841998889}
+  - component: {fileID: 1513243246727111655}
+  m_Layer: 0
+  m_Name: Pause
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3337796885841998889
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5062134072705012740}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.020183172, y: 155.00488, z: -3.9385653}
+  m_LocalScale: {x: 0.97927636, y: 0.949598, z: 0.9674405}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1513243246727111655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5062134072705012740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 017e8feb1c8c15441bff42acbdd2dc72,
+    type: 3}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: Voel de ontspanning in je bovenlichaam terwijl je de spanning
+    en stress loslaat.
+  MyMessageHolding: 
+  MyMessageRelease: 
 --- !u!1 &5075858520930009212
 GameObject:
   m_ObjectHideFlags: 0
@@ -6101,6 +9293,104 @@ MonoBehaviour:
   MyMessageInstructions: Allow your attention to focus only on your body.
   MyMessageHolding: 
   MyMessageRelease: 
+--- !u!1 &5104361286207166310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3178885595440481229}
+  - component: {fileID: 4420420959000204507}
+  - component: {fileID: 6622021463498526133}
+  - component: {fileID: 6636862655672895743}
+  m_Layer: 0
+  m_Name: Quadriceps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3178885595440481229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5104361286207166310}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0031640828, y: 1.1057987, z: 0.07680131}
+  m_LocalScale: {x: 0.015774839, y: 0.015774839, z: 0.015774839}
+  m_Children: []
+  m_Father: {fileID: 4890812260657023493}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &4420420959000204507
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5104361286207166310}
+  m_Mesh: {fileID: 2129457083912056756, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &6622021463498526133
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5104361286207166310}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &6636862655672895743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5104361286207166310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 0}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: 
+  MyMessageHolding: 
+  MyMessageRelease: 
 --- !u!1 &5237086363721745410
 GameObject:
   m_ObjectHideFlags: 0
@@ -6200,6 +9490,150 @@ MonoBehaviour:
   MyMessageInstructions: 'Now tighten the muscles in your stomach by sucking in. '
   MyMessageHolding: Hold for about 5 seconds.
   MyMessageRelease: And release.Pause for about 5 seconds.
+--- !u!1 &5296329641230275264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4784784547511732277}
+  - component: {fileID: 4197781479802466457}
+  - component: {fileID: 2991582379136253943}
+  - component: {fileID: 6227385916593667603}
+  m_Layer: 0
+  m_Name: MuscleVFX (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4784784547511732277
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5296329641230275264}
+  m_LocalRotation: {x: -0, y: 0.7071058, z: -0, w: 0.7071078}
+  m_LocalPosition: {x: 36, y: 18.9, z: 13.55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4389125697304402553}
+  - {fileID: 6219022393032012936}
+  - {fileID: 1229463008093425476}
+  - {fileID: 5044111188669849715}
+  - {fileID: 1749628059800315892}
+  m_Father: {fileID: 7151703362951481938}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
+--- !u!114 &4197781479802466457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5296329641230275264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5c491bbd8d818f40bef14fbb786b393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timePerMuscle: 10
+  switchTime: 3
+  turbulenceIntensity: 0
+  maxTurbulenceIntensity: 2
+  timeBetweenMuscles: 2
+  SendMessages: 0
+  ParentObject: {fileID: 5341574864421027685}
+--- !u!73398921 &2991582379136253943
+VFXRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5296329641230275264}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!2083052967 &6227385916593667603
+VisualEffect:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5296329641230275264}
+  m_Enabled: 1
+  m_Asset: {fileID: 8926484042661614526, guid: 5154138a91af02141888aec5730742ac, type: 3}
+  m_InitialEventName: OnPlay
+  m_InitialEventNameOverriden: 0
+  m_StartSeed: 0
+  m_ResetSeedOnPlay: 1
+  m_PropertySheet:
+    m_Float:
+      m_Array:
+      - m_Value: 1
+        m_Name: Orientation
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: OrientationXZ
+        m_Overridden: 1
+    m_Vector2f:
+      m_Array: []
+    m_Vector3f:
+      m_Array: []
+    m_Vector4f:
+      m_Array:
+      - m_Value: {x: 64, y: 0, z: 0, w: 0}
+        m_Name: ColorFlexed
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 58.647488, z: 63.999992, w: 0}
+        m_Name: ColorRelaxed
+        m_Overridden: 1
+    m_Uint:
+      m_Array: []
+    m_Int:
+      m_Array: []
+    m_Matrix4x4f:
+      m_Array: []
+    m_AnimationCurve:
+      m_Array: []
+    m_Gradient:
+      m_Array: []
+    m_NamedObject:
+      m_Array: []
+    m_Bool:
+      m_Array: []
 --- !u!1 &5324606717542606431
 GameObject:
   m_ObjectHideFlags: 0
@@ -6400,6 +9834,159 @@ MonoBehaviour:
   MyMessageInstructions: Curl your toes under tensing your feet.
   MyMessageHolding: Hold for about 5 seconds.
   MyMessageRelease: Release. Pause for about 5 seconds.
+--- !u!1 &5341574864421027685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1749628059800315892}
+  m_Layer: 0
+  m_Name: Human_Body_v4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1749628059800315892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5341574864421027685}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.015774839, y: 0.015774839, z: 0.015774839}
+  m_Children:
+  - {fileID: 4117114797451457871}
+  - {fileID: 5579131678237982952}
+  - {fileID: 7734842276630035530}
+  - {fileID: 5488660462206629457}
+  - {fileID: 8274431696345810318}
+  - {fileID: 1434869963501204956}
+  - {fileID: 4154737080903351169}
+  - {fileID: 4338279543021010180}
+  - {fileID: 4111020892001203293}
+  - {fileID: 4039367912090517293}
+  - {fileID: 2718675226990415980}
+  - {fileID: 2296408795618580979}
+  - {fileID: 4123738373357250822}
+  - {fileID: 1993335408730369188}
+  - {fileID: 8679033487284206378}
+  - {fileID: 1618706938060508061}
+  - {fileID: 4162162589841749547}
+  - {fileID: 3337796885841998889}
+  - {fileID: 8922547604159412163}
+  - {fileID: 2614238431137057007}
+  - {fileID: 8164851766325449998}
+  - {fileID: 4909319252811638998}
+  - {fileID: 167582233869764447}
+  m_Father: {fileID: 4784784547511732277}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5347175104865922158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1822172784832734302}
+  - component: {fileID: 4203145199251726962}
+  - component: {fileID: 5230917556826774165}
+  - component: {fileID: 3952906058498864518}
+  m_Layer: 0
+  m_Name: Hands
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1822172784832734302
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5347175104865922158}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.016666412, y: 85.80814, z: 3.82123}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &4203145199251726962
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5347175104865922158}
+  m_Mesh: {fileID: 586481732289701080, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &5230917556826774165
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5347175104865922158}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &3952906058498864518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5347175104865922158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 4728ef12f5708824abec4bc64c344992,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 7108d29eb1763f145af6138954beb02c, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: b6cff87f87eb5ac48aec560b65e398fa, type: 3}
+  MyMessageInstructions: Maak nu strak een vuist - zonder te overspannen - en houd
+    deze positie aan totdat ik stop zeg.
+  MyMessageHolding: "Houd dit vast voor zo\u2019n 5 seconden."
+  MyMessageRelease: En stop, laat het los...
 --- !u!1 &5412785708061197352
 GameObject:
   m_ObjectHideFlags: 0
@@ -6450,6 +10037,105 @@ MonoBehaviour:
   MyMessageInstructions: Now feel the weight of your relaxed head and neck sink.
   MyMessageHolding: 
   MyMessageRelease: 
+--- !u!1 &5439574401552080360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2222306206250646350}
+  - component: {fileID: 4930247974787119505}
+  - component: {fileID: 8109837403876410930}
+  - component: {fileID: 3951945327656230125}
+  m_Layer: 0
+  m_Name: Feet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2222306206250646350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439574401552080360}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.20058441, y: 5.36571, z: 0.13422775}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &4930247974787119505
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439574401552080360}
+  m_Mesh: {fileID: 2840823874903811969, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &8109837403876410930
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439574401552080360}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &3951945327656230125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439574401552080360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: e1c8a869514b7574bbaf163c10e66470,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: d4622a0b2884a2c498db49aefa141a9a, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: d47bec86d00467647a13e3944629d9d3, type: 3}
+  MyMessageInstructions: Trek nu je tenen in om je voeten aan te spannen.
+  MyMessageHolding: Houd dit voor ongeveer 5 seconden vast.
+  MyMessageRelease: En laat weer los.
 --- !u!1 &5753234704403692922
 GameObject:
   m_ObjectHideFlags: 0
@@ -7484,6 +11170,104 @@ MonoBehaviour:
   MyMessageInstructions: 
   MyMessageHolding: 
   MyMessageRelease: 
+--- !u!1 &6255830063219164857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6750022368969453267}
+  - component: {fileID: 518348093117714953}
+  - component: {fileID: 1329286269081640378}
+  - component: {fileID: 3064246570187006790}
+  m_Layer: 0
+  m_Name: Obliques
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6750022368969453267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6255830063219164857}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.00031826645, y: 1.9226303, z: 0.09597397}
+  m_LocalScale: {x: 0.015774839, y: 0.015774839, z: 0.015774839}
+  m_Children: []
+  m_Father: {fileID: 4890812260657023493}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &518348093117714953
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6255830063219164857}
+  m_Mesh: {fileID: 1954939133646094786, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &1329286269081640378
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6255830063219164857}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &3064246570187006790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6255830063219164857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 0}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: 
+  MyMessageHolding: 
+  MyMessageRelease: 
 --- !u!1 &6373837309937201849
 GameObject:
   m_ObjectHideFlags: 0
@@ -7583,6 +11367,155 @@ MonoBehaviour:
   MyMessageInstructions: Tighten your chest by taking a deep breath in.
   MyMessageHolding: Hold for about 5 seconds.
   MyMessageRelease: And exhale, blowing out all the tension.
+--- !u!1 &6482350477654463216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6367889300667019172}
+  - component: {fileID: 7042658508599212108}
+  m_Layer: 0
+  m_Name: Pause
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6367889300667019172
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6482350477654463216}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.020183172, y: 155.00488, z: -3.9385653}
+  m_LocalScale: {x: 0.97927636, y: 0.949598, z: 0.9674405}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7042658508599212108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6482350477654463216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 7a3eec36ad48d2e4baaaeef73f467a8b,
+    type: 3}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: 'Terwijl je uitademt, probeer je voor te stellen hoe de
+    spanning in je lichaam wordt losgelaten, en uit je lichaam vloeit. '
+  MyMessageHolding: 
+  MyMessageRelease: 
+--- !u!1 &6525839923538526279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8605178793974571236}
+  - component: {fileID: 206010663352519743}
+  - component: {fileID: 8337530756580327838}
+  - component: {fileID: 6122531558312170646}
+  m_Layer: 0
+  m_Name: Head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8605178793974571236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6525839923538526279}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0034876205, y: 2.685419, z: 0.012184134}
+  m_LocalScale: {x: 0.015774839, y: 0.015774839, z: 0.015774839}
+  m_Children: []
+  m_Father: {fileID: 4890812260657023493}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &206010663352519743
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6525839923538526279}
+  m_Mesh: {fileID: -8839368762345780380, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &8337530756580327838
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6525839923538526279}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &6122531558312170646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6525839923538526279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 0}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: 
+  MyMessageHolding: 
+  MyMessageRelease: 
 --- !u!1 &6542937487166855132
 GameObject:
   m_ObjectHideFlags: 0
@@ -7740,6 +11673,157 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &6619185411244721625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5327917654042330914}
+  - component: {fileID: 202369997481653693}
+  - component: {fileID: 625378503501192335}
+  - component: {fileID: 779853236291300952}
+  m_Layer: 0
+  m_Name: Gluteals
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5327917654042330914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6619185411244721625}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.021583557, y: 99.590294, z: -6.7240624}
+  m_LocalScale: {x: 1, y: 0.9442749, z: 1}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &202369997481653693
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6619185411244721625}
+  m_Mesh: {fileID: -5184784309073745011, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &625378503501192335
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6619185411244721625}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &779853236291300952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6619185411244721625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 70707496f66f09a4090b100b9d4c236f,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: b6b1f9cbb2a1a5a44ba49595bbc8dac9, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 2f91a4dbc47e93a489bc9155a55855e5, type: 3}
+  MyMessageInstructions: Span nu je billen aan.
+  MyMessageHolding: Houd deze positie voor ongeveer 5 seconden aan.
+  MyMessageRelease: En laat weer los, voel de spieren om je heupen ontspannen.
+--- !u!1 &6782012784028006009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1085850688358725749}
+  - component: {fileID: 355030206241614477}
+  m_Layer: 0
+  m_Name: Pause
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1085850688358725749
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6782012784028006009}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.020183172, y: 155.00488, z: -3.9385653}
+  m_LocalScale: {x: 0.97927636, y: 0.949598, z: 0.9674405}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &355030206241614477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6782012784028006009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 4b0d6c845c0924a41b954b7a96b9028e,
+    type: 3}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: Tijdens deze oefening mag je je voorstellen hoe je spieren
+    zich aanspannen, en er vervolgens een golf van ontspanning doorheen vloeit, terwijl
+    je loslaat.
+  MyMessageHolding: 
+  MyMessageRelease: 
 --- !u!1 &6908539335536292313
 GameObject:
   m_ObjectHideFlags: 0
@@ -7945,7 +12029,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7365224448779593800}
   m_Layer: 0
-  m_Name: MuscleRelaxation
+  m_Name: MuscleRelaxationEnglish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8065,6 +12149,105 @@ MonoBehaviour:
   MyMessageInstructions: 
   MyMessageHolding: 
   MyMessageRelease: 
+--- !u!1 &7318618434542256372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4162162589841749547}
+  - component: {fileID: 3078402701019371697}
+  - component: {fileID: 7167124422038344027}
+  - component: {fileID: 4269317908352328834}
+  m_Layer: 0
+  m_Name: Latissimus_Dorsi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4162162589841749547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7318618434542256372}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.005355835, y: 123.929955, z: -7.5950184}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3078402701019371697
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7318618434542256372}
+  m_Mesh: {fileID: -5948521262588528721, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &7167124422038344027
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7318618434542256372}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &4269317908352328834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7318618434542256372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 12b6cd10d055b794690f40fc294f03d7,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: df4517b37125782489ac088bbb2a0d50, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 9ee6f567e75b1e44aaeaa67b9e6bc16e, type: 3}
+  MyMessageInstructions: Buig voorzichtig je onderrug.
+  MyMessageHolding: Blijf ongeveer 5 seconden in deze positie.
+  MyMessageRelease: En ontspan je weer.
 --- !u!1 &7443842666429848425
 GameObject:
   m_ObjectHideFlags: 0
@@ -8164,6 +12347,38 @@ MonoBehaviour:
   MyMessageInstructions: Gently arch your lower back.
   MyMessageHolding: Hold for about 5 seconds.
   MyMessageRelease: Relax. Pause for about 5 seconds.
+--- !u!1 &7593884322068931699
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7151703362951481938}
+  m_Layer: 0
+  m_Name: MuscleRelaxationDutch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &7151703362951481938
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7593884322068931699}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4784784547511732277}
+  - {fileID: 4890812260657023493}
+  m_Father: {fileID: 3501821051827883104}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7619440373607180663
 GameObject:
   m_ObjectHideFlags: 0
@@ -8197,7 +12412,7 @@ Transform:
   m_Children:
   - {fileID: 544360625765155098}
   m_Father: {fileID: 3501821051827883104}
-  m_RootOrder: 31
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: -4.4550004, y: -0.44000003, z: 5.644}
 --- !u!33 &8020697764610296080
 MeshFilter:
@@ -8371,6 +12586,209 @@ MonoBehaviour:
   MyAudioClipHolding: {fileID: 0}
   MyAudioClipRelease: {fileID: 0}
   MyMessageInstructions: Take a deep breath through your abdomen.
+  MyMessageHolding: 
+  MyMessageRelease: 
+--- !u!1 &7870086709277935720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5520106735013282824}
+  - component: {fileID: 752193011120570656}
+  m_Layer: 0
+  m_Name: Pause
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5520106735013282824
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7870086709277935720}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.020183172, y: 155.00488, z: -3.9385653}
+  m_LocalScale: {x: 0.97927636, y: 0.949598, z: 0.9674405}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &752193011120570656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7870086709277935720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 945c01b8d043fb3499d6b67785058c05,
+    type: 3}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: Focus je aandacht op enkel je lichaam. Als je merkt dat
+    je gedachten afdwalen, probeer het dan terug te brengen naar de spiergroep waar
+    je op dat moment aan werkt.
+  MyMessageHolding: 
+  MyMessageRelease: 
+--- !u!1 &7878564896894540552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3545338667043975201}
+  - component: {fileID: 1071290547036155227}
+  - component: {fileID: 3916181966825910738}
+  - component: {fileID: 7000460424140464352}
+  m_Layer: 0
+  m_Name: Smile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3545338667043975201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7878564896894540552}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.22109985, y: 170.2343, z: 0.7722583}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1071290547036155227
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7878564896894540552}
+  m_Mesh: {fileID: -8839368762345780380, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &3916181966825910738
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7878564896894540552}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &7000460424140464352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7878564896894540552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 7e97ef5d865e63944b464c5ae8831ffb,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 80fe46bc0c504d44c80edcccc7177b09, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 25e25749c8ce42542a13e7bb89fdbb99, type: 3}
+  MyMessageInstructions: Glimlach nu zo wijd als je maar kan, voel je mond en wangen
+    zich aanspannen.
+  MyMessageHolding: "Houd dit vast voor zo\u2019n 5 seconden."
+  MyMessageRelease: En laat het los, waardeer de ontspanning in je gezicht.
+--- !u!1 &7909183030228857311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4111020892001203293}
+  - component: {fileID: 3334585965583749146}
+  m_Layer: 0
+  m_Name: Pause
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4111020892001203293
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7909183030228857311}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.020183172, y: 155.00488, z: -3.9385653}
+  m_LocalScale: {x: 0.97927636, y: 0.949598, z: 0.9674405}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3334585965583749146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7909183030228857311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 5e7f234bd7452d0448c8c8b086297969,
+    type: 3}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: Voel het gewicht van je ontspannen hoofd en nek langzaam
+    wegzakken.
   MyMessageHolding: 
   MyMessageRelease: 
 --- !u!1 &8137310750736714217
@@ -8767,6 +13185,106 @@ MonoBehaviour:
     and hold this position until I say stop. '
   MyMessageHolding: Hold for about 5 seconds.
   MyMessageRelease: Stop, and release. Pause for about 5 seconds.
+--- !u!1 &8315311565781545646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5096102502902191387}
+  - component: {fileID: 4364438490508514000}
+  - component: {fileID: 7999853116387094256}
+  - component: {fileID: 675923149908264104}
+  m_Layer: 0
+  m_Name: Gastrocnemius
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5096102502902191387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8315311565781545646}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.20058823, y: 31.345886, z: -11.476544}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &4364438490508514000
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8315311565781545646}
+  m_Mesh: {fileID: -5258637513795983813, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &7999853116387094256
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8315311565781545646}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &675923149908264104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8315311565781545646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: c6b00e517152db24b84b28d34365b541,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 804a10672cee72a4487da1baef973653, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: f0341ce80192ffc4392c37715007117e, type: 3}
+  MyMessageInstructions: Span nu je voeten aan. Strek hiervoor je tenen naar je toe,
+    en voel de spanning in je kuiten.
+  MyMessageHolding: Houd dit 5 seconden vol.
+  MyMessageRelease: En relax, voel het gewicht van je benen naar beneden zakken.
 --- !u!1 &8327244781017574254
 GameObject:
   m_ObjectHideFlags: 0
@@ -8865,6 +13383,206 @@ MonoBehaviour:
   MyMessageInstructions: 
   MyMessageHolding: 
   MyMessageRelease: 
+--- !u!1 &8385800214157156630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4154737080903351169}
+  - component: {fileID: 3797437872201646577}
+  - component: {fileID: 8709579582463424469}
+  - component: {fileID: 1047395015077949022}
+  m_Layer: 0
+  m_Name: Squinting
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4154737080903351169
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8385800214157156630}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.18543614, y: 173.02426, z: 6.883608}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3797437872201646577
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8385800214157156630}
+  m_Mesh: {fileID: 4958478750611369943, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &8709579582463424469
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8385800214157156630}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &1047395015077949022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8385800214157156630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: bd9a0bc10d46db34db88d096f643326f,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 1eff555527e203844944155601221176, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 7c079e9266a9ef048adb75fa10804d49, type: 3}
+  MyMessageInstructions: Span vervolgens je oogspieren aan door je oogleden strak
+    te sluiten.
+  MyMessageHolding: Houd dit vast voor 5 seconden.
+  MyMessageRelease: En laat het weer los...
+--- !u!1 &8497216292535956745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2296408795618580979}
+  - component: {fileID: 7889389835341492954}
+  - component: {fileID: 789272100262329447}
+  - component: {fileID: 1712783448130005752}
+  m_Layer: 0
+  m_Name: Triceps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2296408795618580979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8497216292535956745}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.1513252, y: 129.33138, z: -7.069703}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &7889389835341492954
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8497216292535956745}
+  m_Mesh: {fileID: 8150061251124819540, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &789272100262329447
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8497216292535956745}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &1712783448130005752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8497216292535956745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 861f6effe4aa2424d9755ef78fa8370f,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 95ee908c3d1b7d44d9ac86fd82edb454, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 11f77578c41250c449d519cf0853b0d7, type: 3}
+  MyMessageInstructions: Span nu je triceps aan door je armen uit te strekken en
+    je en je duim naar onder te wijzen.
+  MyMessageHolding: Houd deze positie for 5 seconden aan.
+  MyMessageRelease: En laat het weer los.
 --- !u!1 &8622432288917857451
 GameObject:
   m_ObjectHideFlags: 0
@@ -9078,6 +13796,58 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &8650327211428392137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9003097966557640153}
+  - component: {fileID: 8590230125186656514}
+  m_Layer: 0
+  m_Name: Pause
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9003097966557640153
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8650327211428392137}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.020183172, y: 155.00488, z: -3.9385653}
+  m_LocalScale: {x: 0.97927636, y: 0.949598, z: 0.9674405}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8590230125186656514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8650327211428392137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 0a96f0e44f3cee548ad5ca288250c07f,
+    type: 3}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: Haal diep adem door je buik, houd dit vast voor een paar
+    seconden, en adem rustig uit. Probeer dit nog een keer. Voel hoe je buik en borst
+    op en neer bewegen en voel je longen zich vullen met lucht.
+  MyMessageHolding: 
+  MyMessageRelease: 
 --- !u!1 &8901025724496655965
 GameObject:
   m_ObjectHideFlags: 0
@@ -9305,6 +14075,157 @@ MonoBehaviour:
     your body beginning at your head and going all the way down to your feet. '
   MyMessageHolding: 
   MyMessageRelease: 
+--- !u!1 &9006340356315456264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4039367912090517293}
+  - component: {fileID: 8517725339511332156}
+  - component: {fileID: 1050501928882395736}
+  - component: {fileID: 2080159000745887821}
+  m_Layer: 0
+  m_Name: Hands
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4039367912090517293
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9006340356315456264}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.016666412, y: 85.80814, z: 3.82123}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &8517725339511332156
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9006340356315456264}
+  m_Mesh: {fileID: 586481732289701080, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &1050501928882395736
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9006340356315456264}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &2080159000745887821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9006340356315456264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 4728ef12f5708824abec4bc64c344992,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 7108d29eb1763f145af6138954beb02c, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: b6cff87f87eb5ac48aec560b65e398fa, type: 3}
+  MyMessageInstructions: Maak nu strak een vuist - zonder te overspannen - en houd
+    deze positie aan totdat ik stop zeg.
+  MyMessageHolding: "Houd dit vast voor zo\u2019n 5 seconden."
+  MyMessageRelease: En stop, laat het los...
+--- !u!1 &9035331647130738827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8086181992774899953}
+  - component: {fileID: 8507583133419692409}
+  m_Layer: 0
+  m_Name: Pause
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8086181992774899953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9035331647130738827}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.020183172, y: 155.00488, z: -3.9385653}
+  m_LocalScale: {x: 0.97927636, y: 0.949598, z: 0.9674405}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8507583133419692409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9035331647130738827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 97384306491d00e4489c033737a94cf3,
+    type: 3}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: Stel je nu voor hoe een golf van ontspanning langzaam door
+    je lichaam vloeit, beginnend bij je hoofd, helemaal naar je voeten.
+  MyMessageHolding: 
+  MyMessageRelease: 
 --- !u!1 &9047326974197934089
 GameObject:
   m_ObjectHideFlags: 0
@@ -9481,6 +14402,105 @@ MonoBehaviour:
   Position: {x: 0, y: 0.2, z: 0}
   FollowObject: 1
   CooldownTime: 30
+--- !u!1 &9085020931157818352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2309424622935996656}
+  - component: {fileID: 3474932149431432301}
+  - component: {fileID: 4932323570859976225}
+  - component: {fileID: 5558834973147444641}
+  m_Layer: 0
+  m_Name: Abdominus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2309424622935996656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9085020931157818352}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.020168304, y: 111.353676, z: 11.567936}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 619311658142771959}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3474932149431432301
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9085020931157818352}
+  m_Mesh: {fileID: 6277465883492232146, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &4932323570859976225
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9085020931157818352}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &5558834973147444641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9085020931157818352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 137e1c956cfbfa641bd44767b8aeef7b,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 1d917fc1805adc4419766bb41cfc0186, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: f4e21ee2e9abee845aa5f9dcd3edb92e, type: 3}
+  MyMessageInstructions: Haal nu diep adem door je mond om je buik aan te spannen.
+  MyMessageHolding: Houd dit voor 5 seconden vast.
+  MyMessageRelease: En laat het weer los.
 --- !u!1 &9131756049830648030
 GameObject:
   m_ObjectHideFlags: 0
@@ -9511,6 +14531,106 @@ Transform:
   m_Father: {fileID: 895661682993917961}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -90.00001}
+--- !u!1 &9165570247737845789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8274431696345810318}
+  - component: {fileID: 5771584207801585180}
+  - component: {fileID: 6213211677541117158}
+  - component: {fileID: 2080986532196413399}
+  m_Layer: 0
+  m_Name: Eye_Brows
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8274431696345810318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9165570247737845789}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.18543614, y: 173.02426, z: 6.883608}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &5771584207801585180
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9165570247737845789}
+  m_Mesh: {fileID: 4958478750611369943, guid: 450167fa6370eed44a4208933e010fe1, type: 3}
+--- !u!23 &6213211677541117158
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9165570247737845789}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fe81cdf62639dc64d97a5389baa24fad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &2080986532196413399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9165570247737845789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: c5517eb571d08b344a8558e932ca66b7,
+    type: 3}
+  MyAudioClipHolding: {fileID: 8300000, guid: 513a3502046292e4989b281dbf95f766, type: 3}
+  MyAudioClipRelease: {fileID: 8300000, guid: 614844d00b01d7949b648954a74f24a7, type: 3}
+  MyMessageInstructions: Span de spieren in je voorhoofd aan door je wenkbrauwen
+    zo ver als je kan naar boven te bewegen.
+  MyMessageHolding: Houd dit vast voor ongeveer 5 seconden.
+  MyMessageRelease: En laat het ineens los, voel die spanning wegvallen.
 --- !u!1 &9166601968506959299
 GameObject:
   m_ObjectHideFlags: 0
@@ -9775,6 +14895,57 @@ MonoBehaviour:
   MyMessageHolding: Hold for about 5 seconds.
   MyMessageRelease: 'And release, feeling the tension melting away. Pause for about
     5 seconds. '
+--- !u!1 &9219794491659607285
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 167582233869764447}
+  - component: {fileID: 377822773704339817}
+  m_Layer: 0
+  m_Name: Pause
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &167582233869764447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9219794491659607285}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.020183172, y: 155.00488, z: -3.9385653}
+  m_LocalScale: {x: 0.97927636, y: 0.949598, z: 0.9674405}
+  m_Children: []
+  m_Father: {fileID: 1749628059800315892}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &377822773704339817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9219794491659607285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acc93adcb7cf2e4d8dd7856b29bf788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyAudioClipInstructions: {fileID: 8300000, guid: 97384306491d00e4489c033737a94cf3,
+    type: 3}
+  MyAudioClipHolding: {fileID: 0}
+  MyAudioClipRelease: {fileID: 0}
+  MyMessageInstructions: Stel je nu voor hoe een golf van ontspanning langzaam door
+    je lichaam vloeit, beginnend bij je hoofd, helemaal naar je voeten.
+  MyMessageHolding: 
+  MyMessageRelease: 
 --- !u!1001 &9510554469335597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11104,15 +16275,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00195c457a007314aafeb81b7ab8eb09, type: 3}
---- !u!4 &2906043205660296941 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 253550540784490604, guid: 00195c457a007314aafeb81b7ab8eb09,
-    type: 3}
-  m_PrefabInstance: {fileID: 3157195109884272257}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2906043205660296938 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 253550540784490603, guid: 00195c457a007314aafeb81b7ab8eb09,
+    type: 3}
+  m_PrefabInstance: {fileID: 3157195109884272257}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2906043205660296941 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 253550540784490604, guid: 00195c457a007314aafeb81b7ab8eb09,
     type: 3}
   m_PrefabInstance: {fileID: 3157195109884272257}
   m_PrefabAsset: {fileID: 0}
@@ -11370,6 +16541,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 396917c60628b2e47822e2e121a60d49, type: 3}
+--- !u!4 &5591874771812089351 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9007942298498979417, guid: 396917c60628b2e47822e2e121a60d49,
+    type: 3}
+  m_PrefabInstance: {fileID: 3501821049885730910}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5591874771812089368 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9007942298498979398, guid: 396917c60628b2e47822e2e121a60d49,
@@ -11382,12 +16559,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &5591874771812089351 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9007942298498979417, guid: 396917c60628b2e47822e2e121a60d49,
-    type: 3}
-  m_PrefabInstance: {fileID: 3501821049885730910}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3501821050720195933
 PrefabInstance:
   m_ObjectHideFlags: 0

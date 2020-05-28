@@ -141,6 +141,7 @@ MonoBehaviour:
   startColor: {r: 1, g: 0.868332, b: 0, a: 1}
   maxFireFlies: 10
   maxIntensity: 100000
+  currentFireflies: 0
 --- !u!114 &8421493370064169924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +267,7 @@ GameObject:
   - component: {fileID: 4920129990792236998}
   - component: {fileID: 8421493369607969463}
   - component: {fileID: 1932928951895163217}
+  - component: {fileID: 3595317223938649565}
   m_Layer: 0
   m_Name: Fireflycatcher
   m_TagString: Tool
@@ -358,6 +360,31 @@ MonoBehaviour:
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
+--- !u!114 &3595317223938649565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4921322651885544197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9286cd89e87dc3e49bc754075f8138f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxRange: 10
+  Message: Touch the fireflies with the glass box to catch them and temporarily use
+    their energy.
+  MessageDutch: Raak de vuurvliegjes met de glazen doos aan om ze te vangen en tijdelijk
+    hun energie te gebruiken.
+  Size: 0.15
+  TextSize: 6
+  MessageDuration: 10
+  Position: {x: 0, y: 0.5, z: 0}
+  FollowObject: 1
+  Title: Firefly catcher
+  TitleDutch: Vuurvlieg vanger
+  TitleTextSize: 12
 --- !u!1 &8723516280983785223
 GameObject:
   m_ObjectHideFlags: 0
