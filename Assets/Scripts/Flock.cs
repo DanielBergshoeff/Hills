@@ -19,15 +19,25 @@ public class Flock : MonoBehaviour
 
     private bool turning = false;
 
+    private float maxCatchCooldown = 10f;
+    public float catchCooldown = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
         Speed = Random.Range(MinSpeed, MaxSpeed) * SpeedMultiplier;
     }
 
+    public void CatchCooldown() {
+        catchCooldown = maxCatchCooldown;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (catchCooldown > 0f)
+            catchCooldown -= Time.deltaTime;
+
         if (!MyFlock.MyCollider.bounds.Contains(transform.position))
             turning = true;
         else 

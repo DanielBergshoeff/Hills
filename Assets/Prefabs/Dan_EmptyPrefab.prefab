@@ -9105,8 +9105,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8901025724496655965}
-  m_LocalRotation: {x: -0, y: -0.2377859, z: -0, w: 0.97131765}
-  m_LocalPosition: {x: 0, y: 24.69, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3501821051827883104}
@@ -9474,7 +9474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxRange: 5
   Message: Paint brush. Try picking up to paint on the canvas.
-  MessageDutch: Kwast. Probeer op te pakken om te kunnen verven op het canvas.
+  MessageDutch: Kwast. Probeer het op te pakken om te kunnen verven op het canvas.
   Size: 0.075
   TextSize: 10
   MessageDuration: 10
