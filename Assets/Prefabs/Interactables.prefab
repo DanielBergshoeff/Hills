@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxRange: 5
   Message: Try throwing me like a paper plane..
+  MessageDutch: Dit is een voorbeeld text. Gebruik het wijslijk.
   Size: 0.075
   TextSize: 10
   MessageDuration: 10
-  CooldownTime: 30
   Position: {x: 0, y: 0.2, z: 0}
+  FollowObject: 1
+  CooldownTime: 30
 --- !u!114 &1420561196245665003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33,11 +35,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxRange: 10
   Message: How about throwing a leaf into the sea?
+  MessageDutch: Dit is een voorbeeld text. Gebruik het wijslijk.
   Size: 0.15
   TextSize: 10
   MessageDuration: 10
-  CooldownTime: 90
   Position: {x: 0, y: 0.5, z: 0}
+  FollowObject: 1
+  CooldownTime: 90
 --- !u!114 &1420561197307944198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52,11 +56,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxRange: 5
   Message: Have you tried throwing me like a card?
+  MessageDutch: Dit is een voorbeeld text. Gebruik het wijslijk.
   Size: 0.075
   TextSize: 10
   MessageDuration: 10
-  CooldownTime: 30
   Position: {x: 0, y: 0.2, z: 0}
+  FollowObject: 1
+  CooldownTime: 30
 --- !u!1 &1420561195545121348
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,11 +914,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxRange: 30
   Message: Have you tried hitting the chimes with a small object?
+  MessageDutch: Dit is een voorbeeld text. Gebruik het wijslijk.
   Size: 0.5
   TextSize: 10
   MessageDuration: 10
-  CooldownTime: 90
   Position: {x: -1, y: 0, z: 0}
+  FollowObject: 1
+  CooldownTime: 90
 --- !u!114 &1420561196097796905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -927,11 +935,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxRange: 30
   Message: Try hitting the chimes with an object to make some noise!
+  MessageDutch: Dit is een voorbeeld text. Gebruik het wijslijk.
   Size: 0.3
   TextSize: 10
   MessageDuration: 10
-  CooldownTime: 90
   Position: {x: 0, y: 0, z: 1}
+  FollowObject: 1
+  CooldownTime: 90
 --- !u!114 &1420561197277792805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -946,11 +956,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxRange: 20
   Message: How many coconuts can you manage to score?
+  MessageDutch: Dit is een voorbeeld text. Gebruik het wijslijk.
   Size: 0.3
   TextSize: 10
   MessageDuration: 10
-  CooldownTime: 90
   Position: {x: 0, y: 0, z: -1}
+  FollowObject: 1
+  CooldownTime: 90
 --- !u!114 &1420561196590829581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -965,11 +977,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxRange: 5
   Message: Have you tried throwing items into the bucket?
+  MessageDutch: Dit is een voorbeeld text. Gebruik het wijslijk.
   Size: 0.15
   TextSize: 10
   MessageDuration: 10
-  CooldownTime: 90
   Position: {x: 0, y: 0, z: 1}
+  FollowObject: 1
+  CooldownTime: 90
 --- !u!114 &136810884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -984,11 +998,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxRange: 5
   Message: Catch fireflies with the glass box...?
+  MessageDutch: Dit is een voorbeeld text. Gebruik het wijslijk.
   Size: 0.1
   TextSize: 10
   MessageDuration: 8
-  CooldownTime: 8
   Position: {x: -0.35, y: 0.3, z: 0}
+  FollowObject: 1
+  CooldownTime: 8
 --- !u!114 &1420561196973483163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1003,11 +1019,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxRange: 15
   Message: Catch fireflies with the glass box...?
+  MessageDutch: Dit is een voorbeeld text. Gebruik het wijslijk.
   Size: 0.15
   TextSize: 10
   MessageDuration: 10
-  CooldownTime: 90
   Position: {x: 0, y: 0.2, z: 0}
+  FollowObject: 1
+  CooldownTime: 90
 --- !u!114 &1420561195773064663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1022,11 +1040,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxRange: 5
   Message: Catch fireflies with the glass box...?
+  MessageDutch: Dit is een voorbeeld text. Gebruik het wijslijk.
   Size: 0.1
   TextSize: 10
   MessageDuration: 8
-  CooldownTime: 8
   Position: {x: -0.35, y: 0.3, z: 0}
+  FollowObject: 1
+  CooldownTime: 8
 --- !u!1001 &1420561195569440660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5399,7 +5419,7 @@ PrefabInstance:
     - target: {fileID: 4784833835035884267, guid: 7ad2add05fe8d134bb445c9cfff473f7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.277418
+      value: 22.003
       objectReference: {fileID: 0}
     - target: {fileID: 4784833835035884267, guid: 7ad2add05fe8d134bb445c9cfff473f7,
         type: 3}
