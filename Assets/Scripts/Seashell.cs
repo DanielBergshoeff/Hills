@@ -12,25 +12,23 @@ public class Seashell : MonoBehaviour
     private bool fullsong = false;
     private bool shakeAllowed = true;
     private AudioSource myAudioSource;
-    private AudioSource mySongSource;
+    public static AudioSource MySongSource;
     private float timer = 0f;
 
     private VRTK.VRTK_InteractableObject vrtkObject;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    private void Awake() {
         myAudioSource = gameObject.AddComponent<AudioSource>();
         myAudioSource.spatialBlend = 1f;
         myAudioSource.minDistance = 0.1f;
         myAudioSource.maxDistance = 5f;
         myAudioSource.volume = 0f;
 
-        mySongSource = gameObject.AddComponent<AudioSource>();
-        mySongSource.spatialBlend = 1f;
-        mySongSource.minDistance = 0.1f;
-        mySongSource.maxDistance = 5f;
-        mySongSource.volume = 0f;
+        MySongSource = gameObject.AddComponent<AudioSource>();
+        MySongSource.spatialBlend = 1f;
+        MySongSource.minDistance = 0.1f;
+        MySongSource.maxDistance = 5f;
+        MySongSource.volume = 0f;
 
         vrtkObject = GetComponent<VRTK.VRTK_InteractableObject>();
 
@@ -39,6 +37,12 @@ public class Seashell : MonoBehaviour
             ShakeDetection.shakeEvent = new ShakeEvent();
 
         ShakeDetection.shakeEvent.AddListener(Shaken);
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
     }
 
     private void EnableShaking() {
@@ -67,9 +71,9 @@ public class Seashell : MonoBehaviour
 
     private void SwitchSong() {
         List<AudioClip> tempClips = new List<AudioClip>(AudioManager.AllClips);
-        tempClips.Remove(mySongSource.clip);
-        mySongSource.clip = tempClips[Random.Range(0, tempClips.Count)];
-        mySongSource.Play();
+        tempClips.Remove(MySongSource.clip);
+        MySongSource.clip = tempClips[Random.Range(0, tempClips.Count)];
+        MySongSource.Play();
     }
 
     private void IncreaseWaveSound() {
@@ -82,8 +86,8 @@ public class Seashell : MonoBehaviour
         if (timer >= timeTillSong) {
             fullsong = true;
             timer = 0f;
-            mySongSource.clip = AudioManager.AllClips[0];
-            mySongSource.Play();
+            MySongSource.clip = AudioManager.AllClips[0];
+            MySongSource.Play();
         }
     }
 
@@ -92,9 +96,9 @@ public class Seashell : MonoBehaviour
             return;
 
         timer += Time.deltaTime;
-        mySongSource.volume = timer / timeTillFullSong;
+        MySongSource.volume = timer / timeTillFullSong;
         myAudioSource.volume = 1f - timer / timeTillFullSong;
-        mySongSource.spatialBlend = 1f - timer / timeTillFullSong;
+        MySongSource.spatialBlend = 1f - timer / timeTillFullSong;
     }
 
     private void OnTriggerEnter(Collider other) {

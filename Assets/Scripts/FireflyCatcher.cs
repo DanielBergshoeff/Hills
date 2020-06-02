@@ -14,6 +14,8 @@ public class FireflyCatcher : MonoBehaviour
 
     public int currentFireflies = 0;
 
+    private AudioSource myAudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,11 +23,14 @@ public class FireflyCatcher : MonoBehaviour
         GlassMat = GetComponent<Renderer>().material;
         GlassMat.SetColor("_EmissiveColor", startColor);
         myFireflies = new List<Flock>();
+        myAudioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other) {
         if (!other.CompareTag("Firefly"))
             return;
+
+        myAudioSource.PlayOneShot(AudioManager.Instance.FireflycatcherCatchSound);
 
         Flock flock = other.GetComponent<Flock>();
         flock.MyFlock.AllFish.Remove(flock);

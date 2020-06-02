@@ -2937,6 +2937,107 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209480810}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &220922983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b6606ef2548734bb6d11b9d160bc7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  rotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  skyIntensityMode:
+    m_OverrideState: 0
+    m_Value: 0
+  exposure:
+    m_OverrideState: 0
+    m_Value: 10
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxValue:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxColor:
+    m_OverrideState: 0
+    m_Value: {x: 0, y: 0, z: 0}
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 0
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 0
+  hdriSky:
+    m_OverrideState: 0
+    m_Value: {fileID: 8900000, guid: 0a345497283889f49b7c8637c2b84cb8, type: 3}
+  enableBackplate:
+    m_OverrideState: 0
+    m_Value: 0
+  backplateType:
+    m_OverrideState: 0
+    m_Value: 0
+  groundLevel:
+    m_OverrideState: 0
+    m_Value: 0
+  scale:
+    m_OverrideState: 0
+    m_Value: {x: 32, y: 32}
+  projectionDistance:
+    m_OverrideState: 0
+    m_Value: 16
+    min: 0.0000001
+  plateRotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  plateTexRotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  plateTexOffset:
+    m_OverrideState: 0
+    m_Value: {x: 0, y: 0}
+  blendAmount:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 100
+  shadowTint:
+    m_OverrideState: 0
+    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  pointLightShadow:
+    m_OverrideState: 0
+    m_Value: 0
+  dirLightShadow:
+    m_OverrideState: 0
+    m_Value: 0
+  rectLightShadow:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!1001 &235976998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3076,6 +3177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpdateTime: 1
+  MaxUptimePercentage: 0.5
 --- !u!4 &263370300
 Transform:
   m_ObjectHideFlags: 0
@@ -3448,7 +3550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: a123fc0ac58cb774e8592c925f167e7c, type: 2}
   m_StaticLightingSkyUniqueID: 1
-  m_SkySettings: {fileID: 1070387408}
+  m_SkySettings: {fileID: 220922983}
   m_SkySettingsFromProfile: {fileID: -1658960478407648048, guid: a123fc0ac58cb774e8592c925f167e7c,
     type: 2}
 --- !u!4 &313761475
@@ -5041,6 +5143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HeldInHand: 0
+  RandomSize: 0
 --- !u!114 &416882846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6035,7 +6138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &475683370
 Transform:
   m_ObjectHideFlags: 0
@@ -8095,7 +8198,8 @@ VFXRenderer:
   m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials: []
+  m_Materials:
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8828,7 +8932,8 @@ VFXRenderer:
   m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials: []
+  m_Materials:
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9357,7 +9462,8 @@ VFXRenderer:
   m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials: []
+  m_Materials:
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9462,8 +9568,8 @@ MonoBehaviour:
   numFish: 10
   AllFish: []
   GoalPosition: {x: 0, y: 0, z: 0}
+  UpdatePosition: 1
   MyCollider: {fileID: 0}
-  SpeedAdjustment: 0
 --- !u!4 &686147450
 Transform:
   m_ObjectHideFlags: 0
@@ -9755,10 +9861,7 @@ MonoBehaviour:
   breatheInTime: 4
   holdBreathTime: 5
   breatheOutTime: 3
-  waitForNewBreath: 1
-  breatheInAudio: {fileID: 0}
-  holdbreathAudio: {fileID: 0}
-  breatheOutAudio: {fileID: 0}
+  amtOfCycles: 10
   leavesEffect: 0
   flowerRainEffect: 0
   waterEffect: 0
@@ -12978,7 +13081,6 @@ MonoBehaviour:
   m_Script: {fileID: 1452932587}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Entries: []
 --- !u!4 &977171892
 Transform:
   m_ObjectHideFlags: 19
@@ -13733,107 +13835,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060177902}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1070387408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59b6606ef2548734bb6d11b9d160bc7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 0
-    m_Value: 10
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxColor:
-    m_OverrideState: 0
-    m_Value: {x: 0, y: 0, z: 0}
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 0
-  hdriSky:
-    m_OverrideState: 0
-    m_Value: {fileID: 8900000, guid: 0a345497283889f49b7c8637c2b84cb8, type: 3}
-  enableBackplate:
-    m_OverrideState: 0
-    m_Value: 0
-  backplateType:
-    m_OverrideState: 0
-    m_Value: 0
-  groundLevel:
-    m_OverrideState: 0
-    m_Value: 0
-  scale:
-    m_OverrideState: 0
-    m_Value: {x: 32, y: 32}
-  projectionDistance:
-    m_OverrideState: 0
-    m_Value: 16
-    min: 0.0000001
-  plateRotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  plateTexRotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  plateTexOffset:
-    m_OverrideState: 0
-    m_Value: {x: 0, y: 0}
-  blendAmount:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 100
-  shadowTint:
-    m_OverrideState: 0
-    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  pointLightShadow:
-    m_OverrideState: 0
-    m_Value: 0
-  dirLightShadow:
-    m_OverrideState: 0
-    m_Value: 0
-  rectLightShadow:
-    m_OverrideState: 0
-    m_Value: 0
 --- !u!1 &1072380548
 GameObject:
   m_ObjectHideFlags: 0
@@ -13869,6 +13870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HeldInHand: 0
+  RandomSize: 0
 --- !u!114 &1072380550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14860,8 +14862,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0275ae1be1f977a4c8e6c3cbcb1dc311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refreshTime: 1
-  onTime: 0.1
+  UpdateTime: 15
+  ScentTimeMultiplier: 3
 --- !u!4 &1174329065
 Transform:
   m_ObjectHideFlags: 0
@@ -16297,6 +16299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MessagePrefab: {fileID: 5632399428720470722, guid: 320a70fe085d6de4fa074230ca84b66e,
     type: 3}
+  MessageWithTitlePrefab: {fileID: 0}
   Sapling: {fileID: 159048470}
   DisappearTime: 0
   TerrainLayer:
@@ -17276,6 +17279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HeldInHand: 0
+  RandomSize: 0
 --- !u!1 &1364702696
 GameObject:
   m_ObjectHideFlags: 0
@@ -18906,7 +18910,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a56e2a75cbc36241a315ff3070b1ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpdateTime: 1
 --- !u!4 &1473897794
 Transform:
   m_ObjectHideFlags: 0
@@ -22402,7 +22405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1750777555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22416,12 +22419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Clips:
-  - {fileID: 8300000, guid: 43fa929ab5a8e5941adaf367fcf31547, type: 3}
-  - {fileID: 8300000, guid: f0cd9c3256a66ac4b867dba3e453c634, type: 3}
-  - {fileID: 8300000, guid: a843395e25327cf4d9dafc9160136559, type: 3}
-  - {fileID: 8300000, guid: 8abd96e6142d46842a3195731294a745, type: 3}
-  - {fileID: 8300000, guid: fae9bb33cff5fd8459a7191e72ca8c09, type: 3}
-  - {fileID: 8300000, guid: 144fce2e4f183c946b743fe8d48c8e94, type: 3}
+  - {fileID: 8300000, guid: ffa8a709a17502c4c947e8de03b46b1b, type: 3}
   WavesAudio: {fileID: 8300000, guid: b33ff6ed333bd3144a7c539796b574e6, type: 3}
   AutoPlay: 1
 --- !u!4 &1750777556
@@ -24988,7 +24986,8 @@ VFXRenderer:
   m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials: []
+  m_Materials:
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

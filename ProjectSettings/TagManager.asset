@@ -16,6 +16,7 @@ TagManager:
   - Tool
   - MenuOption
   - Interactable
+  - Water
   layers:
   - Default
   - TransparentFX
