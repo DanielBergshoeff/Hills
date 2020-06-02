@@ -43,6 +43,7 @@ public class ButterflyVisualizer : MonoBehaviour {
             Color color = colours.Evaluate((1f / amtOfVisualizers) * i);
             VisualEffect ve = Instantiate(butterflyVisualizerPrefab).GetComponent<VisualEffect>();
             ve.transform.parent = transform;
+            ve.transform.localPosition = Vector3.zero;
             //ve.transform.localPosition = Vector3.right * i;
             ve.SetVector4("Color", color * colorMultiplier);
             ve.SetInt("AmtOfButterflies", amtOfButterflies);

@@ -7,6 +7,7 @@ public class MuscleRelaxationStarter : MonoBehaviour
     public static bool StartOnAwake = true;
 
     public GameObject MuscleRelaxation;
+    public GameObject DutchMuscleRelaxation;
 
     private void Awake() {
         if (!StartOnAwake) {
@@ -17,7 +18,12 @@ public class MuscleRelaxationStarter : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         GetComponent<VicinityMessage>().StopMessage();
         Destroy(GetComponent<VicinityMessage>());
-        MuscleRelaxation.SetActive(true);
+
+        if (MenuManager.Dutch)
+            DutchMuscleRelaxation.SetActive(true);
+        else
+            MuscleRelaxation.SetActive(true);
+
         Destroy(gameObject);
     }
 }

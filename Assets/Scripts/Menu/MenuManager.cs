@@ -40,9 +40,12 @@ public class MenuManager : MonoBehaviour
     private Vector3 previousPosition;
     private Vector3 startPosition;
 
+    public GameObject WarmthPrefab;
     private float fireflyCatcherCooldown = 0f;
 
     private Tool myTool;
+    private GameObject heldObject;
+    private FireflyCatcher fireflyCatcher;
 
     private string[] englishTutorial = new string[] {
         "To rotate, gently nudge the thumbstick on your left controller into the desired direction. Try it now.",
@@ -59,7 +62,7 @@ public class MenuManager : MonoBehaviour
         "Richt met de straal op de kwast en knijp met je middelvinger de onderste knop in om de kwast op te pakken.",
         "Om te teleporteren kan je de X knop op je linker controller indrukken om een boog te laten verschijnen.",
         "Richt vervolgens op een steen op het pad, tot de boog groen wordt. Laat vervolgens de knop los om te teleporteren.",
-        "Goed gedaan, nu heb je zelf de controle!"
+        "Goed gedaan, nu heb jij de controle!"
     };
 
     private string[] currentTutorial;
@@ -148,12 +151,13 @@ public class MenuManager : MonoBehaviour
         currentMessage.StartFade();
         ExerciseGrabber.Instance.gameObject.SetActive(true);
         Tutorial = false;
-        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[5], AudioManager.TutorialClips[5], 10f, Vector3.up * 1f, 2f, true, 4f);
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[5], AudioManager.TutorialClips[5], AudioManager.TutorialClips[5].length, Vector3.up * 1f, 2f, true, 4f);
     }
 
     private void FireflyCatcherUpdate() {
         if (fireflyCatcherCooldown > 0f) {
-            FireflyCatcherVFX.SetVector3("Velocity", FireflyCatcher.Instance.transform.forward * 2f);
+            FireflyCatcherVFX.SetVector3("Velocity", fireflyCatcher.transform.up * 2f);
+            FireflyCatcherVFX.SetVector3("SpawnPosition", fireflyCatcher.transform.position);
             fireflyCatcherCooldown -= Time.deltaTime;
             if(fireflyCatcherCooldown <= 0f) {
                 FireflyCatcherVFX.SetFloat("SpawnRate", 0f);
@@ -161,8 +165,11 @@ public class MenuManager : MonoBehaviour
         }
 
         if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch)) {
-            if(FireflyCatcher.Instance.currentFireflies > 0 && fireflyCatcherCooldown <= 0f) {
-                FireflyCatcher.Instance.currentFireflies--;
+            if(fireflyCatcher.currentFireflies > 0 && fireflyCatcherCooldown <= 0f) {
+                GameObject go = Instantiate(WarmthPrefab);
+                go.transform.parent = fireflyCatcher.transform;
+                go.transform.localPosition = Vector3.zero;
+                fireflyCatcher.RemoveFirefly();
                 fireflyCatcherCooldown = MaxFireflyCatcherTime;
                 FireflyCatcherVFX.SetFloat("SpawnRate", 3f);
             }
@@ -267,6 +274,8 @@ public class MenuManager : MonoBehaviour
             Destroy(vm);
         }
 
+        heldObject = e.target.gameObject;
+
         if (!e.target.CompareTag("Tool"))
             return;
 
@@ -278,6 +287,7 @@ public class MenuManager : MonoBehaviour
         }
         else if (e.target.name == "FireflyCatcher") {
             myTool = Tool.FireflyCatcher;
+            fireflyCatcher = e.target.GetComponentInChildren<FireflyCatcher>();
         }
         else if (e.target.name == "TreasureFinder") {
             myTool = Tool.Treasurefinder;
