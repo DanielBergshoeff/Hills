@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 2516114243291407046}
   - component: {fileID: 4340688940909933925}
   - component: {fileID: 2339555013770519941}
+  - component: {fileID: 6728738755273334244}
   m_Layer: 0
   m_Name: Cylinder (1)
   m_TagString: Interactable
@@ -258,6 +259,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd1bf188842134a9619adf15d724ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6728738755273334244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965063346844956975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9286cd89e87dc3e49bc754075f8138f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxRange: 10
+  Message: To make a sound, hit the chimes with a small object.
+  MessageDutch: Om geluid te maken, kan je een klein object tegen het klokkenspel
+    aan gooien.
+  Size: 0.2
+  TextSize: 9
+  MessageDuration: 10
+  Position: {x: -1, y: 0, z: 0}
+  FollowObject: 1
+  Title: Chimes
+  TitleDutch: Klokkenspel
+  TitleTextSize: 12
 --- !u!1 &5161514569779314736
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,6 +298,7 @@ GameObject:
   - component: {fileID: 6845899844834587835}
   - component: {fileID: 8322571215442877623}
   - component: {fileID: 2339555014334183078}
+  - component: {fileID: 2885134322522139416}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Interactable
@@ -397,6 +423,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd1bf188842134a9619adf15d724ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2885134322522139416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5161514569779314736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9286cd89e87dc3e49bc754075f8138f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxRange: 10
+  Message: To make a sound, hit the chimes with a small object.
+  MessageDutch: Om geluid te maken, kan je een klein object tegen het klokkenspel
+    aan gooien.
+  Size: 0.2
+  TextSize: 9
+  MessageDuration: 10
+  Position: {x: -1, y: 0, z: 0}
+  FollowObject: 1
+  Title: Chimes
+  TitleDutch: Klokkenspel
+  TitleTextSize: 12
 --- !u!1 &6193621297258788223
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +462,7 @@ GameObject:
   - component: {fileID: 1016376045829033329}
   - component: {fileID: 9178550264220310728}
   - component: {fileID: 2339555014367324358}
+  - component: {fileID: 2808532356075320928}
   m_Layer: 0
   m_Name: Cylinder (2)
   m_TagString: Interactable
@@ -545,6 +596,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd1bf188842134a9619adf15d724ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2808532356075320928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6193621297258788223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9286cd89e87dc3e49bc754075f8138f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxRange: 10
+  Message: To make a sound, hit the chimes with a small object.
+  MessageDutch: Om geluid te maken, kan je een klein object tegen het klokkenspel
+    aan gooien.
+  Size: 0.2
+  TextSize: 9
+  MessageDuration: 10
+  Position: {x: -1, y: 0, z: 0}
+  FollowObject: 1
+  Title: Chimes
+  TitleDutch: Klokkenspel
+  TitleTextSize: 12
 --- !u!1 &8761536593126243306
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,6 +632,7 @@ GameObject:
   - component: {fileID: 68692961839407849}
   - component: {fileID: 8211713828410761947}
   - component: {fileID: 2872096526771136958}
+  - component: {fileID: 8400917211428351677}
   m_Layer: 0
   m_Name: Rope
   m_TagString: Untagged
@@ -709,3 +785,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8400917211428351677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8761536593126243306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9286cd89e87dc3e49bc754075f8138f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxRange: 10
+  Message: To make a sound, hit the chimes with a small object.
+  MessageDutch: Om geluid te maken, kan je een klein object tegen het klokkenspel
+    aan gooien.
+  Size: 0.2
+  TextSize: 9
+  MessageDuration: 10
+  Position: {x: -1, y: 0, z: 0}
+  FollowObject: 1
+  Title: Chimes
+  TitleDutch: Klokkenspel
+  TitleTextSize: 12

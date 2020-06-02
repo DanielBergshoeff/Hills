@@ -176,6 +176,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5150389294550305309}
+  - component: {fileID: 1897622041769417029}
   m_Layer: 0
   m_Name: Bucket
   m_TagString: Untagged
@@ -201,6 +202,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1897622041769417029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4546407443553447718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9286cd89e87dc3e49bc754075f8138f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxRange: 10
+  Message: Increase your score by throwing coconuts into the bucket.
+  MessageDutch: Verbeter je score door kokosnoten in de emmer te gooien.
+  Size: 0.15
+  TextSize: 9
+  MessageDuration: 10
+  Position: {x: 0, y: 0, z: 1}
+  FollowObject: 1
+  Title: Bucket
+  TitleDutch: Emmer
+  TitleTextSize: 12
 --- !u!1 &4974851825489478612
 GameObject:
   m_ObjectHideFlags: 0

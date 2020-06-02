@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class FireflyCatcher : MonoBehaviour
 {
-    public static FireflyCatcher Instance;
     public Material GlassMat;
     public Color startColor;
     public int maxFireFlies = 10;
     public float maxIntensity = 15f;
 
     private GlobalFlock myFlock;
+    private List<Flock> myFireflies;
 
     public int currentFireflies = 0;
 
-    private void Awake() {
-        Instance = this;
-    }
+    private AudioSource myAudioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -24,27 +22,38 @@ public class FireflyCatcher : MonoBehaviour
         myFlock = GetComponent<GlobalFlock>();
         GlassMat = GetComponent<Renderer>().material;
         GlassMat.SetColor("_EmissiveColor", startColor);
+        myFireflies = new List<Flock>();
+        myAudioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other) {
         if (!other.CompareTag("Firefly"))
             return;
 
+        myAudioSource.PlayOneShot(AudioManager.Instance.FireflycatcherCatchSound);
+
         Flock flock = other.GetComponent<Flock>();
         flock.MyFlock.AllFish.Remove(flock);
 
-        myFlock.AllFish.Add(flock);
-        flock.MyFlock = myFlock;
-        flock.RotationSpeed = 1000f;
-        flock.SpeedMultiplier = 0f;
-        flock.Speed = 0f;
-
         flock.transform.position = myFlock.transform.position;
         flock.transform.parent = this.transform;
-
-        Destroy(flock);
+        flock.enabled = false;
         
         currentFireflies++;
         GlassMat.SetColor("_EmissiveColor", startColor * (1f + (maxIntensity * (Mathf.Clamp(currentFireflies, 0f, maxFireFlies)) / maxFireFlies)));
+    }
+
+    public void RemoveFirefly() {
+        if (myFireflies.Count <= 0)
+            return;
+
+        currentFireflies--;
+        GlassMat.SetColor("_EmissiveColor", startColor * (1f + (maxIntensity * (Mathf.Clamp(currentFireflies, 0f, maxFireFlies)) / maxFireFlies)));
+
+        myFireflies[0].enabled = true;
+        myFireflies[0].CatchCooldown();
+        myFireflies[0].MyFlock.AllFish.Add(myFireflies[0]);
+        myFireflies[0].transform.parent = null;
+        myFireflies.RemoveAt(0);
     }
 }

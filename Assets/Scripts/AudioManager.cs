@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager Instance;
     public static AudioSource myAudioSource;
     public static float[] Samples = new float[512];
     public static float[] FrequencyBands = new float[8];
@@ -17,6 +18,11 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] Clips;
     public AudioClip WavesAudio;
     public bool AutoPlay = false;
+    public AudioClip CoconutBucketSound;
+    public AudioClip CoconutGroundSound;
+    public AudioClip CoconutWaterSound;
+    public AudioClip FireflycatcherCatchSound;
+    public AudioClip LeafThrow;
 
     public static List<AudioClip> BreatheInClips;
     public static List<AudioClip> BreatheOutClips;
@@ -24,6 +30,7 @@ public class AudioManager : MonoBehaviour
     public static List<AudioClip> TutorialClips;
 
     private void Awake() {
+        Instance = this;
         string language = MenuManager.Dutch ? "Dutch" : "English";
         string pathBreatheIn = "TextClips/" + language + "/BreatheIn";
         string pathBreatheOut = "TextClips/" + language + "/BreatheOut";
@@ -39,7 +46,10 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myAudioSource = gameObject.AddComponent<AudioSource>();
+        if (AutoPlay)
+            myAudioSource = gameObject.AddComponent<AudioSource>();
+        else
+            myAudioSource = Seashell.MySongSource;
         AllClips = Clips;
         WaveAudio = WavesAudio;
 
