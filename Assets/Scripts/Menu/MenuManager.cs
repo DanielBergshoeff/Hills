@@ -71,7 +71,8 @@ public class MenuManager : MonoBehaviour
         None,
         Paintbrush,
         FireflyCatcher,
-        Treasurefinder
+        Treasurefinder,
+        Seashell
     }
 
     private void Awake() {
@@ -166,6 +167,7 @@ public class MenuManager : MonoBehaviour
 
         if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch)) {
             if(fireflyCatcher.currentFireflies > 0 && fireflyCatcherCooldown <= 0f) {
+                Debug.Log("Firefly use!");
                 GameObject go = Instantiate(WarmthPrefab);
                 go.transform.parent = fireflyCatcher.transform;
                 go.transform.localPosition = Vector3.zero;
@@ -173,6 +175,12 @@ public class MenuManager : MonoBehaviour
                 fireflyCatcherCooldown = MaxFireflyCatcherTime;
                 FireflyCatcherVFX.SetFloat("SpawnRate", 3f);
             }
+        }
+    }
+
+    private void SeashellUpdate() {
+        if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch)) {
+            heldObject.GetComponent<Seashell>().ToggleSong();
         }
     }
 
@@ -193,8 +201,11 @@ public class MenuManager : MonoBehaviour
         if (painting)
             PaintingMenu();
 
-        if(myTool == Tool.FireflyCatcher) 
+        if(myTool == Tool.FireflyCatcher || fireflyCatcherCooldown > 0f) 
             FireflyCatcherUpdate();
+
+        if (myTool == Tool.Seashell)
+            SeashellUpdate();
 
         if (!Tutorial || MuscleRelaxationStarter.StartOnAwake)
             return;
@@ -291,6 +302,9 @@ public class MenuManager : MonoBehaviour
         }
         else if (e.target.name == "TreasureFinder") {
             myTool = Tool.Treasurefinder;
+        }
+        else if(e.target.name == "Seashell") {
+            myTool = Tool.Seashell;
         }
     }
 

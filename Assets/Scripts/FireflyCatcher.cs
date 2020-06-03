@@ -17,8 +17,7 @@ public class FireflyCatcher : MonoBehaviour
     private AudioSource myAudioSource;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         myFlock = GetComponent<GlobalFlock>();
         GlassMat = GetComponent<Renderer>().material;
         GlassMat.SetColor("_EmissiveColor", startColor);
@@ -30,15 +29,19 @@ public class FireflyCatcher : MonoBehaviour
         if (!other.CompareTag("Firefly"))
             return;
 
-        myAudioSource.PlayOneShot(AudioManager.Instance.FireflycatcherCatchSound);
-
         Flock flock = other.GetComponent<Flock>();
+        if (flock == null || flock.catchCooldown > 0f)
+            return;
+
         flock.MyFlock.AllFish.Remove(flock);
+
+        myAudioSource.PlayOneShot(AudioManager.Instance.FireflycatcherCatchSound);
 
         flock.transform.position = myFlock.transform.position;
         flock.transform.parent = this.transform;
         flock.enabled = false;
-        
+        myFireflies.Add(flock);
+
         currentFireflies++;
         GlassMat.SetColor("_EmissiveColor", startColor * (1f + (maxIntensity * (Mathf.Clamp(currentFireflies, 0f, maxFireFlies)) / maxFireFlies)));
     }

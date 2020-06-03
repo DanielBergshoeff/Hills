@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2625806326175650106}
   m_Layer: 0
   m_Name: Seashell
-  m_TagString: Untagged
+  m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeTillSong: 5
-  timeTillFullSong: 5
+  timeTillFullSong: 10
   timeForShake: 2
 --- !u!54 &2625806326175650106
 Rigidbody:

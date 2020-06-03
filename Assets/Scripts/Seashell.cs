@@ -39,10 +39,14 @@ public class Seashell : MonoBehaviour
         ShakeDetection.shakeEvent.AddListener(Shaken);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public void ToggleSong() {
+        if (!activated || !fullsong)
+            return;
+
+        MySongSource.Stop();
+        activated = false;
+        fullsong = false;
+        timer = 0f;
     }
 
     private void EnableShaking() {
@@ -70,6 +74,9 @@ public class Seashell : MonoBehaviour
     }
 
     private void SwitchSong() {
+        if (!activated || !fullsong)
+            return;
+
         List<AudioClip> tempClips = new List<AudioClip>(AudioManager.AllClips);
         tempClips.Remove(MySongSource.clip);
         MySongSource.clip = tempClips[Random.Range(0, tempClips.Count)];
@@ -88,6 +95,7 @@ public class Seashell : MonoBehaviour
             timer = 0f;
             MySongSource.clip = AudioManager.AllClips[0];
             MySongSource.Play();
+            MySongSource.loop = true;
         }
     }
 

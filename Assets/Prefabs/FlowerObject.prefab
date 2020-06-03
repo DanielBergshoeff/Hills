@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1991400551161151271}
   - component: {fileID: 1071670056118517190}
   - component: {fileID: 4795677798983696877}
+  - component: {fileID: 8853181107613760468}
   m_Layer: 0
   m_Name: FlowerObject
   m_TagString: SmallObject
@@ -47,7 +48,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
@@ -67,6 +68,7 @@ MonoBehaviour:
   timeForShake: 0.3
   flowerBudPrefab: {fileID: 418801088962573734, guid: 16de208e98597e8439cf4228bbdee724,
     type: 3}
+  MyColor: {r: 63.999992, g: 30.96157, b: 0, a: 1}
 --- !u!114 &1071670056118517190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +115,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HeldInHand: 0
+  RandomSize: 0
+  Leaf: 0
+--- !u!75 &8853181107613760468
+ConstantForce:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991400551161151258}
+  m_Enabled: 1
+  m_Force: {x: 0, y: -1, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!1 &7530877665436131824
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +156,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7530877665436131824}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.147, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 1991400551161151269}
@@ -233,7 +249,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9129637784936186951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.125, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1991400551161151269}
@@ -263,7 +279,10 @@ VisualEffect:
     m_Vector3f:
       m_Array: []
     m_Vector4f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 63.999992, y: 30.96157, z: 0, w: 1}
+        m_Name: Color
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:

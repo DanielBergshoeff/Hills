@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxRange: 5
   Message: Try pointing me at the floor to look for the four treasures!
-  MessageDutch: Dit is een voorbeeld text. Gebruik het wijslijk.
+  MessageDutch: Richt me naar de vloer om te zoeken naar de vier schatten!
   Size: 0.08
   TextSize: 10
   MessageDuration: 8
@@ -4115,7 +4115,7 @@ MonoBehaviour:
   timePerMuscle: 10
   switchTime: 3
   turbulenceIntensity: 0
-  maxTurbulenceIntensity: 2
+  maxTurbulenceIntensity: 0.5
   timeBetweenMuscles: 2
   SendMessages: 1
   ParentObject: {fileID: 2574395502333359256}
@@ -5149,11 +5149,11 @@ MonoBehaviour:
   enableTeleport: 1
   targetListPolicy: {fileID: 0}
   pointerRenderer: {fileID: 1305635440024075177}
-  activationButton: 10
+  activationButton: 14
   holdButtonToActivate: 1
   activateOnEnable: 0
   activationDelay: 0
-  selectionButton: 10
+  selectionButton: 14
   selectOnPress: 0
   selectionDelay: 0
   selectAfterHoverDuration: 0
@@ -8506,7 +8506,7 @@ MonoBehaviour:
   timePerMuscle: 10
   switchTime: 3
   turbulenceIntensity: 0
-  maxTurbulenceIntensity: 2
+  maxTurbulenceIntensity: 0.5
   timeBetweenMuscles: 2
   SendMessages: 1
   ParentObject: {fileID: 2078347471430568457}
@@ -9543,7 +9543,7 @@ MonoBehaviour:
   timePerMuscle: 10
   switchTime: 3
   turbulenceIntensity: 0
-  maxTurbulenceIntensity: 2
+  maxTurbulenceIntensity: 0.5
   timeBetweenMuscles: 2
   SendMessages: 0
   ParentObject: {fileID: 5341574864421027685}
@@ -10758,11 +10758,11 @@ MonoBehaviour:
   enableTeleport: 0
   targetListPolicy: {fileID: 0}
   pointerRenderer: {fileID: 5448456420391903034}
-  activationButton: 10
+  activationButton: 14
   holdButtonToActivate: 1
   activateOnEnable: 0
   activationDelay: 0
-  selectionButton: 10
+  selectionButton: 14
   selectOnPress: 0
   selectionDelay: 0
   selectAfterHoverDuration: 0
@@ -10787,7 +10787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playareaCursor: {fileID: 0}
   directionIndicator: {fileID: 0}
-  customRaycast: {fileID: 0}
+  customRaycast: {fileID: 2483212135240551278}
   pointerOriginSmoothingSettings:
     smoothsPosition: 0
     maxAllowedPerFrameDistanceDifference: 0.003
@@ -12844,7 +12844,7 @@ MonoBehaviour:
   timePerMuscle: 10
   switchTime: 3
   turbulenceIntensity: 0
-  maxTurbulenceIntensity: 2
+  maxTurbulenceIntensity: 0.5
   timeBetweenMuscles: 2
   SendMessages: 0
   ParentObject: {fileID: 4343524117851271694}
@@ -13881,7 +13881,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3501821051827883104}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: -27.512001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!2083052967 &6030586887679654055
 VisualEffect:
   m_ObjectHideFlags: 0
@@ -14021,7 +14021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 616c6ebf9aed2b54588089f90e61de8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AdditionalData: {fileID: 0}
+  AdditionalData: {fileID: 5591874771812089368}
   CameraProperty:
     m_Name: DepthCamera
 --- !u!1 &8937317836611005074
@@ -17030,6 +17030,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3546226366541759765, guid: 60fe01da15cc8844bb8ddcbcf96a2f55,
+        type: 3}
+      propertyPath: MessageDutch
+      value: Probeer de bol vast te grijpen om een ademhalingsoefening te plaatsen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60fe01da15cc8844bb8ddcbcf96a2f55, type: 3}
 --- !u!4 &2384170666738881557 stripped
@@ -17833,6 +17838,12 @@ PrefabInstance:
       propertyPath: MenuDistance
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1169078510773378127, guid: ecfb19e805533e0449eb3d20632c15aa,
+        type: 3}
+      propertyPath: WarmthPrefab
+      value: 
+      objectReference: {fileID: 4721921799930977928, guid: a18ecddc3d479a64f9033f0275bccd13,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecfb19e805533e0449eb3d20632c15aa, type: 3}
 --- !u!4 &5825311337314302871 stripped
@@ -19081,9 +19092,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2701878617094512453, guid: f2b258583500b034bb9dca5ec3d5a304,
         type: 3}
+      propertyPath: Clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701878617094512453, guid: f2b258583500b034bb9dca5ec3d5a304,
+        type: 3}
       propertyPath: AutoPlay
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2701878617094512453, guid: f2b258583500b034bb9dca5ec3d5a304,
+        type: 3}
+      propertyPath: Clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: ffa8a709a17502c4c947e8de03b46b1b, type: 3}
+    - target: {fileID: 2701878617094512453, guid: f2b258583500b034bb9dca5ec3d5a304,
+        type: 3}
+      propertyPath: CoconutBucketSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8ba50773182d09740b61f77f2bf92691, type: 3}
+    - target: {fileID: 2701878617094512453, guid: f2b258583500b034bb9dca5ec3d5a304,
+        type: 3}
+      propertyPath: CoconutGroundSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b5c20e643ff747543bbf8b13de097731, type: 3}
+    - target: {fileID: 2701878617094512453, guid: f2b258583500b034bb9dca5ec3d5a304,
+        type: 3}
+      propertyPath: CoconutWaterSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 07ad7df4b561baf41a7618ef03fd70d7, type: 3}
+    - target: {fileID: 2701878617094512453, guid: f2b258583500b034bb9dca5ec3d5a304,
+        type: 3}
+      propertyPath: FireflycatcherCatchSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a99dad84ef1d44247b02bab3d9bd95b9, type: 3}
+    - target: {fileID: 2701878617094512453, guid: f2b258583500b034bb9dca5ec3d5a304,
+        type: 3}
+      propertyPath: LeafThrow
+      value: 
+      objectReference: {fileID: 8300000, guid: 242a247cc952179459acf878338d3216, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2b258583500b034bb9dca5ec3d5a304, type: 3}
 --- !u!4 &8698246757294385750 stripped
@@ -19659,6 +19705,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeWithLeaves (42)
       objectReference: {fileID: 0}
+    - target: {fileID: 2373968060958429657, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2377346500224665209, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19718,6 +19769,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316450147403651804, guid: 5f0cea39cdab1cf4d91b7e2b637b7369,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f0cea39cdab1cf4d91b7e2b637b7369, type: 3}
