@@ -3,7 +3,27 @@ guid: 6ad924e920fce44438790f52c7a2cdb4
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn4
+    second: {fileID: 2100000, guid: 25e02d5d76430e442a658fd127fda312, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert9
+    second: {fileID: 2100000, guid: aa4fca863ff6b694a9df5934cf42b245, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: staff_low_defaultMat1
+    second: {fileID: 2100000, guid: 6c5ab4d5d8a95374385ccc9cc5a6eaae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: surfaceShader1
+    second: {fileID: 2100000, guid: f36e195f80425a84abfeb9db1a6fa273, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

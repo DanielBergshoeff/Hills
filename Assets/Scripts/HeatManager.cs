@@ -93,9 +93,9 @@ public class HeatManager : MonoBehaviour
     }
 
     private void SetHeat() {
-        SensiksManager.SetHeaterIntensity(HeaterPosition.FRONT, Mathf.Clamp(heatFront, 0f, 1f));
-        SensiksManager.SetHeaterIntensity(HeaterPosition.LEFT, Mathf.Clamp(heatLeft, 0f, 1f));
-        SensiksManager.SetHeaterIntensity(HeaterPosition.RIGHT, Mathf.Clamp(heatRight, 0f, 1f));
+        SensiksManager.SetHeaterIntensity(HeaterPosition.FRONT,heatFront);
+        SensiksManager.SetHeaterIntensity(HeaterPosition.LEFT, heatLeft);
+        SensiksManager.SetHeaterIntensity(HeaterPosition.RIGHT, heatRight);
     }
 
     private void OnDrawGizmosSelected() {

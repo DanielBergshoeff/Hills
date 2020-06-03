@@ -88,6 +88,8 @@ public class MenuManager : MonoBehaviour
                 currentTutorial = englishTutorial;
             }
 
+            wings.ToggleTutorialHands(true);
+
             RightHandPointer.enabled = false;
             LeftHandPointer.enabled = false;
             wings.RotationEnabled = false;
@@ -152,6 +154,9 @@ public class MenuManager : MonoBehaviour
         currentMessage.StartFade();
         ExerciseGrabber.Instance.gameObject.SetActive(true);
         Tutorial = false;
+
+        wings.ToggleTutorialHands(false);
+
         currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[5], AudioManager.TutorialClips[5], AudioManager.TutorialClips[5].length, Vector3.up * 1f, 2f, true, 4f);
     }
 

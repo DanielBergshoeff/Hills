@@ -11,6 +11,9 @@ public class Wings : MonoBehaviour {
     public Transform RightHand;
     public Transform Head;
 
+    public GameObject LeftHandTutorial;
+    public GameObject RightHandTutorial;
+
     public bool Testing;
     public bool Flying = false;
     public bool RotationEnabled = true;
@@ -30,6 +33,14 @@ public class Wings : MonoBehaviour {
     private void Start() {
         //HeatManager.Instance.UpdateHeat();
         WindManager.Instance.UpdateWind();
+    }
+
+    public void ToggleTutorialHands(bool enabled) {
+        LeftHandTutorial.SetActive(enabled);
+        RightHandTutorial.SetActive(enabled);
+
+        LeftHand.gameObject.SetActive(!enabled);
+        RightHand.gameObject.SetActive(!enabled);
     }
 
     private void UpdateRotations() {
