@@ -119,6 +119,7 @@ public class MenuManager : MonoBehaviour
 
     public void StartTutorial() {
         wings.RotationEnabled = true;
+        wings.HighlightButton(wings.ThumbstickLeftRenderer);
         currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[0], AudioManager.TutorialClips[0], 0f, Vector3.up * 1f, 2f, true, 4f);
     }
 
@@ -126,12 +127,15 @@ public class MenuManager : MonoBehaviour
         tutorialPart++;
         currentMessage.StartFade();
         RightHandPointer.enabled = true;
+        wings.ReverseHighlight(wings.ThumbstickLeftRenderer);
+        wings.HighlightButton(wings.ButtonOneRightRenderer);
         currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[1], AudioManager.TutorialClips[1], 0f, Vector3.up * 1f, 2f, true, 4f);
     }
 
     private void PickupTutorialPart2() {
         tutorialPart++;
         currentMessage.StartFade();
+        wings.HighlightButton(wings.HandRightRenderer);
         currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[2], AudioManager.TutorialClips[2], 0f, Vector3.up * 1f, 2f, true, 4f);
     }
 
@@ -139,6 +143,9 @@ public class MenuManager : MonoBehaviour
         tutorialPart++;
         currentMessage.StartFade();
         LeftHandPointer.enabled = true;
+        wings.ReverseHighlight(wings.ButtonOneRightRenderer);
+        wings.ReverseHighlight(wings.HandRightRenderer);
+        wings.HighlightButton(wings.ButtonOneLeftRenderer);
         currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[3], AudioManager.TutorialClips[3], 0f, Vector3.up * 1f, 2f, true, 4f);
     }
 
@@ -153,6 +160,8 @@ public class MenuManager : MonoBehaviour
         tutorialPart++;
         currentMessage.StartFade();
         ExerciseGrabber.Instance.gameObject.SetActive(true);
+        wings.ReverseHighlight(wings.ButtonOneLeftRenderer);
+
         Tutorial = false;
 
         wings.ToggleTutorialHands(false);

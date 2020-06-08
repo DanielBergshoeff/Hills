@@ -41,6 +41,9 @@ public class HeatManager : MonoBehaviour
         SetHeat();
     }
 
+    /// <summary>
+    /// Check for warmth objects and update the heater strength
+    /// </summary>
     public void UpdateHeat() {
         foreach (HeatObject ho in HeatObjects) {
             ProcessHeatObject(ho);
@@ -53,6 +56,10 @@ public class HeatManager : MonoBehaviour
         Invoke("UpdateHeat", UpdateTime);
     }
 
+    /// <summary>
+    /// Process heat object and add warmth accordingly
+    /// </summary>
+    /// <param name="ho"></param>
     private void ProcessHeatObject(HeatObject ho) {
         if (Wings.Instance == null)
             return;

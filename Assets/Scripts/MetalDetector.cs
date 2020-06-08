@@ -42,8 +42,12 @@ public class MetalDetector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateDetection();
+    }
+
+    private void UpdateDetection() {
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, transform.forward, out hit, Range)) {
+        if (Physics.Raycast(transform.position, transform.forward, out hit, Range)) {
             DetectionMaterial.SetVector("Vector3_E8D52375", hit.point);
             DetectionEffect.SetVector3("ScanPosition", hit.point);
             DetectedItem.UpdateDetectedPosition(hit.point);

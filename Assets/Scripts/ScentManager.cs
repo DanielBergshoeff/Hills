@@ -53,6 +53,11 @@ public class ScentManager : MonoBehaviour
         SensiksManager.SetActiveScent(strongestScent, currentScentStrength);
     }
 
+
+    /// <summary>
+    /// Set the strongest scent and its strength
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator UpdateScent() {
         yield return new WaitForSeconds(UpdateTime);
 
@@ -82,6 +87,9 @@ public class ScentManager : MonoBehaviour
         SensiksManager.SetActiveScent(strongestScent, 0f);
     }
 
+    /// <summary>
+    /// Update scent and scent strength based on scent objects
+    /// </summary>
     private void SetScent() {
         scentToStrength = new Dictionary<Scent, float>();
         foreach(ScentObject so in ScentObjects) {

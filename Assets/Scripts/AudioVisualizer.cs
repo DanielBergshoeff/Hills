@@ -20,6 +20,9 @@ public class AudioVisualizer : MonoBehaviour {
         ChangeColorStrength();
     }
 
+    /// <summary>
+    /// Update color strength and turbulence intensity based on the audio
+    /// </summary>
     private void ChangeColorStrength() {
         for (int i = 0; i < amtOfVisualizers; i++) {
             audioVisualizers[i].SetFloat("Strength", AudioManager.FrequencyBands[i] * AudioManager.FrequencyBands[i]);
@@ -27,6 +30,9 @@ public class AudioVisualizer : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Spawns the visual effects and adds them to the list
+    /// </summary>
     private void SpawnVisualizers() {
         audioVisualizers = new List<VisualEffect>();
         for (int i = 0; i < amtOfVisualizers; i++) {

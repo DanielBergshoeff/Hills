@@ -37,52 +37,68 @@ public class ExerciseGrabber : MonoBehaviour
     void Update()
     {
         if (grabbed) {
-            RaycastHit hit;
-
-            if (Physics.Raycast(Wings.Instance.RightHand.transform.position, Wings.Instance.RightHand.transform.forward, out hit, MaxDistance) && (Wings.Instance.RightHand.transform.position - hit.point).sqrMagnitude > MinDistance * MinDistance) {
-                lineRenderer.SetPositions(new Vector3[] { Wings.Instance.RightHand.transform.position, hit.point });
-                breathingExercise.transform.position = hit.point + Vector3.up * 1.5f;
-                Vector3 heading = Camera.main.transform.position - breathingExercise.transform.position;
-                breathingExercise.transform.rotation = Quaternion.LookRotation(-heading);
-            }
-            else {
-                lineRenderer.SetPositions(new Vector3[] { Wings.Instance.RightHand.transform.position, Wings.Instance.RightHand.transform.position + Wings.Instance.RightHand.transform.forward * MaxDistance });
-            }
-
-            if (Input.GetAxis("Oculus_CrossPlatform_SecondaryHandTrigger") < 0.5f) {
-                grabbed = false;
-                lineRenderer.enabled = false;
-                breathingExercise.GetComponent<Breathing>().StartBreathing();
-            }
+            UpdateExercisePlacement();
         }
 
         if (!touching)
             return;
 
         if (!grabbed) {
-            if (Input.GetAxis("Oculus_CrossPlatform_SecondaryHandTrigger") > 0.5f) {
-                if (MyVicinityMessage != null) {
-                    MyVicinityMessage.StopMessage();
-                    Destroy(MyVicinityMessage);
-                }
-
-                grabbed = true;
-                lineRenderer.enabled = true;
-                
-                if(breathingExercise != null) {
-                    Destroy(breathingExercise);
-                }
-
-                touching = false;
-                transform.GetChild(0).localScale = new Vector3(0.025f, 0.025f, 0.025f);
-
-                breathingExercise = Instantiate(BreathingPrefab);
-                breathingExercise.transform.position = Camera.main.transform.parent.parent.position + Camera.main.transform.parent.parent.forward * 5f + Vector3.up * 1f;
-                Vector3 heading = breathingExercise.transform.position - Camera.main.transform.position;
-                breathingExercise.transform.rotation = Quaternion.LookRotation(heading);
-            }
+            CheckForGrab();
         }
     }
+
+    /// <summary>
+    /// Update the exercise position based on player right hand
+    /// </summary>
+    private void UpdateExercisePlacement() {
+        RaycastHit hit;
+
+        if (Physics.Raycast(Wings.Instance.RightHand.transform.position, Wings.Instance.RightHand.transform.forward, out hit, MaxDistance) && (Wings.Instance.RightHand.transform.position - hit.point).sqrMagnitude > MinDistance * MinDistance) {
+            lineRenderer.SetPositions(new Vector3[] { Wings.Instance.RightHand.transform.position, hit.point });
+            breathingExercise.transform.position = hit.point + Vector3.up * 1.5f;
+            Vector3 heading = Camera.main.transform.position - breathingExercise.transform.position;
+            breathingExercise.transform.rotation = Quaternion.LookRotation(-heading);
+        }
+        else {
+            lineRenderer.SetPositions(new Vector3[] { Wings.Instance.RightHand.transform.position, Wings.Instance.RightHand.transform.position + Wings.Instance.RightHand.transform.forward * MaxDistance });
+            lineRenderer.startColor = Color.red;
+        }
+
+        if (Input.GetAxis("Oculus_CrossPlatform_SecondaryHandTrigger") < 0.5f) {
+            grabbed = false;
+            lineRenderer.enabled = false;
+            breathingExercise.GetComponent<Breathing>().StartBreathing();
+        }
+    }
+
+    /// <summary>
+    /// Check if the player has grabbed the exercise
+    /// </summary>
+    private void CheckForGrab() {
+        if (Input.GetAxis("Oculus_CrossPlatform_SecondaryHandTrigger") > 0.5f) {
+            if (MyVicinityMessage != null) {
+                MyVicinityMessage.StopMessage();
+                Destroy(MyVicinityMessage);
+            }
+
+            grabbed = true;
+            lineRenderer.enabled = true;
+
+            if (breathingExercise != null) {
+                Destroy(breathingExercise);
+            }
+
+            touching = false;
+            transform.GetChild(0).localScale = new Vector3(0.025f, 0.025f, 0.025f);
+
+            breathingExercise = Instantiate(BreathingPrefab);
+            breathingExercise.transform.position = Camera.main.transform.parent.parent.position + Camera.main.transform.parent.parent.forward * 5f + Vector3.up * 1f;
+            Vector3 heading = breathingExercise.transform.position - Camera.main.transform.position;
+            breathingExercise.transform.rotation = Quaternion.LookRotation(heading);
+        }
+    }
+
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.name != "GrabVolumeSmall")

@@ -5,16 +5,4 @@ using UnityEngine;
 public class TreeManager : MonoBehaviour
 {
     public static List<Tree> Trees;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

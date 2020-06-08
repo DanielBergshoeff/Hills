@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MuscleRelaxationStarter : MonoBehaviour
 {
-    public static bool StartOnAwake = true;
+    public static bool StartOnAwake = false;
 
     public GameObject MuscleRelaxation;
     public GameObject DutchMuscleRelaxation;

@@ -15,7 +15,6 @@ public class Paintable : MonoBehaviour
     public VisualEffect VFXGraph;
     public VisualEffect Aim;
 
-    public bool VREnabled = false;
     public float BrushSize = 0.1f;
     public LayerMask PaintLayer;
 
@@ -45,13 +44,7 @@ public class Paintable : MonoBehaviour
         if (!PaintingEnabled)
             return;
 
-        if (!VREnabled) {
-            TryPaint();
-        }
-        else {
-            TryPaintVR();
-        }
-
+        TryPaintVR();
     }
 
     public static void ChangeColor(Color color) {
@@ -62,6 +55,9 @@ public class Paintable : MonoBehaviour
         sharedVfxGraph.SetFloat("Size", size);
     }
 
+    /// <summary>
+    /// Update painting information based on player right hand
+    /// </summary>
     private void TryPaintVR() {
         RaycastHit hit;
         if (Physics.Raycast(Wings.Instance.RightHand.transform.position + Wings.Instance.RightHand.transform.forward * 0.25f, Wings.Instance.RightHand.transform.forward, out hit, 100f, PaintLayer)) {
@@ -75,27 +71,6 @@ public class Paintable : MonoBehaviour
             if (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) > 0.1f) {
 
                 distance += Time.deltaTime * 0.1f;
-                VFXGraph.SetFloat("SpawnRate", 60f);
-            }
-            else {
-                VFXGraph.SetFloat("SpawnRate", 0f);
-            }
-        }
-        else {
-            VFXGraph.SetFloat("SpawnRate", 0f);
-        }
-    }
-
-    private void TryPaint() {
-        if (Input.GetMouseButton(0)) {
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100f, PaintLayer)) {
-                if (!hit.transform.CompareTag("Painting"))
-                    return;
-                
-                distance += Time.deltaTime * 0.1f;
-                SpawnPosition.transform.position = hit.point + transform.up * distance;
                 VFXGraph.SetFloat("SpawnRate", 60f);
             }
             else {

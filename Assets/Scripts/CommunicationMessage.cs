@@ -82,6 +82,9 @@ public class CommunicationMessage : MonoBehaviour
             Destroy(gameObject);
     }
 
+    /// <summary>
+    /// Update position based on follow object
+    /// </summary>
     private void DoFollow() {
         transform.position = FollowObject.transform.position + RelativePosition;
         RaycastHit hit;
@@ -95,15 +98,6 @@ public class CommunicationMessage : MonoBehaviour
         if (height > transform.position.y - Size) {
             transform.position = new Vector3(transform.position.x, height + Size, transform.position.z);
         }
-
-        /*
-        Vector3 heading = transform.position - Camera.main.transform.position;
-        if(Physics.SphereCast(Camera.main.transform.position, 0.5f, heading.normalized, out hit, 1000f)) {
-            if (!hit.collider.CompareTag("Message")) {
-                Vector3 hd = Camera.main.transform.position - hit.point;
-                transform.position = hit.point + hd.normalized;
-            }
-        }*/
     }
 
     public void StartFade() {

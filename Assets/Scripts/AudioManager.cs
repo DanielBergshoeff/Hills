@@ -65,7 +65,6 @@ public class AudioManager : MonoBehaviour
     {
         GetSpectrumAudioSource();
         MakeFrequencyBands();
-        //BandBuffer();
         CalculateAverage();
     }
 
@@ -89,19 +88,6 @@ public class AudioManager : MonoBehaviour
 
             average /= count;
             FrequencyBands[i] = average * 10;
-        }
-    }
-
-    private void BandBuffer() {
-        for (int i = 0; i < FrequencyBands.Length; i++) {
-            if(FrequencyBands[i] > BandBuffers[i]) {
-                BandBuffers[i] = FrequencyBands[i];
-                bufferDecrease[i] = 0.005f;
-            }
-            if(FrequencyBands[i] < BandBuffers[i]) {
-                BandBuffers[i] -= bufferDecrease[i];
-                bufferDecrease[i] *= 1.2f;
-            }
         }
     }
 

@@ -60,6 +60,9 @@ public class Breathing : MonoBehaviour
         Tree.UpdateTree(0f, 1f, leafSpawnRateNormal);
     }
 
+    /// <summary>
+    /// Activates the breathing exercise
+    /// </summary>
     public void StartBreathing() {
         active = true;
         BreatheInEffects();
@@ -101,6 +104,9 @@ public class Breathing : MonoBehaviour
         vfxGraph.SetFloat("Point", timer);
     }
 
+    /// <summary>
+    /// Updates every frame during breathing in phase
+    /// </summary>
     private void ContinuousBreatheInEffects() {
         if (waterEffect) {
             float waterPoint = 1f - (timer / breatheInTime);
@@ -108,10 +114,16 @@ public class Breathing : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Updates every frame during holding breath phase
+    /// </summary>
     private void ContinuousHoldBreathEffects() {
 
     }
 
+    /// <summary>
+    /// Updates every frame during breathing out phase
+    /// </summary>
     private void ContinuousBreatheOutEffects() {
         if (waterEffect) {
             float waterPoint = (timer - breatheInTime - holdBreathTime) / breatheOutTime;
@@ -123,12 +135,19 @@ public class Breathing : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Updates water VFX graph
+    /// </summary>
+    /// <param name="waterPoint"></param>
     private void SetWaterGraph(float waterPoint) {
         waterPoint = waterPoint.Remap(0f, 1f, minWaterDistance, maxWaterDistance);
         WaterShaderGraph.SetFloat("_RipplePosition", waterPoint);
         WaterShaderGraph.SetVector("_CenterPosition", Camera.main.transform.parent.parent.position);
     }
 
+    /// <summary>
+    /// Sets once when the breathing in phase starts
+    /// </summary>
     private void BreatheInEffects() {
         myMessage = CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe in", AudioManager.BreatheInClips[Random.Range(0, AudioManager.BreatheInClips.Count)], breatheInTime, Vector3.up * 2f, 0.5f, false);
         vfxGraph.SetFloat("Direction", 1f);
@@ -145,6 +164,10 @@ public class Breathing : MonoBehaviour
             MountainPaintingVFXGraph.SetFloat("SpawnRate", 0f);
     }
 
+
+    /// <summary>
+    /// Sets once when the holding breath phase starts
+    /// </summary>
     private void HoldBreathEffects() {
         myMessage = CommunicationManager.Instance.DisplayMessage(this.gameObject, "Hold breath", AudioManager.HoldBreathClips[Random.Range(0, AudioManager.HoldBreathClips.Count)], holdBreathTime, Vector3.up * 2f, 0.5f, false);
         vfxGraph.SetFloat("Speed", 0f);
@@ -159,6 +182,9 @@ public class Breathing : MonoBehaviour
             MountainPaintingVFXGraph.SetFloat("SpawnRate", 0f);
     }
 
+    /// <summary>
+    /// Sets once when the breathing out phase starts
+    /// </summary>
     private void BreatheOutEffects() {
         myMessage = CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe out", AudioManager.BreatheOutClips[Random.Range(0, AudioManager.BreatheOutClips.Count)], breatheOutTime, Vector3.up * 2f, 0.5f, false);
         vfxGraph.SetFloat("Direction", -1f);
@@ -175,6 +201,10 @@ public class Breathing : MonoBehaviour
             MountainPaintingVFXGraph.SetFloat("SpawnRate", mountainPaintingSpawnRate);
     }
 
+
+    /// <summary>
+    /// Return all the graphs to neutral
+    /// </summary>
     private void SetToNeutral() {
         Tree.UpdateTree(0f, 1f, leafSpawnRateNormal);
         FlowerRainVfxGraph.SetInt("SpawnRate", 0);
@@ -183,7 +213,9 @@ public class Breathing : MonoBehaviour
         WaterShaderGraph.SetVector("_CenterPosition", Vector3.zero);
     }
     
-
+    /// <summary>
+    /// Stop the breathing exercise
+    /// </summary>
     public void Stop() {
         Debug.Log("Stop");
         if (vfxGraph == null)
@@ -191,6 +223,9 @@ public class Breathing : MonoBehaviour
         vfxGraph.Reinit();
     }
 
+    /// <summary>
+    /// Cleans up before destroying self
+    /// </summary>
     private void OnDestroy() {
         SetToNeutral();
         if (myMessage != null)

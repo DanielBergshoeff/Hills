@@ -87,6 +87,9 @@ public class MuscleRelaxation : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Switch to a different muscle group
+    /// </summary>
     private void SwitchMuscleGroup() {
         if (currentMuscle + 1 >= MuscleGroups.Count) {
             MuscleRelaxationStarter.StartOnAwake = false;
@@ -123,6 +126,9 @@ public class MuscleRelaxation : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Communicate to player to flex the muscle group
+    /// </summary>
     private void FlexMuscleGroup() {
         if (SendMessages) {
             if (currentMessage != null)
@@ -133,6 +139,9 @@ public class MuscleRelaxation : MonoBehaviour {
         Invoke("ReleaseMuscleGroup", cMObjects[currentMuscle].MyAudioClipHolding.length);
     }
 
+    /// <summary>
+    /// Communicate to player to release muscle group
+    /// </summary>
     private void ReleaseMuscleGroup() {
         if(SendMessages)
             currentMessage.StartFade();
@@ -150,12 +159,20 @@ public class MuscleRelaxation : MonoBehaviour {
         Invoke("SwitchMuscleGroup", cMObjects[currentMuscle].MyAudioClipRelease.length + timeBetweenMuscles);
     }
 
+    /// <summary>
+    /// Update the visual effect based on maps
+    /// </summary>
     private void UpdateModel() {
         vfxGraph.SetTexture(PropName.PositionMap, mapSets[currentMuscle].position);
         vfxGraph.SetVector3(PropName.PositionOffset, MuscleGroups[currentMuscle].transform.position - transform.position);
         vfxGraph.SetVector3(PropName.Scale, mapSets[currentMuscle].scale);
     }
 
+    /// <summary>
+    /// Get the maps necesssary for the visual effect
+    /// </summary>
+    /// <param name="go"></param>
+    /// <returns></returns>
     private MapSet InitEffect(GameObject go) {
         MapSet mapSet = new MapSet();
         var modelTrans = go.transform;

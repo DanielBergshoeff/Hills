@@ -11,8 +11,26 @@ public class Wings : MonoBehaviour {
     public Transform RightHand;
     public Transform Head;
 
+    public GameObject LeftHandNormal;
+    public GameObject RightHandNormal;
+
+
     public GameObject LeftHandTutorial;
     public GameObject RightHandTutorial;
+
+    [Header("Tutorial")]
+    public Material HighlightMaterial;
+    public Material StandardMaterial;
+
+    public Renderer ThumbstickLeftRenderer;
+    public Renderer ButtonOneLeftRenderer;
+
+    public Renderer ButtonOneRightRenderer;
+    public Renderer IndexRightRenderer;
+    public Renderer HandRightRenderer;
+
+    private Renderer currentRenderer;
+    
 
     public bool Testing;
     public bool Flying = false;
@@ -23,6 +41,8 @@ public class Wings : MonoBehaviour {
     private GameObject FeatherParent;
     private bool ReadyToSnapTurn = true;
     public bool RotationEitherThumbstick = false;
+
+   
     
     private void Awake() {
         myRigidbody = transform.parent.GetComponent<Rigidbody>();
@@ -35,12 +55,20 @@ public class Wings : MonoBehaviour {
         WindManager.Instance.UpdateWind();
     }
 
+    public void ReverseHighlight(Renderer r) {
+        r.material = StandardMaterial;
+    }
+
+    public void HighlightButton(Renderer r) {
+        r.material = HighlightMaterial;
+    }
+
     public void ToggleTutorialHands(bool enabled) {
         LeftHandTutorial.SetActive(enabled);
         RightHandTutorial.SetActive(enabled);
 
-        LeftHand.gameObject.SetActive(!enabled);
-        RightHand.gameObject.SetActive(!enabled);
+        LeftHandNormal.SetActive(!enabled);
+        RightHandNormal.SetActive(!enabled);
     }
 
     private void UpdateRotations() {
