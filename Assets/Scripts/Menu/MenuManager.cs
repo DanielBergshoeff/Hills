@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Events;
 using UnityEngine.VFX;
 using VRTK;
@@ -60,7 +61,10 @@ public class MenuManager : MonoBehaviour
         "Aim at the brush on the floor and squeeze the right controller's middle finger to pick it up.",
         "To teleport, press the X button on the left controller to make an arch appear first.",
         "Aim for a stepping stone on the path, until the arch turns green. Release the button to teleport.",
-        "Good job, now you are in control!"
+        "Good job, now you are in control!",
+        "If you dont know how to use an object, hold the A button on your right controller and aim for the object.",
+        "Then click the button by your index finger to show an info screen. Try it with the paint brush.",
+        "Well done. Now that you know how to use it, try painting on the canvas."
     };
 
     private string[] dutchTutorial = new string[] {
@@ -69,7 +73,10 @@ public class MenuManager : MonoBehaviour
         "Richt met de straal op de kwast en knijp met je middelvinger de onderste knop in om de kwast op te pakken.",
         "Om te teleporteren kan je de X knop op je linker controller indrukken om een boog te laten verschijnen.",
         "Richt vervolgens op een steen op het pad, tot de boog groen wordt. Laat vervolgens de knop los om te teleporteren.",
-        "Goed gedaan, nu heb jij de controle!"
+        "Goed gedaan, nu heb jij de controle!",
+        "Als je niet weet hoe je een object kan gebruiken, houd dan de A knop ingedrukt op je rechter controller, en richt op het object.",
+        "Klik vervolgens op de knop bij je wijsvinger om een informatiescherm te laten zien. Probeer het eens met de kwast.",
+        "Goed gedaan. Nu je weet hoe je het moet gebruiken,probeer eens op het canvas te schilderen."
     };
 
     private string[] currentTutorial;
@@ -90,6 +97,10 @@ public class MenuManager : MonoBehaviour
         standardMenuEvent.AddListener(SelectMenu);
 
         grabAudioSource = gameObject.AddComponent<AudioSource>();
+        AudioMixer mixer = Resources.Load("MixerGroups/Ambience") as AudioMixer;
+        grabAudioSource.outputAudioMixerGroup = mixer.FindMatchingGroups("GrabSound")[0];
+
+
         menuAudioSource = gameObject.AddComponent<AudioSource>();
 
         if (Tutorial) {
@@ -144,11 +155,26 @@ public class MenuManager : MonoBehaviour
         currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[0], AudioManager.TutorialClips[0], 0f, Vector3.up * 1f, 2f, true, 4f);
     }
 
-    private void PickupTutorial() {
+    private void ExplanationTutorial() {
+        RightHandPointer.enabled = true;
         tutorialPart++;
         currentMessage.StartFade();
-        RightHandPointer.enabled = true;
         wings.ReverseHighlight(wings.ThumbstickLeftRenderer);
+        wings.HighlightButton(wings.ButtonOneRightRenderer);
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[6], AudioManager.TutorialClips[6], 0f, Vector3.up * 1f, 2f, true, 4f);
+    }
+
+    private void ExplanationTutorialPart2() {
+        tutorialPart++;
+        currentMessage.StartFade();
+        wings.HighlightButton(wings.IndexRightRenderer);
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[7], AudioManager.TutorialClips[7], 0f, Vector3.up * 1f, 2f, true, 4f);
+    }
+
+    private void PickupTutorial() {
+        wings.ReverseHighlight(wings.IndexRightRenderer);
+        tutorialPart++;
+        currentMessage.StartFade();
         wings.HighlightButton(wings.ButtonOneRightRenderer);
         currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[1], AudioManager.TutorialClips[1], 0f, Vector3.up * 1f, 2f, true, 4f);
     }
@@ -158,6 +184,12 @@ public class MenuManager : MonoBehaviour
         currentMessage.StartFade();
         wings.HighlightButton(wings.HandRightRenderer);
         currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[2], AudioManager.TutorialClips[2], 0f, Vector3.up * 1f, 2f, true, 4f);
+    }
+
+    private void PaintTutorial() {
+        tutorialPart++;
+        currentMessage.StartFade();
+        currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[8], AudioManager.TutorialClips[8], 0f, Vector3.up * 1f, 2f, true, 4f);
     }
 
     private void TeleportTutorial() {
@@ -251,25 +283,40 @@ public class MenuManager : MonoBehaviour
         switch (tutorialPart) {
             case 0:
                 if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft, OVRInput.Controller.LTouch) || OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight, OVRInput.Controller.LTouch)) {
-                    PickupTutorial();
+                    ExplanationTutorial();
                 }
                 break;
             case 1:
                 if(OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
-                    PickupTutorialPart2();
+                    ExplanationTutorialPart2();
                 }
                 break;
             case 2:
+                if (OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.RTouch) && OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch)) {
+                    PickupTutorial();
+                }
+                break;
+            case 3:
+                if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
+                    PickupTutorialPart2();
+                }
+                break;
+            case 4:
                 if(myTool == Tool.Paintbrush) {
+                    PaintTutorial();
+                }
+                break;
+            case 5:
+                if(myTool == Tool.Paintbrush && OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch)) {
                     TeleportTutorial();
                 }
                 break;
-            case 3: 
+            case 6: 
                 if(OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.LTouch)){
                     TeleportPart2Tutorial();
                 }
                 break;
-            case 4:
+            case 7:
                 if((startPosition - wings.transform.position).sqrMagnitude > 0.5f) {
                     EndTutorial();
                 }
@@ -362,6 +409,11 @@ public class MenuManager : MonoBehaviour
         if(vm != null) {
             vm.StopMessage();
             Destroy(vm);
+        }
+
+        Explanation ex = e.target.GetComponent<Explanation>();
+        if (ex != null) {
+            ex.StopMessage();
         }
 
         heldObject = e.target.gameObject;

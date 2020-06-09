@@ -102,6 +102,20 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &-4519339548255669287
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: c74b07b07591e2e4299bb557e4b8919c
+  m_EffectName: Attenuation
+  m_MixLevel: 90dae5e4443f7f74c86c6475cf2c649f
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-4164334752861626203
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -149,6 +163,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-1055613930644446083
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GrabSound
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 0af1282ab668c8244815e00a51454316
+  m_Children: []
+  m_Volume: a3dda0a89a46b5945bfc9991d1450999
+  m_Pitch: 62d92d9bc2c425042ac36079c8b1b2f3
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -4519339548255669287}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -170,6 +203,7 @@ AudioMixerController:
     - 13535004bb1c5d24f9942dacad099596
     - 2ab63ec47d76b14448f6af8b59c7a226
     - 69c2671ee01b34840be60e0050f4ec87
+    - 0af1282ab668c8244815e00a51454316
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -187,6 +221,7 @@ AudioMixerGroupController:
   - {fileID: 6031738288946648725}
   - {fileID: -5689185311446717596}
   - {fileID: 4543036275931296375}
+  - {fileID: -1055613930644446083}
   m_Volume: b3297b73fe4641c4b896fb2949bd2128
   m_Pitch: 36750c13f1fd78243ade72bf56c75700
   m_Send: 00000000000000000000000000000000
@@ -221,6 +256,7 @@ AudioMixerSnapshotController:
   m_SnapshotID: cc2cfe0875ae992478a1aed4c440293c
   m_FloatValues:
     80ba3ab5c07ef7f4b9dd662b86963df0: -9.833286
+    a3dda0a89a46b5945bfc9991d1450999: 9.757735
     6d615d69c780f624c862dc7f8cdf1a66: -13.637256
     d3877b8d2e7bd9d4ca3261b0bd04e6a5: -4.9356413
     cbed816f346d2bd4198e55a9a8ac29cc: -27.943817

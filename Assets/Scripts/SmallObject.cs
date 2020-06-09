@@ -23,11 +23,6 @@ public class SmallObject : MonoBehaviour {
         if (myRigidbody != null) {
             myRigidbody.constraints = RigidbodyConstraints.None;
         }
-
-        Explanation ex = GetComponent<Explanation>();
-        if (ex != null) {
-            ex.StopMessage();
-        }
     }
 
     public void LetGo() {
