@@ -30,6 +30,8 @@ public class Wings : MonoBehaviour {
     public Renderer HandRightRenderer;
 
     private Renderer currentRenderer;
+
+    private Vector3 startPosition;
     
 
     public bool Testing;
@@ -41,13 +43,16 @@ public class Wings : MonoBehaviour {
     private GameObject FeatherParent;
     private bool ReadyToSnapTurn = true;
     public bool RotationEitherThumbstick = false;
-
    
     
     private void Awake() {
         myRigidbody = transform.parent.GetComponent<Rigidbody>();
-
+        startPosition = transform.parent.position;
         Instance = this;
+    }
+
+    public void ResetPosition() {
+        transform.parent.position = startPosition;
     }
 
     private void Start() {

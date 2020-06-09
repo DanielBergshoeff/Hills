@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.VFX;
 using VRTK;
 
@@ -9,8 +10,10 @@ public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
     public static bool Dutch = false;
+    public static StandardMenuEvent standardMenuEvent;
 
     public GameObject ColorMenuPrefab;
+    public GameObject StandardMenuPrefab;
     public GameObject ColorMenu;
     public GameObject TutorialPosition;
     public Wings wings;
@@ -27,6 +30,7 @@ public class MenuManager : MonoBehaviour
     private MenuOption selectedMenu;
     private bool menuEnabled = false;
     private bool painting = true;
+    private bool menuRightHand = false;
 
 
     public static bool Tutorial = false;
@@ -79,6 +83,8 @@ public class MenuManager : MonoBehaviour
         RightHandGrab.ControllerGrabInteractableObject += new ObjectInteractEventHandler(OnGrabObject);
         RightHandGrab.ControllerUngrabInteractableObject += new ObjectInteractEventHandler(OnUnGrabObject);
         Instance = this;
+        standardMenuEvent = new StandardMenuEvent();
+        standardMenuEvent.AddListener(SelectMenu);
 
         if (Tutorial) {
             if (Dutch) {
@@ -93,6 +99,15 @@ public class MenuManager : MonoBehaviour
             RightHandPointer.enabled = false;
             LeftHandPointer.enabled = false;
             wings.RotationEnabled = false;
+        }
+    }
+
+    private void SelectMenu(StandardMenuOption smo) {
+        if(smo == StandardMenuOption.Exit) {
+            Application.Quit();
+        }
+        else if(smo == StandardMenuOption.ReturnToStart) {
+            wings.ResetPosition();
         }
     }
 
@@ -212,6 +227,9 @@ public class MenuManager : MonoBehaviour
         }
         previousPosition = wings.transform.position;
 
+        if(myTool == Tool.None)
+            StandardMenu();
+
         if (painting)
             PaintingMenu();
 
@@ -256,10 +274,50 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    private void StandardMenu() {
+        if(OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.LTouch)) {
+            ColorMenu = Instantiate(StandardMenuPrefab, transform);
+            Vector3 forward = new Vector3(Wings.Instance.LeftHand.forward.x, 0f, Wings.Instance.LeftHand.forward.z).normalized;
+            ColorMenu.transform.position = Wings.Instance.LeftHand.position + forward * MenuDistance;
+            ColorMenu.transform.rotation = Quaternion.LookRotation(forward);
+            menuOptions = ColorMenu.GetComponentsInChildren<MenuOption>();
+
+            menuLineRenderer.enabled = true;
+            menuEnabled = true;
+            menuRightHand = false;
+        }
+
+        if (OVRInput.GetUp(OVRInput.Button.Two, OVRInput.Controller.LTouch)) {
+            if (!menuEnabled)
+                return;
+
+            if (selectedMenu != null) {
+                selectedMenu.Select();
+            }
+            else {
+                foreach (MenuOption mo in menuOptions) {
+                    if (!mo.Selected)
+                        continue;
+
+                    mo.Select();
+                }
+            }
+
+            menuLineRenderer.enabled = false;
+
+            Destroy(ColorMenu);
+            menuEnabled = false;
+        }
+    }
+
     private void MenuPointing() {
         RaycastHit hit;
-        if(Physics.Raycast(RightHandGrab.transform.position, RightHandGrab.transform.forward, out hit, 10f)) {
-            menuLineRenderer.SetPositions(new Vector3[] { RightHandGrab.transform.position, hit.point });
+        Transform hand = RightHandGrab.transform;
+        if (!menuRightHand)
+            hand = wings.LeftHand;
+
+        if(Physics.Raycast(hand.position, hand.forward, out hit, 10f)) {
+            menuLineRenderer.SetPositions(new Vector3[] { hand.position, hit.point });
             if (hit.transform.CompareTag("MenuOption")) {
                 if (selectedMenu == null || selectedMenu.name != hit.transform.name) {
                     if(selectedMenu != null) {
@@ -275,7 +333,7 @@ public class MenuManager : MonoBehaviour
             }
         }
         else {
-            menuLineRenderer.SetPositions(new Vector3[] { RightHandGrab.transform.position, RightHandGrab.transform.position + RightHandGrab.transform.forward * 10f });
+            menuLineRenderer.SetPositions(new Vector3[] { hand.position, hand.position + hand.forward * 10f });
             DeselectMenu();
         }
     }
@@ -353,6 +411,7 @@ public class MenuManager : MonoBehaviour
             menuLineRenderer.enabled = true;
 
             menuEnabled = true;
+            menuRightHand = true;
         }
         if (OVRInput.GetUp(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.RTouch)) {
             Debug.Log("Released");
@@ -379,3 +438,5 @@ public class MenuManager : MonoBehaviour
         }
     }
 }
+
+public class StandardMenuEvent : UnityEvent<StandardMenuOption> { }

@@ -49,6 +49,7 @@ public class CommunicationManager : MonoBehaviour
         SetMessageValues(msg, message, audio, time, relativePosition, size, follow, textsize);
 
         msg.Title = title;
+        msg.TitleTextSize = titleSize;
 
         return msg;
     }
