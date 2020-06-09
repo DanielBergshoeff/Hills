@@ -12459,7 +12459,7 @@ MonoBehaviour:
   layersToIgnore:
     serializedVersion: 2
     m_Bits: 4100
-  triggerInteraction: 0
+  triggerInteraction: 1
 --- !u!1 &6126187348738272611
 GameObject:
   m_ObjectHideFlags: 0
