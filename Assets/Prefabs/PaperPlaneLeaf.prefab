@@ -142,7 +142,7 @@ MonoBehaviour:
   Message: Can be thrown and will keep flying for a long time.
   MessageDutch: Kan worden gegooid, en zal blijven vliegen voor een lange tijd.
   Size: 0.15
-  TextSize: 9
+  TextSize: 8.5
   MessageDuration: 10
   Position: {x: 0, y: 0.5, z: 0}
   FollowObject: 1
