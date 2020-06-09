@@ -481,7 +481,7 @@ MonoBehaviour:
   FollowObject: 1
   Title: Firefly catcher
   TitleDutch: Vuurvlieg vanger
-  TitleTextSize: 12
+  TitleTextSize: 7
 --- !u!1 &8723516280983785223
 GameObject:
   m_ObjectHideFlags: 0
