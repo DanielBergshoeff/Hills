@@ -178,7 +178,7 @@ MonoBehaviour:
   MaxRange: 10
   Message: Hold the shell against your ear to hear the wispers of the sea...
   MessageDutch: Houd de schelp tegen je oor om de zee te horen fluisteren...
-  Size: 0.075
+  Size: 0.15
   TextSize: 10
   MessageDuration: 10
   Position: {x: 0, y: 0.2, z: 0}
@@ -197,12 +197,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxRange: 7
-  Message: Hold the 'A' button on the right controller, aim for the object to select
-    it. Then squeeze the button by your index finger to grab.
-  MessageDutch: Houd de 'A' knop ingedrukt en richt op het object om het te selecteren.
-    Knijp dan de knop bij je middelvinger op het beet te pakken.
+  Message: Hold against your ear to activate. Press the button by your index finger
+    to deactivate.
+  MessageDutch: 'Houd de schelp bij je oor om het te activeren. Klik op de knop bij
+    je wijsvinger om te deactiveren. '
   Size: 0.2
-  TextSize: 5
+  TextSize: 7
   MessageDuration: 10
   Position: {x: 0, y: 0.4, z: 0}
   FollowObject: 1
