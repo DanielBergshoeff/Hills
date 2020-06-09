@@ -51,6 +51,9 @@ public class MenuManager : MonoBehaviour
     private GameObject heldObject;
     private FireflyCatcher fireflyCatcher;
 
+    private AudioSource grabAudioSource;
+    private AudioSource menuAudioSource;
+
     private string[] englishTutorial = new string[] {
         "To rotate, gently nudge the thumbstick on your left controller into the desired direction. Try it now.",
         "To pick up items from a distance, press the A button on your right controller to make a ray appear from it.",
@@ -85,6 +88,9 @@ public class MenuManager : MonoBehaviour
         Instance = this;
         standardMenuEvent = new StandardMenuEvent();
         standardMenuEvent.AddListener(SelectMenu);
+
+        grabAudioSource = gameObject.AddComponent<AudioSource>();
+        menuAudioSource = gameObject.AddComponent<AudioSource>();
 
         if (Tutorial) {
             if (Dutch) {
@@ -326,6 +332,7 @@ public class MenuManager : MonoBehaviour
                     MenuOption mo = hit.transform.GetComponent<MenuOption>();
                     selectedMenu = mo;
                     selectedMenu.SetSelected();
+                    menuAudioSource.PlayOneShot(AudioManager.Instance.MenuHoverSound);
                 }
             }
             else {
@@ -364,19 +371,23 @@ public class MenuManager : MonoBehaviour
 
         Debug.Log("Tool grabbed");
 
-        if (e.target.name == "Paintbrush") {
-            myTool = Tool.Paintbrush;
-            Paintable.Instance.PaintingEnabled = true;
-        }
-        else if (e.target.name == "FireflyCatcher") {
-            myTool = Tool.FireflyCatcher;
-            fireflyCatcher = e.target.GetComponentInChildren<FireflyCatcher>();
-        }
-        else if (e.target.name == "TreasureFinder") {
-            myTool = Tool.Treasurefinder;
-        }
-        else if(e.target.name == "Seashell") {
+        if (e.target.name == "Seashell") {
             myTool = Tool.Seashell;
+        }
+        else {
+            grabAudioSource.PlayOneShot(AudioManager.Instance.WoodGrabClips[Random.Range(0, AudioManager.Instance.WoodGrabClips.Count)]);
+
+            if (e.target.name == "Paintbrush") {
+                myTool = Tool.Paintbrush;
+                Paintable.Instance.PaintingEnabled = true;
+            }
+            else if (e.target.name == "FireflyCatcher") {
+                myTool = Tool.FireflyCatcher;
+                fireflyCatcher = e.target.GetComponentInChildren<FireflyCatcher>();
+            }
+            else if (e.target.name == "TreasureFinder") {
+                myTool = Tool.Treasurefinder;
+            }
         }
     }
 

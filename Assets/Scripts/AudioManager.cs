@@ -23,6 +23,11 @@ public class AudioManager : MonoBehaviour
     public AudioClip CoconutWaterSound;
     public AudioClip FireflycatcherCatchSound;
     public AudioClip LeafThrow;
+    public AudioClip StartPaintingSound;
+    public AudioClip LoopPaintingSound;
+    public AudioClip MenuHoverSound;
+
+    public List<AudioClip> WoodGrabClips;
 
     public static List<AudioClip> BreatheInClips;
     public static List<AudioClip> BreatheOutClips;
