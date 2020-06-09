@@ -275,8 +275,8 @@ MonoBehaviour:
   Message: To make a sound, hit the chimes with a small object.
   MessageDutch: Om geluid te maken, kan je een klein object tegen het klokkenspel
     aan gooien.
-  Size: 0.2
-  TextSize: 9
+  Size: 0.3
+  TextSize: 7
   MessageDuration: 10
   Position: {x: -1, y: 0, z: 0}
   FollowObject: 1
@@ -439,8 +439,8 @@ MonoBehaviour:
   Message: To make a sound, hit the chimes with a small object.
   MessageDutch: Om geluid te maken, kan je een klein object tegen het klokkenspel
     aan gooien.
-  Size: 0.2
-  TextSize: 9
+  Size: 0.3
+  TextSize: 7
   MessageDuration: 10
   Position: {x: -1, y: 0, z: 0}
   FollowObject: 1
@@ -801,8 +801,8 @@ MonoBehaviour:
   Message: To make a sound, hit the chimes with a small object.
   MessageDutch: Om geluid te maken, kan je een klein object tegen het klokkenspel
     aan gooien.
-  Size: 0.2
-  TextSize: 9
+  Size: 0.3
+  TextSize: 7
   MessageDuration: 10
   Position: {x: -1, y: 0, z: 0}
   FollowObject: 1
