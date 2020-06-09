@@ -21,6 +21,10 @@ public class Paintable : MonoBehaviour
     private float distance = 0f;
     public bool PaintingEnabled = false;
 
+    private bool currentlyPainting = false;
+    private AudioSource paintingSoundStartSource;
+    private AudioSource paintingSoundSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +37,11 @@ public class Paintable : MonoBehaviour
         sizeEvent = new SizeEvent();
         sizeEvent.AddListener(ChangeSize);
 
+        paintingSoundStartSource = gameObject.AddComponent<AudioSource>();
+        paintingSoundSource = gameObject.AddComponent<AudioSource>();
+        paintingSoundSource.loop = true;
+        paintingSoundSource.clip = AudioManager.Instance.LoopPaintingSound;
+        paintingSoundSource.volume = 0.3f;
 
         if (sharedVfxGraph == null)
             sharedVfxGraph = VFXGraph;
@@ -69,11 +78,19 @@ public class Paintable : MonoBehaviour
             Aim.SetVector3("SpawnPosition", hit.point + transform.up * (distance + 0.05f));
 
             if (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) > 0.1f) {
-
+                if(currentlyPainting == false) { 
+                    paintingSoundStartSource.PlayOneShot(AudioManager.Instance.StartPaintingSound);
+                    paintingSoundSource.Play();
+                    currentlyPainting = true;
+                }
                 distance += Time.deltaTime * 0.1f;
                 VFXGraph.SetFloat("SpawnRate", 60f);
             }
             else {
+                if (currentlyPainting) {
+                    paintingSoundSource.Stop();
+                    currentlyPainting = false;
+                }
                 VFXGraph.SetFloat("SpawnRate", 0f);
             }
         }
