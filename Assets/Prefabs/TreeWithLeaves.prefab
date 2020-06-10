@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2377346500224665209}
   - component: {fileID: 938711868470589362}
+  - component: {fileID: 8585748875946393032}
   m_Layer: 0
   m_Name: TreeWithLeaves
   m_TagString: Untagged
@@ -46,6 +47,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VfxGraph: {fileID: 5316450147403651795}
+--- !u!65 &8585748875946393032
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2373968060958429657}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.62, y: 11.91, z: 3.6}
+  m_Center: {x: 0, y: 4.98, z: 0}
 --- !u!1 &5316450147403651805
 GameObject:
   m_ObjectHideFlags: 0
