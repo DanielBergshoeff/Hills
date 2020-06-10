@@ -447,7 +447,11 @@ public class MenuManager : MonoBehaviour
         if (!e.target.CompareTag("Tool"))
             return;
 
-        if(e.target.name == "Paintbrush") {
+        if(e.target.name != "Seashell") {
+            grabAudioSource.PlayOneShot(AudioManager.Instance.WoodGrabClips[Random.Range(0, AudioManager.Instance.WoodGrabClips.Count)]);
+        }
+
+        if (e.target.name == "Paintbrush") {
             Paintable.Instance.PaintingEnabled = false;
         }
 
