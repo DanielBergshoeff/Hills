@@ -19,6 +19,8 @@ public class SoundVines : MonoBehaviour
         if (!readyForSound || !collision.transform.CompareTag("SmallObject"))
             return;
 
+        Debug.Log(MySound.name);
+
         MyAudioSource.PlayOneShot(MySound);
         readyForSound = false;
 

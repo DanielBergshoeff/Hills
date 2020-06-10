@@ -92,10 +92,15 @@ public class MuscleRelaxation : MonoBehaviour {
     /// </summary>
     private void SwitchMuscleGroup() {
         if (currentMuscle + 1 >= MuscleGroups.Count) {
-            MuscleRelaxationStarter.StartOnAwake = false;
+            if (SendMessages) {
+                if (currentMessage != null)
+                    currentMessage.StartFade();
+            }
+                MuscleRelaxationStarter.StartOnAwake = false;
             if (MenuManager.Tutorial && SendMessages) {
                 MenuManager.Instance.StartTutorial();
             }
+
             Destroy(this.gameObject);
             return;
         }

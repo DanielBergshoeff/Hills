@@ -29,6 +29,11 @@ public class AudioManager : MonoBehaviour
 
     public List<AudioClip> WoodGrabClips;
 
+    [Header("Treasure finder sounds")]
+    public AudioClip TreasureIdleSound;
+    public AudioClip TreasureExtractingSound;
+    public AudioClip TreasureExtractionCompleteSound;
+
     public static List<AudioClip> BreatheInClips;
     public static List<AudioClip> BreatheOutClips;
     public static List<AudioClip> HoldBreathClips;

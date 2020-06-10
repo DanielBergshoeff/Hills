@@ -33,6 +33,11 @@ public class DetectedItem : MonoBehaviour
         }
     }
 
+    public void UpdateMyVisualEffect(Vector3 pos, float blend) {
+        myVisualEffect.SetVector3("TargetPosition", pos);
+        myVisualEffect.SetFloat("Blend", blend);
+    }
+
     public VisualEffect GetVisualEffect() {
         return myVisualEffect;
     }

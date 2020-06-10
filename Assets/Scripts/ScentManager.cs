@@ -28,7 +28,7 @@ public class ScentManager : MonoBehaviour
 
     private void Update() {
         if(currentScentStrength > 0f && !turningOn) {
-            currentScentStrength -= Time.deltaTime * ScentTimeMultiplier;
+            currentScentStrength -= Time.deltaTime / ScentTimeMultiplier;
 
             if(currentScentStrength <= 0f) {
                 TurnOffScent();
@@ -38,7 +38,7 @@ public class ScentManager : MonoBehaviour
             }
         }
         else if(currentScentStrength < turnOffTimer && turningOn) {
-            currentScentStrength += Time.deltaTime * ScentTimeMultiplier;
+            currentScentStrength += Time.deltaTime / ScentTimeMultiplier;
 
             if(currentScentStrength >= turnOffTimer) {
                 turningOn = false;
@@ -77,7 +77,7 @@ public class ScentManager : MonoBehaviour
         strongestScentStrength = Mathf.Clamp(strongestScentStrength, 0f, 1f);
         SensiksManager.SetActiveScent(strongestScent, strongestScentStrength);
 
-        turnOffTimer = strongestScentStrength / 2f;
+        turnOffTimer = strongestScentStrength;
         turningOn = true;
 
         StartCoroutine("UpdateScent");
