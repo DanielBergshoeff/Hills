@@ -149,7 +149,7 @@ MonoBehaviour:
   MaxRange: 10
   Message: Can be used to throw into or against other objects.
   MessageDutch: Kan worden gebruikt om in of tegen andere objecten aan te gooien.
-  Size: 0.1
+  Size: 0.15
   TextSize: 8
   MessageDuration: 10
   Position: {x: 0, y: 0.5, z: 0}
