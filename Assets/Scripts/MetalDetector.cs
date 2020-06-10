@@ -19,9 +19,16 @@ public class MetalDetector : MonoBehaviour
 
     private int detectedItems = 0;
 
+    private AudioSource idleSoundSource;
+
     private void Start() {
         if(DetectedItem.VisualEffects == null)
             return;
+
+        idleSoundSource = gameObject.AddComponent<AudioSource>();
+        idleSoundSource.loop = true;
+        idleSoundSource.spatialBlend = 1f;
+        ReturnToIdleSound();
 
         List<GameObject> tempList = new List<GameObject>();
 
@@ -45,6 +52,12 @@ public class MetalDetector : MonoBehaviour
         UpdateDetection();
     }
 
+    private void ReturnToIdleSound() {
+        idleSoundSource.clip = AudioManager.Instance.TreasureIdleSound;
+        idleSoundSource.volume = 0.2f;
+        idleSoundSource.Play();
+    }
+
     private void UpdateDetection() {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, Range)) {
@@ -57,11 +70,17 @@ public class MetalDetector : MonoBehaviour
                     detectedObject = hit.transform.gameObject;
                     detectedObjectItem = detectedObject.GetComponent<DetectedItem>();
                     detectedTimer = 0f;
+                    idleSoundSource.clip = AudioManager.Instance.TreasureExtractingSound;
+                    idleSoundSource.volume = 0.7f;
+                    idleSoundSource.Play();
                 }
                 else {
                     detectedTimer += Time.deltaTime;
-                    detectedObjectItem.UpdateVisualEffect(transform.position, detectedTimer / DetectionTime);
+                    detectedObjectItem.UpdateMyVisualEffect(transform.position, detectedTimer / DetectionTime);
                     if (detectedTimer >= DetectionTime) {
+                        idleSoundSource.Stop();
+                        idleSoundSource.PlayOneShot(AudioManager.Instance.TreasureExtractionCompleteSound, 1f);
+                        Invoke("ReturnToIdleSound", AudioManager.Instance.TreasureExtractionCompleteSound.length + 1f);
                         DetectedItem.VisualEffects.Remove(detectedObjectItem.GetVisualEffect());
                         Destroy(detectedObject);
                         detectedItems++;
@@ -70,8 +89,15 @@ public class MetalDetector : MonoBehaviour
             }
             else {
                 detectedTimer = 0f;
-                if (detectedObjectItem != null)
+                if(detectedObject != null) {
+                    detectedObject = null;
+                    ReturnToIdleSound();
+                }
+
+                if (detectedObjectItem != null) {
                     detectedObjectItem.UpdateVisualEffect(Vector3.zero, 0f);
+                    detectedObjectItem = null;
+                }
             }
         }
         else {
