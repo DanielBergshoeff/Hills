@@ -60,12 +60,24 @@ public class MuscleRelaxation : MonoBehaviour {
             mapSets.Add(ms);
         }
 
+        vfxGraph.enabled = false;
+
+        for (int i = 0; i < transform.childCount; i++) {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+    }
+
+    public void StartMuscleRelaxation() {
+        for (int i = 0; i < transform.childCount; i++) {
+            transform.GetChild(i).gameObject.SetActive(true);
+        }
+
         turbulenceIntensity = maxTurbulenceIntensity;
         vfxGraph.SetFloat(PropName.TurbulenceIntensity, turbulenceIntensity);
         vfxGraph.SetFloat(PropName.FlexStrength, 0f);
         vfxGraph.SetFloat(PropName.FlexBlend, 0f);
-
         vfxGraph.SetFloat(PropName.Speed, 1f / switchTime);
+        vfxGraph.enabled = true;
         SwitchMuscleGroup();
     }
 
@@ -100,6 +112,8 @@ public class MuscleRelaxation : MonoBehaviour {
             if (MenuManager.Tutorial && SendMessages) {
                 MenuManager.Instance.StartTutorial();
             }
+
+            MuscleRelaxationStarter.Instance.EnableObjects();
 
             Destroy(this.gameObject);
             return;

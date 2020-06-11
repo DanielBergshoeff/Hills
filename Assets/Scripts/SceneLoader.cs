@@ -13,7 +13,7 @@ public class SceneLoader : MonoBehaviour
     public void LoadExperience() {
         MenuManager.Tutorial = toggleTutorial.isOn;
         MuscleRelaxationStarter.StartOnAwake = toggleMR.isOn;
-        MenuManager.Dutch = toggleDutch.isOn;
+        MenuManager.Dutch = !toggleDutch.isOn;
         SceneManager.LoadScene("LizzyTerrain");
     }
 }

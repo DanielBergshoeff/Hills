@@ -109,4 +109,8 @@ public class MetalDetector : MonoBehaviour
 
         DetectionEffect.SetVector3("ScannerPosition", transform.position);
     }
+
+    private void OnDestroy() {
+        DetectionMaterial.SetVector("Vector3_E8D52375", Vector3.zero);
+    }
 }

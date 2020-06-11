@@ -102,21 +102,6 @@ public class MenuManager : MonoBehaviour
 
 
         menuAudioSource = gameObject.AddComponent<AudioSource>();
-
-        if (Tutorial) {
-            if (Dutch) {
-                currentTutorial = dutchTutorial;
-            }
-            else {
-                currentTutorial = englishTutorial;
-            }
-
-            wings.ToggleTutorialHands(true);
-
-            RightHandPointer.enabled = false;
-            LeftHandPointer.enabled = false;
-            wings.RotationEnabled = false;
-        }
     }
 
     private void SelectMenu(StandardMenuOption smo) {
@@ -152,6 +137,20 @@ public class MenuManager : MonoBehaviour
     }
 
     public void StartTutorial() {
+        Tutorial = true;
+
+        if (Dutch) {
+            currentTutorial = dutchTutorial;
+        }
+        else {
+            currentTutorial = englishTutorial;
+        }
+
+        wings.ToggleTutorialHands(true);
+        RightHandPointer.enabled = false;
+        LeftHandPointer.enabled = false;
+        wings.RotationEnabled = false;
+
         wings.RotationEnabled = true;
         wings.HighlightButton(wings.ThumbstickLeftRenderer);
         currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[0], AudioManager.TutorialClips[0], 0f, Vector3.up * 1f, 2f, true, 4f);
@@ -218,6 +217,7 @@ public class MenuManager : MonoBehaviour
         wings.ReverseHighlight(wings.ButtonOneLeftRenderer);
 
         Tutorial = false;
+        MuscleRelaxationStarter.Instance.EnableObjects();
 
         wings.ToggleTutorialHands(false);
 

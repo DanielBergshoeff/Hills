@@ -5,7 +5,6 @@ using UnityEngine;
 public class SeaAudio : MonoBehaviour
 {
     public static SeaAudio Instance;
-    public float RefreshTime = 5f;
     public float TimeTillFullVolume = 5f;
 
     private AudioSource myAudioSource;
