@@ -9,6 +9,9 @@ public class Explanation : MessageObject
     public float TitleTextSize = 12f;
 
     public new void ShowMessage() {
+        if (myMessage != null)
+            return;
+
         string msg = MenuManager.Dutch ? MessageDutch : Message;
         string title = MenuManager.Dutch ? TitleDutch : Title;
 

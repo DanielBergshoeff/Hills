@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4012673265951096503}
   - component: {fileID: 123294701488919403}
   - component: {fileID: 6101463921059998713}
+  - component: {fileID: 1944001963870056881}
   m_Layer: 0
   m_Name: SmallObject
   m_TagString: SmallObject
@@ -111,7 +112,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 100
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 10
@@ -265,6 +266,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!75 &1944001963870056881
+ConstantForce:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7037766006290124154}
+  m_Enabled: 1
+  m_Force: {x: 0, y: -4.5, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!1001 &5570240472218314727
 PrefabInstance:
   m_ObjectHideFlags: 0

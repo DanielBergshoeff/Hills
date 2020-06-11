@@ -130,9 +130,11 @@ public class MenuManager : MonoBehaviour
 
     private void OnTeleport() {
         WindManager.Instance.UpdateWind();
+        SeaAudio.Instance.CheckForPlayer();
+        SeaAudio.Instance.RefreshAudio();
         //HeatManager.Instance.UpdateHeat();
 
-        if(Breathing.Instance != null) {
+        if (Breathing.Instance != null) {
             if((Breathing.Instance.transform.position - wings.transform.position).sqrMagnitude > 60f * 60f) {
                 Destroy(Breathing.Instance.gameObject);
             }
