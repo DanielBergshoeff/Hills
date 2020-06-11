@@ -203,7 +203,7 @@ Material:
     - _RefractionModel: 0
     - _RenderQueueType: 5
     - _RequireSplitLighting: 0
-    - _RipplePosition: 7.736673
+    - _RipplePosition: 5.0114317
     - _SSRefractionProjectionModel: 0
     - _Smoothness: 0.5
     - _SmoothnessRemapMax: 1
@@ -253,7 +253,7 @@ Material:
     - Vector3_8F72418F: {r: 67, g: 3.5, b: 24, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
-    - _CenterPosition: {r: -81.41318, g: 5.1487465, b: 28.801884, a: 0}
+    - _CenterPosition: {r: 55.423447, g: 43.975, b: -135.36703, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
