@@ -6,6 +6,9 @@ public class VicinityMessage : MessageObject
 {
     private bool cooldown = false;
     public float CooldownTime = 90f;
+    public string Title = "";
+    public string TitleDutch = "";
+    public float TitleSize = 10f;
 
     // Update is called once per frame
     void Update()
@@ -24,8 +27,12 @@ public class VicinityMessage : MessageObject
 
         if(angle < 20f) {
             string msg = MenuManager.Dutch ? MessageDutch : Message;
+            string title = MenuManager.Dutch ? TitleDutch : Title;
 
-            myMessage = CommunicationManager.Instance.DisplayMessage(this.gameObject, msg, null, MessageDuration, Position, Size, FollowObject, TextSize);
+            if (Title == "")
+                myMessage = CommunicationManager.Instance.DisplayMessage(this.gameObject, msg, null, MessageDuration, Position, Size, FollowObject, TextSize);
+            else
+                myMessage = CommunicationManager.Instance.DisplayMessage(this.gameObject, title, msg, null, MessageDuration, Position, Size, FollowObject, TextSize, TitleSize);
             displayingMessage = true;
             Invoke("RevertDisplayingMessage", MessageDuration);
         }

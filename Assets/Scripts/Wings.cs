@@ -128,6 +128,10 @@ public class Wings : MonoBehaviour {
                     return;
 
                 ex.ShowMessage();
+
+                VicinityMessage vm = hit.transform.GetComponent<VicinityMessage>();
+                if(vm != null)
+                    vm.StopMessage();
             }
         }
     }
@@ -140,14 +144,14 @@ public class Wings : MonoBehaviour {
         else if(OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
             ClearMessagesRight();
             if (holdingObject) {
-                CommunicationMessage msg = CommunicationManager.Instance.DisplayButtonMessage(RightHandMessagePosition, "Middle finger", "Release to drop", null, 0f, Vector3.up * 0.04f, 0.03f, true, 10f, 8f, 0.1f);
+                CommunicationMessage msg = CommunicationManager.Instance.DisplayButtonMessage(RightHandMessagePosition, "Middle finger", "Release to drop", null, 0f, Vector3.up * 0.04f, 0.03f, true, 9f, 7f, 0.1f);
                 messagesRight.Add(msg);
             }
         }
 
         if(OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.LTouch)) {
             ClearMessagesLeft();
-            CommunicationMessage msg = CommunicationManager.Instance.DisplayButtonMessage(LeftHandMessagePosition, "X button", "Release to teleport", null, 0f, Vector3.up * 0.1f, 0.03f, true, 10f, 8f, -0.1f);
+            CommunicationMessage msg = CommunicationManager.Instance.DisplayButtonMessage(LeftHandMessagePosition, "X button", "Release to teleport", null, 0f, Vector3.up * 0.1f, 0.03f, true, 9f, 7f, -0.1f);
             messagesLeft.Add(msg);
         }
         else if(OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.LTouch)) {
@@ -158,8 +162,8 @@ public class Wings : MonoBehaviour {
     public void OnPickup(object sender, ObjectInteractEventArgs e) {
         holdingObject = true;
         ClearMessagesRight();
-        CommunicationMessage msg3 = CommunicationManager.Instance.DisplayButtonMessage(RightHandMessagePosition, "A button", "Release to remove line", null, 0f, Vector3.up * 0.1f, 0.03f, true, 10f, 8f, 0.1f);
-        CommunicationMessage msg = CommunicationManager.Instance.DisplayButtonMessage(RightHandMessagePosition, "Middle finger", "Release to drop", null, 0f, Vector3.up * 0.04f, 0.03f, true, 10f, 8f, 0.1f);
+        CommunicationMessage msg3 = CommunicationManager.Instance.DisplayButtonMessage(RightHandMessagePosition, "A button", "Release to remove line", null, 0f, Vector3.up * 0.1f, 0.03f, true, 9f, 6f, 0.1f);
+        CommunicationMessage msg = CommunicationManager.Instance.DisplayButtonMessage(RightHandMessagePosition, "Middle finger", "Release to drop", null, 0f, Vector3.up * 0.04f, 0.03f, true, 9f, 7f, 0.1f);
         messagesRight.Add(msg);
         messagesRight.Add(msg3);
     }
@@ -174,8 +178,8 @@ public class Wings : MonoBehaviour {
     }
 
     private void ButtonAMessages() {
-        CommunicationMessage msg = CommunicationManager.Instance.DisplayButtonMessage(RightHandMessagePosition, "Index finger", "Show explanation", null, 0f, Vector3.up * 0.1f, 0.03f, true, 10f, 8f, 0.1f);
-        CommunicationMessage msg2 = CommunicationManager.Instance.DisplayButtonMessage(RightHandMessagePosition, "Middle finger", "Pickup item", null, 0f, Vector3.up * 0.04f, 0.03f, true, 10f, 8f, 0.1f);
+        CommunicationMessage msg = CommunicationManager.Instance.DisplayButtonMessage(RightHandMessagePosition, "Index finger", "Show explanation", null, 0f, Vector3.up * 0.1f, 0.03f, true, 9f, 7f, 0.1f);
+        CommunicationMessage msg2 = CommunicationManager.Instance.DisplayButtonMessage(RightHandMessagePosition, "Middle finger", "Pickup item", null, 0f, Vector3.up * 0.04f, 0.03f, true, 9f, 7f, 0.1f);
         messagesRight.Add(msg);
         messagesRight.Add(msg2);
     }
