@@ -1,7 +1,10 @@
-﻿using System.Collections;
+﻿using Oculus.Platform;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.VR;
+using VRTK;
 
 public class Wings : MonoBehaviour {
     public static Wings Instance { get; private set; }
@@ -18,6 +21,9 @@ public class Wings : MonoBehaviour {
     public GameObject LeftHandTutorial;
     public GameObject RightHandTutorial;
 
+    public GameObject LeftHandMessagePosition;
+    public GameObject RightHandMessagePosition;
+
     [Header("Tutorial")]
     public Material HighlightMaterial;
     public Material StandardMaterial;
@@ -29,24 +35,21 @@ public class Wings : MonoBehaviour {
     public Renderer IndexRightRenderer;
     public Renderer HandRightRenderer;
 
-    private Renderer currentRenderer;
+    public LayerMask ExplanationMask;
 
     private Vector3 startPosition;
     
-
-    public bool Testing;
-    public bool Flying = false;
     public bool RotationEnabled = true;
     public float RotationRatchet = 45f;
 
-    private Rigidbody myRigidbody;
-    private GameObject FeatherParent;
     private bool ReadyToSnapTurn = true;
     public bool RotationEitherThumbstick = false;
-   
+
+    private List<CommunicationMessage> messagesRight;
+    private List<CommunicationMessage> messagesLeft;
+    private bool holdingObject = false;
     
     private void Awake() {
-        myRigidbody = transform.parent.GetComponent<Rigidbody>();
         startPosition = transform.parent.position;
         Instance = this;
     }
@@ -110,12 +113,13 @@ public class Wings : MonoBehaviour {
         if(RotationEnabled)
             UpdateRotations();
         CheckForExplanation();
+        CheckForButtonMessages();
     }
 
     private void CheckForExplanation() {
         if (OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.RTouch) && OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch)) {
             RaycastHit hit;
-            if(Physics.Raycast(RightHand.position, RightHand.forward, out hit, 100f)) {
+            if(Physics.Raycast(RightHand.position, RightHand.forward, out hit, 100f, ExplanationMask)) {
                 if(!(hit.transform.CompareTag("SmallObject") || hit.transform.CompareTag("Tool") || hit.transform.CompareTag("Interactable")))
                     return;
 
@@ -126,5 +130,77 @@ public class Wings : MonoBehaviour {
                 ex.ShowMessage();
             }
         }
+    }
+
+    private void CheckForButtonMessages() {
+        if(OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
+            ClearMessagesRight();
+            ButtonAMessages();
+        }
+        else if(OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
+            ClearMessagesRight();
+            if (holdingObject) {
+                CommunicationMessage msg = CommunicationManager.Instance.DisplayButtonMessage(RightHandMessagePosition, "Middle finger", "Release to drop", null, 0f, Vector3.up * 0.04f, 0.03f, true, 10f, 8f, 0.1f);
+                messagesRight.Add(msg);
+            }
+        }
+
+        if(OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.LTouch)) {
+            ClearMessagesLeft();
+            CommunicationMessage msg = CommunicationManager.Instance.DisplayButtonMessage(LeftHandMessagePosition, "X button", "Release to teleport", null, 0f, Vector3.up * 0.1f, 0.03f, true, 10f, 8f, -0.1f);
+            messagesLeft.Add(msg);
+        }
+        else if(OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.LTouch)) {
+            ClearMessagesLeft();
+        }
+    }
+
+    public void OnPickup(object sender, ObjectInteractEventArgs e) {
+        holdingObject = true;
+        ClearMessagesRight();
+        CommunicationMessage msg3 = CommunicationManager.Instance.DisplayButtonMessage(RightHandMessagePosition, "A button", "Release to remove line", null, 0f, Vector3.up * 0.1f, 0.03f, true, 10f, 8f, 0.1f);
+        CommunicationMessage msg = CommunicationManager.Instance.DisplayButtonMessage(RightHandMessagePosition, "Middle finger", "Release to drop", null, 0f, Vector3.up * 0.04f, 0.03f, true, 10f, 8f, 0.1f);
+        messagesRight.Add(msg);
+        messagesRight.Add(msg3);
+    }
+
+    public void OnDrop(object sender, ObjectInteractEventArgs e) {
+        holdingObject = false;
+        ClearMessagesRight();
+
+        if(OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
+            ButtonAMessages();
+        }
+    }
+
+    private void ButtonAMessages() {
+        CommunicationMessage msg = CommunicationManager.Instance.DisplayButtonMessage(RightHandMessagePosition, "Index finger", "Show explanation", null, 0f, Vector3.up * 0.1f, 0.03f, true, 10f, 8f, 0.1f);
+        CommunicationMessage msg2 = CommunicationManager.Instance.DisplayButtonMessage(RightHandMessagePosition, "Middle finger", "Pickup item", null, 0f, Vector3.up * 0.04f, 0.03f, true, 10f, 8f, 0.1f);
+        messagesRight.Add(msg);
+        messagesRight.Add(msg2);
+    }
+
+    public void OnExplanation(string title) {
+
+    }
+
+    private void ClearMessagesRight() {
+        if (messagesRight != null) {
+            foreach (CommunicationMessage msg in messagesRight) {
+                msg.StartFade();
+            }
+        }
+
+        messagesRight = new List<CommunicationMessage>();
+    }
+
+    private void ClearMessagesLeft() {
+        if (messagesLeft != null) {
+            foreach (CommunicationMessage msg in messagesLeft) {
+                msg.StartFade();
+            }
+        }
+
+        messagesLeft = new List<CommunicationMessage>();
     }
 }

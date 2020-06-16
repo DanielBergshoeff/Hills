@@ -7,6 +7,7 @@ public class CommunicationManager : MonoBehaviour
     public static CommunicationManager Instance { get; private set; }
     public GameObject MessagePrefab;
     public GameObject MessageWithTitlePrefab;
+    public GameObject ButtonMesssage;
     public GameObject Sapling;
     public float DisappearTime = 0f;
     public LayerMask TerrainLayer;
@@ -50,6 +51,28 @@ public class CommunicationManager : MonoBehaviour
 
         msg.Title = title;
         msg.TitleTextSize = titleSize;
+
+        return msg;
+    }
+
+    /// <summary>
+    /// Displays a message with a title in the world
+    /// </summary>
+    public CommunicationMessage DisplayButtonMessage(GameObject go, string title, string message, AudioClip audio, float time = 0f, Vector3 relativePosition = default, float size = 1f, bool follow = false, float textsize = 10f, float titleSize = 12f, float cameraPositioning = 0f) {
+        GameObject messageObject = Instantiate(ButtonMesssage);
+        CommunicationMessage msg = messageObject.GetComponent<CommunicationMessage>();
+
+        if (go == null)
+            msg.FollowObject = Camera.main.gameObject;
+        else {
+            msg.FollowObject = go;
+        }
+
+        SetMessageValues(msg, message, audio, time, relativePosition, size, follow, textsize);
+
+        msg.Title = title;
+        msg.TitleTextSize = titleSize;
+        msg.CameraPositioning = cameraPositioning;
 
         return msg;
     }

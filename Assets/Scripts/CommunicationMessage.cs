@@ -21,6 +21,8 @@ public class CommunicationMessage : MonoBehaviour
     public float TextSize;
     public float TitleTextSize;
 
+    public float CameraPositioning;
+
     private Image img;
     public LayerMask TerrainLayer; 
 
@@ -44,7 +46,8 @@ public class CommunicationMessage : MonoBehaviour
         Tmp.fontSize = TextSize;
         startAlphaText = Tmp.alpha;
         img = GetComponentInChildren<Image>();
-        startAlphaImage = img.color.a;
+        if(img != null)
+            startAlphaImage = img.color.a;
 
         myAudioSource = gameObject.AddComponent<AudioSource>();
         AudioMixer mixer = Resources.Load("MixerGroups/Ambience") as AudioMixer;
@@ -86,7 +89,14 @@ public class CommunicationMessage : MonoBehaviour
     /// Update position based on follow object
     /// </summary>
     private void DoFollow() {
-        transform.position = FollowObject.transform.position + RelativePosition;
+        Vector3 dir = Vector3.zero;
+        if (CameraPositioning != 0f) {
+            Vector3 heading = Camera.main.transform.position - FollowObject.transform.position;
+            dir = Vector3.Cross(heading, Vector3.up).normalized * CameraPositioning;
+        }
+
+        transform.position = FollowObject.transform.position + RelativePosition + dir;
+
         RaycastHit hit;
         float height = -100f;
         for (int i = -1; i < 2; i++) {

@@ -55,6 +55,8 @@ public class MenuManager : MonoBehaviour
     private AudioSource grabAudioSource;
     private AudioSource menuAudioSource;
 
+    private bool brushExplanationShown = false;
+
     private string[] englishTutorial = new string[] {
         "To rotate, gently nudge the thumbstick on your left controller into the desired direction. Try it now.",
         "To pick up items from a distance, press the A button on your right controller to make a ray appear from it.",
@@ -102,6 +104,9 @@ public class MenuManager : MonoBehaviour
 
 
         menuAudioSource = gameObject.AddComponent<AudioSource>();
+
+        Explanation.explanationEvent = new ExplanationEvent();
+        Explanation.explanationEvent.AddListener(OnExplanation);
     }
 
     private void SelectMenu(StandardMenuOption smo) {
@@ -190,6 +195,8 @@ public class MenuManager : MonoBehaviour
     private void PaintTutorial() {
         tutorialPart++;
         currentMessage.StartFade();
+        wings.ReverseHighlight(wings.ButtonOneRightRenderer);
+        wings.HighlightButton(wings.IndexRightRenderer);
         currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[8], AudioManager.TutorialClips[8], 0f, Vector3.up * 1f, 2f, true, 4f);
     }
 
@@ -197,8 +204,8 @@ public class MenuManager : MonoBehaviour
         tutorialPart++;
         currentMessage.StartFade();
         LeftHandPointer.enabled = true;
-        wings.ReverseHighlight(wings.ButtonOneRightRenderer);
         wings.ReverseHighlight(wings.HandRightRenderer);
+        wings.ReverseHighlight(wings.IndexRightRenderer);
         wings.HighlightButton(wings.ButtonOneLeftRenderer);
         currentMessage = CommunicationManager.Instance.DisplayMessage(TutorialPosition, currentTutorial[3], AudioManager.TutorialClips[3], 0f, Vector3.up * 1f, 2f, true, 4f);
     }
@@ -294,7 +301,7 @@ public class MenuManager : MonoBehaviour
                 }
                 break;
             case 2:
-                if (OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.RTouch) && OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch)) {
+                if (brushExplanationShown) {
                     PickupTutorial();
                 }
                 break;
@@ -418,6 +425,7 @@ public class MenuManager : MonoBehaviour
             ex.StopMessage();
         }
 
+        wings.OnPickup(sender, e);
         heldObject = e.target.gameObject;
 
         if (!e.target.CompareTag("Tool"))
@@ -446,6 +454,8 @@ public class MenuManager : MonoBehaviour
     }
 
     private void OnUnGrabObject(object sender, ObjectInteractEventArgs e) {
+        wings.OnDrop(sender, e);
+
         if (!e.target.CompareTag("Tool"))
             return;
 
@@ -456,6 +466,13 @@ public class MenuManager : MonoBehaviour
         Debug.Log("Tool ungrabbed");
 
         myTool = Tool.None;
+    }
+
+    private void OnExplanation(string title) {
+        wings.OnExplanation(title);
+        if(title == "Paint brush") {
+            brushExplanationShown = true;
+        }
     }
 
     private void PaintingMenu() {

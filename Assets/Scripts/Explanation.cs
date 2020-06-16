@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Explanation : MessageObject
 {
@@ -8,9 +9,14 @@ public class Explanation : MessageObject
     public string TitleDutch;
     public float TitleTextSize = 12f;
 
+    public static ExplanationEvent explanationEvent;
+
     public new void ShowMessage() {
         if (myMessage != null)
             return;
+
+        if(explanationEvent != null)
+            explanationEvent.Invoke(Title);
 
         string msg = MenuManager.Dutch ? MessageDutch : Message;
         string title = MenuManager.Dutch ? TitleDutch : Title;
@@ -20,3 +26,5 @@ public class Explanation : MessageObject
         Invoke("RevertDisplayingMessage", MessageDuration);
     }
 }
+
+public class ExplanationEvent : UnityEvent<string> { }
