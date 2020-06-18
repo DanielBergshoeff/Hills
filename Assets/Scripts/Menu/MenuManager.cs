@@ -109,7 +109,8 @@ public class MenuManager : MonoBehaviour
 
     private void SelectMenu(StandardMenuOption smo) {
         if(smo == StandardMenuOption.Exit) {
-            Application.Quit();
+            CommunicationManager.Instance.DisplayMessage(null, "Exiting", "You may take off your headset", null, 0f, Camera.main.transform.forward * 8f, 0.5f, false, 10f, 12f);
+            Invoke("QuitApplication", 10f);
         }
         else if(smo == StandardMenuOption.ReturnToStart) {
             wings.ResetPosition();
@@ -117,6 +118,10 @@ public class MenuManager : MonoBehaviour
         else if(smo == StandardMenuOption.Recenter) {
             OVRManager.display.RecenterPose();
         }
+    }
+
+    private void QuitApplication() {
+        Application.Quit();
     }
 
     private void OnTeleport() {

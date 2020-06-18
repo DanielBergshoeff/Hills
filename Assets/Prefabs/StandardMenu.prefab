@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Selected: 0
-  standardMenuOption: 1
+  standardMenuOption: 2
 --- !u!1 &2552712943875240860
 GameObject:
   m_ObjectHideFlags: 0
