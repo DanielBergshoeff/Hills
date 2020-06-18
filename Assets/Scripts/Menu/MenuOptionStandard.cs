@@ -16,5 +16,6 @@ public class MenuOptionStandard : MenuOption
 public enum StandardMenuOption
 {
     ReturnToStart,
+    Recenter,
     Exit
 }

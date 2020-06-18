@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FireflyCatcher : MonoBehaviour
 {
-    public Material GlassMat;
+    public Light CatcherLight;
     public Color startColor;
     public int maxFireFlies = 10;
     public float maxIntensity = 15f;
@@ -19,10 +19,9 @@ public class FireflyCatcher : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         myFlock = GetComponent<GlobalFlock>();
-        GlassMat = GetComponent<Renderer>().material;
-        GlassMat.SetColor("_EmissiveColor", startColor);
         myFireflies = new List<Flock>();
         myAudioSource = GetComponent<AudioSource>();
+        CatcherLight.intensity = 0f;
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -43,7 +42,7 @@ public class FireflyCatcher : MonoBehaviour
         myFireflies.Add(flock);
 
         currentFireflies++;
-        GlassMat.SetColor("_EmissiveColor", startColor * (1f + (maxIntensity * (Mathf.Clamp(currentFireflies, 0f, maxFireFlies)) / maxFireFlies)));
+        CatcherLight.intensity = maxIntensity * (Mathf.Clamp(currentFireflies, 0f, maxFireFlies)) / maxFireFlies;
     }
 
     public void RemoveFirefly() {
@@ -51,7 +50,7 @@ public class FireflyCatcher : MonoBehaviour
             return;
 
         currentFireflies--;
-        GlassMat.SetColor("_EmissiveColor", startColor * (1f + (maxIntensity * (Mathf.Clamp(currentFireflies, 0f, maxFireFlies)) / maxFireFlies)));
+        CatcherLight.intensity = maxIntensity * (Mathf.Clamp(currentFireflies, 0f, maxFireFlies)) / maxFireFlies;
 
         myFireflies[0].enabled = true;
         myFireflies[0].CatchCooldown();

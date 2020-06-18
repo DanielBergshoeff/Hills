@@ -14,8 +14,12 @@ public class ExerciseGrabber : MonoBehaviour
     private bool touching = false;
     private bool grabbed = false;
 
+    public Material wrongMat;
+    public Material correctMat;
+
     private GameObject breathingExercise;
     private LineRenderer lineRenderer;
+    private bool correctPosition = false;
 
     private void Awake() {
         Instance = this;
@@ -59,16 +63,28 @@ public class ExerciseGrabber : MonoBehaviour
             breathingExercise.transform.position = hit.point + Vector3.up * 1.5f;
             Vector3 heading = Camera.main.transform.position - breathingExercise.transform.position;
             breathingExercise.transform.rotation = Quaternion.LookRotation(-heading);
+
+            if (!correctPosition) {
+                correctPosition = true;
+                lineRenderer.material = correctMat;
+                breathingExercise.SetActive(true);
+            }
         }
         else {
             lineRenderer.SetPositions(new Vector3[] { Wings.Instance.RightHand.transform.position, Wings.Instance.RightHand.transform.position + Wings.Instance.RightHand.transform.forward * MaxDistance });
-            lineRenderer.startColor = Color.red;
+
+            if (correctPosition) {
+                correctPosition = false;
+                lineRenderer.material = wrongMat;
+                breathingExercise.SetActive(false);
+            }
         }
 
         if (Input.GetAxis("Oculus_CrossPlatform_SecondaryHandTrigger") < 0.5f) {
             grabbed = false;
             lineRenderer.enabled = false;
-            breathingExercise.GetComponent<Breathing>().StartBreathing();
+            if(correctPosition)
+                breathingExercise.GetComponent<Breathing>().StartBreathing();
         }
     }
 

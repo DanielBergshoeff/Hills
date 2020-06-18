@@ -1,16 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Events;
 using UnityEngine.VFX;
+using UnityEngine.XR;
 using VRTK;
 
 public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
-    public static bool Dutch = false;
+    public static bool Dutch = true;
     public static StandardMenuEvent standardMenuEvent;
 
     public GameObject ColorMenuPrefab;
@@ -115,6 +113,9 @@ public class MenuManager : MonoBehaviour
         }
         else if(smo == StandardMenuOption.ReturnToStart) {
             wings.ResetPosition();
+        }
+        else if(smo == StandardMenuOption.Recenter) {
+            OVRManager.display.RecenterPose();
         }
     }
 
