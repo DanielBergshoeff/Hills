@@ -194,7 +194,7 @@ public class Breathing : MonoBehaviour
             Tree.UpdateTree(0f, 1f, leafSpawnRateNormal);
 
         if (flowerRainEffect) {
-            FlowerRainVfxGraph.SetInt("SpawnRate", 100);
+            FlowerRainVfxGraph.SetInt("SpawnRate", 200);
         }
 
         if (mountainPainting)
