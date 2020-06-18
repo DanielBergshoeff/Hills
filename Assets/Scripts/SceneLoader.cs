@@ -49,7 +49,7 @@ public class SceneLoader : MonoBehaviour
             return;
         }
 
-        NextScreenButton.SetActive(currentScreen < tempList.Count);
+        NextScreenButton.SetActive(currentScreen < tempList.Count && currentScreen != 0);
         PreviousScreenButton.SetActive(currentScreen > 0);
 
         for (int i = 0; i < tempList.Count; i++) {
