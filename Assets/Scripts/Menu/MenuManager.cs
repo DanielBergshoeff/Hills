@@ -13,6 +13,7 @@ public class MenuManager : MonoBehaviour
 
     public GameObject ColorMenuPrefab;
     public GameObject StandardMenuPrefab;
+    public GameObject StandardMenuDutchPrefab;
     public GameObject ColorMenu;
     public GameObject TutorialPosition;
     public Wings wings;
@@ -344,9 +345,9 @@ public class MenuManager : MonoBehaviour
 
     private void StandardMenu() {
         if(OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.LTouch)) {
-            ColorMenu = Instantiate(StandardMenuPrefab, transform);
+            ColorMenu = Instantiate(MenuManager.Dutch ? StandardMenuDutchPrefab : StandardMenuPrefab, transform);
             Vector3 forward = new Vector3(Wings.Instance.LeftHand.forward.x, 0f, Wings.Instance.LeftHand.forward.z).normalized;
-            ColorMenu.transform.position = Wings.Instance.LeftHand.position + forward * MenuDistance;
+            ColorMenu.transform.position = Wings.Instance.LeftHand.position + forward * MenuDistance * 1.5f;
             ColorMenu.transform.rotation = Quaternion.LookRotation(forward);
             menuOptions = ColorMenu.GetComponentsInChildren<MenuOption>();
 
