@@ -490,7 +490,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.3726415, g: 0.48845315, b: 1, a: 1}
-  m_Intensity: 47.746483
+  m_Intensity: 0
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -767,9 +767,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxRange: 10
-  Message: Touch the fireflies with the glass box to catch them and temporarily use
+  Message: Touch the fireflies with the crystal to catch them and temporarily use
     their energy.
-  MessageDutch: Raak de vuurvliegjes met de glazen doos aan om ze te vangen en tijdelijk
+  MessageDutch: Raak de vuurvliegjes met het kristal aan om ze te vangen en tijdelijk
     hun energie te gebruiken.
   Size: 0.15
   TextSize: 6
