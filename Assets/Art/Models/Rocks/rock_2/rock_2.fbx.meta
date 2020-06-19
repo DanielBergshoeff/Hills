@@ -3,7 +3,12 @@ guid: 302555816c3448b4cae313a3ce686a7e
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock_2_remeshed_uv_low1_defaultMat1
+    second: {fileID: 2100000, guid: b24e8c88164c2174f909e660d12fcf14, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
