@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WaterPurple
-  m_Shader: {fileID: -6465566751694194690, guid: 8dfc888b62a3ea047aee3ca254edf826,
+  m_Shader: {fileID: -6465566751694194690, guid: 4c1c6ceb8688744488360c5daee80fee,
     type: 3}
   m_ShaderKeywords: _BLENDMODE_ALPHA _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 1
@@ -113,12 +113,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_19CC0495: 250
     - Vector1_4588EA5B: 0.25
     - Vector1_46141FBF: 0.3
     - Vector1_4725705D: 0
     - Vector1_70B02B79: 0
     - Vector1_78A03E92: 1
-    - Vector1_9633E1C9: 10
+    - Vector1_878B9B63: 20
+    - Vector1_9633E1C9: 50
     - Vector1_A590E99: 0.8
     - Vector1_ABCEFF23: 1
     - Vector1_C5CC69BE: 3
@@ -203,7 +205,7 @@ Material:
     - _RefractionModel: 0
     - _RenderQueueType: 5
     - _RequireSplitLighting: 0
-    - _RipplePosition: 6.3096833
+    - _RipplePosition: -200
     - _SSRefractionProjectionModel: 0
     - _Smoothness: 0.5
     - _SmoothnessRemapMax: 1
@@ -247,13 +249,13 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_326821FC: {r: 5.992157, g: 0, b: 0, a: 0}
-    - Color_48AAA93A: {r: 0.58681494, g: 0.4627451, b: 0.6784314, a: 0}
-    - Color_4BA8B7F2: {r: 0.71885115, g: 0.51882344, b: 0.8396226, a: 0}
-    - Vector2_40ABEB6C: {r: -1, g: 0, b: 0, a: 0}
+    - Color_48AAA93A: {r: 0.4627451, g: 0.50980395, b: 0.6784314, a: 0}
+    - Color_4BA8B7F2: {r: 0, g: 0.81960785, b: 1, a: 0}
+    - Vector2_40ABEB6C: {r: 0, g: 0, b: 0, a: 0}
     - Vector3_8F72418F: {r: 67, g: 3.5, b: 24, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
-    - _CenterPosition: {r: 67.67257, g: 4.860734, b: 23.737024, a: 0}
+    - _CenterPosition: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}

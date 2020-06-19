@@ -149,7 +149,7 @@ public class Breathing : MonoBehaviour
     /// Sets once when the breathing in phase starts
     /// </summary>
     private void BreatheInEffects() {
-        myMessage = CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe in", AudioManager.BreatheInClips[Random.Range(0, AudioManager.BreatheInClips.Count)], breatheInTime, Vector3.up * 2f, 0.5f, false);
+        myMessage = CommunicationManager.Instance.DisplayMessage(this.gameObject, MenuManager.Dutch ? "Adem in" : "Breathe in", AudioManager.BreatheInClips[Random.Range(0, AudioManager.BreatheInClips.Count)], breatheInTime, Vector3.up * 2f, 0.5f, false);
         vfxGraph.SetFloat("Direction", 1f);
         vfxGraph.SetFloat("Speed", 1f / breatheInTime);
         timer = 0f;
@@ -169,7 +169,7 @@ public class Breathing : MonoBehaviour
     /// Sets once when the holding breath phase starts
     /// </summary>
     private void HoldBreathEffects() {
-        myMessage = CommunicationManager.Instance.DisplayMessage(this.gameObject, "Hold breath", AudioManager.HoldBreathClips[Random.Range(0, AudioManager.HoldBreathClips.Count)], holdBreathTime, Vector3.up * 2f, 0.5f, false);
+        myMessage = CommunicationManager.Instance.DisplayMessage(this.gameObject, MenuManager.Dutch ? "Houd vast" : "Hold breath", AudioManager.HoldBreathClips[Random.Range(0, AudioManager.HoldBreathClips.Count)], holdBreathTime, Vector3.up * 2f, 0.5f, false);
         vfxGraph.SetFloat("Speed", 0f);
 
         if(leavesEffect)
@@ -186,7 +186,7 @@ public class Breathing : MonoBehaviour
     /// Sets once when the breathing out phase starts
     /// </summary>
     private void BreatheOutEffects() {
-        myMessage = CommunicationManager.Instance.DisplayMessage(this.gameObject, "Breathe out", AudioManager.BreatheOutClips[Random.Range(0, AudioManager.BreatheOutClips.Count)], breatheOutTime, Vector3.up * 2f, 0.5f, false);
+        myMessage = CommunicationManager.Instance.DisplayMessage(this.gameObject, MenuManager.Dutch ? "Adem uit" : "Breathe out", AudioManager.BreatheOutClips[Random.Range(0, AudioManager.BreatheOutClips.Count)], breatheOutTime, Vector3.up * 2f, 0.5f, false);
         vfxGraph.SetFloat("Direction", -1f);
         vfxGraph.SetFloat("Speed", 1f / breatheOutTime);
 

@@ -115,6 +115,7 @@ public class MenuManager : MonoBehaviour
         }
         else if(smo == StandardMenuOption.ReturnToStart) {
             wings.ResetPosition();
+            OnTeleport();
         }
         else if(smo == StandardMenuOption.Recenter) {
             OVRManager.display.RecenterPose();
